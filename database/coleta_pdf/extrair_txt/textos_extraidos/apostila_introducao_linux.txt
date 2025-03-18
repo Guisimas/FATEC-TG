@@ -1,0 +1,1459 @@
+Introdução ao Linux – Augusto C. Campos 
+1
+Introdução
+ao
+Linux
+Augusto César Campos
+brain@matrix.com.br
+www.br-linux.com
+Introdução ao Linux – Augusto C. Campos 
+2
+Conteúdo
+1.Apresentação.....................................................................................................................................3
+2.Nota de Copyright.............................................................................................................................3
+3.Conceitos básicos..............................................................................................................................4
+4.Uma instalação assistida....................................................................................................................5
+5.Usando o ambiente............................................................................................................................7
+O kicker ou barra de tarefas.............................................................................................................8
+O menu do sistema...........................................................................................................................9
+Os ícones do sistema........................................................................................................................9
+6.Configurando o idioma....................................................................................................................10
+7.Os aplicativos para usuários............................................................................................................11
+8.Comandos em modo texto na shell..................................................................................................12
+Os comandos básicos.....................................................................................................................13
+Virando root...................................................................................................................................14
+9.A árvore de diretórios......................................................................................................................15
+Os diretórios de binários................................................................................................................15
+O diretório de configuração...........................................................................................................16
+O diretório de boot.........................................................................................................................16
+O diretório de dispositivos.............................................................................................................16
+O diretório de bibliotecas...............................................................................................................16
+Os pontos de montagem de mídias removíveis.............................................................................16
+Diretórios pessoais.........................................................................................................................16
+O indicador de status......................................................................................................................16
+Os diretórios de variáveis..............................................................................................................16
+A segunda hierarquia.....................................................................................................................16
+Outros diretórios............................................................................................................................17
+Quem garante?...............................................................................................................................17
+10.A documentação............................................................................................................................17
+11.Administração do sistema..............................................................................................................18
+O YaST..........................................................................................................................................20
+Gerenciamento de usuários e segurança........................................................................................20
+Acesso a rede.................................................................................................................................21
+Serviços de rede.............................................................................................................................21
+Hardware........................................................................................................................................23
+Sistema ..........................................................................................................................................24
+12.Gerenciando impressoras...............................................................................................................25
+13.Gerenciamento de discos...............................................................................................................27
+Descobrindo o espaço livre............................................................................................................27
+Descobrindo quem está usando o espaço.......................................................................................28
+Localizando arquivos.....................................................................................................................28
+Restrições e permissões de acesso.................................................................................................30
+14.Instalando e gerenciando software................................................................................................31
+15.Sobrevivendo no modo texto.........................................................................................................32
+16.Apêndice 1: Análise do SuSE Linux 8.2.......................................................................................36
+17. Apêndice 2: Como obter e gravar seus próprios CDs de Linux...................................................40
+Introdução ao Linux – Augusto C. Campos 
+3
+1. Apresentação
+Este documento é utilizado como complemento ao bloco A do curso “Introdução ao
+Linux”, e pretende servir como auxílio ao aprendizado e posterior fonte de consulta para alunos que
+já tenham sólidos conhecimentos na área de informática e que queiram ingressar no mundo do
+software livre.
+Ênfase é dada aos aspectos tecnológicos e administrativos, sem o enfoque político
+encontrado em outras publicações desta natureza. 
+O curso é dividido em dois blocos:
+Bloco A 
+
+Conceitos (Linux, software livre, LSB, distribuições, FHS...) 
+
+Instalação a partir dos CDs
+
+Uso do ambiente 
+
+Estrutura de diretórios 
+
+Acesso a dispositivos [CD, disquete...] 
+
+Como localizar e usar documentação e suporte
+
+Introdução a ferramentas de administração
+
+Gerenciamento de usuários 
+
+Configuração para acesso a rede 
+
+Acesso a impressoras 
+
+Gerenciamento de disco 
+
+Instalação de software adicional 
+
+Shell (comandos e filtros básicos)
+Bloco B
+
+Gerenciamento de processos 
+
+Como localizar e acompanhar os logs 
+
+Suporte básico de rede 
+
+Introdução ao SSH
+
+Samba e NFS 
+
+Apache 
+
+Squid (proxy web)
+
+Introdução a segurança (filtros de pacotes, apresentação de ferramentas básicas de
+verificação)
+Como os blocos são extensos e foram planejados para durar uma semana de aula cada um,
+ao final de vários capítulos são apresentadas referências adicionais sobre os assuntos, bem como
+sugestões de exercícios de fixação e para exploração adicional, podendo gerar discussões em sala de
+aula quando houver interesse dos alunos.
+2. Nota de Copyright
+© 2003 – Augusto César Campos. 
+Introdução ao Linux – Augusto C. Campos 
+4
+O uso deste documento é regido pela licença GNU Free Documentation License, Versão
+1.1 da Free Software Foundation. Permission is granted to copy, distribute and/or modify this
+document under the terms of the GNU Free Documentation License, Version 1.1 or any later
+version published by the Free Software Foundation; 
+3. Conceitos básicos
+Antes de começar a conhecer o Linux, é hora de conhecer alguns conceitos e definições
+que se tornam importantes na hora de compreender as demais questões envolvidas. Embora as
+revistas de circulação nacional possam achar que software livre e freeware são sinônimos, cabe a
+você entender as diferenças de forma a melhor orientar suas escolhas.
+Sistema operacional: é o componente de software que faz a interface
+básica entre os programas do usuário e o computador, gerenciando itens como os
+recursos e periféricos (e. g.
+memória, discos, arquivos, usuários, impressoras),
+segurança, privilégios, comunicação e outros. 
+Kernel: é o componente central de qualquer sistema operacional,
+contendo as principais tarefas de gerenciamento.
+Linux: é um kernel desenvolvido a partir de 1991 por Linus Torvalds (foto abaixo), unido
+a centenas de interessados (voluntários e empresas como a IBM, a HP e outras), capaz de rodar em
+múltiplas arquiteturas (do palm ao mainframe) e que, aliado a ferramentas providas por terceiros
+(e.g. GNU, KDE, Apache, PHP) forma um sistema operacional robusto e flexível. O sistema
+operacional resultante da união entre o kernel do Linux e as ferramentas de terceiros pode ser
+chamado de GNU/Linux ou apenas de Linux – a variação ocorre por razões ideológicas. 
+Linus Torvalds, autor do Linux
+Licenças: existe uma série de termos de uso que regulamentam os softwares. Cada autor
+de software é livre para escolher o tipo de licença adotada: licenças comerciais, shareware, etc. A
+licença típica do Linux é a GPL (General Public License), que permite livre uso, alteração e
+redistribuição, desde que as cópias redistribuídas adotem a mesma licença do original. Outra licença
+típica de sistemas abertos é a BSD, que permite livre uso e redistribuição, e dá a opção para que os
+interessados alterem os termos da licença.
+Distribuição: reunião do kernel do Linux a um conjunto de software selecionado por
+Introdução ao Linux – Augusto C. Campos 
+5
+terceiros, respeitando os termos de licenciamento de cada um dos componentes envolvidos.
+Qualquer interessado pode criar uma distribuição, mas apenas um pequeno grupo delas tem
+presença no mercado (o que não desqualifica as demais – algumas não tem interesse em “sucesso
+mercadológico”). Exemplos de distribuição: Conectiva, Red Hat, Debian, SuSE, Kurumin.
+Logotipo do LSB
+LSB: Linux Standards Base (www.linuxbase.org) . Conjunto de padrões (facultativos) aos
+quais as distribuições e as aplicações devem aderir de forma a facilitar o desenvolvimento de
+software que não seja específico de uma dada distribuição, maximizando os treinamentos, a
+documentação, etc. 
+Exercícios propostos:
+1. Discutir em sala de aula as diferenças existentes entre domínio público, freeware, free
+software/software livre e open source/código aberto.
+2. Você acha que a existência de múltiplas distribuições diferentes de Linux é um ponto
+positivo ou negativo deste sistema operacional? (Considere que todas elas obedeçam ao
+padrão LSB)
+3. Veja no apêndice 2 as instruções sobre como obter via internet e gravar seus próprios
+Cds de Linux. Você acha correto revender Cds obtidos desta forma? Por que?
+4. Como sugestão de leitura adicional, um artigo do site Linux.com apresenta vários
+conceitos interessantes relacionados ao Linux, em inglês. Veja em
+http://linux.com/article.pl?sid=02/03/09/1727250 
+4. Uma instalação assistida
+Instalar o Linux pode ser uma experiência muito mais fácil do que a maior parte dos
+usuários imagina. Entretanto, alguns detalhes podem tornar a tarefa mais desafiadora: manter mais
+de um sistema operacional na mesma máquina sem prejuízos a nenhum dos dois, ou instalar o
+sistema em um hardware cujo fabricante não forneceu driver para o sistema.
+A instalação assistida será realizada com o sistema
+operacional SuSE Linux 8.2, e não iremos tentar manter outro
+sistema operacional instalado no computador. Há uma sequência de
+passos que serão orientados pelo instrutor no início e no final da
+instalação, mas a maior parte do tempo será ocupada na tarefa de
+ficar trocando os discos durante a instalação - enquanto você
+aguarda o conteúdo dos cds ser transferido para o seu computador,
+pode ler no final desta apostila a minha análise do SuSE Linux 8.2, cuja versão condensada foi
+Introdução ao Linux – Augusto C. Campos 
+6
+publicada pela Revista do Linux em sua edição de Junho/2003.
+Atenção: os procedimentos abaixo instalarão o Linux sem preservar nenhum dado do
+seu disco rígido. Faça backup de todos os dados antes de prosseguir.
+O primeiro passo é verificar na BIOS do computador se ele está preparado para dar boot
+pelo CD, inserir o CD 1 no drive e dar o boot. Note que em poucos segundos deverá aparecer um
+menu de boot com várias opções – a primeira (selecionada automaticamente após alguns segundos
+de inatividade) continua o boot normalmente pelo sistema operacional que estiver instalado no seu
+disco rígido, e as demais são opções normais de instalação. Use a tecla F2 para selecionar um modo
+de vídeo compatível com seu equipamento, e em seguida selecione “Installation – Safe Settings” e
+pressione Enter.
+Após uma inicialização em modo texto que dura cerca de um minuto, começa a instalação
+em modo gráfico. Ajuste o monitor se necessário, e inicie sua interação selecionando o idioma
+Português Brasileiro – note que os demais controles da tela mudam automaticamente após esta
+seleção. Pressione Aceitar.
+Neste momento, o programa de instalação irá fazer uma verificação do seu sistema, e
+construir um conjunto de sugestões de configuração. Você pode aceitá-las ou não, mas nada será
+alterado em seu computador até que você pressione o botão Aceitar na tela “Configurações de
+Inicialização”. Dica: outras distribuições operam de maneira diferente, e vão fazendo suas
+alterações conforme você as solicita – procure sempre se informar sobre o modo de instalação antes
+de testar uma nova.
+Selecione o modo “Instalação nova”, o mapa de teclado “Português
+Brasil” (ou o “Português Brasil (Acentuação US)” se o seu teclado não tiver a
+tecla da cedilha) e o mouse adequado à sua configuração. 
+Agora é a hora do particionamento. Esqueça a sugestão do sistema –
+no nosso treinamento, vamos poder remover todas as partições pré-existentes e
+criar novas. Acompanhando as instruções dadas pelo instrutor, entre na opção “Criar configuração
+de partição customizada”, selecione o disco rígido correto e pressione o botão “Use o disco rígido
+inteiro”. O sistema irá criar uma nova sugestão de particionamento, para remover todas as partições
+pré-existentes e criar duas novas – uma para o swap (memória virtual) e outra para os dados.
+Acompanhe com o instrutor a operação de, através da opção “Particionamento definido
+pelo usuário”, remover a partição “/” e em seu lugar criar duas outras partições: “/” e “/home”, cada
+uma com metade do espaço disponível, formatados com o sistema de arquivos Reiser. Existem
+muitas variáveis a considerar no momento de definir o particionamento de uma máquina usada em
+produção, mas elas serão vistas mais à frente.
+Dica: ao contrário do que ocorre em outros sistemas operacionais típicos de PCs, os
+diretórios do
+Linux possuem uma única raiz, representada por uma barra normal “/”. Outros
+dispositivos aparecem como ramos desta árvore – por exemplo, o seu CD-ROM pode ser visto
+como o diretório /media/cdrom, e não como uma nova raiz (ex: “D:\”).
+A seleção de softwares definida automaticamente pelo sistema é suficiente para o
+treinamento. Entretanto, acompanhe a apresentação do instrutor sobre o uso do seletor de pacotes
+(que pode ser usado também após o sistema já estar instalado) e inclua para instalação o software
+“mc” e os pacotes de configuração do ambiente para o nosso idioma, de acordo com as instruções
+que serão dadas.
+Agora pressione Aceitar, confirme a operação e aguarde um bom tempo enquanto o
+sistema formata e copia dados dos CDs. É uma boa hora para assistir às dicas exibidas durante a
+instalação do CD 1, tirar dúvidas com o instrutor ou ler os apêndices desta apostila, mas fique
+atento aos momentos em que você precisará trocar as mídias! Note tambpem que entre o CD 1 e o
+CD 2 ocorre um boot do sistema.
+Introdução ao Linux – Augusto C. Campos 
+7
+Após a leitura dos pacotes do CD 3 (a seleção default não usa softwares dos Cds 4 e 5) o
+sistema irá fazer algumas perguntas.
+A primeira delas é a senha para o administrador do sistema. Em situações normais você
+deveria levar em conta a política de senhas de sua organização, mas durante o treinamento
+certifique-se de escolher uma senha simples, de forma a lembrar dela até o último dia de aula. 
+Em seguida surge a tela de configuração de dispositivos – configure a rede de acordo com
+as políticas de sua rede local, conforme as instruções do orientador. Não esqueça de configurar o
+servidor de nomes e o gateway padrão. Após confirmar a operação, configure também o endereço
+do seu servidor proxy, também de acordo com as políticas de sua rede e segundo as orientações do
+instrutor.
+Quando o sistema perguntar se há necessidade de testar conexão com a internet, responda
+que não. Este teste poderia levar ao download de drivers adicionais, fontes TrueType extras e
+atualizações, mas demora tempo demais para ser feito durante um curso – não deixe de fazê-lo
+quando estiver instalando uma máquina de produção!
+Na tela “Método de autenticação do usuário”, a escolha óbvia para um curso é “Máquina
+Stand-alone”, pois queremos ter estações de trabalho completamente independentes umas das
+outras. Entretanto, observe as demais opções disponíveis: as autenticações via serviços NIS, NIS+ e
+LDAP permitem ter uma base de dados de usuários centralizada na rede da organização, e os
+usuários utilizarem um único login e senha para todos os serviços sem complicação.
+Agora crie ao menos um usuário local. Os campos obrigatórios são o nome, o login e a
+senha. A opção “Receber Correio do System”, se habilitada, indica que este usuário deve receber
+cópias de todos os e-mails gerados pela administração do sistema (geralmente reservados apenas ao
+usuário root). Se fosse necessário alterar as demais configurações do usuário (grupos, ID numérico,
+diretório pessoal), bastaria clicar no botão “Detalhes”. O botão “Configurações de senha” permite
+configurar os prazos de expiração da senha do usuário. 
+Após ler as notas de lançamento da versão, o sistema mostra os periféricos reconhecidos
+automaticamente, sugere configurações default e permite alterações. Todas estas configurações
+podem ser alteradas após a instalação também, mas é importante garantir que a placa gráfica e o
+monitor estejam configurados corretamente, para evitar problemas após o boot. Use a função de
+teste disponível nesta tela, para não ter problemas depois. Dica: se o teste falhar, você pode acelerar
+o retorno à tela de configuração pressionando Control+Alt+Backspace.
+Agora é só completar a instalação. Em alguns segundos você será levado a uma breve
+inicialização e à tela de login em modo gráfico.
+5. Usando o ambiente
+Após uma instalação normal do Linux, você será levado a uma tela de logon em modo
+gráfico, onde deverá preencher seu login e senha, além de opcionalmente escolher qual será o seu
+ambiente gráfico, caso tenha instalado mais de um.
+Após preencher os campos, você será levado ao KDE, um ambiente gráfico amigável e
+completo, dispondo da maior parte das ferramentas comuns a outros ambientes gráficos
+contemporâneos. Note que o ambiente estará configurado em Português Europeu – logo
+aprenderemos a selecionar o nosso idioma.
+Introdução ao Linux – Augusto C. Campos 
+8
+A imagem acima mostra uma visão geral do ambiente default do KDE no SuSE Linux 8.2.
+A área 1 é ocupada por ícones de dispositivos e programas, a área 2 é o menu do sistema, e a área 3
+é o Kicker, ou barra de tarefas. Vamos analisá-los em ordem decrescente.
+O kicker ou barra de tarefas
+O kicker possui uma série de recursos para dar fácil acesso a itens usados com freqüencia e
+exibir o estado do sistema. Ele é altamente configurável, mas a configuração default é um bom
+exemplo do que ele pode fazer. 
+Da esquerda para a direita, temos dois botões que dão acesso a menus do sistema, 6 botões
+de diretórios ou aplicações (diretório de documentos, diretório pessoal, shell, documentação,
+navegador web e e-mail), o paginador que dá acesso às áreas de trabalho virtuais, botões
+identificando as janelas abertas, uma área de botões que controlam aplicativos em execução, o
+relógio e um botão para “encolher” o kicker.
+Você pode redimensionar o kicker arrastando sua borda superior, da mesma forma que
+usaria para redimensionar qualquer outra janela do sistema. Outras opções (posição, aparência e
+comportamento) podem ser selecionadas clicando com o botão direito do mouse sobre qualquer
+área vazia do painel.
+Exercícios propostos:
+1. altere a altura do seu kicker, observando o efeito sobre os botões.
+2. Troque alguns botões de posição.
+3. Crie um novo botão, associado à calculadora Kcalc
+Introdução ao Linux – Augusto C. Campos 
+9
+O menu do sistema
+O menu do KDE dá acesso à maioria das aplicações instaladas juntamente com o SuSE
+Linux. Quando você remove ou adiciona uma aplicação fornecida pela própria SuSE, o menu é
+atualizado automaticamente. Parece uma afirmação óbvia, mas nem todas as distribuições de Linux
+oferecem este serviço.
+As aplicações estão agrupadas conforme seu uso: os grandes grupos são Escritório,
+Gráficos, Internet, Jogos, Multimídia e Sistema. Cada um deles se divide em subgrupos, conforme a
+necessidade. Infelizmente, as aplicações são identificadas apenas pelo seu nome, e não pela sua
+tarefa – assim, pode ficar difícil adivinhar que o Kopete é um cliente de ICQ, ou que o XMMS é um
+player de MP3.
+Opções adicionais, como Favoritos e Navegador, dão acesso rápido a várias partes
+importantes do sistema, inclusive os arquivos de configuração da maior parte dos serviços – mas
+lembre-se de que apenas o usuário root tem permissão para alterá-los.
+No topo do menu ficam as opções de acesso aos aplicativos recentemente executados. Na
+base, o gerenciamento de sessão, que permite bloquear a tela, iniciar um segundo ambiente gráfico
+simultâneo, ou encerrar a sua sessão.
+Exercícios propostos:
+1. Crie uma segunda sessão do KDE sem encerrar a atual.
+2. Alterne entre as sessões utilizando as teclas Ctrl+Alt+F7 e Ctrl+Alt+F8.
+3. Aproveite para conhecer as sessões em modo texto, pressionando Ctrl+Alt+F1 a
+Ctrl+Alt+F6.
+4. Altere o wallpaper em uma das sessões gráficas, e verifique o efeito sobre a outra.
+5. Encerre a segunda sessão através do menu.
+Os ícones do sistema
+Você pode criar e remover ícones à vontade, como faz em qualquer outro sistema
+operacional moderno. Os ícones originais do sistema dão acesso aos dispositivos de armazenamento
+reconhecidos automaticamente pelo sistema (discos rígidos, disquetes, Cds, webcams...), à
+impressora, à apresentação do SuSE e ao OpenOffice.
+O ícone do OpenOffice merece atenção especial, porque na primeira vez em que é
+utilizado, faz a configuração do aplicativo automaticamente. Quando isto acontecer, e o sistema
+exibir a janela “Address Data Source AutoPilot”, pressione “Cancel”. Sim, o OpenOffice fornecido
+é em inglês, embora exista uma versão em português para download em www.openoffice.org.br. 
+Exercícios propostos:
+1. Crie um documento simples no OpenOffice, e grave-o com o nome de teste.sxw
+2. Utilizando o ícone de sua unidade de CD, veja o conteúdo do CD 1 do SuSE. Em
+seguida, ejete-o.
+3. Crie um ícone para a calculadora Kcalc. Dica: o executável dela é /opt/kde3/bin/kcalc.
+6. Configurando o idioma
+Você já deve ter notado que o ambiente gráfico está todo em português europeu, e tarefas
+simples como a visualização prévia de um documento acabam virando “Antevisão em editor de
+texto avançado embebido”. Felizmente a conversão para a nossa língua pátria é tarefa simples, e
+serve também como um primeiro contato com o Centro de Controle. 
+Introdução ao Linux – Augusto C. Campos 
+10
+No menu do sistema, selecione o “Centro de Controlo” e aguarde o surgimento da janela
+exibida na figura acima. Nela, clique em “Regional e Acessibilidade”, e depois em “País/Região e
+Lingua”. Note que o sistema está configurado para Portugal... Como durante a instalação tivemos o
+cuidado de selecionar os pacotes do nosso idioma, basta trocar o campo País para Brasil, e o
+Português Brasileiro surge na tela, conforme a figura abaixo.
+Esta é uma das poucas alterações que exigem o reinício do ambiente gráfico (note que não
+é necessário fazer reboot) para se tornarem efetivas. Encerre sua sessão e faça novamente o logon, e
+você deverá ver os menus e opções dos programas em um idioma bem mais familiar.
+Introdução ao Linux – Augusto C. Campos 
+11
+7. Os aplicativos para usuários
+A intenção deste capítulo é fazer um rápido tour para demonstrar que a usabilidade dos
+bons aplicativos para usuários do Linux não tem nada de muito diferente em relação aos demais
+aplicativos que você tenha visto recentemente. Vamos passear por algumas das aplicações
+instaladas nos nossos computadores e verificar se elas são mais complexas ou menos funcionais.
+Comecemos pela calculadora, acessível através do menu Escritório / Calculation / Kcalc.
+Interaja com ela, faça contas básicas e avançadas. Simples, não? 
+Agora vamos navegar rapidamente pelos diretórios do sistema. Em breve teremos uma aula
+específica sobre o que significa cada um dos diretórios e arquivos, mas agora preocupe-se apenas
+em abrir o navegador através do ícone da Casa no seu kicker, e em navegar através dos diretórios do
+seu sistema. Note como a navegação é simples, e a estrutura de diretórios e arquivos em árvore é
+bastante similar ao que você já conhecia.
+Agora vamos a um editor de textos simples, estilo bloco de notas. Abra o Kate, em
+Escritório / Editors / Kate. Escreva algumas linhas, grave seu documento. As funções não estão
+onde você esperaria que estivessem? Os aplicativos do Linux não são tão complicados como você
+ouviu falar, afinal... Se você for programador, vá em Ferraments / Modo de destaque e selecione a
+sua linguagem favorita. Agora escreva algumas linhas de código, e veja que o Kate é capaz de
+demarcar a sintaxe de diversas linguagens corretamente – este pequeno editor tem vários truques na
+manga!
+Explore os demais menus, guiado pelo instrutor. Conheça o navegador web, o cliente de e-
+mail, veja o processador de textos e a planilha, e tenha uma boa noção do que está disponível atrás
+de cada opção do menu.
+8. Comandos em modo texto na shell
+Talvez você já tenha ouvido falar que o uso do Linux exige o domínio de comandos em
+Introdução ao Linux – Augusto C. Campos 
+12
+modo texto, ou que ele é feio, lento e desajeitado. A segunda parte já deixou de ser realidade faz
+tempo, e a primeira vem se tornando cada vez menos real.
+Na administração de servidores, certamente o domínio do modo texto é uma grande
+necessidade – muitos servidores operam completamente sem modo gráfico, para poupar recursos de
+processamento. No desktop, entretanto, a maior parte das tarefas suportadas já pode ser feita
+completamente sem interação em modo terminal, e a shell (similar ao “Prompt de comandos” nos
+sistemas da Microsoft) é mantida mais para conveniência dos usuários experientes (que certamente
+conseguem fazer através dela operações completamente inacessíveis em modo gráfico)
+do que
+como um recurso para os usuários comuns.
+Entretanto, ao seguir instruções de manuais ou de artigos de revista, muitas vezes será
+necessário recorrer à shell – como ela varia pouco entre as diversas distribuições de Linux,
+normalmente a documentação a usa como base em seus exemplos. Eis porque teremos alguma
+interação com a shell neste curso introdutório.
+Para abrir seu terminal shell, pressione o ícone da concha em frente a um monitor no seu
+Kicker. Ao contrário do que ocorre nos prompts de comandos de outros sistemas operacionais, a
+janela da shell pode ser redimensionada como qualquer outra – a sua geometria se adapta ao
+tamanho selecionado.
+A opção “Preferências” do menu da shell permite personalizar vários itens do aspecto da
+shell. Em “Fonte” você pode mudar a codificação e o tamanho dos caracteres. Em “Teclado” pode-
+se mudar o protocolo de comunicação oferecido pela shell (Dica: isto pode resolver problemas de
+acentuação ou de caracteres estranhos aparecendo em programas antigos). Em “Esquema” muda-se
+o conjunto de cores e a aparência geral do terminal. A opção “Sessão”, no menu principal, permite
+abrir vários prompts adicionais na mesma janela, e aí você pode alternar entre eles através dos
+botões criados na barra de status.
+Os comandos básicos
+Não vamos nos fixar em comandos em modo texto neste curso, mas alguns podem ser
+importantes, principalmente para usuários com conhecimento das interfaces via comando de outros
+sistemas operacionais. Note que todas as operações abaixo podem ser efetuadas de maneira intuitiva
+através de uma interface tipo “Explorer” acessível através do botão em formato de casa no Kicker.
+Introdução ao Linux – Augusto C. Campos 
+13
+Para exibir a lista de arquivos, o comando é o ls. Usado sem nenhum parâmetro, ele exibe
+apenas os nomes dos arquivos do diretório corrente – para ver uma listagem mais abrangente, com
+informações adicionais além dos nomes, use ls -la. Você pode acrescentar um parâmetro extra para
+indicar o nome do diretório do qual você deseja ver o conteúdo: ls -la /etc/init.d irá mostrar o
+conteúdo do diretório  /etc/init.d.
+Para ver o conteúdo de um arquivo via shell, use o comando less. Exemplo: less
+/etc/inittab. Uma vez “dentro” do less, você pode sair pressionando a tecla “q”. A tecla “/” permite
+procurar por palavras, e a navegação ocorre pelas teclas tradicionais – setas, page up, etc. A tecla
+“h” exibe uma referência dos demais comandos do less.
+Quando precisar digitar o nome de um arquivo, você pode utilizar a tecla TAB para
+completá-lo. Por exemplo, para se quiser usar o comando less /etc/protocols, você pode digitar
+apenas less /etc/prot e então pressionar TAB – e o shell completará a digitação para você. Para
+limpar a tela, use Control+L. Para repetir comandos anteriores, use as teclas de setas – e para
+localizar comandos similares, use Page Up.
+Para mudar o diretório corrente, use o comando cd, como no exemplo: cd /usr/local.
+Usuários acostumados ao MS-DOS vão notar que o comando CD sem parâmetros não faz o que
+eles estão acostumados – ele retorna ao diretório pessoal do usuário, e não exibe o nome do
+diretório corrente. Para exibir o nome do diretório corrente, use pwd.
+Para criar um diretório, use mkdir. Exemplo: mkdir teste123. Para excluir um diretório
+vazio, use rmdir, como no exemplo: rmdir teste123.
+Para editar arquivos em modo texto, existem várias opções, desde o tradicional editor vi até
+alternativas mais simples (e menos poderosas) como o pico. Para editar o arquivo exemplo.txt com
+o pico, digite pico exemplo.txt. Dentro do pico, use as teclas Control+o para gravar, e Control+x
+para sair.
+Para renomear ou mover um arquivo, use o comando mv. Por exemplo, para transformar
+seu arquivo exemplo.txt em exercicio.txt, digite mv exemplo.txt exercicio.txt. Se você quisesse
+movê-lo para o diretório teste123, previamente criado, o comando seria similar: mv exemplo.txt
+teste123.  
+Para copiar um arquivo, use o comando cp, com a mesma sintaxe do mv: cp exemplo.txt
+exercicio.txt, ou  cp exemplo.txt teste123 
+Para apagar um arquivo, use o comando rm. Exemplo: rm  exemplo.txt
+Virando root
+Eventualmente você terá necessidade de emitir comandos específicos do administrador do
+sistema (o usuário root). Para tornar-se o usuário root dentro de uma sessão shell, use o comando
+“su -” ou “sux -”. O segundo é específico da distribuição SuSE, e permite que o
+usuário root possa inclusive iniciar aplicações gráficas a partir de sua shell.
+Você pode usar também o comando su sem parâmetro nenhum, mas aí
+os scripts de inicialização do usuário não serão executados, e você poderá sentir
+falta de alguns recursos presentes nele (como a reconfiguração da variável
+Introdução ao Linux – Augusto C. Campos 
+14
+PATH, por exemplo).
+Para retornar à situação pré-root, use o comando exit ou pressione Control+d.
+Exercícios propostos
+1. Usando sua shell pessoall, tente exibir o conteúdo do arquivo /etc/shadow com o
+comando less /etc/shadow. Em seguida torne-se o root e tente o mesmo comando,
+comparando os resultados obtidos.
+2. Compare os efeitos do comando “su” e “su -” sobre o diretório corrente (que você pode
+aferir através do comando pwd). Como você explicaria a diferença?
+3. Você acha segura a abordagem de segurança em que o usuário administrador do sistema
+tem acesso irrestrito a todos os recursos? Conhece modelos alternativos? Discuta o tema
+em sala de aula.
+Introdução ao Linux – Augusto C. Campos 
+15
+9. A árvore de diretórios
+O Linux tem uma estrutura de diretórios peculiar, objeto de uma série de padronizações e
+similar à que pode ser encontrada em versões comerciais de Unix. Alguns dos diretórios básicos do
+sistema merecem ser mencionados até mesmo em um curso introdutório, pois ajudam a entender
+melhor como o Linux funciona.
+Acompanhe esta aula através do seu gerenciador de arquivos – no menu do KDE, selecione
+Navegador rápido / Diretório raiz / Abrir no gerenciador de arquivos. Você verá uma tela
+similar à da Figura abaixo, mostrando o nível inicial da árvore de diretórios de sua máquina. Nesta
+janela. Use o menu Ver / Modo de Visão para selecionar o tipo de visualização que você prefere –
+ícones, detalhes, árvore...
+Os diretórios de binários
+Os diretórios de binários contém comandos e programas executáveis. A palavra “binários”
+não deve ser tomada ao pé da letra – vários programas são em linguagens interpretadas (como Perl e
+bash) e estão gravados em formato textual. Os principais são o /bin e o /sbin, mas existem outros
+dentro de áreas como o /usr e o /opt, como veremos adiante. A diferença entre o /bin e o /sbin é que
+no último devem ficar todos os comandos e programas necessários durante o boot da máquina –
+portanto, ele deve sempre residir no mesmo disco ou partição que o diretório raiz.
+Introdução ao Linux – Augusto C. Campos 
+16
+O diretório de configuração
+Os arquivos de configuração dos diversos serviços instalados na sua máquina devem
+preferencialmente residir no /etc. Ele também precisa estar no seu diretório raiz, por ser necessário
+durante o boot.
+O diretório de boot
+No /boot residem os arquivos estáticos necessários ao processo de boot do kernel, inclusive
+o próprio kernel e eventualmente uma imagem de disco virtual contendo drivers para os primeiros
+estágios da inicialização. De modo geral ocupa menos de 10MB, e pode estar em uma partição
+separada – algumas BIOS antigas podem exigir que este diretório esteja gravado no início do disco
+rígido.
+O diretório de dispositivos
+O /dev abriga arquivos que virtualizam todos os dispositivos de entrada e saída – terminais,
+teclado, portas seriais e paralelas, teclado e até mesmo os próprios discos. 
+O diretório de bibliotecas
+As bibliotecas compartilhadas essenciais (equivalentes às DLLs do mundo Windows) das
+aplicações e os módulos do kernel ficam gravadas no /lib.
+Os pontos de montagem de mídias removíveis
+Quando você
+acessa
+um
+CD,
+disquete
+ou
+mesmo
+um
+disco
+compartilhado via rede, ele se torna integrante (diz-se que ele foi “montado”)
+do diretório /mnt ou /media. Seu disquete, após montado, pode ser visualizado
+em /mnt/floppy; o CD pode vir a ser lido em /media/cdrom.
+Diretórios pessoais
+O diretório pessoal do usuário root é o /root. Os demais diretórios
+pessoais devem estar sempre dentro do /home.
+O indicador de status
+O diretório /proc é virtual – ele não ocupa espaço físico real nos seus discos ou na
+memória. Seus arquivos servem como ponto de acesso para uma série de variáveis e recursos do
+sistema. Por exemplo, se você acessar o conteúdo do arquivo (virtual) /proc/cpuinfo verá
+informações sobre os processadores da sua máquina.
+Os diretórios de variáveis
+Logs, filas de impressão e de e-mail e outros arquivos mantidos dinamicamente pelo
+sistema são armazenados no /var. Já no /tmp são armazenados apenas arquivos temporários.
+A segunda hierarquia
+Dentro do diretório /usr nasce uma segunda hierarquia, idêntica à anterior. Dentro do
+/usr/bin, por exemplo, pode residir o mesmo tipo de arquivos que residiria no /bin – desde que não
+Introdução ao Linux – Augusto C. Campos 
+17
+sejam necessários durante o boot. Eventualmente pode haver mais um terceiro nível, dentro de
+/usr/local. As razões por trás das hierarquias adicionais são históricas, mas elas permitem manobras
+interessantes, como a gravação em mídias protegidas contra gravação, ou o compartilhamento de
+um mesmo diretório /usr por uma série de computadores ligados em rede. Alguns conteúdos
+interessantes podem ser encontrados por padrão dentro da hierarquia do /usr – um exemplo é a
+documentação dos pacotes instalados, que deve residir em /usr/share/docs.
+Outros diretórios
+Outros diretórios podem existir na sua árvore sem violar o padrão. O SuSE Linux usa
+extensivamente o /opt, por exemplo, para instalação de árvores de diretórios adicionais criadas por
+pacotes específicos, como o KDE  e o OpenOffice. 
+Quem garante?
+E quem garante que cada distribuição de Linux vá obedecer aos padrões existentes?
+Ninguém. Mas os usuários esperam isso – desrespeitar os padrões significa que softwares
+desenvolvidos levando em conta os padrões existentes não irão funcionar na sua distribuição.
+O desrespeito aos padrões pode levar a problemas sérios: uma versão relativamente antiga
+de uma distribuição de Linux bastante usada no Brasil gravava seu arquivo de definição de fusos
+horários dentro do diretório /usr. Quando algum administrador de sistemas experiente optava por
+gravar o diretório /usr em uma partição ou disco separado (respeitando o padrão), o arquivo deixava
+de estar disponível durante o boot. Resultado? Um erro difícil de identificar, que resultava em
+problemas principalmente durante o horário de verão.
+Assim, as distribuições que desejam participar do mercado corporativo tendem a aderir aos
+padrões,
+evitando
+causar
+problemas
+desnecessários
+aos
+administradores.
+Distribuições
+desenvolvidas para objetivos acadêmicos ou por hobby podem se dar ao luxo de criar seus próprios
+padrões.
+Para conhecer melhor os padrões, visite:
+
+www.linuxbase.org
+
+www.pathname.com/fhs
+
+www.li18nux.net
+10.A documentação
+O Linux é fornecido com grande volume de documentação. Bons manuais são o diferencial
+das distribuições mais orientadas ao mercado corporativo, mas também estão disponíveis junto às
+distribuições “livres” e até mesmo em produções independentes.
+O SuSE Linux 8.2 vem acompanhado de dois manuais impressos, sendo um deles voltado
+para a administração do sistema e o outro voltado ao usuário. Como seria de se esperar em um
+produto vindo do software livre, o conteúdo dos manuais vem gravado nos Cds e é instalado
+juntamente com o sistema, podendo ser acessado através do ícone da bóia salva-vidas no seu kiosk. 
+No mesmo ícone você encontra pontos de acesso a uma série de outros itens de
+documentação que são instalados junto com o seu sistema: os manuais (man) dos comandos, o guia
+do usuário do KDE,  guias para desenvolvedores, e muito mais.
+Introdução ao Linux – Augusto C. Campos 
+18
+Boa parte da documentação pode ser acessada também através do modo
+texto. Para ler o manual de um comando qualquer, use o comando man. Por exemplo,
+para ler o manual do comando cp, use man cp. Alguns comandos mais “modernos”
+não dispõem de manuais no antigo formato man, e para eles usa-se o comando info -
+exemplo: info less. Outros comandos ainda possuem documentação através do
+sistema help – exemplo: help pwd.
+Existe muita documentação disponível na Internet, também. Em português pode-se contar
+com:
+
+Os manuais e guias da Conectiva: http://www.conectiva.com.br/cpub/pt/doc 
+
+FAQ:  http://www.conectiva.com.br/cpub/pt/suporte/perguntaserespostas.php 
+
+Guia Foca Linux: http://focalinux.cipsga.org.br/ 
+
+Tutoriais Linux in Brazil: http://artigos.br-linux.com/
+além de muitos outros sites. Já em inglês, as dicas básicas são o Linux Documentation
+Project (www.tldp.org) e a área Linux do Google (www.google.com/linux).
+Se você preferir participar interativamente, perguntando e respondendo, uma sugestão é
+assinar a lista linux-br (instruções em http://linux-br.conectiva.com.br/ - note que apesar da URL,
+não se trata de uma lista exclusiva sobre o Conectiva Linux) ou participar de fóruns online como o
+br-linux.com ou o www.underlinux.com.br.
+Para informações específicas sobre a SuSE, o site brasileiro é www.suse-brasil.com.br, e o
+internacional é www.suse.com. Eles tem instruções sobre como assinar as listas de e-mail
+relacionadas a seus produtos.
+11.Administração do sistema
+Todo sistema operacional precisa de administração, em maior ou menor grau. Há
+necessidade de manter atualizadas as contas e senhas de usuários, gerenciar a ocupação dos discos,
+dimensionar a quantidade de tarefas em execução simultânea, manter a comunicação com os
+periféricos e com a rede, e muito mais.
+As ferramentas fornecidas para administração do sistema servem como um dos principais
+diferenciais entre as distribuições – algumas oferecem alternativas que de tão automatizadas
+chegam a ser intrusivas, enquanto outras limitam-se ao mínimo necessário.
+O “mínimo necessário”, no caso, pode ser um editor de texto capaz de alterar os arquivos
+de configuração do Linux – seguindo a tradição do mundo Unix, a absoluta maioria dos softwares
+para Linux pode ser configurada a partir de arquivos texto. E as ferramentas intrusivas são aquelas
+que sobrescrevem estes arquivos de configuração sem considerar alterações eventualmente
+inseridas de forma manual pelo administrador do sistema.
+Cada distribuição de Linux oferece a sua própria ferramenta de administração, e todas têm
+suas vantagens e problemas. Algumas ferramentas de administração são desenvolvidas de forma
+independente de qualquer distribuição, e podem ser instaladas com relativa facilidade em qualquer
+sistema. Um exemplo desta categoria é o Webmin, que permite o gerenciamento remoto via
+navegador web, com uma interface como a da figura abaixo:
+Introdução ao Linux – Augusto C. Campos 
+19
+Os módulos do webmin têm interfaces avançadas e simples de usar. Veja como funciona a
+inclusão de um usuário:
+Este foi apenas um exemplo, mas há uma série de outras ferramentas disponíveis para esta
+mesma função. Neste curso, entretanto, iremos concentrar nosso foco no YaST, a ferramenta de
+administração que acompanha o SuSE Linux.
+Introdução ao Linux – Augusto C. Campos 
+20
+O YaST
+O YaST é uma interface de gerenciamento completamente gráfica, mas que também
+oferece uma interface em modo texto para facilitar a administração remota (via ssh ou telnet) e a
+administração de servidores sem modo gráfico.
+A tela inicial do YaST exibe à esquerda os ícones dos grupos de serviços gerenciáveis pelo
+YaST, e à direita os ícones do grupo default, que é o do gerenciamento de software. Note na figura
+a abrangência dos grupos: Software, Hardware, Rede, Segurança, Usuários, Sistema e Diversos.
+Vamos agora visitar os principais grupos. Como se trata de experiência interativa, a
+apostila não irá abordar as configurações individualmente – acompanhe as exposições juntamente
+com o instrutor.
+Gerenciamento de usuários e segurança
+Vamos iniciar pelo gerenciamento de usuários, disponível no grupo
+“Segurança e
+usuários”. O ícone “Editar e criar usuários” permite visualizar a listagem dos usuários do seu
+sistema, alterá-los, excluí-los e até mesmo incluir novos. Usuários experientes de Linux vão notar
+que o sistema, por default, exibe apenas a listagem dos usuários locais. Utilizando a opção
+“Configurar Filtro” você pode exibir também os usuários administrativos do sistema, como o root e
+o nobody – mas não os altere a não ser que tenha boa razão para isto! Acompanhe o instrutor nas
+operações de criação, alteração e exclusão de usuários, e veja também as opções avançadas,
+inclusive a criptografia utilizada nas senhas (DES, MD5 e Blowfish) e a fonte utilizada na
+autenticação (arquivos locais, NIS, NIS+ e LDAP).
+Introdução ao Linux – Augusto C. Campos 
+21
+O ícone “Configurações de segurança” permite definir o nível de segurança usado na
+máquina, variando de 1 (estação de trabalho doméstica) a 3 (servidor de rede). Pode-se também
+alterar detalhes individualmente, incluindo o tratamento de senhas, das teclas Ctrl+Alt+Del, da
+possibilidade de shutdown para usuários comuns, do método utilizado para login, do gerenciamento
+de arquivos e outros.
+Acesso a rede
+O grupo “Dispositivos de rede” permite configurar as suas interfaces, inclusive ADSL,
+modems, placas de rede, Fax, secretária eletrônica e ISDN. A maior parte dos dispositivos de rede
+comuns são detectados automaticamente, e o uso dos ícones deste grupo em geral limita-se a
+configurações de software – detalhes da discagem para provedores Internet, ou a configuração do IP
+da sua placa de rede.
+Clique no ícone da placa de rede para fazer a configuração IP. Caso ela não apareça na lista
+de dispositivos já configurados, pressione o botão Configurar e informe os dados solicitados; caso
+contrário, pressione Modificar, selecione Editar  e veja uma tela como a da figura abaixo:
+Nela você pode selecionar a configuração automática (se sua rede contar com servidor
+DHCP) ou informar manualmente dados como o endereço IP, a máscara, o endereço do servidor
+DNS e o Gateway padrão.
+Serviços de rede
+Este é um grupo que vem crescendo a cada nova edição do SuSE Linux. Ainda não é
+possível configurar os serviços de rede mais avançados (como o Apache e o Samba) por aqui, mas
+tudo indica que logo teremos esta comodidade.
+Entre os serviços já disponíveis neste grupo, temos os diversos autenticadores de rede
+Introdução ao Linux – Augusto C. Campos 
+22
+(NIS, NIS+, LDAP, Kerberos), configurações relacionadas a serviços de nomes (definições de
+nomes locais e arquivo de hosts, acesso a servidor DNS), compartilhamento de arquivos via NFS,
+roteamento, acesso a proxy, acesso a e-mail e serviços de rede (inetd). Os dois últimos, por serem
+mais complexos, serão vistos com mais detalhes.
+Quanto ao serviço de e-mail, visto na figura acima, a primeira escolha é quanto ao tipo de
+conexão. Em conexões discadas, o servidor de e-mail acumula as mensagens, e elas só são enviadas
+quando explicitamente solicitado pelo administrador de sistemas. Neste passo pode-se também
+habilitar o uso de um antivírus no servidor. Em seguida, pode-se especificar um servidor (“relay”)
+de saída, para os casos em que se deseja rotear todo o e-mail através de um servidor remoto (com
+suporte inclusive a mascaramento e autenticação SMTP), e pode-se também habilitar a recepção de
+e-mail remoto (inclusive através de servidores POP e IMAP de outros provedores, e com suporte a
+apelidos e a domínios virtuais).
+Introdução ao Linux – Augusto C. Campos 
+23
+Já quando se trata dos serviços de rede (inetd), a explicação tem que ser um pouco mais
+detalhada. O inetd é um serviço especial, cuja principal tarefa é monitorar as interfaces do sistema e
+iniciar automaticamente os demais servidores (exemplo: FTP, IMAP, POP) quando detecta alguma
+requisição externa. 
+Através do seu ícone no YaST, o administrador pode ativar o inetd (na verdade trata-se de
+um software chamado de xinetd) e configurar em uma interface como a da figura acima quais os
+serviços que serão providos através dele. No caso de serviços cujo software correspondente não
+tenha sido instalado, a ativação gera automaticamente uma requisição de instalação do software
+necessário, a partir dos Cds do sistema. Por exemplo, se você deseja que seu computador aceite e
+suporte conexões via FTP, basta ativar o xinetd e usar o botão “Toggle Status” para ativar o serviço
+correspondente.
+Hardware
+No grupo Hardware encontramos as ferramentas de suporte à configuração dos diversos
+dispositivos suportados pelo YaST. Note que há dispositivos suportados e reconhecidos
+automaticamente pelo SuSE Linux mas que não possuem opção de configuração pelo YaST –
+exemplos disso são as câmeras digitais e webcams.
+Introdução ao Linux – Augusto C. Campos 
+24
+O ícone Informação de Hardware mostra uma lista dos dispositivos reconhecidos pelo
+sistema, mesmo que não tenham sido configurados automaticamente. Veja na figura acima um
+exemplo, com o primeiro nível de detalhe sobre a CPU, o disco e a placa de vídeo. O segundo nível
+de detalhe, não mostrado na figura, exibe uma quantidade surpreendente de informações sobre o
+equipamento.
+O ícone Modo IDE DMA permite ligar ou desligar o acesso de alta velocidade aos
+dispositivos IDE (discos rígidos, unidades de CD). De modo geral, a única razão para desligar o
+modo DMA (que garante velocidades bem superiores) é na existência de problemas de
+compatibilidade com dispositivos antigos.
+O ícone da placa de vídeo o monitor permite selecionar a resolução, profundidade de cores
+e aceleração 3D de seu equipamento – ou colocá-lo em modo texto definitivamente. Além disso
+pode-se utilizar o suporte a múltiplos monitores simultâneos, quando o hardware suportar esta
+configuração. Se em algum teste você descobrir que seu micro não dá mais boot em modo gráfico,
+use o comando “SaX2 -l” (é um L minúsculo, e não o número 1) no modo texto para reconfigurar.
+Exercício proposto:
+1. Usando o ícone Informação de Hardware, compare a sua configuração com a dos demais
+colegas de treinamento, identificando diferenças reconhecidas pelo sistema.
+Sistema 
+Esta opção é específica para usuários avançados. Os módulos permitem a configuração do
+boot do sistema, criar disquete de boot ou de resgate, escolher o idioma básico utilizado pelo YaST
+e pelos aplicativos, fazer e restaurar backups simples, reparticionar e configurar volumes lógicos
+(LVM) alterar o fuso horário e o mapa do teclado.
+Algumas opções merecem destaque, embora não sejam objeto deste curso introdutório. A
+primeira delas é o Gerenciador de Perfil, que permite arquivar múltiplas configurações para uma
+mesma máquina – pense em um notebook que pode ser usado em mais de uma rede com
+configurações completamente diferentes, ou em uma máquina usada em treinamentos que precisa
+ser servidor de manhã e estação de trabalho à tarde.
+O editor de runlevel permite definir quais serviços irão ser executados em sua máquina. A
+explicação sobre os diversos níveis de execução (runlevels) será dada mais adiante, mas através
+deste editor pode-se definir qual o runlevel padrão da máquina, e quais os serviços (exemplo:
+servidor web, servidor de correio, login gráfico) estarão ativos em cada runlevel.
+O editor do /etc/sysconfig é o último recurso do administrador de sistemas que não deseja
+Introdução ao Linux – Augusto C. Campos 
+25
+editar arquivos texto de configuração diretamente. Através dele pode-se localizar até mesmo as
+opções mais obscuras suportadas pelo YaST, e alterá-las em uma interface gráfica com ajuda
+online.
+12.Gerenciando impressoras
+Manipular impressoras através do YaST é uma tarefa fácil. Nos exemplos, vamos utilizar
+uma impressora conectada via rede, mas eles podem ser facilmente adaptados para impressoras
+conectadas localmente.
+Para configurar sua impressora, utilize o ícone correspondente no grupo Hardware do
+YaST. Na primeira execução ele pode demorar mais do que o esperado, porque ele tentará localizar
+sua impressora local utilizando todas as portas disponíveis. A figura abaixo mostra a tela de
+configuração sem que nenhuma impressora tenha sido reconhecida automaticamente. 
+Se você ligar uma impressora paralela agora, pode apertar o botão “Reiniciar detecção” e
+aguardar a configuração automática, mas para o caso de impressoras de rede a única possibilidade é
+a configuração manual. 
+No nosso exemplo iremos configurar uma impressora Lexmark T520 conectada via rede
+local. A operação é simples. Clique no botão “Modificar”, depois em “Adicionar”, “Mostrar mais
+tipos de conexão”, “Fila de pré-filtro para impressora LPD”, preencha o endereço da impressora na
+rede e o nome da fila remota (geralmente é “lp”), selecione o fabricante e modelo, defina um nome,
+descrição e localização da sua impressora conforme os padrões adotados em sua organização e
+confirme a operação. Parece uma seqüência longa, mas é uma típica receita de bolo que funciona
+para a maior parte das impressoras conectadas diretamente a redes locais – embora haja suporte
+também a impressoras paralelas e conectadas a servidores de impressão Unix/Linux, Novell e
+Windows (veja figura abaixo).
+Introdução ao Linux – Augusto C. Campos 
+26
+Utilizando o mesmo ícone pode-se editar a configuração das impressoras, tornando-as
+inativas, configurando folhas de rosto e várias outras opções.
+Para imprimir, utiliza-se os recursos dos próprios programas aplicativos. Para imprimir um
+arquivo texto a partir da shell, pode-se utilizar o comando “lpr -Pimpressora arquivo.txt”,
+substituindo o nome da impressora e o nome do arquivo – note que não há espaço entre o P
+maiúsculo e o nome da impressora.
+Para exibir a lista dos trabalhos pendentes em uma fila de impressão, utiliza-se o comando
+“lpq -Pimpressora”, e para remover um deles o comando é “lprm -Pimpressora número”. O
+exemplo da figura abaixo não usa o parâmetro -P, desnecessário quando se opera sobre a
+impressora default do sistema.
+Introdução ao Linux – Augusto C. Campos 
+27
+13.Gerenciamento de discos
+Este capítulo não irá tratar de questões como o particionamento ou o gerenciamento de
+RAID e volumes lógicos – estas são matérias complexas que mereceriam cursos específicos para
+elas. Entretanto, todo usuário e administrador de sistema tem a eventual necessidade de gerenciar o
+espaço livre em seus discos, ou de localizar um determinado arquivo cujo nome é conhecido mas
+não se sabe onde está. Usaremos preferencialmente ferramentas de modo texto para esta finalidade.
+Descobrindo o espaço livre
+Uma das necessidades mais comuns relacionadas ao gerenciamento de discos diz respeito
+ao espaço livre. O comando df apresenta o total disponível em cada partição do computador, como
+no exemplo abaixo, de um servidor bastante lotado:
+root@jurere /etc> df
+Filesystem         1024-blocks  Used Available Capacity Mounted on
+/dev/sda5             396500  356805    19214     95%   /
+/dev/sda7             598634  204566   363145     36%   /opt
+/dev/sda12            893986  526005   321796     62%   /usr
+/dev/sda6             598634  418964   148747     74%   /var
+/dev/sdc1            4950048 4591001   102812     98%   /users
+/dev/sda11           5839303 5217784   319097     94%   /users2
+/dev/sdc5            3633411 3212673   232780     93%   /users3
+/dev/sdb1            6921609 6487165    75793     99%   /users4
+/dev/sdb2            5932328 5317990   307095     95%   /users5
+/dev/sdb4            4299860 3741990   335370     92%   /users6
+Note que a coluna mais à direita indica o nome do diretório associado a cada uma das
+partições, a coluna available indica o espaço livre (em Kbytes) e a coluna Capacity indica quanto do
+espaço já está ocupado, em percentual.
+A opção -h exibe os valores em forma mais fácil de ler:
+Introdução ao Linux – Augusto C. Campos 
+28
+root@jurere /etc> df -h
+Filesystem            Size  Used  Avail  Capacity Mounted on
+/dev/sda5             387M  348M    19M     95%   /
+/dev/sda7             585M  200M   355M     36%   /opt
+/dev/sda12            873M  514M   314M     62%   /usr
+/dev/sda6             585M  409M   145M     74%   /var
+Dica: o comando kdf pode fornecer a mesma informação, mas em modo gráfico.
+Descobrindo quem está usando o espaço
+Para descobrir os vilões responsáveis pelo maior consumo do seu espaço, use o comando
+du. Entre suas múltiplas opções, o -S (maiúsculo) separa os subdiretórios e o -x desconsidera
+arquivos e diretórios que estejam em partições diferentes. 
+Adiantando uma matéria de um capítulo posterior, podemos usar os filtros de texto do
+Linux para listar os 5 maiores diretórios abaixo de um determinado diretório, como no exemplo
+abaixo que lista os maiores diretórios abaixo do /f/grupos/inf:
+root@jurere /> du -Sx /f/grupos/inf | sort -nr | head -5
+12817   /f/grupos/inf/gm
+11035   /f/grupos/inf/eliane
+9830    /f/grupos/inf/Curso UML
+4340    /f/grupos/inf
+4044    /f/grupos/inf/agreg
+O parâmetro -h pode ser usado para facilitar a leitura dos números, mas ao mesmo tempo
+ele torna os resultados incompatíveis com o filtro de ordenação:
+root@jurere /> du -Sxh ~renato
+8.9K    /users/net/users/renato/Forum
+2.0M    /users/net/users/renato/backup/altguia2
+1.5M    /users/net/users/renato/backup
+3.3M    /users/net/users/renato/filiacao/0506
+339K    /users/net/users/renato/filiacao/0805
+A opção Sistema / Filesystem tools / Kdir Stats do seu menu oferece a mesma
+funcionalidade, mas em modo gráfico.
+Localizando arquivos
+O comando básico para localizar arquivos no disco é o find, cuja sintaxe é praticamente
+uma linguagem, e permite realizar uma série de operações complexas. Neste curso introdutório,
+vamos ver apenas os itens mais comuns.
+A busca mais simples é a baseada em nomes de arquivos. Se você quiser procurar dentro
+do diretório /users apenas os arquivos com a extensão “.xls”, pode usar o comando find /users
+Introdução ao Linux – Augusto C. Campos 
+29
+-name '*.xls' como no exemplo abaixo:
+root@jurere /> find /users -name '*.xls'
+/users/net/temp/Banco_horas.xls
+/users/_zonas/public/out/multa.xls
+O segundo parâmetro é a origem da pesquisa, o terceiro é o tipo da busca e o quarto é o
+argumento da busca. Para pesquisar arquivos chamados “backup” no disco inteiro, o comando seria
+find / -name backup. Note que a barra utilizada como segundo parâmetro indica que a pesquisa
+deve ocorrer no disco todo.
+Pode-se também fazer pesquisas baseadas no tamanho do arquivo. O comando find /users
+-size +1000000c mostraria todos os arquivos abaixo do diretório /users e que tenham mais de
+1.000.000 de caracteres. Pode-se combinar pesquisas, como em find /users -size +1000000c -name
+'*.zip'. 
+O comando find tem uma série de recursos adicionais – digite man find para ver os
+detalhes. A boa notícia é que o ambiente gráfico KDE tem uma interface bastante amigável para a
+localização de arquivos, permitindo inclusive fazer filtros pelo conteúdo dos mesmos, data de
+criação, tamanho e várias outras opções – ela está na opção Encontrar arquivos, no menu do
+sistema.
+Além disso, se você instalar o pacote adicional findutils-locate, poderá utilizar o comando
+locate para pesquisas super-rápidas baseadas em um índice de arquivos. Este índice é gerado
+automaticamente uma vez por dia, ou toda vez que o administrador da máquina utilizar o comando
+updatedb.
+Introdução ao Linux – Augusto C. Campos 
+30
+Restrições e permissões de acesso
+O sistema de permissão de acesso do Linux protege o sistema de arquivos do acesso
+indevido de pessoas ou programas não autorizados.
+Os direitos de acesso são fornecidos a três classes distintas de usuários:
+
+O usuário dono do arquivo, representado pela letra u;
+
+O grupo dono do arquivo, representado pela letra g;
+
+Todos os outros usuários, representados pela letra o (de outros).
+Eles também se dividem em três categorias de privilégio:
+
+Leitura (r, de Read)
+
+Escrita (w, de Write)
+
+Execução (x, de eXecute)
+Todo arquivo do Linux possui um conjunto de privilégios definido para cada uma das três
+classes, e o sistema operacional sempre obedece a estes privilégios, e força todos os usuários a
+obedecê-los também – exceto quando se trata do usuário root, que tem acesso a todos os arquivos.
+A figura abaixo mostra o editor de permissões do gerenciador de arquivos do KDE. Note a matriz
+formada pelas classes e pelas categorias:
+Aqui, o arquivo pode ser escrito apenas por seu proprietário, mas pode ser lido e executado
+pelo proprietário, pelo grupo e pelos demais usuários – ou seja, por todos. 
+Geralmente as permissões são descritas como uma sequência de 10 caracteres, sendo que
+o primeiro indica se ele é um diretório e os demais formam 3 grupos de 3 caracteres indicando os
+privilégios de cada classe de usuário. A seqüência “- rwx r-x r-x” indica que o usuário proprietário
+do arquivo tem direitos de leitura, escrita e execução, o grupo proprietário tem leitura e execução, e
+os outros usuários têm também leitura e execução – a mesma combinação vista na figura acima.
+Veja como o mesmo arquivo da figura seria exibido pelo comando “ls -l”:
+Introdução ao Linux – Augusto C. Campos 
+31
+-rwxr-xr-x    1 brain    users         482 2000-05-23 22:12 bin/terminal
+Você pode alterar as permissões dos seus arquivos através do editor de propriedades
+exibido na figura, ou através do comando chmod. O chmod tem muitas opções de sintaxe, mas a
+mais simples é a que acrescenta ou retira privilégios de cada uma das classes. Alguns exemplos:
+Dar permissão de execução para o usuário: chmod u+x arquivo
+Dar permissão de leitura para o usuário e o grupo: chmod ug+r arquivo
+Retirar permissão de escrita dos outros: chmod o-w arquivo
+Os três exemplos acima acrescentam e retiram apenas as permissões explicitamente
+citadas, sem alterar as demais. Existem muitas outras formas de manipular permissões usando o
+comando chmod, e existem até mesmo permissões avançadas (SUID, SGID e sticky) que não
+vamos mencionar neste curso introdutório – conte com a documentação do comando chmod para
+conhecer os detalhes.
+Dica: Este modelo de permissões, que segue o modelo tradicional do Unix, pode ser
+substituído e complementado de várias maneiras. Uma delas é a instalação de ACLs (como as do
+HP-UX e do Windows NT) e atributos extendidos – não veremos detalhes neste curso, mas você
+pode se informar em http://acl.bestbits.at/.
+14.Instalando e gerenciando software
+A instalação de software adicional é feita através da opção Instalar e Remover Software,
+do grupo Software do YaST. A figura abaixo mostra a interface básica:
+Note que são 5 painéis distintos. Da esquerda para a direita temos:
+Introdução ao Linux – Augusto C. Campos 
+32
+
+O seletor de filtros, que permite optar entre ver todos os pacotes disponíveis para a
+instalação, limitar-se aos recomendados pela SuSE ou fazer buscas específicas;
+
+A lista de pacotes do grupo definido no seletor de grupos, ou resultante de uma pesquisa
+efetuada pelo usuário. Cada pacote tem um campo de status (que indica se ele está
+instalado, se está em conflito com outro, etc.), o nome e uma breve descrição em inglês;
+
+Os dados sobre o pacote selecionado, incluindo descrição, dependências em relação a
+outros pacotes, etc.
+
+Um resumo do espaço livre em disco;
+
+O seletor de grupos, permitindo escolher o escopo da lista de pacotes apresentada.
+Para instalar ou desinstalar um pacote, basta alterar o seu campo status na lista. Se esta
+operação quebrar alguma relação de dependência, o sistema alertará e dará sugestões sobre as
+possíveis alternativas, incluindo a instalação de pacotes adicionais, se necessário.
+Fazer uma pesquisa é simples: selecione a opção Pesquisa no seletor de filtros, preencha a
+palavra desejada, e pressione Enter. 
+Ao terminar suas alterações, clique no botão Aceitar, e o sistema irá solicitar a inserção
+dos Cds conforme necessário.
+É possível também instalar e gerenciar pacotes a partir da shell. Alguns comandos úteis
+são:
+
+Instalar um pacote novo: rpm -ivh nome.rpm
+
+Fazer upgrade de um pacote: rpm -Uvh nome.rpm
+
+Remover um pacote: rpm -e nome 
+
+Listar os pacotes instalados: rpm -qa
+
+Ver informações sobre um pacote instalado: rpm -qi nome 
+
+Ver a lista de arquivos de um pacote instalado: rpm -ql nome
+
+Ver informações sobre um pacote não instalado: rpm -qpi nome.rpm 
+
+Ver a lista de arquivos de um pacote não instalado: rpm -qpl nome.rpm
+É possível também fazer a atualização dos softwares via Internet, usando o ícone
+Atualização online no YaST. Neste caso, o sistema verifica no servidor de Internet da SuSE os
+pacotes que foram alterados desde a última atualização do computador e permite o download e
+instalação automatizada das versões novas.
+15.Sobrevivendo no modo texto
+Nota: este capítulo foi extraído do artigo “O poder do modo texto”, de Aurélio M. Jargas,
+publicado pela Revista do Linux.
+O que para a maioria dos usuários são funcionalidades fantásticas do mundo gráfico, para
+outros não passam de futilidades. Aliás, no Linux, são muitos os usuários que fazem apologia do
+modo texto, sem interfaces gráficas, sem mouse, em um terminal de fundo preto, basicamente
+devido ao poder e flexibilidade obtidos. São os que não adotam o mouse porque consideram os
+atalhos de teclado muito mais rápidos. Dispensam o ambiente gráfico porque o julgam uma
+Introdução ao Linux – Augusto C. Campos 
+33
+"desespecialização", uma padronização que nivela o especialista por baixo e pela média. Uma
+camisa-de-força inaceitável.
+Mais do que qualquer apologia do modo texto, porém, nada como a demonstração de
+conceitos e o detalhamento de exemplos para mostrar suas vantagens. E a realidade é que há muitas
+tarefas que não podem ser feitas em aplicações gráficas ou que, se podem, não alcançam toda a
+flexibilidade do modo texto.
+Vamos a uma análise rápida. O que temos no mercado, aos milhares, são aplicativos
+gráficos para sistemas operacionais "gráficos", que tentam centralizar diversas tarefas e, assim,
+monopolizar o uso. Quase sempre, desempenham todas as tarefas aquém do grau ideal para cada
+uma. Resultado: o usuário acaba tendo um aplicativo muito genérico e pouco especialista, que no
+fim acaba não sendo ótimo para nenhuma das tarefas isoladamente. Ganha-se em integração, mas
+perde-se em flexibilidade. Exemplos são o Lotus Notes, Microsoft Office, etc.
+Também existe aquele outro tipo de programa, chamado de front-end, que é apenas uma
+interface "bonitinha" para o usuário, que acessa um programa não-gráfico, cheio de opções. O
+grande problema é que geralmente essa interface não contém todas as opções do programa,
+limitando seu uso, como em alguns aplicativos do KDE e do Gnome.
+Já o Unix, o Linux e o Java seguem uma filosofia contrária: a modularidade. Pequenos
+aplicativos, cada um com uma tarefa bem específica e definida, que desempenham de maneira
+eficiente e confiável. Combinando essas pequenas "ferramentas", conseguimos todo o poder,
+flexibilidade e confiabilidade necessários a uma tarefa. São essas ferramentas e dicas de uso que
+vamos comentar.
+Numa alusão simples mas didática, o modo gráfico é comparável a um carrinho de
+plástico, pronto e imutável. E o modo texto pode ser comparado a um Lego®, com todas as peças
+para montar o carrinho da maneira que bem se entenda. Se amanhã seu carrinho precisar de mais
+duas rodas, basta acrescentá-las, sem traumas ou esforço.
+Ao contrário do que possa parecer, "montar" o seu carrinho não é complicado. Basta
+entender um conceito básico, como o redirecionamento, e você já sai criando. Isso não é uma
+exclusividade de administradores de sistema, e você, como usuário normal, pode se beneficiar
+dessas ferramentas, automatizando tarefas repetitivas e extraindo informações de maneira rápida e
+eficiente.
+Primeiro, vamos dar uma olhada nas ferramentas mais usadas: 
+cal: mostra o calendário
+cat: mostra o conteúdo de um arquivo
+crontab: agenda tarefas de sistema
+cut: "corta" pedaços de uma linha
+date: mostra a data e hora atuais
+du: mostra o uso do disco
+find: "acha" arquivos no sistema
+grep: procura palavras num texto
+more: pagina um fluxo de texto
+sort: "ordena" um texto
+Introdução ao Linux – Augusto C. Campos 
+34
+tr: "traduz" texto (no sentido de trocar letras)
+uniq: elimina linhas repetidas seguidas num texto
+wc: conta letras, palavras e linhas de um texto
+Antes de partirmos para os exemplos práticos, lembremos o único conceito fundamental:
+redirecionamento. Temos um comando para mostrar o conteúdo de um arquivo, o cat. 
+Experimente:
+cat /etc/inittab
+E o comando cat exibirá esse arquivo no vídeo. Como você pôde
+perceber, o arquivo é muito grande, e rola na tela. Então podemos usar um
+utilitário cuja única função é paginar um fluxo de texto, o more. Vamos
+colocá-lo para paginar a saída do comando anterior:
+cat /etc/inittab | more
+Agora, a cada tela cheia, o more espera que você aperte a barra de
+espaços para mostrar a próxima tela. Pare um pouco para refletir e entender o
+que ocorreu aqui. Primeiro, você tinha um comando que gerou uma saída
+qualquer na tela (nesse caso, o conteúdo do /etc/inittab), e essa saída foi
+redirecionada (pelo pipe |, um cano de redirecionamento), ao comando more que a paginou.
+Observe que o cat joga a saída para o more, que joga a saída na tela, e esse é o nosso
+conceito base, o redirecionamento. Um comando faz o que tem que fazer, e joga o resultado na
+saída. Outro comando pega essa saída, que lhe foi passada pelo pipe |, faz o que tem que fazer com
+ela e exibe a saída na tela.
+Dessa
+mesma
+maneira,
+pode-se
+ir
+ligando
+os
+comandos,
+um
+atrás
+do
+outro,
+indefinidamente, até se obter os resultados desejados. Vamos a outro exemplo simples. Como
+conseguir uma lista de todos os usuários de sua máquina? Digite:
+cat /etc/passwd
+Novamente estamos vendo o conteúdo de um arquivo. Este é um arquivo especial, com
+todos os usuários do sistema e alguns dados sobre eles. A chave de acesso do usuário (o "login")
+está no começo de cada linha, seguido de um :. E como obter a lista de todos os usuários?
+cat /etc/passwd | cut -d: -f1
+Aqui usamos o cut, para extrair de cada linha apenas o que nos interessa, a chave do
+usuário. A maioria dos comandos possui opções que geralmente são identificadas por uma letra
+precedida de um hífen (como o -d e o -f do cut acima). Para ver as opções de um comando, use o --
+help:
+cut --help
+Resumindo, nosso cut usou como delimitador (-d) o :, e pegou o campo (-f, do inglês field)
+de número 1, ou seja, o primeiro campo. Então para cada linha do /etc/passwd, tiramos a parte que
+nos interessa, obtendo a lista de usuários. Supondo que desejemos colocar esta lista em ordem
+alfabética:
+cat /etc/passwd | cut -d: -f1 | sort
+Usamos o sort para sortear nosso texto. E se precisássemos dessa lista em ordem inversa?
+Introdução ao Linux – Augusto C. Campos 
+35
+Bem, como podem imaginar, o sort também tem suas opções, e uma delas é a ordenação reversa (-
+r). Então:
+cat /etc/passwd | cut -d: -f1 | sort -r
+Indica-nos a saída requerida. E se tiver muitos usuários e a saída rolar na tela? Aí podemos
+usar o more.
+cat /etc/passwd | cut -d: -f1 | sort -r | more
+No esquema cat | cut | sort | more | tela, o cat joga a saída para o cut, que joga a saída para
+o sort, que joga a saída para o more, que joga a saída na tela.
+Olhe bem para o comando acima. Uma primeira olhada assusta, não? Mas como vimos
+anteriormente, são pequenas partes que, quando concatenadas, geram um comando poderoso.
+Lembrando: ferramentas simples que são agrupadas, tipo Lego® &:)
+E assim se constróem grandes linhas de comando. Faz-se o comando básico, analisa-se a
+saída, filtra-se um pouco com outro comando após o pipe |, analisa-se a saída nova, filtra-se
+novamente e assim se vai.
+Alguns comandos já são úteis por si sós, sem opções, como o date e o cal. Outros ficam
+mais poderosos se usados em conjunto com outros comandos. Outros ainda, por terem várias
+opções, sozinhos fazem muita coisa, como o find:
+find / -type f -iname "*.jpg" -o -iname "*.gif" -mtime 3 -ok rm -f {} \;
+Esse "comandinho" apaga (pedindo confirmação) todos os arquivos JPG e GIF
+modificados nos últimos três dias.
+Agora alguns exemplos de seqüências de comandos úteis utilizando as ferramentas básicas
+apresentadas neste artigo:
+lista dos maiores arquivos de um diretório e subdiretórios 
+du -b `find /home/aurelio -type f` | sort -nr | more
+contar (wc -l) o número de ocorrências (grep) da palavra set em um arquivo (cat), quer
+sejam maiúsculas ou minúsculas (-i) 
+cat /etc/rc.d/rc.sysinit | grep -i set | wc -l
+mostrar o nome em letras maiúsculas (tr) dos usuários do sistema 
+cat /etc/passwd | cut -d: -f1 | tr a-z A-Z
+Nota aos experts: o uso do cat em alguns dos exemplos acima não é necessário, é apenas
+didático.
+Ainda nesse tópico de modo texto e linhas de comando úteis, poderíamos considerar
+redirecionamentos para arquivos, saída padrão e saída de erro, tarefas em segundo plano, subshell,
+interpretação
+de
+variáveis,
+condicionais,
+laços
+e
+outros.
+Esses
+são
+complementos
+ao
+redirecionamento para comandos apresentado aqui, e serão abordados em artigos futuros. 
+Para finalizar com uma visão geral do assunto, é importante lembrar que numa primeira
+tentativa tudo pode parecer confuso e estranho. Para simplificar basta ver cada parte da linha de
+comando como algo completo e não relacionado ao resto, fazendo apenas sua função e nada mais.
+Introdução ao Linux – Augusto C. Campos 
+36
+Aprendendo aos poucos o funcionamento das "ferramentas" base, você conseguirá juntá-
+las, obtendo resultados bem satisfatórios.
+16.Apêndice 1: Análise do SuSE Linux 8.2
+SuSE 8.2
+por Augusto César Campos
+(publicado na edição de Junho/2003 da Revista do Linux, e reproduzido aqui
+com autorização)
+Para esta análise
+do SuSE 8.2 tive a oportunidade de receber os 5 CDs da versão
+Professional semanas antes do lançamento oficial no Brasil. Acho importante mencionar que não
+tive acesso à caixa distribuída comercialmente, contendo os mesmos 5 CDs, 2 DVDs, 2 manuais
+impressos e um poster com guia de instalação rápida, e portanto minha análise vai se limitar ao
+software. Um aspecto interessante do SuSE, entretanto, é que o texto completo dos manuais
+impressos é instalado no seu disco rígido, portanto pude avaliar seu conteúdo normalmente – e eles
+foram bastante úteis para conhecer melhor as novidades desta versão.
+Como de hábito, o SuSE se destaca pela inclusão de quase todos os softwares livres que
+você poderia querer usar – afinal, são mais de 2000 pacotes de software nos 5 CDs. 
+Utilizei um notebook Toshiba Satellite que estava com o Windows XP pré-instalado. Ele
+tinha leitor de DVD, gravador de CD, interface de rede, monitor LCD de 15 polegadas, mouse USB
+e uma câmera digital Pencam Trio USB – tudo detectado e configurado automaticamente pelo
+sistema. Ele já tinha também o espaço livre para as partições do SuSE, mas durante a instalação
+tive a agradável surpresa de descobrir que o SuSE 8.2 é capaz de redimensionar partições NTFS
+para criar espaço, algo impossível em versões anteriores (que já redimensionavam partições FAT
+sem problemas). Porém é necessário dar boot com o CD de instalação em modo rescue para ter
+acesso a esta opção – fica a dica para quem precisar.
+A instalação
+Mesmo sem acesso ao poster que ensina a instalar a distribuição, fiz o óbvio: inseri o CD
+número 1 e liguei o computador. Em instantes apareceu uma bela tela dando as boas vindas em
+diversos idiomas. Procurei atentamente, mas o português não era um deles. Tudo bem -
+willkommen, SuSE! O menu de boot permite selecionar a resolução de tela usada na instalação,
+instalar normalmente, instalar sem uso de ACPI, instalar com configurações “seguras” (usando um
+kernel sem algumas opções avançadas), instalação manual, modo rescue e teste de memória. A
+primeira opção, selecionada automaticamente se o usuário não pressionar teclas em 10 segundos,
+dá boot pelo sistema que já estiver instalado no seu computador – o que acaba com o problema
+típico de reboots interrompidos porque o operador esqueceu um CD de instalação no drive.
+A documentação não menciona, mas o help da instalação indica que pode-se ativar o
+suporte a rede desde o início da instalação, e realizá-la através de um terminal VNC remoto. Não
+encontrei referências a isto no site, nem em nenhum dos manuais, mas resolvi tentar mesmo assim.
+O programa de instação reconheceu minhas instruções, mas em seguida informou que minha placa
+de rede não foi reconhecida. Eu poderia tentar carregar o driver dela manualmente, mas já estaria
+fora do escopo desta análise. Se funcionar mesmo, e se a SuSE publicar boa documentação a
+respeito, vai ser um grande e pioneiro diferencial.
+Selecionei uma instalação normal, e prossegui. O programa de instalação não mudou
+muito desde a versão 8.1, mas está muito mais bonito, com o tema Keramic e com fontes muito
+mais suaves (usando o recurso de anti-aliasing). O SuSE utilizou completamente os 1024x768
+pixels que a placa de vídeo suportavam, deixando tudo bem amplo e organizado. No canto inferior
+esquerdo pode-se encontrar o desenho de uma bóia salva-vidas e o botão de ajuda, bastante eficaz.
+Introdução ao Linux – Augusto C. Campos 
+37
+Na primeira tela é feita a seleção de idioma, que inclui duas versões de português – a
+européia e a brasileira. Selecionei a nossa língua pátria, e (ao contrário do que ocorria com o 8.1)
+fui brindado com um programa de instalação muito bem traduzido. Há pequenas falhas aqui e ali
+(por exemplo, na configuração opcional do teclado “Repeat rate” virou “repetir taxa”, e não “taxa
+de repetição”) mas nada que comprometa, inclusive nos textos de orientação e ajuda. Em seguida,
+na seleção do teclado, há opções para os dois teclados mais comuns no Brasil: ABNT2 e US-
+acentos (ou “americano internacional”), mas a SuSE chamou-os por nomes diferentes: “Português
+(Brasil)” e “Português (Brasil – acentuação US)”. 
+Após a seleção do idioma, o instalador exibe a tela principal de seleções. A aparência é
+de uma página da web, com links que permitem alterar as sugestões de modo de instalação (nova
+ou upgrade), tipo de teclado, mouse, particionamento, conjunto de pacotes a instalar, gerenciador
+de boot e fuso horário.
+O modelo de teclado e o fuso horário foram sugeridos corretamente a partir da seleção
+do idioma. O mouse USB foi detectado automaticamente, e o particionamento sugerido foi típico
+de estações de trabalho: 500MB de swap e o restante como partição raiz, além de informar que a
+partição do Windows XP pré-existente estaria disponível como o diretório /windows/C. 
+O conjunto de software sugerido foi amplo: sistema padrão, mais compiladores C e C++,
+ambiente KDE, aplicações de escritório, documentação e o sistema gráfico base. O gerenciador de
+boot padrão é o GRUB (mas pode-se optar facilmente pelo LiLo, ao contrário do que acontecia na
+versão 8.1), com boot default do Linux e opções para boot pelo Windows XP, pelo disquete ou um
+testador de memória.
+Quando cliquei no link para alterar o particionamento, pude escolher entre modificar a
+sugestão dada pelo instalador, ou descartá-la completamente. Escolhi modificar, e fui levado a um
+particionador em tudo semelhante ao da versão 8.1 – poderoso e simples de usar. Pode-se formatar
+as partições como ext2, ext3, Reiser, JFS, XFS, FAT e swap, e selecionar opções como o acesso a
+elas em modo “somente leitura”, a montagem automática ou a possibilidade de montagem por
+usuários comuns. Entre as opções avançadas, estão o gerenciamento de LVM e RAID, a
+criptografia de partições, e a opção de importar um arquivo /etc/fstab de uma partição já existente. 
+A seleção dos pacotes a instalar pode ser trabalhosa – são mais de 2000 opções! - mas a
+SuSE simplifica a tarefa oferecendo grupos pré-selecionados. Parte-se de um conjunto de 3 opções
+iniciais: sistema mínimo (modo texto), sistema gráfico mínimo (sem KDE) ou sistema básico. A
+partir daí pode-se escolher um grupo inteiro (exemplo: compilador C/C++), ou abri-lo e selecionar
+entre os pacotes que o compõem, que são os mais comuns dentro de suas categorias. Claro que
+também é possível abrir a categoria como um todo, e ver até as opções mais obscuras e incomuns,
+além de poder realizar pesquisas pelo nome ou pela descrição dos pacotes. Aliás, ao contrário do
+que ocorria na versão 8.1, agora as descrições dos pacotes (em inglês) aparecem para usuários que
+estejam instalando em português. É melhor ver uma descrição em inglês do que não ver nenhuma,
+certo?
+Na seleção de pacotes me chamou a atenção que o ambiente GNOME não vem
+escolhido por padrão, mas as diversas bibliotecas e pacotes auxiliares que permitem a execução dos
+seus aplicativos são instaladas mesmo assim. Não satisfeito, e mesmo sendo usuário convicto do
+KDE, mandei instalar também o GNOME.
+A partir daí, uma janela verde me informou que se eu confirmasse a operação,
+começariam as alterações no meu computador. Confirmei, e o sistema começou imediatamente a
+particionar, formatar e instalar pacotes no meu sistema.
+Durante a instalação dos pacotes contidos no CD 1, o sistema exibe telas e descritivos de
+diversos aplicativos, como o navegador Konqueror e o OpenOffice.org. Ao final da instalação do
+primeiro CD, o sistema dá um reboot e a partir daí já estará rodando o Linux do seu disco rígido
+enquanto instala os pacotes dos demais CDs. Ao final dos CDs, o sistema me orientou enquanto eu
+informava uma senha para o usuário root, e configurava a rede (durante a instalação há opções para
+rede local, cable, DSL, modem e RDSI/ISDN). 
+Neste ponto ocorre algo interessante: o sistema verifica se há acesso à Internet, e dá a
+opção de fazer atualização de pacotes via Internet. Como eu estava conectado via rede local, aceitei
+e vi que a SuSE já oferece diversas atualizações de pacotes do 8.2. Optei por instalá-las, e ainda
+pude usar a mesma interface para instalar o pacote de fontes TrueType básicas do Windows
+(incluindo as mais familiares, como a Arial e a Times New Roman) via Internet. 
+A partir daí, há uma sequência de passos de configuração final, incluindo a escolha do
+método de autenticação (que pode ser local ou remoto, utilizando um servidor NIS, NIS+ ou
+Introdução ao Linux – Augusto C. Campos 
+38
+LDAP), a criação de pelo menos um usuário para o sistema, a leitura do documento Release Notes
+(foi aí que eu descobri, por exemplo, que o SuSE 8.2 pode redimensionar partições NTFS) e a
+configuração opcional de itens de hardware (placas de vídeo, impressoras, modem, som e placas de
+sintonia de TV). Minhas placas de som e de vídeo foram detectadas e configuradas
+automaticamente, e eu não possuía nenhum dos demais itens.
+De modo geral, a instalação é bastante similar à da versão 8.1, com melhorias
+substanciais da tradução. Continuo gostando do enfoque da SuSE de incluir todas as opções básicas
+de instalação em uma mesma tela que lembra uma home page, incluindo sugestões comuns para
+todos os itens – todo usuário sabe lidar com este tipo de interface, e os usuários avançados não
+terão dificuldade em adaptar as sugestões conforme suas necessidades.
+O sistema instalado
+No SuSE Linux, o boot obrigatório é dado após a leitura do primeiro CD. Ao final da
+instalação completa,
+não
+é necessário
+reinicializar, pode-se
+começar a
+usar
+o
+sistema
+imediatamente. Merece menção as novas telas de boot e shutdown completamente gráficas, com
+uma barra de progresso totalmente clean. Claro que basta pressionar uma tecla e você poderá ver as
+tradicionais mensagens da inicialização como de hábito.
+O sistema instalado usou corretamente a resolução de 1024x768 do meu monitor, e
+mostrou o gerenciador de login gráfico KDM em uma configuração bastante agradável. Cada
+usuário cadastrado tem o ícone de um homem de gravata ao lado do seu nome completo e login. O
+campo “Utilizador” começou a me assustar um pouco – eu não havia selecionado Português do
+Brasil? Mas fiz meu login mesmo assim, para me deparar com um belo ambiente do KDE em
+português... europeu! Subitamente senti meu monitor se encolher de susto ao ser chamado de écrã,
+os arquivos arrepiados enquanto se transformavam em ficheiros, e o centro de controle do KDE se
+transformou em Centro de Controlo diante dos meus olhos. E uma visita a ele confirmou o pior: o
+KDE estava configurado para Portugal – não apenas o idioma, mas também a moeda, o formato de
+data e todas os demais itens associados. 
+Fui imediatamente à opção do sistema que permite adicionar e remover pacotes e
+conferi: o pacote de internacionalização do KDE para o nosso idioma (kde3-i18n-pt_BR) estava lá.
+Por que não foi instalado e configurado automaticamente? De qualquer forma, instalei-o (junto com
+a tradução do Koffice e o dicionário em português para o OpenOffice.org), e mudei o idioma do
+KDE através do Centro de Controlo, que suspirou de alívio ao virar Centro de Controle. Agora a
+análise poderia começar de verdade. Por que será que essa configuração não é a default?
+Comecei pelo ambiente de trabalho. Um tema azul, agradável visualmente, só com
+ícones básicos: SuSE, Support, OpenOffice, Printer, CD-R, C, Still Camera, Home e Dispositivo de
+disquete.
+O C dá acesso à partição do Windows, Home, CD-R e Dispositivo de Disquete mostram
+o conteúdo dos respectivos diretórios, Printer mostra as filas de impressão (apesar de eu não ter
+configurado nenhuma), SuSE Support dá acesso ao serviço de suporte registrado da SuSE (a chave
+vem em uma folha inclusa no manual), OpenOffice acessa o pacote de automação de escritório. E
+SuSE mostra as diversas opções de documentação e apresentação do sistema – sugiro a todos os
+usuários, mesmo os mais experientes, a visitarem o SuSE Tour pelo menos uma vez.
+O ícone Still Camera acessou as fotos da memória da minha câmera digital USB como
+se ela fosse um disco rígido adicional. Fiquei impressionado, porque a câmera não foi nem ao
+menos mencionada durante a instalação e configuração do sistema.
+Os botões do Kicker também são básicos, incluindo Kmail, pastas de documentos
+(Home, Pictures, Presentations e Texts), Konsole, Konqueror e Ajuda.
+Os menus do KDE também são uma grande evolução em relação ao 8.1 – simples,
+organizados, orientados a tarefas: Desenvolvimento, Escritório, Gráficos, Internet... Os aplicativos
+do GNOME e do KDE estão misturados sem distinção, o que é ótimo – o usuário de KDE não
+precisa saber que o Evolution é um cliente de e-mail associado ao GNOME, tudo o que ele quer é
+que funcione. E funciona.
+Testei uma série de aplicativos com sucesso. As planilhas do Gnumeric são bastante
+usáveis, assim como os textos do AbiWord, mas com o OpenOffice dá de fazer trabalhos bem mais
+completos, incluindo recursos que já fogem ao trivial – gráficos, formatações complexas... Só que
+os dois primeiros são em Português, enquanto o último está só em Inglês.
+Senti a falta de algumas aplicações que na minha opinião deveriam fazer parte de
+Introdução ao Linux – Augusto C. Campos 
+39
+qualquer sistema básico. As mais notáveis foram o gerenciador de arquivos mc e toda a família dos
+clientes Samba, incluindo a interface gráfica LinNeighborhood e o comando smbmount.
+Usei as ferramentas do sistema para ouvir músicas em formato MP3 (lembre-se de
+instalar o pacote adicional xmms-plugins!), assistir a filmes MPEG e até para assistir a um DVD.
+Tudo funcionou bem, mas o DVD Player exigiu intervenção manual, pois fazia referência a um
+dispositivo /dev/dvd, inexistente. Mudei para /dev/cdrecorder e pude assistir ao meu filme, com
+legendas em português mas sem áudio – o sistema informou que faltava um codec. Existem uma
+grande variedade de outras ferramentas multimídia instaladas, inclusive com editores de vídeo e de
+áudio.
+Acessei a web através do Konqueror, funciona bem inclusive para sites em Flash. O
+cliente de comunicação pessoal Kopete foi uma grande surpresa, pois ele permite acesso fácil e
+direto ao ICQ – até a lista de usuários armazenada no servidor é utilizada sem problemas. E o
+cliente de irc Kvirc também permite comunicação ágil, segura (suporta até criptografia e Ipv6) em
+uma interface bonita e prática.
+O menu Sistema/ Configuration/ Redimensionar e Rotacionar a Tela dá acesso às
+extensões RandR do XFree. O KDE foi o pioneiro no suporte a esta tecnologia, e foi a primeira vez
+que a vi em uma distribuição de Linux. Experimentei redimensionar meu desktop para vários
+formatos, e funcionou perfeitamente – muda não apenas a resolução da tela, mas também a área
+disponível no ambiente de trabalho. Muito legal, mas seria ainda melhor se não ficasse tão
+escondido – um bom lugar para a sua inclusão seria no menu “Configurar a área de trabalho”, no
+menu de contexto do desktop.
+Quem tem dúvidas sobre a versatilidade do SuSE deve consultar o menu Sistema/Tools
+– há opções até mesmo para criar disquetes de boot do FreeDOS!
+Para completar os testes do ambiente, encerrei a sessão do KDE e abri uma do GNOME.
+Encontrei um belo ambiente de trabalho, bem configurado e light, quase todo em inglês. Belas
+fontes, belos ícones, menus organizados... Os usuários de GNOME não vão se sentir abandonados
+pela SuSE como no passado.
+Configuração, manuais e servidores
+As observações acima se referem principalmente às instalações em ambiente desktop.
+Entretanto, o SuSE Linux também se destaca nas configurações como servidor. Há software para
+praticamente todos os serviços de rede disponíveis no mundo do software livre, com requintes
+como a configuração automática de anti-vírus nos servidores de e-mail. Embora o configurador
+YaST2 não tenha opções para configurar os servidores mais comuns (como o Apache, o Squid e o
+Samba, por exemplo), os pacotes são fornecidos com documentação adequada e configurações
+default bastante coerentes.
+O manual do administrador do sistema tem capítulos específicos e detalhados sobre as
+opções de diversos serviços de rede, incluindo DNS, NIS, NFS, DHCP, Intermezzo, Unisom, CVS,
+Mailsync, Samba, Netatalk (para interconexão com Macs), Mars/NWE (para interconexão com
+Novell), Squid, Firewall/Masquerading, Kerberos e ssh.
+Claro que este manual também atende os usuários desktop, com tópicos sobre o kernel,
+distribuição dos arquivos no disco, configuração de rede e acesso a Internet e muito mais. 
+O manual do usuário também não deixa a desejar: começa com uma seção específica
+para usuários migrando de outros sistemas operacionais, que precisam descobrir o que, afinal, é
+montar um disco e acessar uma shell, e onde foi parar o seu C:\. Mas ele é útil para usuários
+experientes também, com sua referência de instalação, guia de todos os módulos da ferramenta de
+administração YaST2 e capítulos especiais sobre várias aplicações, incluindo o OpenOffice.org,
+Evolution, Câmeras digitais, Scanners e a ergonomia do ambiente de trabalho.
+A ferramenta de configuração YaST2 não mudou muito em relação às versões
+anteriores, continuando completa, sólida e simples de usar. Usuários comuns podem acessá-la
+normalmente, pois o sistema pede a senha de root antes de dar acesso aos módulos. Algumas das
+ferramentas que me chamaram a atenção foram a facilidade na configuração para o uso de uma
+proxy web e ftp, o poder ainda maior do PowerTweak, o editor das entradas do /etc/sysconfig, o
+editor de processos de cada runlevel, as ferramentas de backup, restore, configuração de LVM e o
+particionador.
+Conclusão
+Introdução ao Linux – Augusto C. Campos 
+40
+A versão 8.2 é uma evolução sem grandes saltos. Os pacotes foram atualizados, surgiram
+algumas novas características, mas nada absolutamente revolucionário em relação à versão 8.1.
+Para usuários de versões anteriores, o upgrade é recomendado principalmente pelas atualizações, e
+não propriamente por novidades.
+Continuo considerando o SuSE uma excelente opção para usuários experientes. Usuários
+iniciantes para os quais a documentação em inglês não seja um obstáculo também podem se
+beneficiar, até mesmo porque a instalação é fácil e toda em português, e não é muito difícil
+converter o sistema instalado para o nosso idioma.
+Aliás, houve bastante progresso no suporte ao português brasileiro, e a representante
+brasileira da SuSE oferece uma série de serviços, principalmente para usuários corporativos, em
+seu site www.suse-brasil.com.br. Com sorte, até a data da publicação desta análise eles já terão
+publicado até documentação específica sobre a conversão do KDE ao português brasileiro ;-)
+ 
+17. Apêndice 2: Como obter e gravar seus próprios CDs de Linux
+Algumas das perguntas mais frequentes na minha correspondência são variações sobre
+um mesmo tema: "Se o Linux é livre, por que temos que pagar por ele?", ou "Como posso obter o
+Linux na Internet", ou ainda "Como posso criar meus próprios CDs de Linux?". 
+Não é minha intenção neste momento explicar mais uma vez a diferença conceitual entre
+livre e grátis, mas o fato é que você pode mesmo obter o Linux gratuitamente, gravar seus próprios
+CDs, e instalá-los onde quiser. As dificuldades técnicas não são grandes, principalmente se você
+possuir uma conexão rápida à Internet, e vamos ver passo a passo como fazer. 
+Selecionando uma distribuição
+Você pode obter o Linux de diversas origens. Nunca opte por uma versão antiga - é
+comum encontrar usuários novos com dificuldades típicas de 2 anos atrás ("O Linux não reconhece
+meu hardware", "Não consigo discar para a Internet") justamente porque instalaram uma versão de
+2 anos atrás, que estava guardada num armário. 
+O Linux evolui muito rapidamente, e os diversos distribuidores tendem a lançar versões
+novas a cada 3 ou 4 meses, ou pelo menos semestralmente. Como em geral você pode obter o
+software gratuitamente ou a custo baixíssimo, não faz sentido optar pela versão antiga - espere mais
+alguns dias, e instale a mais recente. 
+Outro erro a ser evitado é optar por uma mini-distribuição, "para ver como é esse tal
+Linux". De fato, existem mini-distribuições de boa qualidade, que podem ser instaladas na mesma
+partição que o Windows, e cujo download pode ser bem menor do que uma distribuição completa.
+Mas em geral o que você pode fazer com ela é limitado, e o suporte que você encontra na
+comunidade usuária é mais restrito, porque são raros os usuários experientes (portanto aptos a
+responder perguntas) que utilizam esse tipo de sistema. 
+Não vou indicar uma distribuição para você - todas têm vantagens e desvantagens. Eu
+particularmente uso SuSE, Mandrake, Conectiva e Red Hat, mas não as considero necessariamente
+"as melhores" - cada caso é um caso, e eu opto entre elas de acordo com a necessidade do
+momento. Para saber as características de cada uma, você pode pesquisar nos artigos do meu site,
+ou consultar os sites de cada uma delas. Segue uma lista parcial de distribuições de Linux para
+facilitar sua escolha: 
+Conectiva (brasileira) – www.conectiva.com.br 
+TechLinux (brasileira) – www.techlinux.com.br 
+SuSE – www.suse.com ou www.suse-brasil.com.br 
+Mandrake – www.mandrake.com 
+Red Hat – www.redhat.com 
+Slackware – www.slackware.com 
+Introdução ao Linux – Augusto C. Campos 
+41
+Debian – www.debian.org 
+Yellow Dog Linux (para Mac) – www.yellowdoglinux.com 
+Obtendo sua cópia via Internet
+O jeito mais fácil de obter sua cópia de Linux gratuitamente via Internet é através do
+download de imagens ISO, que são arquivos (geralmente por volta de 650MB cada um) trazendo o
+conteúdo completo de um CD-ROM, prontos para serem gravados em um CD, permitindo assim
+que você obtenha cópias idênticas de um CD original. 
+Como o Linux é um software livre, a maior parte dos produtores disponibiliza imagens
+ISO contendo exatamente o mesmo conteúdo dos CDs vendidos em lojas ou na Internet, e você
+pode fazer o que quiser com elas - até mesmo gravar em CDs para revendê-las (e se você quiser
+comprar CDs deste tipo, lojas virtuais como a Tempo Real e a LinuxMall estão à disposição).
+Quando se trata de Linux, não é pirataria, é software livre. 
+Você pode procurar suas imagens ISO no site de sua distribuição preferida - às vezes
+será necessário fazer o download de mais do que uma imagem, e em outros casos (como o da
+Mandrake) o download da primeira imagem é obrigatório, e o das outras é opcional. Raras são as
+distribuições que não disponibilizam imagens ISO de instalação (é o caso da SuSE, por exemplo). 
+Se preferir, procure no site linuxiso.org, cuja especialidade é apontar links para imagens
+ISO dos CDs das distribuições de Linux do mundo todo. 
+Como se trata de um download grande (se você for buscar os 3 CDs do Mandrake 8.2,
+por exemplo, são quase 2GB de dados), certifique-se de ter espaço suficiente no seu HD, e utilize
+um bom gerenciador de download. EU uso o wget, mas você pode escolher o que mais se adequar
+ao seu estilo. 
+Gravando o CD
+Se você tem um gravador de CD funcionando em Linux, queimar um CD com esta
+imagem ISO é bastante simples, basta dar o seguinte comando como usuário root: cdrecord -v
+speed=10 dev=0,0,0 nome-da-imagem.iso 
+O que pode variar é o parâmetro speed (use a velocidade que seu gravador suportar) e o
+número do dev (na dúvida, use o comando "cdrecord -scanbus" para consultar.) 
+Mas muitos usuários só podem gravar CDs a partir do Windows. Para estes, também há
+soluções, mas notem que eu nunca testei nenhuma delas - nem disponho de uma máquina Windows
+para experimentar. Estas dicas de gravação foram obtidas na documentação do Mandrake Linux. 
+Para gravar um CD de imagem ISO no Nero Burning Rom, vá em File/Burn Image. No
+diálogo, clique no "Image files (*.nrg)" e selecione "All files (*.*)". Selecione a sua imagem ISO e
+confirme. No diálogo seguinte, verifique: tipo da imagem: Data mode 1. Block size: 2048. Image
+header: 0. Image trailer: 0. Clique em Ok, e certifique-se de que no próximo diálogo as opções
+"write" e "finalize" estejam ativas. 
+Para gravar no Easy CD Creator, vá em File / Create CD from disc image. No campo
+"Files of type", selecione "ISO image files". Agora é só selecionar seu arquivo, e ele fará o resto
+por você. 
+Usuários experientes de Linux podem querer ver o conteúdo da imagem ISO sem ter que
+queimar um CD. A mesma técnica pode ser utilizada para instalações via HD ou via rede, se a
+distribuição de Linux suportar. O comando para montar sua imagem ISO como se fosse um CD é:
+mount -o loop,unhide -t iso9660 -r nome-da-imagem.iso /mnt/iso 
+Nota: o diretório /mnt/iso tem que ter sido criado previamente. 
+Conclusão
+Introdução ao Linux – Augusto C. Campos 
+42
+Procurei demonstrar que gravar sua própria cópia de Linux não é uma tarefa difícil, e
+está ao alcance de todos. Se você não tem acesso a uma conexão rápida com a Internet ou a um
+gravador de CD, pode optar pelas empresas citadas, que vendem cópias baratas a partir de arquivos
+obtidos na Internet. E se você grava seus próprios CDs, não esqueça de doá-los após o uso,
+ajudando a tornar o Linux mais acessível! 
