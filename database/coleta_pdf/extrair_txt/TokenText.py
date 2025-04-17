@@ -1,27 +1,30 @@
 from sentence_transformers import SentenceTransformer
 import spacy
 import math
+import sys
 import os
-import chromadb
-from chromadb.config import Settings
+sys.path.append(os.path.abspath(os.path.join(
+    os.path.dirname(__file__), '..', '..', 'chroma_db')))
+
+from ConfgChroma import connect_chroma
 
 # Carregar o modelo spaCy para português
 nlp = spacy.load("pt_core_news_sm")
 
 
-def dividir_em_trechos(texto, tokens_por_trecho):
+def dividir_em_trechos(texto):
     doc = nlp(texto)
     palavras = [token.text for token in doc]
 
     # Convertendo tokens para palavras
-    tamanho_trecho = math.ceil(tokens_por_trecho / 0.75)
+    tamanho_trecho = math.ceil(200 / 0.75)
     trechos = [" ".join(palavras[i:i + tamanho_trecho])
                for i in range(0, len(palavras), tamanho_trecho)]
 
     return trechos
 
 
-def processar_pasta_com_txt(pasta_txt, tokens_por_trecho):
+def processar_pasta_com_txt(pasta_txt):
     trechos = []
 
     # Listar arquivos .txt na pasta
@@ -36,7 +39,7 @@ def processar_pasta_com_txt(pasta_txt, tokens_por_trecho):
             texto = file.read()
 
         # Dividir o texto em trechos
-        trechos.extend(dividir_em_trechos(texto, tokens_por_trecho))
+        trechos.extend(dividir_em_trechos(texto))
 
         print(f"Arquivo {arquivo_txt} processado. {
               len(trechos)} trechos extraídos.")
@@ -44,15 +47,15 @@ def processar_pasta_com_txt(pasta_txt, tokens_por_trecho):
     return trechos
 
 
-# Caminho da pasta contendo os arquivos .txt
-# Substitua pelo caminho real da sua pasta com arquivos .txt
-pasta_txt = "database/extrair_txt/textos_extraidos"
+def gerar_embeddings(trechos):
+    return modelo_embedding.encode(trechos, convert_to_tensor=True)
 
-# Definir quantos tokens deseja por trecho (exemplo: 200 tokens)
-tokens_por_trecho = 200
+
+# Caminho da pasta contendo os arquivos .txt
+pasta_txt = "./database/coleta_pdf/extrair_txt/textos_extraidos"
 
 # Processar os arquivos da pasta e dividir em trechos
-trechos = processar_pasta_com_txt(pasta_txt, tokens_por_trecho)
+trechos = processar_pasta_com_txt(pasta_txt)
 
 print(f"Texto dividido em {len(trechos)} trechos.")
 
@@ -60,21 +63,13 @@ print(f"Texto dividido em {len(trechos)} trechos.")
 modelo_embedding = SentenceTransformer(
     "sentence-transformers/all-MiniLM-L6-v2")
 
-
-def gerar_embeddings(trechos):
-    return modelo_embedding.encode(trechos, convert_to_tensor=True)
-
-
 # Gerar embeddings para os trechos de texto
 embeddings = gerar_embeddings(trechos)
 print(f"Gerados {len(embeddings)} embeddings.")
 
-# Criar cliente ChromaDB
-cliente_chroma = chromadb.PersistentClient(
-    path="./database/chroma_db", settings=Settings())
-
-# Criar ou carregar coleção
-colecao = cliente_chroma.get_or_create_collection("curso_software_engineering")
+# Conexão com o banco de dados
+client = connect_chroma()
+colecao = client.get_collection(name="digitalTwin")
 
 # Adicionar embeddings ao banco de dados vetorial
 for i, (embedding, trecho) in enumerate(zip(embeddings, trechos)):
@@ -86,16 +81,4 @@ for i, (embedding, trecho) in enumerate(zip(embeddings, trechos)):
 
 print("Embeddings armazenados no ChromaDB.")
 
-
-def buscar_no_chroma(query, top_k=1):
-    query_embedding = modelo_embedding.encode([query]).tolist()
-    resultados = colecao.query(query_embedding, n_results=top_k)
-    return resultados
-
-
-# Exemplo de consulta
-consulta = "O que faz o comando ps no Linux?"
-resultados = buscar_no_chroma(consulta)
-
-for i, resultado in enumerate(resultados["metadatas"][0]):
-    print(f"🔹 Resultado {i+1}: {resultado['texto'][:300]}...\n")
+print(colecao.count())
