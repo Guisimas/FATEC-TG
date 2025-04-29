@@ -4,21 +4,43 @@ import math
 import os
 import chromadb
 from chromadb.config import Settings
+from chat_mistral import gerar_resposta_mistral
 
 # Carregar o modelo spaCy para português
 nlp = spacy.load("pt_core_news_sm")
 
 
 def dividir_em_trechos(texto, tokens_por_trecho):
-    doc = nlp(texto)
-    palavras = [token.text for token in doc]
+    paragrafos = texto.split("\n\n")
+    trechos = []
 
-    # Convertendo tokens para palavras
     tamanho_trecho = math.ceil(tokens_por_trecho / 0.75)
-    trechos = [" ".join(palavras[i:i + tamanho_trecho])
-               for i in range(0, len(palavras), tamanho_trecho)]
+
+    for par in paragrafos:
+        par = par.strip()
+        if not par:
+            continue
+
+        if len(par) > 1000000:
+            # Se o parágrafo for grande demais, corta em pedaços menores
+            for i in range(0, len(par), 1000000):
+                sub_par = par[i:i+1000000]
+                doc = nlp(sub_par)
+                palavras = [token.text for token in doc]
+                trechos.extend([
+                    " ".join(palavras[i:i + tamanho_trecho])
+                    for i in range(0, len(palavras), tamanho_trecho)
+                ])
+        else:
+            doc = nlp(par)
+            palavras = [token.text for token in doc]
+            trechos.extend([
+                " ".join(palavras[i:i + tamanho_trecho])
+                for i in range(0, len(palavras), tamanho_trecho)
+            ])
 
     return trechos
+
 
 
 def processar_pasta_com_txt(pasta_txt, tokens_por_trecho):
@@ -46,7 +68,7 @@ def processar_pasta_com_txt(pasta_txt, tokens_por_trecho):
 
 # Caminho da pasta contendo os arquivos .txt
 # Substitua pelo caminho real da sua pasta com arquivos .txt
-pasta_txt = "database/extrair_txt/textos_extraidos"
+pasta_txt = "database/coleta_pdf/extrair_txt/textos_extraidos"
 
 # Definir quantos tokens deseja por trecho (exemplo: 200 tokens)
 tokens_por_trecho = 200
@@ -59,7 +81,6 @@ print(f"Texto dividido em {len(trechos)} trechos.")
 
 modelo_embedding = SentenceTransformer(
     "sentence-transformers/all-MiniLM-L6-v2")
-
 
 def gerar_embeddings(trechos):
     return modelo_embedding.encode(trechos, convert_to_tensor=True)
@@ -97,5 +118,9 @@ def buscar_no_chroma(query, top_k=1):
 consulta = "O que faz o comando ps no Linux?"
 resultados = buscar_no_chroma(consulta)
 
-for i, resultado in enumerate(resultados["metadatas"][0]):
-    print(f"🔹 Resultado {i+1}: {resultado['texto'][:300]}...\n")
+# for i, resultado in enumerate(resultados["metadatas"][0]):
+#     print(f"🔹 Resultado {i+1}: {resultado['texto'][:300]}...\n")
+
+contexto = "\n\n".join([r["texto"] for r in resultados["metadatas"][0]])
+resposta = gerar_resposta_mistral(consulta, contexto)
+print(f"\n💬 Resposta gerada:\n{resposta}")
