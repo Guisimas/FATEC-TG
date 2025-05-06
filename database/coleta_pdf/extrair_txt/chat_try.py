@@ -8,8 +8,8 @@ from chat_mistral import gerar_resposta_mistral  # sua função que chama a API 
 modelo_embedding = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
 # Conecta ao ChromaDB existente
-cliente_chroma = chromadb.PersistentClient(path="./database/chroma_db", settings=Settings())
-colecao = cliente_chroma.get_or_create_collection("curso_software_engineering")
+cliente_chroma = chromadb.PersistentClient(path="./database/chroma_db/banco", settings=Settings())
+colecao = cliente_chroma.get_or_create_collection("digitalTwin")
 
 # Função para buscar no banco vetorial
 def buscar_no_chroma(query, top_k=3):

@@ -1,5 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./database/coleta_pdf/extrair_txt"
+        "./database/coleta_pdf/extrair_txt",
+        "./database/chroma_db"
     ]
 }
