@@ -2,6 +2,7 @@
 import os
 from mistralai import Mistral
 
+
 # Certifique-se de definir a variável de ambiente 'MISTRAL_API_KEY' ou coloque a chave direto
 client = Mistral(api_key="da6NnTH1RXeu77gxjvNjrgKLAxHqX4sQ")  # ou: Mistral(api_key="sua-chave-aqui")
 
