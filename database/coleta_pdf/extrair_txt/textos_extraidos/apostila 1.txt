@@ -1,0 +1,1622 @@
+Curso de Linux
+M´odulo B´asico
+Sum´ario
+Introdu¸c˜ao
+1
+1
+O que ´e Linux?
+2
+1.1
+Um breve hist´orico . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2
+1.2
+Software Livre e Licen¸ca GPL . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+1.3
+Distribui¸c˜oes
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+1.3.1
+Debian . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4
+1.3.2
+Red Hat Entreprise Linux . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4
+1.3.3
+Slackware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4
+1.3.4
+Ubuntu
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4
+2
+Instalando
+5
+2.1
+Como obter . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+2.2
+Considera¸c˜oes sobre hardware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+2.2.1
+Conﬁgura¸c˜ao m´ınima
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+2.2.2
+Conﬁgura¸c˜ao recomendada
+. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+2.3
+Instalando o Ubuntu 9.10
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+3
+Ambiente Gr´aﬁco
+11
+3.1
+X Window System . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+3.2
+Ambientes Desktop . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+3.3
+Desempenhando tarefas
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+3.3.1
+Acessando a internet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+3.3.2
+Editando um documento num processador de texto . . . . . . . . . . . . . . .
+13
+3.3.3
+Instalando programas
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+13
+4
+Aplicativos
+15
+5
+Diret´orios e arquivos
+16
+5.1
+Vis˜ao geral da organiza¸c˜ao dos arquivos no Linux . . . . . . . . . . . . . . . . . . . .
+16
+5.1.1
+Diret´orio root – / . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+5.1.2
+/bin . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.3
+/boot
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.4
+/dev . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.5
+/etc
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.6
+/home . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.7
+/lib
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.8
+/media
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.9
+/root . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.10 /tmp . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.11 /usr . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.11.1 /usr/bin
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.11.2 /usr/src . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.1.12 /var . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+i
+ii
+SUM ´ARIO
+5.1.12.1 /var/log . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+5.1.12.2 /var/run
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+5.2
+Caminho absoluto X Caminho relativo . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+5.3
+Permiss˜oes de acesso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+5.3.1
+Donos, grupos, outros . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+5.3.2
+Tipos de permiss˜oes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19
+6
+Modo texto
+20
+6.1
+Shell . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+6.2
+BASH . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+6.3
+Comandos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+6.3.1
+Prompt . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+6.3.2
+Sintaxe dos comandos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+6.3.3
+pwd . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+22
+6.3.4
+ls . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+22
+6.3.5
+cd
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+24
+6.3.6
+mkdir . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25
+6.3.7
+rmdir
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+26
+6.3.8
+touch
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+26
+6.3.9
+rm . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+27
+6.3.10 cp
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+28
+6.3.11 mv . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+29
+6.3.12 cat . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+29
+6.3.13 ﬁnd
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+31
+6.3.14 clear . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+31
+6.3.15 exit
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+31
+6.3.16 echo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+31
+6.3.17 date . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+32
+6.3.18 chmod . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+32
+6.3.19 passwd
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+34
+6.3.20 su
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+34
+6.3.21 sudo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+35
+6.3.22 wc . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+35
+6.4
+Pipe e redirecionamento . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+36
+6.4.1
+| (Pipe) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+36
+6.4.2
+>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+37
+6.4.3
+>>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+38
+6.5
+Instalando programas pela linha de comando
+. . . . . . . . . . . . . . . . . . . . . .
+38
+7
+Obtendo ajuda
+40
+7.1
+Comandos e op¸c˜oes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+40
+7.1.1
+man . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+40
+7.1.2
+apropos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+40
+7.1.3
+−−help . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+41
+7.2
+Internet e literatura
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+41
+7.3
+Sugest˜oes
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+41
+Introdu¸c˜ao
+Este material destina-se a qualquer pessoa que queira adentrar ao curioso mundo do sistema
+operacional GNU/Linux tendo pouqu´ıssimo ou nenhum conhecimento sobre o assunto.
+O objetivo deste curso ´e que vocˆe, ap´os concluir a leitura e pr´atica de todo o conte´udo proposto,
+seja capaz de instalar e utilizar com um certo conforto o ambiente GNU/Linux.
+O material est´a estruturado da seguinte maneira: o primeiro cap´ıtulo apenas introduz o GNU/Linux
+e o conceito de Software Livre. A seguir, mostramos como instalar um sistema GNU/Linux - vocˆe
+ver´a como pode ser incrivelmente f´acil. Nos cap´ıtulos seguintes, fornecemos uma vis˜ao geral de
+como trabalhar no ambiente gr´aﬁco e no modo texto. Finalizamos com um cap´ıtulo que se prop˜oe
+a mostrar como obter ajuda e ampliar seus conhecimentos.
+1
+Cap´ıtulo 1
+O que ´e Linux?
+O termo Linux ´e usado em v´arios contextos com signiﬁcados diferentes. A rigor, Linux ´e um
+kernel. No entanto, em alguns contextos, Linux signiﬁca sistema operacional (n˜ao qualquer sistema
+operacional, mas um que use o kernel Linux).
+Sistema Operacional: ´e um software que serve de interface entre o computador e o
+usu´ario, gerenciando recursos (como mem´oria, processamento etc.).
+Kernel: ´e o n´ucleo ou cerne do sistema operacional (´e a parte deste que ﬁca mais
+“pr´oxima” do hardware).
+Vocˆe pode agora estar se perguntando se deve chamar apenas o kernel de Linux. Como dito an-
+teriormente, a rigor, Linux ´e o kernel. Contudo, a express˜ao “sistema operacional Linux” tornou-se
+muito difundida. Outra pergunta pode ter surgido neste ponto: qual o nome do sistema operacional
+ent˜ao? Mais uma controv´ersia aqui. Quando algum usu´ario instala “o Linux”, ele est´a instalando o
+kernel e mais uma s´erie de outros softwares (aplicativos etc.). Grande parte desses aplicativos per-
+tence a um projeto chamado GNU. Logo, o sistema operacional formado pelo kernel mais utilit´arios
+e aplicativos, como defendem alguns, deveria ser chamado de GNU/Linux.
+1.1
+Um breve hist´orico - Como surgiram o GNU e o Linux
+No ano de 1984, Richard Stallman iniciou o Projeto GNU, que tinha por objetivo criar um
+Figura 1.1: Linus Torvalds
+sistema operacional que fosse totalmente livre. Esse sistema ope-
+racional deveria ser compat´ıvel com outro sistema operacional -
+o UNIX (da´ı o nome GNU - GNU is Not Unix).
+No ano se-
+guinte, Stallman fundou a FSF (Free Software Foundation), com
+o prop´osito de eliminar restri¸c˜oes de uso, c´opia e distribui¸c˜ao de
+software.
+Por volta de 1991, o sistema GNU estava quase pronto, exceto
+pelo kernel. Stallman estava trabalhando no desenvolvimento de
+um kernel chamado Hurd.
+Ao mesmo tempo, o ﬁnlandˆes Linus
+Torvalds havia criado um kernel compat´ıvel com as aplica¸c˜oes do
+projeto GNU. A esse kernel foi dado o nome de Linux.
+Atualmente, Linux tornou-se um termo gen´erico para se referir a
+sistemas operacionais “Unix-like” baseados no kernel Linux. Tornou-se, tamb´em, o melhor exemplo
+de Software Livre e de c´odigo aberto.
+2
+1.2. SOFTWARE LIVRE E LICENC¸A GPL
+3
+1.2
+Software Livre e Licen¸ca GPL
+Na Se¸c˜ao anterior, foi dito que Stallman pretendia criar um sistema operacional livre e que o
+GNU/Linux era um exemplo de Software Livre. A deﬁni¸c˜ao de Software Livre, dada pela FSF ´e:
+Um software ´e considerado livre se atende `as seguintes liberdades:
+ Executar o software com qualquer prop´osito (liberdade nº 0).
+ Estudar o funcionamento do software e adapt´a-lo `as suas necessidades (liberdade nº 1).
+ Redistribuir (inclusive vender) c´opias do software (liberdade nº 2).
+ Melhorar o programa e tornar as modiﬁca¸c˜oes p´ublicas para que a comunidade inteira se
+beneﬁcie da melhoria (liberdade nº 3).
+Ao contr´ario do que as pessoas pensam, Software Livre (do inglˆes Free Software) n˜ao ´e sinˆonimo
+Figura 1.2: Richard Stallman
+de gratuito. O que ocorre ´e uma confus˜ao envolvendo a palavra
+“free” em inglˆes, que signiﬁca tanto gratuito como livre. Mas o
+sentido que Stallman queria dar era de “livre”. De qualquer forma,
+a maioria dos softwares livres ´e distribu´ıda de forma gratuita.
+Grande parte dos projetos de software livre (incluindo o
+GNU/Linux) ´e distribu´ıda sob a GPL (General Public License -
+Licen¸ca P´ublica Geral), que ´e a licen¸ca idealizada por Stallman e
+que se baseia nas quatro liberdades citadas anteriormente. Com
+a garantia destas liberdades, a GPL permite que os programas se-
+jam distribu´ıdos e reaproveitados, mantendo, por´em, os direitos do
+autor por forma a n˜ao permitir que essa informa¸c˜ao seja usada de uma maneira que limite as
+liberdades originais.
+1.3
+Distribui¸c˜oes
+Distribui¸c˜oes Linux (tamb´em chamadas Distribui¸c˜oes GNU/Linux ou simplesmente distros)
+consistem em “pacotes” de software baseados no kernel Linux que incluem determinados tipos de
+software para satisfazer as necessidades de um grupo espec´ıﬁco de usu´arios, dando assim origem a
+vers˜oes dom´esticas, empresariais e para servidores.
+Exemplos de Distribui¸c˜oes Linux: Ubuntu, Debian, Slackware, Fedora, Red Hat, Arch, Gentoo,
+Mandriva, openSUSE etc. Qual ´e a melhor distribui¸c˜ao ´e uma quest˜ao de necessidade e gosto.
+Apresentamos a seguir uma breve descri¸c˜ao de algumas distros, para que vocˆe possa ter uma
+ideia de suas principais caracter´ısticas.
+4
+CAP´ITULO 1. O QUE ´E LINUX?
+1.3.1
+Debian
+A distro Debian (ou Debian GNU/Linux) ´e desenvolvida pelo Projeto Debian, um grupo
+de volunt´arios mantido por doa¸c˜oes atrav´es da organiza¸c˜ao sem ﬁns lucrativos Software in the
+Public Interest (SPI).
+Debian baseia-se fortemente no projeto GNU e tem como principais caracter´ısticas um alto
+compromisso com estabilidade e seguran¸ca bem como uma grande facilidade no que concerne `a
+instala¸c˜ao de programas, atrav´es de um gerenciador de pacotes completo (dpkg) e sua interface
+(apt), utilizados amplamente em outras distribui¸c˜oes.
+A ´ultima vers˜ao est´avel desta distro ´e 5.0.
+1.3.2
+Red Hat Entreprise Linux
+Red Hat Enterprise Linux ´e uma distro criada pela empresa norte-americana Red Hat.
+O foco desta distribui¸c˜ao ´e o mercado corporativo, incluindo vers˜oes para servidores e para
+desktops.
+O Red Hat Enterprise Linux n˜ao possui um ciclo de lan¸camentos ﬁxo: a vers˜ao atual ´e a
+5, mas o Red Hat Entreprise Linux 6 tem previs˜ao de lan¸camento para o primeiro semestre de
+2010.
+1.3.3
+Slackware
+Simplicidade e estabilidade s˜ao duas caracter´ısticas marcantes nesta distribui¸c˜ao. Muito
+comum em servidores, procura ser uma distribui¸c˜ao “leve”, praticamente sem enfeites e r´apida,
+muito apreciada por usu´arios mais experientes.
+Encontra-se atualmente na vers˜ao Slackware 13.
+1.3.4
+Ubuntu
+Ubuntu ´e uma distro GNU/Linux baseada na distro Debian e ´e patrocinada pela Canonical.
+A proposta do Ubuntu ´e oferecer um sistema operacional que qualquer pessoa possa utilizar
+sem diﬁculdades, independentemente de nacionalidade, n´ıvel de conhecimento ou limita¸c˜oes
+f´ısicas (a palavra Ubuntu ´e de origem africana e signiﬁca “humanidade para os outros”).
+Essa distro oferece um ambiente atualizado e est´avel, focado na usabilidade e na facilidade
+de sua instala¸c˜ao.
+A cada seis meses, uma nova vers˜ao da distro ´e lan¸cada, a vers˜ao atual ´e Ubuntu 10.4. Os
+n´umeros 10 e 4 s˜ao, respectivamente, o ano e o mˆes do lan¸camento da vers˜ao.
+Cap´ıtulo 2
+Instalando
+Este cap´ıtulo mostrar´a como instalar o Ubuntu 9.10 (32 bits) atrav´es de um CD-ROM. De fato,
+esta ´e uma tarefa muito simples, pois, ao longo dos anos, os instaladores de quase todas as distros
+tornaram-se bastante amig´aveis, mesmo para usu´arios totalmente inexperientes.
+2.1
+Como obter
+O Ubuntu pode ser obtido gratuitamente atrav´es do site http://www.ubuntu.com/getubuntu.
+2.2
+Considera¸c˜oes sobre hardware
+Antes de proceder com a instala¸c˜ao, o usu´ario deve saber se sua conﬁgura¸c˜ao de hardware ir´a
+funcionar. Todas as distros publicam alguma lista de compatibilidade de hardware, consulte-a se
+estiver em d´uvida sobre algum dispositivo.
+Seguem abaixo as conﬁgura¸c˜oes m´ınima e recomendada para instala¸c˜ao em desktop do Ubuntu
+9.10. ´E importante salientar que, devido ao ambiente gr´aﬁco, conﬁgura¸c˜oes superiores podem ser
+necess´arias.
+2.2.1
+Conﬁgura¸c˜ao m´ınima
+ processador 300 MHz x86
+ 64 MB de RAM
+ Pelo menos 4 GB de espa¸co em disco (para instala¸c˜ao completa e swap)
+ placa de v´ıdeo VGA com suporte para resolu¸c˜ao 640x480
+ drive CD-ROM ou placa de rede
+2.2.2
+Conﬁgura¸c˜ao recomendada
+ processador 700 MHz x86
+ 384 MB de RAM
+ 8 GB de espa¸co em disco
+ placa de v´ıdeo com suporte para resolu¸c˜ao 1024x768
+ placa de som
+ conex˜ao com a Internet
+5
+6
+CAP´ITULO 2. INSTALANDO
+2.3
+Instalando o Ubuntu 9.10
+1. A primeira tela da instala¸c˜ao deve ser esta que aparece abaixo. Selecione a l´ıngua de sua
+preferˆencia.
+2. A seguir, selecione a segunda op¸c˜ao “Instalar o Ubuntu”.
+Observa¸c˜ao: O CD do Ubuntu ´e um Live CD. Isso signiﬁca que o usu´ario pode executar o
+sistema operacional direto do CD, sem precisar instalar nada nem efetuar qualquer mudan¸ca
+em seu disco r´ıgido. Para fazer isso, basta selecionar a op¸c˜ao “Testar o Ubuntu sem qualquer
+mudan¸ca no seu computador”. Esta ´e uma boa alternativa para quem quer testar o sistema
+antes de instal´a-lo.
+2.3. INSTALANDO O UBUNTU 9.10
+7
+3. Vocˆe ver´a um wallpaper por alguns segundos. Quando o instalador aparecer, vocˆe poder´a
+selecionar a l´ıngua de sua preferˆencia para o processo de instala¸c˜ao e para o sistema.
+4. Agora vocˆe dever´a selecionar sua localiza¸c˜ao, para que o hor´ario seja ajustado pelo sistema e
+as atualiza¸c˜oes sejam feitas a partir de locais mais pr´oximos. Vocˆe poder´a fazer isso clicando
+no mapa ou nas listas.
+8
+CAP´ITULO 2. INSTALANDO
+5. Selecione o layout do teclado.
+6. Esta ´e a parte em que o usu´ario ir´a decidir “onde” instalar o sistema. Neste m´odulo, n˜ao
+abordaremos todos os detalhes dessa etapa. Por enquanto, apenas mostramos como instalar
+o Ubuntu utilizando o disco todo.
+Observa¸c˜ao: ´E poss´ıvel instalar o Ubuntu (e outras distros tamb´em) lado a lado com outros
+sistemas operacionais (incluindo outras distros). Isso signiﬁca que vocˆe n˜ao precisar´a aban-
+donar o Windows (ou outro sistema de sua preferˆencia) para poder instalar o GNU/Linux
+2.3. INSTALANDO O UBUNTU 9.10
+9
+em seu HD. ´E poss´ıvel selecionar qual sistema se deseja usar no processo de boot da m´aquina.
+Este assunto ser´a abordado num outro m´odulo do curso.
+7. A seguir, preencha a tela seguinte, de acordo com o que cada t´ıtulo diz. Preencha com seu
+nome, com o nome que vocˆe deseja logar-se no Ubuntu (seu “username”), a senha de sua
+preferˆencia e o nome do computador.
+8. Nesta tela, vocˆe dever´a conferir se as op¸c˜oes deﬁnidas para a instala¸c˜ao est˜ao corretas. Se
+estiver tudo ok, clique em “Instalar”.
+10
+CAP´ITULO 2. INSTALANDO
+9. O sistema ser´a instalado, podendo levar de 10 a 20 minutos (a depender do hardware de sua
+m´aquina). Quando a instala¸c˜ao estiver completa, ser´a necess´ario reiniciar o computador.
+10. Pronto. O Ubuntu 9.10 est´a instalado em sua m´aquina.
+Cap´ıtulo 3
+Ambiente Gr´aﬁco
+No Linux (como UNIX, em geral), o sistema operacional ´e independente da GUI (Graphical
+User Interface - Interface Gr´aﬁca do Usu´ario, ou simplesmente, interface gr´aﬁca). Existem v´arias
+vantagens que essa abordagem proporciona: permite que o usu´ario escolha a interface de sua
+preferˆencia; al´em disso, se a interface gr´aﬁca falha, o sistema continua funcionando. Para alguns,
+pode ser um pouco estranho falar em sistema sem interface gr´aﬁca. Contudo, n˜ao ´e somente atrav´es
+do modo gr´aﬁco que o usu´ario consegue interagir com o sistema, ´e poss´ıvel fazˆe-lo atrav´es de uma
+outra maneira - usando o modo texto, assunto que ser´a abordado no Cap´ıtulo 6.
+3.1
+X Window System
+X Window System (ou simplesmente X11 ou X) ´e o toolkit e protocolo padr˜ao para interface
+gr´aﬁca em plataformas UNIX e similares (como o Linux). Ele n˜ao ´e uma interface gr´aﬁca completa:
+apenas deﬁne como os objetos b´asicos devem ser desenhados e manipulados na tela. O X pode ser
+executado em m´aquinas locais ou remotamente, atrav´es de uma rede.
+3.2
+Ambientes Desktop
+O X ´e a base para a interface gr´aﬁca no GNU/Linux, mas n˜ao inclui nenhuma deﬁni¸c˜ao sobre
+a aparˆencia das janelas. O controle da aparˆencia ´e feito por outro programa, chamado gerenciador
+de janelas (window manager). Exemplos de gerenciadores de janelas s˜ao o FVWM, FluxBox, Xfce,
+GNOME e KDE. Estes dois ´ultimos transcendem o conceito de gerenciador de janelas e s˜ao ambi-
+entes desktop (desktop environment), ou seja, prop˜oem-se a oferecer uma interface mais completa
+para o sistema operacional, incluindo utilit´arios integrados e aplica¸c˜oes.
+KDE e FluxBox.
+11
+12
+CAP´ITULO 3. AMBIENTE GR ´AFICO
+GNOME (Ubuntu 9.10).
+3.3
+Desempenhando tarefas
+A proposta da interface gr´aﬁca ´e o uso intuitivo.
+Apesar disso, mostramos a seguir como
+desempenhar algumas tarefas simples e corriqueiras, apenas para efeito ilustrativo. A interface
+usada ´e o GNOME (Ubuntu 9.10).
+3.3.1
+Acessando a internet
+No Ubuntu 9.10, o navegador Firefox j´a vem instalado e j´a existe um atalho para acess´a-lo:
+3.3. DESEMPENHANDO TAREFAS
+13
+3.3.2
+Editando um documento num processador de texto
+A maioria dos leitores deve estar acostumada a usar o Microsoft Word (do pacote Oﬃce)
+para editar arquivos de texto com formata¸c˜ao. No Ubuntu 9.10, j´a vem instalado o pacote
+do OpenOﬃce.org, que possui formatos pr´oprios de arquivo mas que tamb´em consegue abrir
+arquivos “.doc”.
+3.3.3
+Instalando programas
+Existem v´arias maneiras de instalar programas no GNU/Linux.
+Mostramos aqui uma
+ferramente chamada Synpatic, presente n˜ao apenas no Ubuntu, mas em outras distros tamb´em.
+O Synaptic nada mais ´e do que um programa que oferece uma interface gr´aﬁca amig´avel para
+instalar programas.
+14
+CAP´ITULO 3. AMBIENTE GR ´AFICO
+Cap´ıtulo 4
+Aplicativos
+Basicamente, para qualquer programa que vocˆe utilizava no Windows, existe uma alternativa
+no GNU/Linux. A tabela abaixo prop˜oe-se a oferecer algumas destas alternativas.
+Descri¸c˜ao
+Programas usados
+Programas usados
+no Windows
+no GNU/Linux
+Pacote Oﬃce
+Microsoft Oﬃce
+KOﬃce, OpenOﬃce
+Processador de Texto
+Microsoft Word
+KWrite, OpenOﬃce Writer
+Planilhas
+Excel
+KSpread, OpenOﬃce Calc
+Apresenta¸c˜oes
+PowerPoint
+KPresenter,
+OpenOﬃce Impress
+E-mail
+Outlook
+Evolution
+Grava¸c˜ao de m´ıdia
+Nero
+Brasero, K3b
+IDEs LaTeX
+TeXnicCenter, WinEdit
+Kile, Texmaker
+Compactadores de arquivos
+Winrar, Winzip
+ark, bzip2, tar
+Leitor de PDF
+Adobe Reader
+Adobe Reader, Evince, Kpdf
+Modelagem 3D
+3D Studio MAX, Blender, Maya
+Blender, K-3D, Maya
+Players de v´ıdeo
+Windows Media Player
+Kaﬀeine, MPlayer
+Totem, VLC
+Players de m´usica
+iTunes, Winamp,
+Amarok, Audacious,
+Windows Media Player
+RhythmBox
+Edi¸c˜ao de v´ıdeos
+Windows Movie Maker
+Cinelerra, Kino
+Clientes P2P BitTorrent
+µTorrent, Azureus
+Azureus, KTorrent,
+Transmission
+Mensageiros instantˆaneos
+MSN
+aMSN, Kopete, Pidgin
+Browser
+Firefox, Google Chrome,
+Firefox, Galeon, Google Chrome,
+Microsoft Internet Explorer,
+Konqueror, Opera
+Opera
+Observa¸c˜ao: V´arios dos aplicativos listados apenas em “Programas usados no GNU/Linux”
+tamb´em funcionam no Windows (o VLC, por exemplo).
+15
+Cap´ıtulo 5
+Diret´orios e arquivos
+Muitos usu´arios tˆem diﬁculdades com o GNU/Linux porque n˜ao tˆem uma vis˜ao geral sobre o
+que est´a guardado em que local. Neste cap´ıtulo, mostramos um pouco da organiza¸c˜ao dos arquivos
+do GNU/Linux.
+5.1
+Vis˜ao geral da organiza¸c˜ao dos arquivos no Linux
+Grosso modo, pode-se dizer que, no Linux, tudo ´e arquivo. Se h´a algo que n˜ao seja um arquivo,
+ent˜ao este algo ´e um processo. No GNU/Linux (como no UNIX), n˜ao h´a diferen¸ca entre arquivo
+e diret´orio, uma vez que um diret´orio ´e apenas um arquivo contendo nomes de outros arquivos.
+Imagens, m´usicas, textos, programas, servi¸cos e assim por diante s˜ao todos arquivos. Dispositivos
+de entrada e sa´ıda, e geralmente, todos os dispositivos, s˜ao considerados como arquivos.
+Todos estes arquivos est˜ao organizados de acordo com uma hierarquia, isto ´e, h´a crit´erios que
+prevˆem os principais diret´orios e seu conte´udo. Estes crit´erios s˜ao deﬁnidos por um padr˜ao, o FHS
+(Filesystem Hierarchy Standard).
+No topo da hierarquia de arquivos ﬁca o chamado diret´orio raiz (ou, mais apropriadamente,
+diret´orio root), pois a estrutura de diret´orios ´e chamada tamb´em de “´Arvore de Diret´orios”.
+5.1.1
+Diret´orio root – /
+Este ´e o diret´orio principal do sistema. Dentro dele est˜ao todos os diret´orios do sistema.
+O diret´orio root ´e representado por uma barra (/).
+16
+5.1. VIS ˜AO GERAL DA ORGANIZAC¸ ˜AO DOS ARQUIVOS NO LINUX
+17
+5.1.2
+/bin
+Cont´em comandos e programas essenciais para todos os usu´arios (alguns desses comandos
+ser˜ao tratados no pr´oximo cap´ıtulo).
+5.1.3
+/boot
+Cont´em arquivos necess´arios para a inicializa¸c˜ao do sistema.
+5.1.4
+/dev
+Dispositivos: o /dev cont´em referˆencias para todos os dispositivos, os quais s˜ao represen-
+tados como arquivos com propriedades especiais.
+5.1.5
+/etc
+Cont´em arquivos de conﬁgura¸c˜ao.
+5.1.6
+/home
+Cont´em os diret´orios dos usu´arios.
+5.1.7
+/lib
+Cont´em bibliotecas (que s˜ao subprogramas ou c´odigos auxiliares utilizados por programas)
+essenciais para o funcionamento do Linux, e tamb´em os m´odulos do kernel.
+5.1.8
+/media
+Este diret´orio cont´em subdiret´orios que s˜ao usados como pontos de montagem para m´ıdias
+remov´ıveis, como disquetes, cdroms, pen drives etc.
+5.1.9
+/root
+Diret´orio “home” do super usu´ario (usu´ario root). N˜ao confundir com o diret´orio
+root, o /. O diret´orio /root cont´em os arquivos do usu´ario root. O diret´orio / ´e
+o topo da hierarquia de arquivos.
+Usu´ario root: ´E o administrador do sistema, possui acesso a todos os comandos e arqui-
+vos.
+5.1.10
+/tmp
+Para arquivos tempor´arios.
+5.1.11
+/usr
+Cont´em programas, bibliotecas etc.
+5.1.11.1
+/usr/bin
+´E onde ﬁcam os bin´arios de programas n˜ao-essenciais (os essenciais ﬁcam no /bin).
+5.1.11.2
+/usr/src
+C´odigo-fonte.
+18
+CAP´ITULO 5. DIRET ´ORIOS E ARQUIVOS
+5.1.12
+/var
+Cont´em arquivos “vari´aveis”, como logs, base de dados.
+5.1.12.1
+/var/log
+Como o pr´oprio nome diz, possui arquivos de log.
+Arquivo de log: ´E um arquivo que armazena registros de eventos relevantes de um
+programa ou do sistema.
+5.1.12.2
+/var/run
+Cont´em informa¸c˜ao sobre a execu¸c˜ao do sistema desde a sua ´ultima inicializa¸c˜ao.
+Existem outros diret´orios previstos no padr˜ao, mas, por enquanto, estes j´a s˜ao suﬁcientes.
+5.2
+Caminho absoluto X Caminho relativo
+Caminho de um diret´orio s˜ao os diret´orios que devemos percorrer at´e chegar a ele.
+Vamos
+diferenciar caminho absoluto de caminho relativo por meio de um exemplo.
+Consideremos o diret´orio xinit (vocˆe n˜ao precisa se preocupar com ele, ´e apenas um exemplo. O
+que importa realmente aqui ´e o conceito de caminho at´e o arquivo). Consideremos que este diret´orio
+encontra-se dentro de um outro diret´orio, o diret´orio X11. Este X11, por sua vez, est´a dentro do
+diret´orio etc, que, ﬁnalmente, est´a sob o diret´orio root, o /. Recapitulando: temos o / e dentro o
+etc (/etc), e dentro o X11 (/etc/X11) que cont´em o xinit (/etc/X11/xinit). Logo, “/etc/X11/xinit”
+´e o caminho absoluto para o diret´orio xinit, ou seja, s˜ao os diret´orios que devemos percorrer,
+come¸cando pelo /, at´e o diret´orio xinit.
+Consideremos agora os mesmos diret´orios do caso anterior (/etc/X11/xinit). Suponhamos agora
+que estamos no diret´orio etc. Para dizer qual ´e o caminho do diret´orio xinit, bastaria dizer apenas
+X11/xinit - este ´e o caminho relativo do diret´orio (em rela¸c˜ao ao diret´orio /etc). Se estiv´essemos
+no diret´orio X11, o caminho relativo seria simplesmente xinit.
+Em suma, caminho absoluto ´e aquele que utiliza toda a estrutura de diret´orios, ao passo que o
+relativo toma um diret´orio como referˆencia e deﬁne o caminho a partir da´ı.
+5.3
+Permiss˜oes de acesso
+O Linux foi desenvolvido para ser um sistema multi-usu´ario. Isto signiﬁca que v´arios usu´arios
+podem ter conﬁgura¸c˜oes personalizadas, independentes das dos demais usu´arios, bem como dife-
+rentes usu´arios podem executar tarefas ao mesmo tempo numa mesma m´aquina. Assim sendo,
+cada usu´ario pode querer negar ou permitir o acesso a determinado arquivo ou diret´orio. Por isso,
+existem as chamadas permiss˜oes de acesso do Linux: para impedir o acesso indevido de outros
+usu´arios ou mesmo de programas mal intencionados a arquivos e diret´orios.
+Mostraremos algumas destas permiss˜oes nesta se¸c˜ao. Mais adiante, no pr´oximo cap´ıtulo, mos-
+traremos como manipul´a-las.
+5.3.1
+Donos, grupos, outros
+No Linux, para cada arquivo s˜ao deﬁnidas permiss˜oes para trˆes tipos de usu´arios:
+o dono do arquivo, um grupo de usu´arios e os demais usu´arios (que n˜ao s˜ao nem o dono, nem
+pertencem ao grupo).
+5.3. PERMISS ˜OES DE ACESSO
+19
+ Dono: O dono do arquivo ´e o usu´ario que criou o mesmo. Somente o dono e o usu´ario root
+podem mudar as permiss˜oes para um arquivo ou diret´orio.
+ Grupo: ´E um conjunto de usu´arios. Grupos foram criados para permitir que v´arios usu´arios
+tivessem acesso a um mesmo arquivo.
+ Outros: Como dito anteriormente, s˜ao os usu´arios que n˜ao se encaixam nos tipos de usu´arios
+supracitados.
+5.3.2
+Tipos de permiss˜oes
+Os trˆes tipos b´asicos de permiss˜ao para arquivos e diret´orios s˜ao:
+ r (read): permiss˜ao de leitura para arquivos. Caso seja um diret´orio, permite listar seu
+conte´udo (com o comando ls, por exemplo - que ser´a visto no pr´oximo cap´ıtulo).
+ w (write): permiss˜ao de escrita para arquivos. Caso seja um diret´orio, permite a grava¸c˜ao de
+arquivos ou outros diret´orios dentro dele. Para que um arquivo/diret´orio possa ser apagado,
+´e necess´ario o acesso `a escrita (grava¸c˜ao).
+ x (execute): permite executar um arquivo. Caso seja um diret´orio, permite que seja acessado
+atrav´es do comando cd (vocˆe ver´a este comando tamb´em no pr´oximo cap´ıtulo, equivale a
+“entrar” no diret´orio).
+Em suma, para cada arquivo do sistema, s˜ao deﬁnidas permiss˜oes para o dono do arquivo, para
+um grupo de usu´arios e para os demais usu´arios. Essas permiss˜oes s˜ao de leitura, escrita e execu¸c˜ao
+(r, w ou x). Vocˆe entender´a melhor estes conceitos no pr´oximo cap´ıtulo, mas tente familiarizar-se
+com eles desde j´a.
+Cap´ıtulo 6
+Modo texto
+Como dito anteriormente, n˜ao ´e apenas pelo modo gr´aﬁco que o usu´ario consegue interagir
+com o sistema. ´E poss´ıvel fazer isso pelo modo texto, digitando comandos e nomes de programas
+para conseguir uma “resposta” do sistema. Por isso, o modo texto ´e tamb´em chamado de linha de
+comando.
+´E importante para um usu´ario do GNU/Linux aprender a trabalhar no modo texto por v´arios
+motivos: otimiza v´arias tarefas, existem alguns programas que rodam somente no modo texto e
+tamb´em porque o modo gr´aﬁco consome mais recursos.
+Vocˆe deve estar se perguntando agora como ´e que se faz para usar o GNU/Linux em modo
+texto. Na verdade, existem duas formas.
+Vocˆe pode acessar um terminal “puro”, pressionando as teclas “Ctrl+Alt+F1” (substituir o F1
+por F2, de F3 at´e F6 tamb´em funciona na maior parte das distros) e depois voltar ao modo gr´aﬁco
+pressionando “Alt+F7” (funciona para a maioria das distros).
+Uma tela de login do modo texto geralmente mostra alguma informa¸c˜ao sobre a m´aquina na
+qual vocˆe est´a trabalhando, o nome da m´aquina e um prompt para login. Para logar-se, digite o
+nome de usu´ario e tecle Enter. Agora vocˆe dever´a digitar sua senha e teclar Enter novamente. O
+usu´ario n˜ao ver´a nenhuma indica¸c˜ao de que est´a digitando a senha (n˜ao aparecer˜ao asteriscos nem
+nada do gˆenero, por motivos de seguran¸ca), mas isso ´e normal no GNU/Linux.
+A segunda forma ´e usar um “emulador de terminal”, isto ´e, dentro do modo gr´aﬁco, abre-se
+um programa que funciona como linha de comando. Para fazer isso no ambiente GNOME, v´a em
+Aplicativos ⇒Acess´orios ⇒Terminal.
+20
+6.1. SHELL
+21
+6.1
+Shell
+De qualquer uma das duas formas, o que vocˆe ver´a rodando (ap´os logar-se ou acessar o Terminal)
+´e um programa chamado shell, que ´e um interpretador de comandos.
+6.2
+BASH
+O BASH (Bourne Again Shell) ´e o shell desenvolvido para o projeto GNU, da Free Software
+Foundation, que se tornou padr˜ao nas v´arias distribui¸c˜oes Linux (incluindo Ubuntu).
+6.3
+Comandos
+Nesta se¸c˜ao, examinaremos alguns comandos simples do BASH. ´E importante que vocˆe saiba que
+n˜ao ´e preciso decorar os comandos apresentados. Para aprendˆe-los de fato, vocˆe deve ir praticando
+com os exerc´ıcios propostos e conforme a sua necessidade.
+6.3.1
+Prompt
+O prompt do BASH tem a seguinte aparˆencia:
+username@nomedam´aquina:diret´orio$
+No caso de
+curso@curso-desktop:~$
+curso ´e o nome do usu´ario, curso-desktop ´e o nome da m´aquina, ˜ ´e o diret´orio em que o
+usu´ario se encontra (˜ representa o diret´orio home do usu´ario, nesse caso, /home/curso), e
+o $ ´e o s´ımbolo do tipo de usu´ario (nesse caso, um usu´ario normal). Se fosse o usu´ario root
+(administrador do sistema), o s´ımbolo seria #.
+6.3.2
+Sintaxe dos comandos
+´E importante lembrar que a linha de comando ´e case sensitive, isto ´e, diferencia letras
+mai´usculas de min´usculas.
+Portanto, “echo” ´e diferente de “Echo”, que s˜ao diferentes de
+“ECHO”. Isso tamb´em vale para nomes de diret´orios e arquivos.
+Os comandos s˜ao, em geral, em letras min´usculas. Muitos deles aceitam argumentos. Os
+argumentos que come¸cam com um (ou dois) “-” s˜ao op¸c˜oes.
+comando -op¸c~ao1 -op¸c~ao2 --op¸c~ao3 argumento
+22
+CAP´ITULO 6. MODO TEXTO
+Quando os argumentos forem arquivos ou diret´orios, tanto o caminho absoluto como o
+relativo poder˜ao ser usados.
+Outro ponto importante ´e que vocˆe pode digitar os comandos e nomes de arquivos ou
+diret´orios pela metade e depois pressionar “Tab”. O shell “tentar´a completar” o que falta
+para vocˆe. Se houver mais de uma op¸c˜ao para completar o que foi digitado, as alternativas
+poss´ıveis ser˜ao mostradas. Este ´e um recurso que facilita muito o uso da linha de comando.
+Vamos ent˜ao aos comandos.
+6.3.3
+pwd (print working directory)
+Mostra o nome e o caminho do diret´orio atual (diret´orio em que o usu´ario est´a).
+curso@curso-desktop:~$ pwd
+/home/curso
+6.3.4
+ls (list)
+Lista os arquivos e subdiret´orios de um ou mais diret´orios.
+Sintaxe b´asica:
+ls [op¸c~oes] [diret´orio1] [diret´orio2] ...
+Exemplos
+1. O comando abaixo lista os diret´orios e arquivos do /.
+$ ls /
+2. O comando abaixo lista os diret´orios e arquivos do /etc.
+$ ls /etc
+3. Para listar o conte´udo do / e do /etc, de uma s´o vez, use:
+$ ls / /etc
+Exerc´ıcio: Liste o conte´udo do diret´orio /tmp.
+Para listar o conte´udo do diret´orio atual, basta digitar apenas “ls”.
+Se o usu´ario es-
+tiver em seu diret´orio home e digitar ls, a sa´ıda ser´a os arquivos e diret´orios contidos no
+/home/username.
+Suponha ainda que o usu´ario encontra-se em seu diret´orio home. Existe, dentro do home do
+usu´ario, um diret´orio chamado “Documentos”. Se quisermos listar o conte´udo deste, podemos
+usar o comando
+$ ls /home/username/Documentos
+mas tamb´em podemos usar o caminho relativo (lembra-se?):
+$ ls Documentos
+Op¸c˜oes:
+6.3. COMANDOS
+23
+ -a ou –all: Lista todos os arquivos e diret´orios, incluindo os ocultos. No GNU/Linux,
+os arquivos e diret´orios ocultos come¸cam por “.”. Quando usamos o comando ls como
+anteriormente (sem nenhuma op¸c˜ao), esses arquivos n˜ao s˜ao listados.
+Exemplo
+O comando abaixo listar´a todos os arquivos e diret´orios contidos no barra, incluindo os
+ocultos.
+$ ls -a /
+Exerc´ıcio: Liste todo o conte´udo do seu diret´orio home, incluindo os itens ocultos.
+(Quando ﬁzer isso, vocˆe notar´a que dois itens “estranhos” foram listados: o “.” e o “..”.
+Eles representam, respectivamente, o diret´orio atual e o diret´orio acima. Se vocˆe estiver
+em seu diret´orio home e usar o comando “ls ../”, o conte´udo do /home ser´a listado).
+ -R: Lista o conte´udo de um diret´orio e dos subdiret´orios, recursivamente. Quando vocˆe
+utiliza o comando ls, os arquivos e diret´orios contidos num determinado diret´orio s˜ao
+mostrados. Usando a op¸c˜ao -R, ser˜ao listados os arquivos contidos num determinado
+diret´orio, e para cada subdiret´orio tamb´em ser˜ao listados os arquivos e diret´orios nele
+contidos. E para cada um desses diret´orios, tamb´em ser´a listado todo o seu conte´udo e
+assim sucessivamente. Se vocˆe usasse “ls -R /”, o conte´udo de todos os diret´orios seria
+mostrado (n˜ao estamos recomendando que vocˆe rode este comando, est´a aqui apenas
+para que vocˆe entenda o que faz esta op¸c˜ao).
+ -l: Usa o formato longo para listagem, o que signiﬁca que ser˜ao listados detalhes sobre
+cada arquivo e diret´orio mostrado. Vamos examinar que detalhes s˜ao estes.
+curso@curso-desktop:~$ ls -l
+drwxr-xr-x 2 curso curso 4096 2010-01-18 11:54 ´Area de Trabalho
+drwxr-xr-x 2 curso curso 4096 2010-01-18 11:54 Documentos
+drwxr-xr-x 2 curso curso 4096 2010-01-18 11:54 Downloads
+-rw-r--r-- 1 curso curso
+167 2010-01-18 11:41 examples.desktop
+-rw-r--r-- 1 curso curso
+8 2010-01-18 12:24 exemplo
+drwxr-xr-x 2 curso curso 4096 2010-01-18 11:54 Imagens
+drwxr-xr-x 2 curso curso 4096 2010-01-18 11:54 Modelos
+drwxr-xr-x 2 curso curso 4096 2010-01-18 11:54 M´usica
+drwxr-xr-x 2 curso curso 4096 2010-01-18 11:54 P´ublico
+drwxr-xr-x 2 curso curso 4096 2010-01-18 11:54 V´ıdeos
+Tomemos a primeira linha do resultado obtido:
+drwxr-xr-x 2 curso curso 4096 2010-01-18 11:54 ´Area de Trabalho
+– drwxr-xr-x – indicam as permiss˜oes.
+– 2 – indica o n´umero de subdiret´orios contidos.
+– curso – ´e o dono do arquivo ou diret´orio.
+– curso – ´e o grupo ao qual o arquivo ou diret´orio pertence.
+– 4096 – tamanho do arquivo (em bytes).
+– 2010-01-18 11:54 – data e hora em que o arquivo ou diret´orio foi criado/modiﬁcado.
+– ´Area de Trabalho – nome do arquivo ou diret´orio.
+24
+CAP´ITULO 6. MODO TEXTO
+Permiss˜oes
+A primeira letra (d) indica que “´Area de Trabalho” ´e um diret´orio. Se fosse um arquivo
+normal, ter´ıamos um “-” no lugar (´e o caso de examples.desktop e exemplo). Os pr´oximos
+nove caracteres representam as permiss˜oes do diret´orio. As permiss˜oes de um arquivo
+ou diret´orio s˜ao r, w e x, apresentadas no cap´ıtulo anterior (lembra-se? Leitura, escrita
+e execu¸c˜ao.).
+Para cada trˆes caracteres s˜ao mostradas as permiss˜oes para um tipo de usu´ario. Os trˆes
+primeiros caracteres, no caso “rwx”, indicam as permiss˜oes para o dono do arquivo. A
+interpreta¸c˜ao desta trinca ´e que o dono do arquivo (no caso, o usu´ario “curso”), possui
+as trˆes permiss˜oes sobre o diret´orio (leitura, escrita e execu¸c˜ao). Os trˆes pr´oximos ca-
+racteres mostram as permiss˜oes para o grupo: “r-x”, o que signiﬁca que o grupo possui
+permiss˜ao de leitura e execu¸c˜ao, mas n˜ao possui permiss˜ao de escrita (h´a um “-” no lugar
+do “w” de escrita). Por ´ultimo, temos a permiss˜ao para os demais usu´arios do sistema
+(“r-x” – permiss˜ao de leitura e execu¸c˜ao).
+N´umero de subdiret´orios
+O n´umero da segunda coluna representa o n´umero de subdiret´orios contidos. Se for um
+arquivo comum, esse n´umero ser´a 1.
+Dono do arquivo
+A terceira coluna representa o dono do arquivo, que, como dito anteriormente, ´e o usu´ario
+que criou o arquivo ou diret´orio.
+Grupo
+O grupo ao qual o arquivo pertence est´a mostrado na quarta coluna.
+Tamanho
+A coluna seguinte mostra o tamanho do arquivo em bytes. No caso de um diret´orio, n˜ao
+´e mostrado o tamanho total, isto ´e, considerando todo o conte´udo do diret´orio, mas sim
+o tamanho da estrutura diret´orio, isto ´e, ainda que seja criado um diret´orio vazio, ele
+ocupar´a 4096 bytes de espa¸co em disco.
+Como ´ultimo coment´ario sobre este comando, vale dizer que ´e poss´ıvel usar mais de uma
+op¸c˜ao de cada vez. Ali´as, isso vale para todo comando.
+O comando a seguir lista todos os diret´orio e arquivos do /, incluindo os ocultos, usando
+o formato longo de listagem.
+$ ls -a -l /
+Tamb´em ´e poss´ıvel fazer isso da seguinte forma:
+$ls -al /
+Exerc´ıc´ıo: Liste os arquivos e diret´orios do seu diret´orio home, incluindo os ocultos e o
+conte´udo dos subdiret´orios.
+6.3.5
+cd (change directory)
+Entra em um diret´orio.
+Sintaxe b´asica:
+6.3. COMANDOS
+25
+cd [diret´orio]
+Exemplos
+1. Para entrar no diret´orio root, use
+$ cd /
+2. Para entrar no diret´orio /tmp, basta usar o seguinte comando
+$ cd /tmp
+3. Para subir um diret´orio acima, use:
+$ cd ..
+4. Para voltar ao diret´orio imediatamente anteriormente acessado, basta usar:
+$ cd -
+Exerc´ıcios
+1. Entre no diret´orio home do seu usu´ario (“/home/seu-usuario-aqui”). Agora use o se-
+guinte comando:
+$ cd ../../
+Use outro comando para descobrir em que diret´orio vocˆe acabou de entrar.
+2. O que acontece se vocˆe digitar apenas o comando “cd”, sem nenhum argumento?
+6.3.6
+mkdir (make directory)
+Cria novos diret´orios (vazios).
+Sintaxe b´asica:
+$ mkdir [caminho1/diret´orio1] [caminho2/diret´orio2] ...
+Exemplos
+1. Para criar os diret´orios “Pasta1” e “Pasta2” dentro do diret´orio /tmp, fazemos:
+$ mkdir /tmp/Pasta1 /tmp/Pasta2
+Naturalmente, se estiv´essemos dentro do diret´orio /tmp, n˜ao seria necess´ario usar o
+caminho absoluto:
+$ pwd
+/tmp
+$ mkdir Pasta1 Pasta2
+26
+CAP´ITULO 6. MODO TEXTO
+6.3.7
+rmdir (remove directory)
+Remove um ou mais diret´orios vazios.
+Sintaxe b´asica:
+$ rmdir [caminho1/diret´orio1] [caminho2/diret´orio2] ...
+Exemplos
+1. Para remover os diret´orios “Pasta1” e “Pasta2” criados como nos exemplos do comando
+mkdir, poder´ıamos usar:
+$ rmdir /tmp/Pasta1 /tmp/Pasta2
+Exerc´ıcios
+1. V´a at´e seu diret´orio home e crie um diret´orio chamado “Teste”. Use o comando ls para
+ver que o diret´orio foi criado. Remova o diret´orio criado e use novamente o comando ls
+para ver que a pasta foi removida.
+6.3.8
+touch
+Pode ser usado para criar novos arquivos vazios e tamb´em para mudar a data e a hora de
+cria¸c˜ao de arquivos existentes.
+Sintaxe b´asica:
+touch [op¸c~oes] [arquivo1] [arquivo2] ...
+Exemplos
+1. Para criar um arquivo vazio chamado “arquivonovo” no diret´orio atual, poder´ıamos usar:
+$ touch arquivonovo
+Op¸c˜oes
+ -t [[YY]YY]MMDDhhmm[.ss] - Altera a data e hora do arquivo para o ano YYYY
+(nesse caso, pode-se usar os quatro d´ıgitos ou apenas dois), para o mˆes MM, para o dia
+DD, para a hora hh, para o minuto mm e para o segundo ss. Lembrando que as op¸c˜oes
+de ano e segundo s˜ao opcionais (por isso foram colocadas entre colchetes).
+Exemplos
+1. Para alterar a data do arquivo “arquivonovo” para o dia 16/11 (16 de novembro), e o
+hor´ario para 16h11min, usamos:
+$ touch -t 11161611 arquivonovo
+2. Suponhamos que quis´essemos alterar os segundos tamb´em (para 11, por exemplo):
+$ touch -t 11161611.11 arquivonovo
+3. Por ﬁm, se quis´essemos que a data do arquivo “arquivonovo” fosse 01/01/2013, com
+hor´ario 0h0min, rodar´ıamos o comando da seguinte forma:
+6.3. COMANDOS
+27
+$ touch -t 201301010000 arquivonovo
+Exerc´ıcios
+1. Qual ´e a diferen¸ca entre o resultado produzido pelos dois comandos a seguir?
+$ touch "arquivo novo"
+e
+$ touch arquivo novo
+2. Crie um arquivo chamado “teste” em seu diret´orio home, usando o comando touch. Use
+ls (com a op¸c˜ao -l) para ver a data do novo arquivo criado. Mude a data e o hor´ario do
+arquivo para o seu nascimento e use o comando ls para ver a nova data do arquivo.
+6.3.9
+rm (remove)
+Remove arquivos e diret´orios.
+Sintaxe b´asica:
+$ rm [op¸c~oes] [arquivo1] [arquivo2] ...
+Exemplos:
+1. Criamos um arquivo chamado “teste” no diret´orio /tmp:
+$ touch /tmp/teste
+Agora vamos removˆe-lo:
+$ rm /tmp/teste
+Op¸c˜oes
+ -r: Op¸c˜ao usada para remover recursivamente diret´orios e seu conte´udo. Pode ser usada
+tamb´em para remover diret´orios vazios.
+Exemplos
+1. Vamos criar um diret´orio (vazio) chamado “Pasta”.
+$ mkdir Pasta
+Se usarmos o seguinte comando para removˆe-lo, veremos um erro e o diret´orio n˜ao ser´a
+removido:
+$ rm Pasta
+ERRO!
+Para removˆe-lo, ter´ıamos que fazer:
+$ rm -r Pasta
+Poder´ıamos tamb´em usar o comando rmdir j´a apresentado.
+28
+CAP´ITULO 6. MODO TEXTO
+2. Vamos criar agora um diret´orio chamado “Pastateste” dentro do diret´orio /tmp.
+E
+dentro de “Pastateste”, isto ´e, no /tmp/Pastateste, vamos criar um arquivo chamado
+“Arquivoteste”. Depois vamos removˆe-los.
+$ mkdir /tmp/Pastateste
+$ touch /tmp/Pastateste/Arquivoteste
+Para remover, poder´ıamos fazer da seguinte maneira:
+$ rm /tmp/Pastateste/Arquivoteste
+$ rmdir /tmp/Pastateste
+Mas a op¸c˜ao -r do comando rm nos permite remover o diret´orio e todo o seu conte´udo.
+Por isso, o comando a seguir j´a seria suﬁciente para remover o diret´orio “Pastateste” e
+seu conte´udo (no caso, o arquivo “Arquivoteste”.
+$ rm -r /tmp/Pastateste
+Aten¸c˜ao: O comando rm ´e deﬁnitivo, ou seja, uma vez que o usu´ario removeu um arquivo
+(ou um diret´orio), este n˜ao poder´a ser recuperado. N˜ao funciona simplesmente como uma
+lixeira, mas sim remove deﬁnitivamente o que for passado como argumento.
+6.3.10
+cp (copy)
+Este comando serve para copiar arquivos.
+Sintaxe b´asica:
+$ cp [op¸c~oes] [origem] [destino]
+Exemplos
+1. Para copiar o arquivo “teste” do /tmp para o diret´orio home do usu´ario:
+$ cp /tmp/teste ~
+Op¸c˜oes
+ -R: Copia recursivamente os subdiret´orios e seu conte´udo.
+Exemplos
+1. Suponha que um usu´ario possui um diret´orio no /tmp (/tmp/diretorio) e quer copi´a-lo
+para sua home. Suponha ainda que esse diret´orio a ser copiado n˜ao est´a vazio.
+$ cd /tmp/diretorio
+$ ls
+arquivo
+$ cp -R /tmp/diretorio ~
+6.3. COMANDOS
+29
+6.3.11
+mv (move)
+Move e renomeia arquivos e diret´orios.
+Sintaxe b´asica
+$ mv [op¸c~oes] [origem] [destino]
+Exemplos
+1. Suponha que um usu´ario possui um arquivo em sua home chamado arquivo1.
+Para
+renomear este arquivo para arquivonovo, supondo que o usu´ario est´a em sua home,
+bastaria usar:
+$ mv arquivo1 arquivonovo
+2. Suponhamos agora que queremos mover o “arquivonovo” para o diret´orio /tmp. Para
+isso, o seguinte comando seria eﬁcaz (estamos supondo ainda que o usu´ario est´a em sua
+home):
+$ mv arquivonovo /tmp/
+Ap´os a execu¸c˜ao desse comando, “arquivonovo” estaria no diret´orio /tmp e n˜ao haveria
+mais uma c´opia do arquivo no diret´orio home do usu´ario.
+Op¸c˜oes
+ -r: Como outros comandos, essa op¸c˜ao move diret´orios e seu conte´udo recursivamente.
+6.3.12
+cat (concatenate)
+Concatena arquivos e imprime o resultado no terminal.
+Sintaxe b´asica
+$ cat [arquivo1] [arquivo2] ...
+Para ilustrar o uso deste comando, vamos primeiro criar dois arquivos de texto n˜ao-vazios.
+Para isso, abra um editor de texto - pode ser qualquer um, utilizaremos o gedit por ser bastante
+simples.
+Crie dois arquivos (arquivo1 e arquivo2), contendo qualquer texto e salve-os no diret´orio
+home do usu´ario.
+30
+CAP´ITULO 6. MODO TEXTO
+Observe agora o uso do comando cat:
+curso@curso-desktop:~$ pwd
+/home/curso
+curso@curso-desktop:~$ ls
+´Area de Trabalho
+arquivo2
+Downloads
+exemplo
+Modelos
+P´ublico
+arquivo1
+Documentos
+examples.desktop
+Imagens
+M´usica
+V´ıdeos
+curso@curso-desktop:~$ cat arquivo1
+arquivo1
+etc.
+etc.
+curso@curso-desktop:~$ cat arquivo2
+arquivo2
+bl´abl´abl´a
+curso@curso-desktop:~$ cat arquivo1 arquivo2
+arquivo1
+etc.
+etc.
+6.3. COMANDOS
+31
+arquivo2
+bl´abl´abl´a
+curso@curso-desktop:~$ cat arquivo2 arquivo1
+arquivo2
+bl´abl´abl´a
+arquivo1
+etc.
+etc.
+6.3.13
+ﬁnd
+O comando ﬁnd ´e usado para procurar por diret´orios e arquivos no disco. Possui v´arias
+op¸c˜oes, mas mostraremos apenas alguns exemplos simples.
+Exemplos
+1. Este exemplo procura por um arquivo ou diret´orio com o nome “Documents” a partir
+do / (diret´orio root):
+$ find / -name Documents
+2. Este outro procura por um arquivo ou diret´orio com o nome “Music” a partir do diret´orio
+home do usu´ario:
+$ find ~ -name Music
+´E importante salientar que “a partir do diret´orio x” signiﬁca que o comando procurar´a
+dentre tudo o que estiver contido no tal diret´orio, incluindo os arquivos e os subdiret´orios,
+bem como seu conte´udo e assim por diante.
+6.3.14
+clear
+Use o comando clear e descubra o que ele faz:
+$ clear
+6.3.15
+exit
+Este comando serve para sair do shell (interpretador) e para efetuar o log out do usu´ario
+no terminal.
+6.3.16
+echo
+Mostra um texto. Por agora, pode parecer um comando pouco ´util, mas ´e bastante usado
+sobretudo em scripts para exibir mensagens ao usu´ario.
+Sintaxe b´asica
+$ echo mensagem
+Exemplos
+1. Note que a primeira linha corresponde ao comando, a segunda, ao resultado da execu¸c˜ao
+deste comando:
+$ echo mensagem
+mensagem
+32
+CAP´ITULO 6. MODO TEXTO
+2. Mais um exemplo:
+$ echo Uma mensagem mais comprida
+Uma mensagem mais comprida
+Exerc´ıcios
+1. Rode o comando a seguir e tenha certeza de que entendeu sua sa´ıda.
+$ echo ~
+2. Rode os comandos a seguir e observe a diferen¸ca entre seus resultados.
+$ echo "aspas"
+$ echo \"aspas\"
+6.3.17
+date
+O comando date imprime ou modiﬁca a data e o hor´ario do sistema.
+Sintaxe b´asica:
+$ date [data]
+Exemplos
+1. Para visualizar a data e a hora do sistema:
+$ date
+Mon Mar
+8 14:45:21 BRT 2010
+2. Para alterar a data e a hora do sistema, basta usar o comando da seguinte maneira:
+$ date MMDDhhmm[[YYyy][.ss]]
+Onde MM ´e o mˆes, DD ´e o dia, hh ´e a hora, mm s˜ao os minutos. Opcionalmente, podem
+ser usados o ano (com 2 ou 4 d´ıgitos) e os segundos (ss). Para alterar a data do sistema
+para o dia 1 de fevereiro e o hor´ario para 14:30, poder´ıamos fazer:
+$ date 02011430
+6.3.18
+chmod (change mode)
+Este comando ´e usado para mudar permiss˜oes de arquivos ou diret´orios.
+Sintaxe b´asica:
+$ chmod [permiss~oes] [diret´orio/arquivo]
+H´a duas formas de usar o comando.
+A primeira forma ´e bem simples. Vocˆe precisa saber que “u” representa o dono (“user”),
+“g”, o grupo, “o”, os demais usu´arios e “a”, por sua vez, representa todos (“all”). As letras
+“r”, “w” e “x” s˜ao as permiss˜oes apresentadas anteriormente. Al´em disso, vocˆe precisa saber
+que “+” acrescenta uma permiss˜ao, ao passo que “-” retira. Se usarmos “=”, teremos uma
+permiss˜ao exata. Vamos examinar alguns exemplos para podermos entender melhor.
+Exemplos
+Consideremos o arquivo exemplo (aquele que apareceu no comando ls), cuja permiss˜ao era
+rw-r−−r−−. Consideremos ainda que estamos no diret´orio home do usu´ario curso (/home/curso).
+6.3. COMANDOS
+33
+1. Suponhamos que queremos acrescentar permiss˜ao de escrita ao grupo. Poder´ıamos fazer
+isso da seguinte forma:
+$ chmod g+w exemplo
+2. Suponhamos agora que acabamos de nos arrepender e queremos tirar a permiss˜ao de
+escrita para o grupo. Poder´ıamos fazer da seguinte forma:
+$ chmod g-w exemplo
+3. Para acrescentar a permiss˜ao de execu¸c˜ao a todos os usu´arios, fazemos:
+$ chmod a+x exemplo
+4. Para que os demais usu´arios ﬁquem sem permiss˜ao de leitura, mas tenham permiss˜ao de
+escrita e execu¸c˜ao, temos:
+$ chmod o=wx exemplo
+O outro modo de alterar permiss˜oes ´e usando o chamado modo octal. Para us´a-lo, ´e preciso
+ter em mente o seguinte:
+ 0 - Nenhuma permiss˜ao de acesso.
+ 1 - Permiss˜ao de execu¸c˜ao.
+ 2 - Permiss˜ao de escrita.
+ 4 - Permiss˜ao de leitura.
+A partir disso, podemos obter qualquer permiss˜ao, somando os n´umeros correspondentes `as
+permiss˜oes desejadas.
+ 3 - Permiss˜ao de execu¸c˜ao e escrita (1 + 2).
+ 5 - Permiss˜ao de execu¸c˜ao e leitura (1 + 4).
+ 6 - Permiss˜ao de escrita e leitura (2 + 4).
+ 7 - Todas as permiss˜oes: execu¸c˜ao, escrita e leitura (1 + 2 + 4).
+Com esses algarismos, constru´ımos n´umeros com trˆes d´ıgitos (XYZ, onde X representa a
+permiss˜ao que ser´a deﬁnida para o dono, Y, a permiss˜ao do grupo, e Z ´e a permiss˜ao para
+outros usu´arios). Vamos mostrar como usar o modo octal.
+Exemplos
+1. Observe o exemplo a seguir:
+$ chmod 762 exemplo
+ou
+$ chmod 762 /home/curso/exemplo
+34
+CAP´ITULO 6. MODO TEXTO
+Nesse caso, estamos dando permiss˜ao 7 ao dono do arquivo exemplo, isso signiﬁca que
+estamos dando permiss˜ao de leitura, escrita e execu¸c˜ao ao dono do arquivo.
+Para o
+grupo, demos permiss˜ao 6 (escrita e leitura). Aos demais, demos apenas permiss˜ao de
+escrita (permiss˜ao 2).
+Vale lembrar que este comando (como outros) aceita caminhos relativos e absolutos.
+Exerc´ıcios
+1. Como vocˆe daria permiss˜ao de escrita e leitura para o dono do arquivo exemplo, per-
+miss˜ao de leitura para o grupo e nenhuma permiss˜ao para os demais usu´arios, usando o
+modo octal?
+2. Como vocˆe daria permiss˜ao de leitura e escrita a todos os usu´arios usando o primeiro
+modo apresentado?
+6.3.19
+passwd (password)
+Este comando ´e usado para atualizar informa¸c˜oes dos usu´arios.
+Neste m´odulo, diremos apenas que ele pode ser usado para alterar a senha do seu pr´oprio
+usu´ario.
+Sintaxe b´asica
+$ passwd
+Ap´os digitar este comando no terminal, o usu´ario dever´a digitar sua senha atual (lem-
+brando que n˜ao haver´a nenhuma evidˆencia - como asteriscos ou pontos - de que o usu´ario est´a
+digitando), depois a nova senha e, por ´ultimo, ser´a pedido para que o usu´ario conﬁrme a nova
+senha.
+6.3.20
+su
+O comando su ´e usado para mudar de usu´ario ou para tornar-se superuser (administrador
+do sistema ou usu´ario root).
+Sintaxe b´asica
+$ su [usu´ario]
+Exemplos
+1. Suponha que vocˆe esteja “logado” num terminal como “usuarioa” e deseja logar-se como
+“usuariob”, sem ter que encerrar a sess˜ao como “usuarioa”:
+$ whoami
+usuarioa
+$ su usuariob
+Senha:
+$ whoami
+usuariob
+$ exit
+exit
+$ whoami
+usuarioa
+6.3. COMANDOS
+35
+Acompanhe a sequˆencia de comandos: a princ´ıpio, o usu´ario que estava logado era
+“usuarioa”, o que pˆode ser conﬁrmado pelo comando whoami. A seguir, para mudar sua
+identidade para “usuariob”, o comando su foi utilizado - note que foi preciso digitar a
+senha de usuariob. Depois de autenticado, o usu´ario logado passou a ser “usuariob”. Com
+o comando exit fechou-se a sess˜ao de “usuariob” e a identidade voltou a ser “usuarioa”.
+2. Para tornar-se o usu´ario root, basta usar o comando su sem nenhum argumento:
+$ su
+Senha:
+#
+Note que foi necess´ario digitar a senha do usu´ario root.
+6.3.21
+sudo (su “do”)
+Comando usado para obter privil´egios de outros usu´arios (sobretudo do usu´ario root) para
+executar determinadas tarefas.
+Algumas tarefas como instalar programas, alterar conﬁgura¸c˜oes essenciais do sistema etc.
+n˜ao podem ser desempenhadas por qualquer usu´ario, mas apenas pelo usu´ario root e/ou por
+alguns outros usu´arios que possam utilizar o comando sudo (os chamados sudoers).
+No Ubuntu 9.10, o usu´ario criado no momento da instala¸c˜ao ´e um sudoer e n˜ao ´e criada
+uma senha para usu´ario root. Isso signiﬁca que, para desempenhar tarefas administrativas ´e
+necess´ario acrescentar “sudo” `a frente do comando.
+Observe o seguinte exemplo:
+$ whoami
+curso
+$ shutdown -h now
+shutdown: Precisa ser root
+$ sudo shutdown -h now
+[sudo] password for curso:
+O usu´ario curso gostaria de desligar seu computador atrav´es da linha de comando, usando o
+comando shutdown. Acontece que, para executar tal comando, ´e necess´ario ser root. Por ser
+um sudoer, o usu´ario curso utilizou o comando sudo (observe que foi preciso digitar a senha
+do usu´ario curso) e conseguiu desligar o computador.
+6.3.22
+wc
+O comando wc ´e usado para contar linhas, palavras e bytes de um arquivo ou do que for
+escrito no terminal.
+Sintaxe b´asica
+$ wc [op¸c~oes] [arquivo]
+Op¸c˜oes
+ -c: Imprimir a contagem de bytes.
+ -l: Imprimir o n´umero de linhas.
+ -w: Imprimir o n´umero de palavras.
+36
+CAP´ITULO 6. MODO TEXTO
+Exemplos
+Vamos usar, para estes exemplos, o conte´udo dos arquivos “arquivo1” e “arquivo2”, mos-
+trados na explica¸c˜ao do comando cat.
+1. Para exibir o n´umero de linhas do arquivo “arquivo1”, usar´ıamos:
+$ wc -l arquivo1
+3 arquivo1
+2. Para exibir o n´umero de palavras e de bytes do arquivo “arquivo2”:
+$ wc -wc arquivo2
+2 22 arquivo2
+3. Se us´assemos o comando wc sem nenhuma op¸c˜ao para “arquivo1”, obter´ıamos:
+$ wc arquivo1
+3
+3 19 arquivo1
+onde o primeiro n´umero ´e a contagem de linhas, o segundo, de palavras, e o terceiro, o
+de bytes.
+6.4
+Pipe e redirecionamento
+Al´em dos comandos apresentados anteriormente, a linha de comando ainda possui outros re-
+cursos para facilitar tarefas. Nesta se¸c˜ao, apresentaremos algumas ferramentas de direcionamento
+de entrada e sa´ıda.
+6.4.1
+| (Pipe)
+O pipe (|) ´e usado para fazer encadeamento de processos, ou seja, faz com que a sa´ıda de
+um comando seja enviada como entrada para o pr´oximo comando.
+Observe o exemplo a seguir para entender melhor (o conte´udo de “arquivo1” e “arquivo2”
+´e aquele que foi apresentado junto com o comando cat):
+$ cat arquivo1 arquivo2 | wc -l
+5
+Vamos esclarecer o que aconteceu na execu¸c˜ao deste comando: primeiro, utilizamos o comando
+cat com dois arquivos como argumento.
+Se rod´assemos apenas este comando, ter´ıamos o
+seguinte efeito (lembra-se?):
+$ cat arquivo1 arquivo2
+arquivo1
+etc.
+etc.
+arquivo2
+bl´abl´abl´a
+Mas acrescentamos um pipe (|) ap´os a execu¸c˜ao deste comando, o que signiﬁca que a sa´ıda
+foi redirecionada para o pr´oximo comando, isto ´e, o resultado da execu¸c˜ao de “cat arquivo1
+arquivo2” n˜ao foi impressa, mas sim serviu como entrada para o pr´oximo comando, “wc -l” -
+que contou o n´umero de linhas e imprimiu este resultado no terminal.
+Vamos mostrar agora um exemplo mais interessante:
+6.4. PIPE E REDIRECIONAMENTO
+37
+curso@curso-desktop:~$ ls -1 | wc -l
+13
+O comando antes do pipe lista o conte´udo do diret´orio atual, exibindo um item por linha. Se
+execut´assemos apenas este comando, obter´ıamos o seguinte resultado:
+curso@curso-desktop:~$ ls -1
+´Area de Trabalho
+arquivo1
+arquivo2
+doc
+Documentos
+Downloads
+examples.desktop
+exemplo
+Imagens
+Modelos
+M´usica
+P´ublico
+V´ıdeos
+Mas em vez desta sa´ıda ser impressa, ela foi direcionada ao comando “wc -l”, que contou o
+n´umero de linhas. Em outras palavras, o que o comando “ls -1 | wc -l” fez foi contar o n´umero
+de arquivos e diret´orios dentro do diret´orio atual.
+6.4.2
+>
+Esta ´e uma outra forma de direcionar a sa´ıda de um comando: diferente do |, que direcio-
+nava a sa´ıda de um comando para um outro programa ou comando, o > direciona a sa´ıda de
+um comando para um arquivo ou dispositivo.
+Exemplos
+1. O comando a seguir redireciona a sa´ıda de “cat arquivo1” para um arquivo chamado
+“arquivo3”:
+curso@curso-desktop:~$ ls
+´Area de Trabalho
+doc
+examples.desktop
+Modelos
+V´ıdeos
+arquivo1
+Documentos
+exemplo
+M´usica
+arquivo2
+Downloads
+Imagens
+P´ublico
+curso@curso-desktop:~$ cat arquivo1
+arquivo1
+etc.
+etc.
+curso@curso-desktop:~$ cat arquivo1 > arquivo3
+curso@curso-desktop:~$ ls
+´Area de Trabalho
+arquivo3
+Downloads
+Imagens
+P´ublico
+arquivo1
+doc
+examples.desktop
+Modelos
+V´ıdeos
+arquivo2
+Documentos
+exemplo
+M´usica
+curso@curso-desktop:~$ cat arquivo3
+arquivo1
+etc.
+etc.
+Observe que o arquivo “arquivo3” n˜ao existia, foi criado quando da execu¸c˜ao do comando
+“cat arquivo1 > arquivo3”.
+Se o arquivo “arquivo3” j´a existisse, seu conte´udo seria
+sobrescrito.
+38
+CAP´ITULO 6. MODO TEXTO
+2. Observe agora que “arquivo3” j´a existe:
+curso@curso-desktop:~$ ls
+´Area de Trabalho
+arquivo3
+Downloads
+Imagens
+P´ublico
+arquivo1
+doc
+examples.desktop
+Modelos
+V´ıdeos
+arquivo2
+Documentos
+exemplo
+M´usica
+curso@curso-desktop:~$ cat arquivo3
+arquivo1
+etc.
+etc.
+curso@curso-desktop:~$ cat arquivo2 > arquivo3
+curso@curso-desktop:~$ ls
+´Area de Trabalho
+arquivo3
+Downloads
+Imagens
+P´ublico
+arquivo1
+doc
+examples.desktop
+Modelos
+V´ıdeos
+arquivo2
+Documentos
+exemplo
+M´usica
+curso@curso-desktop:~$ cat arquivo3
+arquivo2
+bl´abl´abl´a
+6.4.3
+>>
+O >>, assim como o >, tamb´em direciona a sa´ıda de um comando para um arquivo, a
+diferen¸ca ´e que ele n˜ao substitui o conte´udo do arquivo, mas acrescenta ao ﬁnal.
+curso@curso-desktop:~$ ls
+´Area de Trabalho
+arquivo3
+Downloads
+Imagens
+P´ublico
+arquivo1
+doc
+examples.desktop
+Modelos
+V´ıdeos
+arquivo2
+Documentos
+exemplo
+M´usica
+curso@curso-desktop:~$ cat arquivo3
+arquivo2
+bl´abl´abl´a
+curso@curso-desktop:~$ cat arquivo1 >> arquivo3
+curso@curso-desktop:~$ cat arquivo3
+arquivo2
+bl´abl´abl´a
+arquivo1
+etc.
+etc.
+Exerc´ıcio: Pesquise sobre outras formas de redirecionamento: < e <<.
+6.5
+Instalando programas pela linha de comando
+J´a mostramos como instalar programas usando o Synaptic, agora mostraremos como fazer isso
+atrav´es da linha de comando. Para isso, utilizaremos uma ferramenta chamada apt-get.
+Tanto o Synaptic quanto o apt-get s˜ao baseados no APT (Advanced Packaging Tool), que ´e
+um gerenciador de pacotes que permite instalar e atualizar programas de forma pr´atica, resolvendo
+dependˆencias automaticamente. Conv´em salientar que o APT (assim como o apt-get e o Synaptic)
+est´a presente em v´arias distros, como Debian e Ubuntu.
+Com o apt-get ´e poss´ıvel, portanto, instalar, remover e atualizar programas.
+Para usar o apt-get, o primeiro passo ´e rodar o comando “apt-get update”, que faz com que o
+apt-get baixe a lista com os pacotes dispon´ıveis. Isso permite que ele crie uma esp´ecie de banco
+6.5. INSTALANDO PROGRAMAS PELA LINHA DE COMANDO
+39
+de dados com os pacotes dispon´ıveis, onde cada um pode ser encontrado e qual endere¸co cont´em a
+vers˜ao mais recente. Este comando deve ser executado periodicamente. O ideal ´e que vocˆe o use
+uma vez por semana, ou sempre que for fazer alguma instala¸c˜ao importante:
+# apt-get update
+Note que foi preciso executar tal comando como root. Vocˆe tamb´em poderia execut´a-lo usando
+sudo:
+$ sudo apt-get update
+Depois disso, vocˆe poder´a instalar os programas desejados, usando a seguinte sintaxe:
+# apt-get install [nome do programa]
+ou
+$ sudo apt-get install [nome do programa]
+Para desinstalar um programa, tamb´em ´e muito simples:
+# apt-get remove [nome do programa]
+ou
+$ sudo apt-get remove [nome do programa]
+Finalmente, existe a op¸c˜ao de atualizar todo o sistema, o que ´e feito usando os comandos:
+# apt-get update
+# apt-get upgrade
+O “apt-get update” ´e o comando que baixa a lista dos pacotes dispon´ıveis, como j´a vimos. O
+“apt-get upgrade”, por sua vez, age de forma bem diferente: ele veriﬁca todos os pacotes do sistema
+e tenta atualizar todos de uma vez, o que geralmente resulta em uma longa lista de atualiza¸c˜oes.
+Cap´ıtulo 7
+Obtendo ajuda
+O que foi apresentado neste curso tem car´ater introdut´orio: mostramos neste cap´ıtulo algumas
+formas de se aprofundar e de achar respostas para alguns problemas.
+7.1
+Comandos e op¸c˜oes
+Atrav´es da pr´opria linha de comando ´e poss´ıvel obter ajuda e informa¸c˜oes a respeito dos co-
+mandos.
+7.1.1
+man (manual)
+O comando man mostra uma p´agina de manual para um determinado comando.
+Sintaxe b´asica
+$ man [comando]
+Para visualizar o manual do comando ls, basta usar
+$ man ls
+Para sair de uma p´agina de manual, basta digitar “q”.
+7.1.2
+apropos
+Este comando faz buscas de palavras em um banco de dados que cont´em descri¸c˜oes curtas
+de comandos e programas.
+Sintaxe b´asica
+$ apropos [busca]
+Suponhamos que quis´essemos procurar como remover arquivos. Poder´ıamos usar
+$ apropos remove
+Provavelmente, esta busca retornaria muitos resultados. Sejamos ent˜ao mais espec´ıﬁcos:
+$ apropos "remove files"
+Esta busca retornaria o seguinte resultado:
+rm
+(1)
+- remove files or directories
+40
+7.2. INTERNET E LITERATURA
+41
+7.1.3
+−−help
+Quase todos os comandos do GNU/Linux possuem a op¸c˜ao “−−help”, usada, obviamente,
+para obter ajuda sobre o comando em quest˜ao.
+Sintaxe b´asica
+$ [comando] --help
+Para obtermos ajuda sobre o wc, por exemplo, usamos
+$ wc --help
+7.2
+Internet e literatura
+´E at´e dispens´avel mencionar que vocˆe sempre pode pesquisar na internet quando encontrar
+algum problema ou d´uvida em rela¸c˜ao ao GNU/Linux: existem muitos f´oruns de discuss˜oes e tu-
+torias, assim como a documenta¸c˜ao dos programas, bibliotecas etc. tamb´em est´a dispon´ıvel na rede.
+Outra boa fonte de informa¸c˜oes ´e a literatura: existem v´arios livros dispon´ıveis sobre diversos
+t´opicos do GNU/Linux. Sugerimos aqui os da editora O’Reilly (http://oreilly.com/pub/topic/
+linux).
+7.3
+Sugest˜oes
+Finalizamos este m´odulo com sugest˜oes de sites que podem ajud´a-lo a entender melhor o
+GNU/Linux.
+ Rede GNU/Linux: Site da Rede GNU/Linux do Instituto de Matem´atica e Estat´ıstica da
+USP.
+www.linux.ime.usp.br
+ Make The Move: Tem como objetivo apresentar o Linux e o Software Livre como alterna-
+tivas vi´aveis ao sistema em seu computador.
+makethemove.net
+ Free Software Foundation: Site da FSF.
+www.fsf.org
+ Debian - The Universal Operating System: Site da distro Debian.
+www.debian.org
+ Ubuntu-BR: Site da Comunidade Ubuntu brasileira.
+www.ubuntu-br.org
+ Fedora Project: Site da distro Fedora.
+fedoraproject.org
+ Distro Watch: Not´ıcias e informa¸c˜oes sobre distribui¸c˜oes Linux e BSD.
+distrowatch.com
+ Google: Dispensa apresenta¸c˜oes.
+www.google.com
+Referˆencias Bibliogr´aﬁcas
+[1] 1234407730ﬁlesystem.gif,
+dispon´ıvel
+in
+http://www.linuxplanet.com/graphics/
+screenshots/1234407730filesystem.gif [Fevereiro de 2010]
+[2] Ficheiro: Fluxbox.png - Wikip´edia, a enciclop´edia livre, dispon´ıvel in http://pt.wikipedia.
+org/wiki/Ficheiro:Fluxbox.png [Janeiro de 2010]
+[3] Ficheiro: KDE 4.png - Wikip´edia, a enciclop´edia livre, dispon´ıvel in http://pt.wikipedia.
+org/wiki/Ficheiro:KDE_4.png [Janeiro de 2010]
+[4] Ficheiro:
+Linus Torvalds.jpeg - Wikip´edia, a enciclop´edia livre, dispon´ıvel in http://pt.
+wikipedia.org/wiki/Ficheiro:Linus_Torvalds.jpeg [Janeiro de 2010]
+[5] Ficheiro: Richard Matthew Stallman.jpeg - Wikip´edia, a enciclop´edia livre, dispon´ıvel in http:
+//pt.wikipedia.org/wiki/Ficheiro:Richard_Matthew_Stallman.jpeg [Janeiro de 2010]
+[6] Filesystem Hierarchy Standard - Wikip´edia, a enciclop´edia livre, dispon´ıvel in http://pt.
+wikipedia.org/wiki/Filesystem_Hierarchy_Standard [Fevereiro de 2010]
+[7] GNU General Public License - Wikip´edia, a enciclop´edia livre, dispon´ıvel in http://pt.
+wikipedia.org/wiki/GNU_General_Public_License [Janeiro de 2010]
+[8] SILVA, Gleydson Mazioli da, Guia Foca GNU/Linux, novembro de 2007, dispon´ıvel in http:
+//www.guiafoca.org/download/iniciante/focalinux1-pdf.tar.gz [Janeiro de 2010]
+[9] Linux - Wikip´edia, a enciclop´edia livre, dispon´ıvel in http://pt.wikipedia.org/wiki/Linux
+[Janeiro de 2010]
+[10] O que ´e Linux, dispon´ıvel in http://www.vivaolinux.com.br/linux/ [Janeiro de 2010]
+[11] CAMPOS, Augusto, O que ´e Linux, Florian´opolis, mar¸co de 2006, dispon´ıvel in http://
+br-linux.org/faq-linux [Janeiro de 2010]
+[12] MORIMOTO, Carlos E., Tutorial completo do apt-get, abril de 2007, dispon´ıvel in http:
+//www.guiadohardware.net/tutoriais/tutorial-completo-apt-get/ [Mar¸co de 2010]
+[13] Ubuntu System Requirements - Community Ubuntu Documentation, dispon´ıvel in https://
+help.ubuntu.com/community/Installation/SystemRequirements [Janeiro de 2010]
+42

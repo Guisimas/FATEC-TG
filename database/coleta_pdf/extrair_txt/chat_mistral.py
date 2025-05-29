@@ -1,17 +1,24 @@
 # chat_mistral.py
 import os
+from dotenv import load_dotenv
 from mistralai import Mistral
 
 
-# Certifique-se de definir a variável de ambiente 'MISTRAL_API_KEY' ou coloque a chave direto
-client = Mistral(api_key="da6NnTH1RXeu77gxjvNjrgKLAxHqX4sQ")  # ou: Mistral(api_key="sua-chave-aqui")
+load_dotenv()
+
+API_KEY = os.getenv("MISTRAL_API_KEY")
+client = Mistral(api_key=API_KEY)
 
 # Modelo disponível (pode ser: mistral-tiny, mistral-small, mistral-medium, mistral-large-latest)
 MODEL = "mistral-large-latest"
 
 def gerar_resposta_mistral(pergunta: str, contexto: str) -> str:
     messages = [
-        {"role": "system", "content": "Você é um assistente que responde com base no contexto fornecido."},
+        {"role": "system", "content": (
+    "Você é um professor virtual especializado em Sistemas Operacionais, com foco em Linux. "
+    "Responda apenas perguntas relacionadas a esse assunto. "
+    "Se a pergunta for fora desse tema, diga que não pode responder."
+)},
         {"role": "user", "content": f"Contexto:\n{contexto}\n\nPergunta:\n{pergunta}"}
     ]
 

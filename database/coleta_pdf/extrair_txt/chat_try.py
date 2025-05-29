@@ -2,13 +2,14 @@ import os
 from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.config import Settings
+from ConfgChroma import connect_chroma
 from chat_mistral import gerar_resposta_mistral  # sua função que chama a API do Mistral
 
 # Carrega o modelo de embeddings
 modelo_embedding = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
 # Conecta ao ChromaDB existente
-cliente_chroma = chromadb.PersistentClient(path="./database/chroma_db/banco", settings=Settings())
+cliente_chroma = connect_chroma
 colecao = cliente_chroma.get_or_create_collection("digitalTwin")
 
 # Função para buscar no banco vetorial
