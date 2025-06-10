@@ -1,0 +1,1605 @@
+SISTEMA INTEGRADO PARA DESENVOLVIMENTO E EXECUÇÃO EM
+TEMPO REAL DE ALGORITMOS DE PROTEÇÃO DE SISTEMAS
+ELÉTRICOS
+Renato Machado Monaro∗
+monaro@usp.br
+Raphael Philipe Mendes da Silva∗
+rapphil@usp.br
+José Carlos de Melo Vieira Júnior∗
+jcarlos@sc.usp.br
+Denis Vinicius Coury∗
+coury@sc.usp.br
+∗Laboratório de Sistemas de Energia Elétrica-LSEE
+Escola de Engenharia de São Carlos-EESC
+Universidade de São Paulo-USP
+São Carlos, São Paulo, Brasil
+ABSTRACT
+Integrated system for development and real time execu-
+tion of protection algorithm in electrical systems
+This article presents the development of an integrated sys-
+tem of hardware and software, whose objective is to serve as
+a platform for developing and executing new power system
+protection algorithms on a real-time environment. The pro-
+posed system aims to reduce development time of new pro-
+tection functions, enabling real-time analysis in opposition of
+only computer simulations, as can be typically found in tech-
+nical literature. In this work, generator protection functions
+were implemented and tested, and the results were compared
+with a commercial relay, showing the feasibility and depend-
+ability of the proposed system.
+KEYWORDS: Protection, Generators, PC104, Embedded
+Systems, Real Time Execution, RTAI, Linux, Comedi
+RESUMO
+O artigo apresenta o desenvolvimento de um sistema inte-
+grado de software e hardware cujo objetivo é servir de pla-
+Artigo submetido em 13/04/2011 (Id.: 1318)
+Revisado em 01/08/2011, 22/08/2011
+Aceito sob recomendação do Editor Associado Prof. Antonio Carlos Zam-
+broni de Souza
+taforma para desenvolver e executar em tempo real algorit-
+mos de proteção aplicados a sistemas elétricos. O objetivo
+deste sistema é reduzir o tempo de desenvolvimento de no-
+vas funções de proteção, possibilitando a execução de testes
+em tempo real e não por meio de simulações computacionais,
+como é tipicamente encontrado na literatura. Neste trabalho
+as funções de proteção de gerador que foram implementadas
+e testadas são descritas, e os resultados obtidos comparados
+com aqueles extraídos através de testes em um relé comer-
+cial, evidenciando a viabilidade do sistema desenvolvido.
+PALAVRAS-CHAVE: Proteção, Geradores, PC104, Sistemas
+Embarcados, Execução em Tempo Real, RTAI, Linux, Co-
+medi
+1
+INTRODUÇÃO
+O aumento da complexidade dos Sistemas Elétricos de Po-
+tência exige o reﬁnamento da proteção de seus componentes
+de modo a garantir a conﬁabilidade e estabilidade dos mes-
+mos, beneﬁciando a operação desses sistemas como um todo.
+Desta maneira os relés de proteção assumem cada vez mais
+importância, devido à sua capacidade de isolar faltas com
+precisão e rapidez (Coury et al., 2007).
+A busca da melhoria da proteção leva naturalmente ao de-
+senvolvimento de novas técnicas de proteção e/ou ao aper-
+202
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+feiçoamento daquelas existentes.
+O aumento do interesse
+nessa área é constatado pelo crescente número de publica-
+ções que abordam esses tópicos.
+Como exemplo, tem-se
+Sidhu et. al. que, em suas sínteses bibliográﬁcas entre 2004
+e 2007, mostram um grande número de artigos relacionados
+à área, conﬁrmando assim o interesse mencionado (Sidhu
+et al., 2006; Sidhu et al., 2007; Sidhu et al., 2008; Sidhu
+et al., 2010). No entanto, a maioria dessas propostas não dis-
+cute a aplicabilidade das mesmas em campo, ﬁcando restritas
+a simulações computacionais. Neste contexto, torna-se rele-
+vante o desenvolvimento de esquemas que permitam a im-
+plementação em hardware e software de novos algoritmos de
+proteção, com a ﬁnalidade de validar seu desempenho e ave-
+riguar sua aplicabilidade em casos práticos. Contudo, o de-
+senvolvimento de sistemas para esta ﬁnalidade normalmente
+requer um profundo conhecimento de suas arquiteturas, as
+quais são especíﬁcas e particulares da família de micropro-
+cessadores utilizada. Como consequência, isso pode levar a
+um longo tempo de desenvolvimento, tornando desestimu-
+lante esse tipo implementação. Adicionalmente, o uso exclu-
+sivo do ambiente de simulação computacional pode levar à
+proposição de algoritmos de proteção suﬁcientemente com-
+plexos, de modo a inviabilizar sua implementação em situa-
+ções práticas.
+Por outro lado, existem trabalhos que abordam o desenvolvi-
+mento de dispositivos de proteção dispondo de componentes
+especíﬁcos de hardware. McLaren et al. (1994) propõem a
+utilização de um hardware genérico para a implementação
+de relés de proteção. A utilização de módulos genéricos de
+hardware possibilita a extensão e expansão das capacidades
+deste conforme as necessidades. Essa propriedade possibilita
+que um engenheiro de proteção com algum conhecimento
+de hardware projete funções de proteção especíﬁcas a suas
+necessidades. O sistema projetado é composto por um ele-
+mento Digital Signal Processor (DSP) e um computador in-
+dustrial 386. Em certo ponto do desenvolvimento, foi neces-
+sária a utilização de código de máquina de baixo nível (As-
+sembly) para aumentar o desempenho do sistema proposto,
+diﬁcultando sua utilização por engenheiros de proteção.
+O trabalho de Ruan and Lin (2005) apresenta o teste da uti-
+lização de um novo modelo de DSPs de baixo custo para a
+implementação de funções de proteção. A comparação com
+outros dispositivos foi feita através da implementação de fer-
+ramentas de extração fasorial utilizando a Transformada de
+Fourier (TF) e o método dos mínimos quadrados. Constatou-
+se a superioridade do novo modelo de DSPs perante os utili-
+zados tradicionalmente para implementação de relés de pro-
+teção.
+O uso de Field Programmable Analogic Arrays (FPAAs) em
+conjunto com DSPs para a implementação de relés de dis-
+tância com característica mho é proposto por Dadash Zadeh
+et al. (2009). Tal abordagem possibilita a obtenção das ca-
+racterísticas de alta velocidade de atuação de dispositivos de
+estado sólido em conjunto com o monitoramento e comuni-
+cação dos dispositivos digitais. Além disso, deve-se ressaltar
+a ﬂexibilidade obtida pela utilização de elementos analógicos
+programáveis, pois possibilita a mudança dos circuitos ele-
+trônicos diretamente no dispositivo. Foram necessárias mui-
+tas unidades FPAAs para o desenvolvimento da plataforma
+devido à baixa densidade de elementos analógicos presentes
+em cada unidade.
+Os trabalhos supracitados utilizam essencialmente DSPs
+para executar as operações necessárias para a proteção de
+Sistema Elétrico de Potências (SEPs). No entanto, imple-
+mentar uma função de processamento digital de sinal como
+um software em um DSP frequentemente requer esforços
+consideráveis de projeto e veriﬁcação (Stranneby, 2001).
+Com intuito de facilitar e diminuir o tempo de desenvolvi-
+mento deste processo, este artigo propõe um conjunto de
+hardware e software projetado para servir de plataforma para
+desenvolvimento e execução em tempo real de novos algo-
+ritmos de proteção.
+O sistema proposto é composto por
+uma placa de processamento ligada a uma placa de aquisi-
+ção de dados que seguem o padrão PC104 (PC/104 Consor-
+tium, 2009) e pelo emprego de um Sistema Operacional (SO)
+baseado no Linux. Logo, por utilizar placas de computado-
+res e um SO de uso comum, os procedimentos de desenvolvi-
+mento e testes de novas funções de proteção são facilitados,
+pois pode-se empregar linguagens de programação de alto ní-
+vel largamente utilizadas em microcomputadores convencio-
+nais, tais como C e C++. Estas características se destacam
+como as vantagens do sistema proposto em relação àque-
+les baseados em DSPs e FPAAs mencionados anteriormente.
+Para veriﬁcar a aplicabilidade e desempenho do sistema pro-
+posto, foram implementados algoritmos de proteção de ge-
+radores síncronos, a saber: proteção diferencial, proteção de
+sobrecorrente de fase instantânea e proteção de sobrecorrente
+de neutro temporizada. Um SEP foi modelado usando o Al-
+ternative Transients Program (ATP), e sobre ele foram si-
+mulados diversos casos de faltas. As simulações serviram
+para prover dados de falta ao sistema proposto, por meio de
+uma caixa de geração de sinais elétricos. Com isso, os algo-
+ritmos de proteção foram avaliados executando-se testes de
+desempenho. Adicionalmente, os resultados foram compa-
+rados com a resposta de um relé comercial, com as mesmas
+funções de proteção, mesmos ajustes e para a mesma situa-
+ção de falta.
+2
+A PLATAFORMA PC104
+O PC104 (ou PC/104) é um padrão de computador embar-
+cado controlado pelo PC/104 Consortium (2009) que deﬁne
+um padrão de formato e de barramento. PC/104 é destinado a
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+203
+aplicações de computação embarcada que dependam de uma
+aquisição de dados conﬁáveis em ambientes extremos.
+O formato PC104 foi originalmente concebido pela empresa
+Ampro em 1987 e mais tarde padronizado pelo PC/104 Con-
+sortium em 1992. Uma tentativa de padronização correspon-
+dente ao PC104 pelo IEEE foi feita com o IEEE P996.1, mas
+nunca foi ratiﬁcada.
+Conforme mencionado anteriormente, a plataforma PC104
+permite a implementação de computação embarcada em am-
+bientes industriais, devido às seguintes características: for-
+mato reduzido, permitindo assim menor área de exposição
+a eventuais danos; ausência de partes móveis, visto que não
+há disco rígido e sim um dispositivo de armazenamento de
+estado sólido (Solid State Disk); sistema de refrigeração so-
+mente com dissipadores (fanless).
+Além dessas características que provêm robustez à plata-
+forma, esta permite o uso de sistemas operacionais convenci-
+onais, ﬂexibilizando seu uso. Também é possível a utilização
+de SOs de tempo real para suprir a necessidade de aplicações
+de controle que têm requisitos de tempo. Tais característi-
+cas fazem da plataforma PC104 uma excelente base de de-
+senvolvimento para aplicações industriais, pois une robustez
+com ﬂexibilidade. Assim, pode-se utilizar o conjunto des-
+crito como uma plataforma de desenvolvimento de diferentes
+funções de proteção integradas, emulando o funcionamento
+de um relé de proteção multifuncional, sem a dependência de
+conhecimentos profundos da arquitetura do hardware.
+3
+SISTEMAS OPERACIONAIS DE TEMPO
+REAL
+Um SO é um software (programa) ou conjunto de softwa-
+res cuja função é gerenciar os recursos de hardware dispo-
+níveis. O SO pode ser visto como um intermediário entre
+outros softwares e os componentes físicos (hardware), além
+de servir de interface entre a máquina e o usuário ﬁnal, per-
+mitindo assim seu controle (Silberschatz et al., 2004).
+SOs podem estar presentes em sistemas embarcados, que são
+largamente utilizados para controle e monitoramento de apli-
+cações de risco, como aviões, carros, plantas industriais, re-
+lés de proteção de SEPs, etc. Tais aplicações são caracte-
+rizadas como sistemas de tempo real, em que o tempo de
+resposta e tratamento a um evento deve ser pré-deﬁnido e
+obedecido, e caso não seja, pode resultar em severas con-
+sequências, como falhas. Assim, tais sistemas dependem de
+um monitoramento/controle correto e feito em tempo pré-
+deﬁnido (Laplante, 2004). Sistemas embarcados podem tirar
+vantagem dos recursos oferecidos por um SO para o gerenci-
+amento de um sistema de tempo real.
+Um SO de tempo real deve atender os programas em exe-
+cução (processos) de forma a atingir os requisitos de tempo
+necessários para a aplicação a qual serve. A diferença entre
+um SO de tempo real e um de propósito geral está basica-
+mente no seu escalonador de processos. Este é responsável
+por gerenciar o tempo de uso do processador para cada pro-
+cesso, alternando entre estes. O escalonador de um SO de
+tempo real precisa ser preemptivo, ou seja, os processos têm
+prioridades uns sobre os outros. Isso permite que um pro-
+cesso de baixa prioridade seja interrompido por um com alta
+prioridade, alcançando assim os tempos desejados.
+3.1
+Real-Time
+Application
+Interface
+(RTAI)
+O Linux é um sistema operacional de código aberto, sob li-
+cença General Public License (GPL), sendo utilizado em di-
+versos campos, de computadores pessoais a supercomputa-
+dores. A grande ﬂexibilidade provida pelo código aberto e a
+existência de documentação abundante, faz desta uma alter-
+nativa atraente para a implementação de novas aplicações.
+No entanto, o Linux foi construído como um SO multiusuá-
+rio de propósito geral e essas características geralmente en-
+tram em conﬂito com as características de um SO de tempo
+real. Um SO de propósito geral tenta maximizar o desem-
+penho médio do sistema ao custo de um descontrole sobre
+o tempo de execução de cada processo. Por outro lado, um
+SO de tempo real tenta colocar um limite superior sobre o
+tempo de execução ao custo de diminuir o desempenho mé-
+dio. Existem diferenças estruturais que não permitem ao Li-
+nux operar como um SO de tempo real, dentre elas: chama-
+das de sistemas de kernel não preemptivas, paginação, algo-
+ritmo do escalonador de processos, reordenação de requisi-
+ções e execução em lotes.
+Como alternativa aos SOs de tempo real proprietários e apro-
+veitando as vantagens do uso do Linux, surge o RTAI. O
+RTAI é uma extensão que faz o Linux operar em tempo real,
+permitindo assim o desenvolvimento de aplicações com res-
+trições de tempo. Ele funciona baseado no modelo de abstra-
+ção de interrupções, em que modiﬁcações fazem com que o
+Linux seja executado como uma tarefa de baixa prioridade de
+um pequeno kernel de tempo real. As funções de tempo real
+são tratadas como de alta prioridade neste pequeno kernel. O
+restante das aplicações, como gráﬁcos, geração de relatórios,
+etc, são tratadas pelo Linux. A arquitetura do RTAI pode ser
+observada na Figura 1.
+Como pode ser observado, a arquitetura utilizada pelo RTAI
+possui uma camada intermediária entre o hardware e o ker-
+nel do SO Linux, o kernel de tempo real. Este kernel tem
+como característica a utilização de um escalonador de tare-
+fas preemptivo. Este tem controle sobre os tempos de execu-
+204
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+
+	
+
+
+	
+
+
+	
+
+
+
+	
+	
+
+ 
+ 
+ 	
+ 	!"
+##$
+
+
+
+
+Figura 1: Arquitetura do RTAI
+ção de cada processo e consegue aplicar prioridades entre os
+mesmos. Deste modo, as interrupções do hardware são ge-
+renciadas e o tempo de processamento das tarefas de tempo
+real é dividido. Além disso, abaixo do kernel do Linux é
+inserida uma camada de abstração de hardware, Real Time
+Hardware Abstraction Layer (RTHAL). A RTHAL é contro-
+lada por interrupções de software provenientes do kernel de
+tempo real, fazendo com que os processos do Linux sejam
+gerenciados com baixa prioridade. Para compartilhar infor-
+mações entre os processos de tempo real e os processos do
+Linux, pode-se utilizar uma estrutura de dados como a First
+In First Out (FIFO), possibilitando a comunicação entre có-
+digos em execução com diferentes níveis de privilégio.
+4
+COMEDI
+O Comedi (Schleef et al., 2005) é o conjunto padrão de dri-
+vers e bibliotecas para aquisição de dados do Linux. Inici-
+ado em 1996 por David Schleef, o Comedi busca suportar
+diversos fabricantes e modelos de placas através de uma in-
+terface comum, a Application Programming Interface (API),
+criando assim um compromisso entre modularidade e com-
+plexidade.
+O Comedi é separado em duas partes: o Comedi em si, um
+pacote de drivers que são carregados em espaço de kernel; o
+comedilib, que atua como interface entre usuários e os dri-
+vers. Programas utilizando o Comedi podem ser escritos em
+linguagem C ou C++.
+O Comedi está organizado em canais, sub-dispositivos e dis-
+positivos. Um canal é o nível mais baixo de medição e con-
+trole. Existem diversos tipos de canais que possibilitam: lei-
+tura e escrita de sinais analógicos e digitais, contadores de
+geradores de pulso e frequência e leitura de encoders.
+Os canais de um mesmo tipo são agrupados em um conjunto
+comum, chamado sub-dispositivo. Os sub-dispositivos são
+agrupados em um dispositivo. A Figura 2 traz uma ilustração
+desta organização.
+	
+	
+	
+	
+
+
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+
+	
+	
+
+
+
+	
+
+
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+
+
+Figura 2: Organização do Comedi
+Através de um conjunto de funções disponíveis no comedi-
+lib é possível acessar os vários dispositivos de uma placa de
+aquisição de dados.
+5
+COMPONENTES DO SISTEMA PRO-
+POSTO
+Nesta seção serão apresentados os equipamentos e softwa-
+res que compõem o sistema integrado de desenvolvimento
+e execução de algoritmos de proteção. Todo o desenvolvi-
+mento do hardware foi concentrado na plataforma PC104,
+batizada de Cubo PC104. O diagrama de blocos da Figura 3
+mostra uma visão geral das principais partes do hardware e
+suas inter-relações. Esse arranjo foi inspirado na arquitetura
+encontrada em relés digitais comerciais, que é mostrada de
+forma sintética na Figura 4 (Coury et al., 2007).
+5.1
+O Cubo PC104
+Para avaliar a viabilidade do emprego da plataforma PC/104
+nos testes de novos algoritmos de proteção em tempo real,
+escolheu-se o seguinte conjunto de placas que conta com
+uma placa de processamento de dados, uma placa de aqui-
+sição de dados e uma fonte de energia. A placa de processa-
+mento de dados escolhida tem como características:
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+205
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+Figura 3: Visão do Conjunto
+	
+
+
+
+
+
+
+	
+
+	
+
+
+
+	
+	
+ 
+ 
+!
+"	
+
+	
+#$
+
+Figura 4: Principais Subsistemas de um Relé Digital.
+• Processador AMD Geode LX800;
+• 512MB de Memóra RAM DDR333;
+• 8GB de Armazenamento em Cartão Compact Flash
+(CF);
+• 1 Placa de rede Ethernet 10/100 Mb/s;
+• 4 Portas USB 2.0;
+• 2 Portas Seriais (RS232);
+• 1 Porta Paralela.
+A escolha da placa de aquisição de dados baseou-se no nú-
+mero de canais de entrada analógica, na taxa de amostragem
+máxima e a na disponibilidade do driver desta placa no Co-
+medi. A placa escolhida tem como principais características:
+• Resolução de 16 bits;
+• Taxa de amostragem máxima de 100 kS/s;
+• 16 canais de entrada analógica em modo comum ou 8
+em modo diferencial;
+• 8 canais de entrada/saída digital;
+• Buffer de 512 amostras.
+A Figura 5 mostra uma foto do Cubo PC104 com suas di-
+mensões físicas.
+
+
+
+Figura 5: Cubo PC104
+5.2
+Caixa de Condicionamento de Sinais
+A placa de aquisição de dados necessita que os sinais elé-
+tricos de entrada, neste caso valores instantâneos de tensões
+e de correntes, sejam fornecidos em níveis compatíveis aos
+valores para os quais ela foi projetada. Para tanto, foi desen-
+volvida uma Placa de Circuito Impresso (PCI) para o condi-
+cionamento das correntes de entrada e outra para as tensões
+de entrada.
+A PCI responsável pelo condicionamento de tensão foi pro-
+jetada para receber sinais de tensão de até ±380Vpico e for-
+necer em sua saída uma tensão de ±10Vpico, mais apropriada
+para a placa de aquisição de dados. Um divisor resistivo foi
+empregado para rebaixar a tensão do sinal de entrada. Um
+ampliﬁcador isolado de barreira ótica foi escolhido para rea-
+lizar a isolação elétrica entre a plataforma PC104 e o sistema
+elétrico. Após o ampliﬁcador isolado, um ampliﬁcador ope-
+racional realiza o ajuste de ganho e offset. Por ﬁm, o sinal é
+submetido a um ﬁltro ativo Anti-Aliasing do tipo Butterworth
+de segunda ordem com frequência de corte de 2, 0kHz, con-
+forme mostra a Figura 6.
+O condicionamento do sinal de corrente é realizado por uma
+PCI que converte a corrente de entrada em tensão na sua
+saída, visto que as placas de aquisição de dados operam, em
+sua maioria, apenas com tensão. Esta PCI foi projetada para
+receber sinais de corrente de até ±30Apico e fornecer em sua
+saída uma tensão de ±10Vpico. Um sensor de efeito Hall foi
+206
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+	
+
+
+	
+	
+
+		
+
+
+	
+
+	
+
+	
+
+
+
+
+	
+
+Figura 6: Circuito de Condicionamento de Tensão
+utilizado para realizar a conversão do sinal de corrente em
+tensão, ao mesmo tempo que isola eletricamente o circuito
+de condicionamento do sistema elétrico. Assim como no cir-
+cuito de condicionamento de tensão, um ampliﬁcador ope-
+racional realiza o ajuste de ganho e offset e um ﬁltro ativo é
+utilizado de modo a evitar o efeito Aliasing, conforme mostra
+a Figura 7.
+
+
+	
+
+
+		
+
+	
+		
+
+
+	
+
+
+	
+
+Figura 7: Circuito de Condicionamento de Corrente
+5.3
+Conjunto de softwares utilizados
+Nesta subseção será descrito o conjunto de softwares es-
+colhido para o desenvolvimento da aplicação proposta. O
+SO escolhido é o Linux, através da distribuição Debian
+GNU/Linux ou simplesmente Debian, versão 5.0 (Lenny).
+O Debian GNU/Linux é uma criação do projeto Debian, uma
+associação de indivíduos que tem por causa comum criar um
+SO livre, coerente e completo, prezando principalmente pela
+estabilidade (Ferrari, 2007). Estes fatos ﬁzeram dele a esco-
+lha para o desenvolvimento deste projeto.
+Como mencionado anteriormente, o RTAI é um patch (modi-
+ﬁcações no código-fonte) aplicado sobre o Kernel do Linux
+para que este possa suportar aplicações de tempo-real.
+Por ﬁm, será também utilizado o Comedi, cujas característi-
+cas principais foram descritas anteriormente.
+As versões dos softwares citados são exibidas a seguir:
+• Debian GNU/Linux 5.0 (Lenny) com kernel 2.6.28.7;
+• RTAI 3.7;
+• Comedi 0.7.76.
+6
+AVALIAÇÃO
+DE
+DESEMPENHO
+DO
+CUBO PC104
+Nesta seção serão apresentados os procedimentos realizados
+para avaliar o desempenho do Cubo PC104 em testes embar-
+cados em tempo real. As análises foram conduzidas por meio
+da implementação dos algoritmos das funções de proteção
+diferencial, sobrecorrente de fase com atuação instantânea e
+sobrecorrente de neutro com atuação temporizada.
+Foram observados a precisão da taxa de amostragem e o
+tempo de processamento das etapas de aquisição de dados,
+medição e proteção. Os testes foram conduzidos conside-
+rando duas taxas de amostragem: 8 e 16 amostras por ciclo
+de 60Hz. Simulações de transitórios eletromagnéticos em
+um SEP modelado no Alternative Transients Program (ATP)
+(ATP, 1987) forneceram dados sobre a operação de um Gera-
+dor Síncrono (GS) submetido a faltas internas e faltas exter-
+nas. Os resultados da atuação das funções de proteção foram
+comparados aos resultados obtidos de um relé comercial sub-
+metido aos mesmos testes.
+6.1
+O Sistema Elétrico Analisado
+A Figura 8 mostra o diagrama uniﬁlar do sistema elétrico
+utilizado nas simulações para fornecer dados para o teste dos
+algoritmos de proteção e avaliação do desempenho da plata-
+forma PC104.
+GER
+Gerador
+Síncrono
+BGER
+BLT1
+BLT1O
+BGCH1
+LT1: 100 km
+BLT2
+BLT2O
+BGCH2
+BLT3
+BLT3O
+BGCH3
+LT3: 50 km
+25MVA
+13.8/138kV
+25MVA
+138/13.8kV
+90MVA
+13.8kV
+V
+2MVA
+13.8/4kV
+M
+BGCHM
+25MVA
+138/13.8kV
+25MVA
+138/13.8kV
+25MVA
+13.8/138kV
+25MVA
+13.8/138kV
+LT2: 50 km
+TR1E
+TR2E
+TR3E
+TR1A
+TR2A
+TR3A
+Alimentadores
+Figura 8: Representação do SEP analisado.
+O sistema elétrico é composto por um GS de 13, 8kV e
+potência aparente de 90MV A, transformadores elevado-
+res com relações de 13, 8/138kV e potência aparente de
+25MV A, linhas de transmissão com extensões variando
+entre 80 e 150km, transformadores abaixadores similares
+aos elevadores e cargas caracterizadas por fator de potên-
+cia de 0, 92 indutivo e potência aparente variando entre 5
+e 25MV A. Este sistema foi implementado no Laboratório
+de Sistemas de Energia Elétrica (LSEE) e empregado com
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+207
+sucesso em outros trabalhos (Barbosa et al., 2007; Barbosa
+et al., 2008).
+6.2
+Funções de Proteção Teste
+Para realizar os testes de desempenho do Cubo PC104 fo-
+ram implementadas algumas funções de proteção, visando
+a proteção do GS do sistema elétrico discutido na seção
+6.1. Para tanto foram implementadas as funções de prote-
+ção diferencial do estator (87G) e de sobrecorrente de neu-
+tro (51GN) (C37-102, 1996; Kindermann, 2006). Adicional-
+mente incluiu-se a proteção contra sobrecorrente instantânea
+de fase (50) (Std-242, 2001). Os ajustes utilizados nas fun-
+ções de proteção estão disponíveis no Anexo Apêndice A.
+A Figura 9 mostra as proteções implementadas e a lógica de
+atuação utilizada. As proteções diferencial e de sobrecor-
+rente de neutro ativam o sinal de disparo (trip) e a função de
+sobrecorrente instantânea de fase ativa o sinal de alarme.
+87G
+51G
+50
+S
+TC1
+TC2
+87G
+51G
+50
+TRIP S
+ALARME
+Figura 9: Funções de Proteção e Lógica de Atuação.
+Foram utilizadas funções disponíveis na API do RTAI para
+tornar os algoritmos de proteção um processo de tempo real
+(rt_task_init_schmod, rt_make_hard_real_time).
+Isso ga-
+rante a máxima prioridade deste sobre todos os processos
+do SO. O intervalo de amostragem foi controlado por uma
+função da API do RTAI dedicada à geração de interrupções
+periódicas (rt_task_make_periodic). As aquisições de dados
+foram realizadas através de funções do comedilib que aces-
+sam a placa de aquisição de dados, realizam a leitura do canal
+solicitado e retornam o valor medido devidamente convertido
+para a grandeza de medição (comedi_data_read_delayed,
+comedi_to_phys).
+A Figura 10 mostra o ﬂuxo de execução dos algoritmos im-
+plementados. O bloco de aquisição refere-se à leitura dos
+dados da placa de aquisição de dados de todos os canais uti-
+lizados. A partir dos dados provenientes da aquisição são
+calculadas as grandezas necessárias aos algoritmos de prote-
+ção, tais como os fasores das corrente para a proteção dife-
+rencial e os valores eﬁcazes para as funções de sobrecorrente.
+Em seguida as funções de proteção são executadas. Por ﬁm,
+aguarda-se a interrupção de tempo para iniciar uma nova exe-
+cução (rt_task_wait_period).
+Início
+Aquisição
+da Dados
+Medição
+TDFJ e RMS
+Trip
+Aguarde o Instante
+da Nova Aquisição
+Salvar 
+Oscilografia
+Sim
+Não
+Funções de
+Proteção
+Medição
+de Tempo
+Medição
+de Tempo
+Medição
+de Tempo
+Figura 10: Fluxo de Execução dos Algoritmos de Proteção.
+Um buffer circular foi implementado para armazenar um
+conjunto de medidas, pois para calcular os valores eﬁcazes
+e os fasores é necessário uma quantidade de amostras que
+represente pelo menos um ciclo completo dos sinais de cor-
+rente. A Figura 11 ilustra o princípio de funcionamento do
+buffer circular. Por convenção a amostra mais nova é arma-
+zenada na posição 1. Quando uma nova amostra é obtida,
+a amostra que ocupava a posição 1 ocupará a posição 2, e a
+amostra que ocupava a última posição é descartada.
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+	
+Figura 11: Buffer Circular.
+Foram necessários sete buffers circulares para as funções de
+proteção utilizadas: três para as correntes próximas aos ter-
+minais do gerador, três para as correntes próximas ao neutro
+208
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+e um para a corrente de neutro do gerador. Essas funções
+de proteção foram programadas em linguagem C++, sendo
+os respectivos algoritmos apresentados a seguir. Além disso,
+foram implementados os algoritmos para cálculo do valor eﬁ-
+caz e dos fasores das tensões e das correntes, também apre-
+sentados em seguida.
+O Algoritmo 1 mostra como foi implementado o cálculo dos
+valores eﬁcazes para as funções de sobrecorrente, no qual
+i(n) é a corrente instantânea de uma das fases ou do neu-
+tro, na n-ésima posição do buffer circular e N é o número de
+amostras por ciclo. O cálculo do fasor para a função dife-
+rencial está disponível no Algoritmo 2, no qual optou-se pela
+Transformada Discreta de Fourier Janelada (TDFJ) de ciclo
+completo com deslocamento de uma amostra.
+Algoritmo 1 Cálculo do Valor Eﬁcaz
+I ←0
+n ←1
+for n ≤N do
+I ←I + i(n)2
+n ←n + 1
+end for
+return p
+I
+N
+Algoritmo 2 Cálculo do Fasor
+⃗I ←0 + 0
+n ←1
+for n ≤N do
+⃗I ←⃗I + i(n)e
+2π
+N n
+n ←n + 1
+end for
+return
+√
+2
+N ⃗I
+As proteções de sobrecorrente veriﬁcam se o valor eﬁcaz da
+corrente monitorada (I) é inferior ao valor máximo permitido
+(Ipickup). O Algoritmo 3 mostra como essa proteção foi pro-
+gramada. A proteção diferencial realiza a comparação dos
+fasores das correntes de entrada e de saída de cada fase. O
+pseudo-código da proteção diferencial está disponível no Al-
+goritmo 4, no qual I1 e I2 indicam as correntes de entrada e
+de saída do elemento protegido, Io é a corrente de operação,
+Ir é a corrente de restrição.
+Algoritmo 3 Proteção de Sobrecorrente
+if I(k) ≥Ipickup then
+return true
+else
+return false
+end if
+6.3
+Teste do Conjunto
+Utilizando o Cubo PC104, os algoritmos de proteção discu-
+tidos na seção 6.2 foram embarcados e posteriormente tes-
+tados com auxílio de uma caixa de geração de sinais elétri-
+cos, que é um sistema de alta potência que pode gerar sinais
+Algoritmo 4 Proteção Diferencial
+Io ← ⃗I1 −⃗I2
+
+Ir ← ⃗I1 + ⃗I2
+
+if (Ir, Io) acima da curva de operação then
+return true
+else
+return false
+end if
+elétricos a partir de arquivos de simulações. Essa caixa pode
+ser utilizada para testar dos antigos relés eletromecânicos aos
+modernos relés equipados com microprocessadores.
+Alimentando a caixa de geração de sinais elétricos com as
+oscilograﬁas obtidas das simulações de faltas no sistema elé-
+trico da Figura 8, pretendeu-se avaliar a conﬁabilidade e de-
+sempenho dos algoritmos em tempo real de execução, mos-
+trando assim seu potencial de aplicação em campo. O di-
+agrama apresentado na Figura 12 descreve a sequência dos
+eventos necessários para a realização dos testes das funções
+de proteção e da avaliação global do sistema proposto.
+
+	
+
+	
+	
+	
+	
+
+
+
+	
+
+	
+
+
+	
+	
+
+	
+
+
+		
+
+
+
+	
+
+
+
+Figura 12: Estrutura geral de testes na plataforma PC104
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+209
+6.4
+Teste do Relé Comercial
+A título de comparação de desempenho das funções de prote-
+ção implementadas, um relé comercial foi ensaiado. No relé
+em questão foram habilitadas as funções de proteção discuti-
+das na seção 6.2 e os parâmetros de ajuste foram os mesmos
+utilizados no teste da plataforma.
+A Figura 13 mostra a estrutura geral dos testes usando o relé
+comercial.
+
+	
+
+	
+	
+
+
+
+	
+
+
+
+
+	
+
+Figura 13: Estrutura geral de testes no relé comercial
+7
+RESULTADOS
+DA
+IMPLEMENTAÇÃO
+DO CUBO PC104
+Nos testes realizados no Cubo PC104 foram avaliados a cor-
+reta atuação das funções de proteção, o tempo de execução de
+cada etapa do algoritmo e a precisão da taxa de amostragem.
+Neste trabalho duas taxas de amostragem, 8 e 16 amostras
+por ciclo de 60Hz, foram utilizadas nos testes realizados.
+7.1
+Tempo de Processamento
+Um dos critérios de avaliação do desempenho do sistema in-
+tegrado proposto neste trabalho é a capacidade de processa-
+mento, que compreende o tempo necessário para realizar a
+aquisição dos sinais de entrada, pré-processa-los e por ﬁm
+executar as funções de proteção. Ressalta-se que o tempo
+disponível para a execução de todas essas tarefas é o inter-
+valo de tempo entre duas amostragens consecutivas. Caso
+esse critério não seja atendido, ocorrerá a perda de informa-
+ção com prejuízo à conﬁabilidade da função de proteção.
+A Figura 14 mostra execução das etapas do algoritmo ao
+longo do tempo, na qual T(k) denota o tempo em que ocor-
+rem as interrupções periódicas, Ta(k), Tm(k) e Tp(k) indi-
+cam o ﬁm das etapas de aquisição, medição e proteção, res-
+pectivamente.
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+Figura 14: Tempo de Execução dos Algoritmos de Proteção.
+A avaliação do tempo de execução busca evidenciar a utili-
+zação do tempo de processamento disponível de cada bloco
+do algoritmo em execução. Para calcular o tempo de exe-
+cução da etapa de aquisição (Tacq), medição (Tmea) e pro-
+teção (Tpro) foram utilizadas as Equações 1, 2 e 3, nessa
+mesma ordem, nas quais k indica a k-ésima execução do
+algoritmo.
+Para o cálculo do tempo de inatividade (Tidl)
+utilizou-se a Equação 4. É importante salientar que Tidl deve
+ser maior que zero, pois é neste intervalo de tempo que os
+demais processos de baixa prioridade do SO são executados.
+Além disso, o tempo de inatividade nulo indica que a placa
+de processamento não consegue executar a tarefa solicitada
+em tempo real. Ressalta-se que o tempo gasto pelas instru-
+ções que realizam as medições de tempo foi desconsiderado.
+Tacq(k)
+=
+Ta(k) −T(k)
+(1)
+Tmea(k)
+=
+Tm(k) −Ta(k)
+(2)
+Tpro(k)
+=
+Tp(k) −Tm(k)
+(3)
+Tidl(k)
+=
+T(k + 1) −Tp(k)
+(4)
+Para realizar essa avaliação, foram medidos os tempos de
+execução das etapas do algoritmo durante o intervalo de um
+minuto. Neste período, a plataforma PC104 foi alimentada
+com oscilograﬁas de situações de operação do sistema elé-
+trico em regime permanente e em condição de falta. Este
+procedimento buscou identiﬁcar alguma mudança signiﬁca-
+tiva nos tempos de execução das etapas em diversas situações
+de operação.
+As Tabelas 1, 2 e 3 mostram, respectivamente, os tempos de
+execução das etapas de aquisição, medição e proteção, para o
+intervalo observado. Constata-se que os tempos de execução
+se mantiveram praticamente constantes e com baixa variação.
+Os gráﬁcos das Figuras 15(a) e 15(b) buscam destacar o
+tempo gasto na execução de cada etapa do algoritmo frente
+ao tempo total disponível para o processamento. Observa-se
+que o tempo de execução das funções de proteção utilizadas
+foi bem inferior ao tempo decorrido entre amostras consecu-
+tivas. Este desempenho positivo possibilita avaliar funções
+de proteções mais avançadas, que exijam a execução de cál-
+culos mais complexos.
+210
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+Algo a ser notado é que os períodos médios de tempo gas-
+tos na aquisição de dados e na execução da proteção foram
+praticamente iguais, para as duas taxas de amostragens utili-
+zadas. No entanto, o percentual de processamento destacado
+para essas atividades dobrou, como se observa nas Figuras
+15(a) e 15(b). Isso ocorre porque o tempo total disponível
+quando se utiliza a taxa de 16 amostras por ciclo é metade do
+tempo disponível para a taxa de 8 amostras por ciclo.
+Outra constatação importante é que o tempo dedicado à me-
+dição quadruplicou percentualmente, quando se consideram
+16 amostras por ciclo. Como a taxa de amostragem dupli-
+cou, o tempo disponível ao processamento entre duas amos-
+tras consecutivas foi reduzido à metade. Além disso, dada a
+nova taxa de amostragem, o número de amostras que repre-
+sentam um ciclo de forma de onda também aumentou. Deste
+modo, o número de operações aritméticas para o cálculo dos
+fasores e dos valores eﬁcazes dobrou. Com referência aos
+Algoritmos 1 e 2, a variável N passa de 8 para 16. Portanto,
+neste caso, o aumento do número de operações aritméticas
+aliada à diminuição do tempo disponível para tais cálculos
+elevou a participação percentual da etapa de medição no total
+do tempo suﬁciente para o processamento de todas as etapas.
+Contudo, ainda há tempo disponível para a execução das ins-
+truções não prioritárias, conforme mostrado na Figura 15(b).
+Tabela 1: Tempo Execução da Aquisição
+Amostras por Ciclo
+8
+16
+Médio (µs)
+159,892
+159,912
+Variância (µs2)
+0,222
+0,277
+Máximo (µs)
+177,625
+174,458
+Mínimo (µs)
+158,514
+158,359
+Tabela 2: Tempo Execução da Medição
+Amostras por Ciclo
+8
+16
+Médio (µs)
+94,252
+173,485
+Variância (µs2)
+0,0696
+0,174
+Máximo (µs)
+103,125
+182,812
+Mínimo (µs)
+93,655
+172,256
+Tabela 3: Tempo Execução da Proteção
+Amostras por Ciclo
+8
+16
+Médio (µs)
+25,586
+25,476
+Variância (µs2)
+0,065
+0,069
+Máximo (µs)
+35,061
+34,728
+Mínimo (µs)
+25,032
+24,956
+Figura 15: Tempo de Execução.
+7.2
+Precisão da Taxa de Amostragem
+Outro critério para avaliar o desempenho do sistema proposto
+foi a precisão da taxa de amostragem dos sinais de entrada.
+Uma vez que a taxa de amostragem é controlada por software
+é importante veriﬁcar sua precisão e desvio máximo. Esta
+preocupação justiﬁca-se pelo fato que, se a taxa de amos-
+tragem não for constante, devido à latência, os sinais de en-
+trada não serão amostrados coerentemente. Isso leva a erros
+de medição e por consequência à atuação errônea das fun-
+ções de proteção, como exemplo, o espalhamento espectral
+na TF (Baghzouz et al., 1998). Para a medição do intervalo
+de amostragem, utilizou-se a Fórmula 5. Para tal, a taxa de
+amostragem foi medida em um intervalo de um minuto de
+execução do algoritmo de proteção. Durante esse intervalo, a
+plataforma PC104 foi alimentada com oscilograﬁas de situa-
+ções de operação do sistema elétrico em regime permanente
+e em condições de falta. Este procedimento visou eviden-
+ciar eventuais variações na taxa de amostragem devido à mu-
+dança no regime de operação do sistema elétrico.
+Tsmp(k) = T(k + 1) −T(k)
+(5)
+A Tabela 4 mostra os resultados obtidos para as duas taxas
+de amostragem investigadas, 8 e 16 amostras por ciclo de
+60Hz, ou seja, 2083, 33µs e 1041, 66µs respectivamente.
+Observa-se que o erro médio foi extremamente baixo, as-
+sim como, o erro máximo. A partir do histograma da Figura
+16, que mostra a dispersão do erro da taxa de amostragem,
+pode-se observar que 90% das amostras têm erro inferior a
+1, 25µs (0, 06%) para a taxa de amostragem de 8 amostras
+por ciclo. Com auxílio do histograma da Figura 17, que mos-
+tra a dispersão do erro da taxa de amostragem para o caso que
+se usou a taxa de 16 amostras por ciclo, constata-se que 90%
+das amostras têm erro menor que 1, 23µs (0, 11%).
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+211
+Tabela 4: Precisão da Taxa de Amostragem
+Amostras por Ciclo
+8
+16
+Erro Absoluto Médio (µs)
+0,607
+0,543
+Erro Relativo Médio (%)
+0,058
+0,052
+Variância (µs2)
+0,295
+0,266
+Erro Absoluto Máximo (µs)
+11,882
+9,817
+Erro Relativo Máximo (%)
+1,140
+0,942
+ 0
+ 2
+ 4
+ 6
+ 8
+ 10
+ 12
+ 14
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+Percentual das Amostras (%)
+Erro Absoluto da Amostragem (µs)
+Figura 16: Dispersão do Erro de Amostragem (8 Amostras
+por Ciclo).
+ 0
+ 2
+ 4
+ 6
+ 8
+ 10
+ 12
+ 14
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+Percentual das Amostras (%)
+Erro Absoluto da Amostragem (µs)
+Figura 17: Dispersão do Erro de Amostragem (16 Amostras
+por Ciclo).
+7.3
+Desempenho das Funções de Prote-
+ção
+Os gráﬁcos das Figuras 18 e 19 mostram, respectivamente, a
+resposta das funções de proteção implementadas no sistema
+proposto e do relé comercial. O distúrbio simulado foi uma
+falta entre a fase C do gerador e a terra dentro da área de pro-
+teção da função de proteção diferencial, conforme mostra a
+Figura 9. Os gráﬁcos das Figuras 20 e 21 mostram o desem-
+−20
+−15
+−10
+−5
+0
+5
+10
+15
+20
+Canais Analógicos
+IA1
+IB1
+IC1
+IA2
+IB2
+IC2
+IN
+  
+  
+  
+  
+  
+  
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+0.12
+Canais Digitais
+Tempo(s)
+87G−A
+87G−B
+87G−C
+51G−N
+TRIP
+50−A
+50−B
+50−C
+ALARM
+Figura 18: Resposta Cubo PC104 (Falta C-Terra)
+−20
+−15
+−10
+−5
+0
+5
+10
+15
+20
+Canais Analógicos
+IA1
+IB1
+IC1
+IA2
+IB2
+IC2
+IN
+  
+  
+  
+  
+  
+  
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+0.12
+Canais Digitais
+Tempo(s)
+87G−A
+87G−B
+87G−C
+51G−N
+TRIP
+50−A
+50−B
+50−C
+ALARM
+Figura 19: Resposta Relé Comercial (Falta C-Terra)
+penho das funções de proteção dos dois sistemas (sistema
+proposto e o relé comercial) para uma situação de falta entre
+a fase A e a fase B do gerador dentro da área de proteção da
+função de proteção diferencial. O sub-índice 1 indica as cor-
+rentes dos Transformadores de Corrente (TCs) próximos aos
+terminais dos geradores e o sub-índice 2 discrimina as cor-
+rentes dos Transformador de Correntes (TCs) próximos ao
+neutro do gerador. Por ﬁm, a corrente de neutro é assinalada
+por IN. A parte inferior dos gráﬁcos representa as saídas
+lógicas de todas das funções de proteção e da lógica de atu-
+ação implementada, sendo que a linha cheia indica o estado
+ativo. Como o tempo de atuação da função de proteção de
+sobrecorrente de neutro é muito longo, optou-se por indicar
+somente o instante da partida desta função nos gráﬁcos ana-
+lisados. Pela análise comparativa dos gráﬁcos conclui-se que
+as funções de proteção, embarcadas no PC104, atuaram cor-
+retamente.
+212
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+−30
+−20
+−10
+0
+10
+20
+30
+Canais Analógicos
+IA1
+IB1
+IC1
+IA2
+IB2
+IC2
+IN
+  
+  
+  
+  
+  
+  
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+0.12
+Canais Digitais
+Tempo(s)
+87G−A
+87G−B
+87G−C
+51G−N
+TRIP
+50−A
+50−B
+50−C
+ALARM
+Figura 20: Resposta Cubo PC104 (Falta A-B)
+−30
+−20
+−10
+0
+10
+20
+30
+Canais Analógicos
+IA1
+IB1
+IC1
+IA2
+IB2
+IC2
+IN
+  
+  
+  
+  
+  
+  
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+0.12
+Canais Digitais
+Tempo(s)
+87G−A
+87G−B
+87G−C
+51G−N
+TRIP
+50−A
+50−B
+50−C
+ALARM
+Figura 21: Resposta Relé Comercial (Falta A-B)
+Uma segunda análise foi feita no que diz respeito ao tempo
+de atuação. As Tabelas 5 e 6 mostram os tempos de atuação
+das funções de proteção embarcadas no PC104 e as funções
+ativadas no relé comercial para as situações de faltas indica-
+das anteriormente. Com base nestas, conﬁrma-se o correto
+funcionamento dos algoritmos implementados. Pequenas di-
+ferenças no tempo atuação podem ser observadas, e isso se
+deve, provavelmente, aos algoritmos especíﬁcos de cálculo
+dos fasores ou ao número de amostras que o relé comer-
+cial emprega para conﬁrmar o evento de proteção. Enfatiza-
+se que essas informações não estavam disponíveis durante a
+execução dos ensaios em laboratório.
+8
+CONCLUSÕES
+Este artigo mostrou o desenvolvimento e avaliação de de-
+sempenho de um sistema integrado de hardware e software
+para desenvolver e executar, em tempo real, funções de pro-
+Tabela 5: Tempos de Atuação (Falta C-Terra)
+Função de
+Tempo de Atuação (ms)
+Proteção
+PC104
+Relé Comercial
+87G-A
+†
+†
+87G-B
+†
+†
+87G-C
+2,13
+2,09
+50-A
+†
+†
+50-B
+11,44
+14,55
+50-C
+8,30
+8,27
+51G-A
+0,92
+2,09
+† Não houve atuação.
+Tabela 6: Tempos de Atuação (Falta A-B)
+Função de
+Tempo de Atuação (ms)
+Proteção
+PC104
+Relé Comercial
+87G-A
+2,22
+2,28
+87G-B
+2,22
+2,28
+87G-C
+†
+†
+50-A
+7,49
+6,18
+50-B
+7,49
+6,18
+50-C
+†
+†
+51G-A
+†
+†
+† Não houve atuação.
+teção aplicadas em sistemas elétricos. Uma das principais
+vantagens do sistema proposto é facilitar a programação das
+funções de proteção, uma vez que não exige o conhecimento
+detalhado de sua arquitetura, tampouco de linguagens de pro-
+gramação de baixo nível. Além disso, a execução em tempo
+real e implementação em hardware são fundamentais para
+avaliar a viabilidade de implementação de novos algoritmos
+de proteção em condições próximas às encontradas em casos
+práticos.
+A avaliação da precisão da taxa de amostragem mostrou que
+o uso do RTAI é viável em aplicações de tempo crítico como
+proteção. A placa de processamento foi capaz de executar os
+algoritmos de proteção com rapidez aceitável, o que mostra
+a possibilidade do uso desta para executar funções de pro-
+teção mais complexas. Conclui-se que o sistema desenvol-
+vido neste trabalho atendeu a todos os requisitos de funci-
+onamento examinados, destacando-se como uma importante
+ferramenta para auxiliar o desenvolvimento de novas técni-
+cas de proteção, diminuindo o tempo de implementação e
+possibilitando testes mais completos. Ressalta-se que o em-
+prego de funções de proteção tradicionais foi útil para vali-
+dar os resultados do sistema proposto. Como continuidade
+deste trabalho, funções de proteção mais soﬁsticadas, envol-
+vendo cálculos mais complexos e considerando técnicas de
+inteligência artiﬁcial serão implementadas e testadas na pla-
+taforma PC104.
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+213
+REFERÊNCIAS
+ATP (1987). Alternative Transients Program - Rule Book.
+Baghzouz, Y., Burch, R., Capasso, A., Cavallini, A., Ema-
+nuel, A., Halpin, M., Imece, A., Ludbrook, A., Mon-
+tanari, G., Olejniczak, K., Ribeiro, P., Rios-Marcuello,
+S., Tang, L., Thaliam, R. and Verde, P. (1998). Time-
+varying harmonics. I. Characterizing measured data,
+IEEE Transactions on Power Delivery 13(3): 938–944.
+Barbosa, D., da Silva, M., Bernardes, A. P., Oleskovicz, M.
+and Coury, D. V. (2007).
+Lógica Fuzzy aplicada na
+proteção de transformadores, VIII Simpósio Brasileiro
+de Automação Inteligente, Florianópolis.
+Barbosa, D., Monaro, R., Coury, D. and Oleskovicz, M.
+(2008).
+Filtragem adaptativa para a estimação da
+frequência em sistemas elétricos de potência, SBA Con-
+trole & Automação 19(2): 226–234.
+C37-102 (1996). IEEE Guide for AC Generator Protection,
+IEEE Std C37.102-1995 p. i.
+Coury, D. V., Oleskovicz, M. and Giovanini, R. (2007). Pro-
+teção digital de sistemas elétricos de potência: dos re-
+lés eletromecânicos aos microprocessados inteligentes,
+1 edn, EDUSP, São Carlos.
+Dadash Zadeh, M., Sidhu, T. and Klimek, A. (2009). FPAA-
+based mho distance relay considering cvt transient su-
+pervision, Generation, Transmission Distribution, IET
+3(7): 616 –627.
+Ferrari, F. A. (2007). Curso Prático de Linux, Universo dos
+Livros Ltda., São Paulo.
+Kindermann, G. (2006). Proteção de Sistemas Elétricos de
+Potência, Vol. 3, UFSC-EEL-LabPlan, Santa Catarina.
+Laplante, P. A. (2004). Real-Time Systems Design and Analy-
+sis, 3 edn, Wiley-IEEE Press.
+McLaren, P., Swift, G., Neufeld, A., Zhang, Z., Dirks, E. and
+Haywood, R. (1994). “Open” systems relaying, Power
+Delivery, IEEE Transactions on 9(3): 1316 –1324.
+PC/104 Consortium (2009). No Title, Online.
+URL: http://www.pc104.org
+Ruan, J. and Lin, J. (2005). The application of DSP tech-
+nique in the ﬁeld of relay protection, Communications,
+Circuits and Systems, 2005. Proceedings. 2005 Inter-
+national Conference on, Vol. 2, pp. 1326–1329.
+Schleef, D., Hess, F. and Bruyninckx, H. (2005). The Control
+and Measurement Device Interface handbook.
+Sidhu, T. S., Bajpai, M., Burnworth, J., Darlington, A., Kasz-
+tenny, B., McLaren, P., Nagpal, M., Saha, M., Sachdev,
+M., Swanson, M. and Winston, P. (2006). Bibliography
+of Relay Literature, 2004 IEEE Committee Report,
+IEEE Transactions on Power Delivery 21(3): 1199–
+1212.
+Sidhu, T. S., Burnworth, J., Darlington, A., Kasztenny, B.,
+Liao, Y., McLaren, P. G., Nagpal, M., Sachdev, M. S.,
+Saha, M. M., Swanson, M. and Winston, P. B. (2008).
+Bibliography of Relay Literature, 2006 IEEE Com-
+mittee Report, IEEE Transactions on Power Delivery
+25(1): 88–101.
+Sidhu, T. S., Burnworth, J., Darlington, A., Kasztenny, B.,
+Liao, Y., McLaren, P. G., Nagpal, M., Sachdev, M. S.,
+Saha, M. M., Swanson, M. and Winston, P. B. (2010).
+Bibliography of Relay Literature, 2007 IEEE Com-
+mittee Report, IEEE Transactions on Power Delivery
+25(1): 88–101.
+Sidhu, T. S., Burnworth, J., Darlington, A., Kasztenny, B.,
+Liao, Y., McLaren, P., Nagpal, M., Sachdev, M., Saha,
+M., Swanson, M. and Winston, P. (2007).
+Biblio-
+graphy of Relay Literature, 2005 IEEE Committee Re-
+port, IEEE Transactions on Power Delivery 22(2): 781–
+794.
+Silberschatz, A., Galvin, P. B. and Gagne, G. (2004). Opera-
+ting System Concepts, 7 edn, Wiley.
+Std-242 (2001). IEEE Recommended Practice for Protection
+and Coordination of Industrial and Commercial Power
+Systems, IEEE Std 242-2001 [IEEE Buff Book] pp. i
+–740.
+Stranneby, D. (2001). Digital signal processing: DSP and
+applications, Newnes.
+214
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+APÊNDICE A
+Ajustes das Funções de Proteção
+Os ajustes das funções de proteção utilizadas no trabalho são
+apresentadas neste anexo, por meio das tabelas A.1, A2 e
+A.3.
+Tabela A.1: Proteção Diferencial
+Pick-Up
+Break 1
+Slope 1
+Break 2
+Slope 2
+0, 2 pu
+1, 15 pu
+15%
+8, 0 pu
+50%
+Tabela A.2: Proteção de Sobrecorrente de Fase Instantânea
+Pick-Up
+1, 15 pu
+Tabela A.3: Proteção de Sobrecorrente de Neutro
+Pick-Up
+Dial
+Curve Type
+0, 4 pu
+4, 0
+IEEE Very Inverse
+Revista Controle & Automação/Vol.23 no.2/Março e Abril 2012
+215

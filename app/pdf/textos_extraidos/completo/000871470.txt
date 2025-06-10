@@ -1,0 +1,670 @@
+2
+3
+Natália Ribeiro Sentanin
+Bauru
+ 2015
+PAPER KILLER - MOTION COMICS
+Projeto de conclusão do curso de Design 
+Gráfico da Faculdade de Arquitetura, Artes e 
+Comunicação da Unesp de Bauru.
+Orientadora: Fernanda Henriques
+Bauru
+ 2015
+RESUMO
+Abstract
+O projeto consiste em uma animação Stop Motion, mesclada 
+com técnicas de Motion Comic e feita em papel, utilizando-se de 
+recursos do Tactile Design e com inspiração na famosa história 
+em quadrinhos de Alan Moore, Batman: A Piada Mortal, icônica 
+por ser ainda hoje considerada com o roteiro mais aceito para 
+explicar a origem do personagem Coringa, principal vilão do 
+Batman. O presente projeto também serve como homenagem a 
+esse personagem, que neste ano de 2015 completa 75 anos de 
+sua primeira aparição.
+Palavras chave: stop motion, motion comic, tactile design
+The project consists of a Stop Motion animation, mixed with Motion 
+Comic techniques and made into paper, using of Tactile Design resources 
+and inspiration on the famous comic book by Alan Moore, Batman: The 
+Killing Joke, iconic to be even now considered with the script more accepted 
+to explain the origin of the Joker character, main villain of Batman. This 
+project also serves as a tribute to this character, which this year 2015 turns 
+75 years of his first appearance.
+Keywords: stop motion, motion comics, tactile design
+Agradecimentos
+Agradecimentos em primeiro lugar aos meus familiares, 
+que tanto contribuiram para que eu realizasse meu sonho e 
+futuramente me formasse; ao meu namorado, pelas ajudas, 
+pelo companheirismo e compreensão; aos amigos que fiz nessa 
+longa caminhada e que com certeza levarei para sempre na 
+memória com muito carinho, em especial aos que me ajudaram 
+diretamente com esse projeto e por fim aos professores, que foram 
+essenciais para meu aprendizado e crescimento profissional, 
+especialmente minha orientadora Fernanda Henriques e minha 
+banca avaliadora Ana Bia Andrade e Milton Nakata.
+Objetivo
+O projeto tem por objetivo analisar e enaltecer a união entre 
+técnicas manuais e digitais na concepção de animações, em 
+especial o Stop Motion. Também discutir sobre a viabilidade do 
+papel como material utilizado na produção de curtas animados. 
+Além disso, propor um híbrido entre Stop Motion e Motion 
+Comic, colocando em evidência as histórias em quadrinhos, em 
+especial Batman: A Piada Mortal, ao mesmo tempo em que serve 
+de homenagem aos 75 anos da primeira aparição do principal 
+vilão do heroi, o Coringa.
+INTRODUÇÃO
+FUNDAM
+MET
+d Origens do Stop Motion
+  :................................................. 22 
+d Produções em Stop Motion
+  :................................................. 25 
+d Stop Motion em outras mídias          
+  :.................................................36
+d Diferenciais do Stop Motion
+  :................................................  38 
+d Montagem de personagens
+  :................................................. 40
+d Animação e HQ: os Motion 
+Comics ....................................... 42
+d O que é o projeto
+  :................................................ 48   
+d Desenvolvimento da marca
+  :................................................ 49
+d Processo de produção          
+  :................................................ 52
+d Processo de pós produção
+  :................................................  55 
+d Conclusão
+  :................................................. 72 
+d Referências
+  :................................................. 74 
+d 
+  :................................................. 18 
+o
+umári
+suumári
+MENTAÇÃO
+MENTAÇÃ
+TODOLOGIA
+TODOLOGIA
+io
+16
+17
+18
+19
+18
+A 
+palavra animação tem origem na palavra animar, que um 
+dos significados é colocar alma em algo, sendo assim o 
+animador é alguém que dá alma a um objeto. Uma animação é 
+definida por um processo segundo o qual cada fotograma (ou 
+quadro) de um filme é produzido individualmente, podendo ser 
+gerado tanto por computação gráfica quanto fotografando uma 
+imagem desenhada ou repetidamente fazendo-se pequenas 
+mudanças a um modelo, fotografando o resultado. Quando os 
+fotogramas são ligados entre si e o filme resultante é visto a 
+uma velocidade de 16 ou mais imagens por segundo, há uma 
+ilusão de movimento contínuo. No caso de uma animação no 
+estilo stop motion, utiliza-se máquina filmadora, fotográfica ou 
+um computador para o registro das ações das personagens, que 
+podem ser objetos ou bonecos feitos com massa de modelar, 
+arames ou modelos em madeira com juntas mecânicas e 
+complexos mecanismos de articulação, facilitando o manuseio. 
+As diversas posições são registradas, resultando em quadros 
+(ou frames, como também é chamado) que serão reproduzidos 
+em série, em torno de 24 a cada segundo, transmitindo a 
+sensação do movimento real. Por fim, podem ser acrescentados 
+efeitos sonoros, como falas e músicas.
+*Nota: as imagens que se encontram em baixo relevo nessas páginas 
+e nas próximas ao longo deste relatório são as ilustrações oficiais da HQ 
+Batman: A Piada Mortal, escolhidos para reprodução nesse projeto, e estão 
+posicionados no exato local em que se encontram na revista original. Por 
+esse motivo, estarão sem legendas.
+Figura 1: Disco de Fenacistoscópio por Eadweard Muybridge (1893), um 
+dos primeiros dispositivos de simulação de movimento.
+20
+21
+22
+23
+                   Origens do Stop Motion
+D
+urante a primeira década do século XXI, cresceu o número de 
+animações que utilizam como principal técnica de produção 
+o stop motion. Após o auge da animação tridimensional 
+digital, algumas produtoras optaram por utilizar técnicas de 
+animação manuais, como forma de diferenciar o acabamento 
+e o conceito de suas animações. As primeiras animações do 
+tipo utilizavam apenas manipulações rápidas de objetos, com 
+o intuito de criar ilusões. Pode-se citar Viagem à Lua, de 1902, 
+do mágico ilusionista francês George Mélies (1861-1938), que 
+viu no cinema uma extensão da sua arte; e El Hotel Eléctrico, de 
+Víctor Aurelio Chomón (1871-1929). A utilização da técnica de 
+stop motion na criação de efeitos especiais pode ser vista em 
+produçõe como os três filmes da saga original de Star Wars, de 
+George Lucas lançados entre as décadas de 1970 e 1980, em que 
+naves, veículos espaciais e monstros alienígenas se moviam de 
+forma independente. Também deve ser citada a produção King 
+NMF¬´®®~CDHKKHRQHDM~NMCDNRSNOLNSHNMENHTSHKHY@CN
+como recurso para animação do gigantesco gorila, que era na 
+realidade um boneco.
+Figura 2: Viagem à Lua (1902), de George
+Mélies.
+A animação com bonecos é, sem dúvida, o exemplo mais 
+popular de uso da técnica. O primeiro filme integralmente 
+OQNCTYHCNBNLDRRDQDBTQRNENHNBTQS@LDSQ@FDL@LDQ@L@MR
+Revenge, do cineasta russo Ladslas Starewicz (1882 – 1965), de 
+1912. Starewicz produziu diversos filmes utilizando esta técnica e 
+variados tipos de bonecos, feitos com tecido, em tamanho real e 
+outros que interagiam diretamente com atores. O uso de animais, 
+insetos e personagens com características humanas dentro 
+da animação é um dos diferenciais que tornam as criações de 
+Starewicz marcos no processo de produção de animação. Pode 
+ser citado ainda o filme The Lost World (1925), com utilização 
+CDANMDBNRCD@QFHK@~CNLDRLNHKKHRQHDMCDHMFNMF
+A maioria dos problemas apresentados pelos bonecos ou pela 
+própria animação vinha de ferramentas rudimentares e massas 
+ou argilas de baixa qualidade, que não propiciavam riqueza 
+de detalhes. Com o passar do tempo, os próprios animadores 
+improvisavam o uso de materiais diversos para a produção 
+de algumas partes dos bonecos e assim a técnica foi se 
+desenvolvendo e os materiais foram se adequando ao uso.
+Figura 3: The Lost World (1925), de Willis OBrien.
+24
+25
+Nas primeiras experiências com o recurso do stop motion, 
+raramente presencia-se movimentos de boca ou expressões 
+bem elaboradas, pois os materiais e as ferramentas utilizadas 
+na época eram muito rudimentares para a produção dessas 
+ações. O aperfeiçoamento dos movimentos deu-se com o uso da 
+plastilina, massa bastante macia e prática à base de óleos e cargas 
+minerais. Grande parte dos filmes de curta e longa metragem de 
+animação atuais fazem uso desse material para a produção de 
+bonecos, entre eles A Fuga das Galinhas e Wallace & Gromit, que 
+serão citados novamente mais a frente. Nos dias atuais, também 
+são utilizadas a borracha de látex, espuma de látex, espuma de 
+poliuretano e o silicone, materiais bastante duráveis.
+Figura 4: Bonecos da animação stop motion Os Monstros das Caixas (2014).
+                 Produções em Stop Motion
+U
+m dos nomes mais conhecidos atualmente em se tratando 
+de projetos com stop motion é o de Tim Burton. Em 1982, 
+quando trabalhava na Disney, surgiu a ideia de um curta de terror 
+para crianças, Vincent. O filme conta a história de um estranho 
+garotinho que sonha ser como o seu ídolo, o famoso artista de 
+filmes de terror Vincent Price. O boneco criado por Burton era 
+anguloso e de formato desconfortável. O curta foi feito todo em 
+preto e branco com narração do próprio Vincent Price. O visual 
+incomum não podia ser considerado um filme Disney.
+Figura 5: Vincent (1982), de Tim Burton.
+26
+27
+Burton seguiu carreira fazendo filmes live action, e foi 
+apenas em 1993 que colocou em prática a ideia do filme 
+que é hoje uma das principais referências em animação do 
+tipo stop motion, O Estranho Mundo de Jack (The Nightmare 
+Before Christmas). A produção do filme reuniu os melhores 
+animadores da atualidade e foi o primeiro com essa técnica 
+de animação a ser distribuído no mundo todo. A construção 
+das personagens foi meticulosamente planejada para que eles 
+realmente se parecessem com os rascunhos de Burton. Os 
+sets foram elaborados com grotescas construções criando um 
+mundo surreal, repleto de texturas estranhas. Foram feitos 227 
+bonecos, incluindo vampiros, fantasmas, lobisomens, múmias 
+entre outros, muitos deles com várias cabeças ou faces para 
+serem substituídas durante o processo de animação. O filme 
+não contava com grandes recursos de computação gráfica, no 
+entanto, algumas cenas foram manipuladas para se conseguir 
+mais contraste e vibração nos personagens, destacando-os dos 
+cenários. O longa teve em sua direção o talentoso animador 
+Henry Sellick.          
+Figura 6: Tim Burton com os bonecos de O Estranho Mundo de Jack.
+O ESTRANHO MUNDO
+DE JACK
+28
+29
+Outro longa de sucesso do mesmo gênero, sob produção e 
+co-direção de Tim Burton com Mike Johnson, é A Noiva Cadáver 
+(Corpse Bride), de 2005, com personagens de 25 a 40 cm de altura, 
+feitos em espuma de látex, silicone e uma estrutura metálica para 
+compor o esqueleto e dar sustentação. 
+Figura 7: Victor Van Dort, personagem de A Noiva Cadáver (2005).
+A noiva
+Cadáver
+30
+31
+Em 2000, foi lançada uma animação muito aclamada por 
+críticos, A Fuga das Galinhas (Chicken Run), primeiro longa 
+metragem do Studio Aardman, e dirigido por Peter Lord e Nick 
+Park. A produção do filme, que durou 4 anos, conta a história de 
+galinhas que estão determinadas a fugir de sua granja, semelhante 
+a um campo de concentração. Em geral, os personagens foram 
+construídos com plastilina, porém com algumas partes rígidas e, 
+para tais partes, foram utilizados vários tipos de materiais, como 
+polimer clay, resinas diversas, gesso, borracha, madeira, plástico 
+etc. Para que não fosse notada a diferença entre um material e 
+outro na tela pelo espectador, foram criadas zonas de encaixe 
+onde um material sobrepõe o outro de forma natural, como por 
+exemplo um chale no pescoço das galinhas onde a cabeça é 
+encaixada no corpo facilitando a manipulação dos bonecos.
+a fuga das
+Figura 8: Ginger, personagem de A Fuga das Galinhas.
+GALINHAS
+32
+33
+Por fim, a animação Wallace & Gromit: A Batalha dos 
+Vegetais (Wallace & Gromit: The Curse of the Were-Rabbit) 
+também foi muito elogiada e ganhadora de diversos prêmios 
+de cinema, incluindo o Oscar de Melhor Animação. O longa de 
+2005 é uma produção da DreamWorks Animation e Aardman 
+Animations, mesmos criadores de A Fuga das Galinhas. O filme 
+conta a história de Wallace e seu leal cão, Gromit, em uma 
+missão a fim de descobrir qual o mistério por trás dos jardins 
+do vilarejo onde vivem, mistério esse que se tornou uma 
+ameaça à competição anual do maior vegetal, organizada pela 
+Sra. Tottington. Os personagens do filme foram produzidos 
+em plastilina, os animadores criaram moldes para facilitar a 
+reprodução dos personagens, já que durante as filmagens eles 
+sofriam modificações que, com o tempo, acabavam destruindo 
+os bonecos. Alguns personagens possuíam partes rígidas nos 
+cabelos, bocas, roupas etc, que podiam ser substituídas durante 
+o processo de gravação. Os olhos eram pequenas miçangas que 
+podiam ser manipuladas com a ajuda de uma agulha.
+Figura 9: Wallace & Gromit, protagonistas da animação.
+Wallace & Gromit
+A batalha dos
+vegetais
+34
+35
+Figuras 12: Animação Frankenweenie; Figura 13: Animação O Fantástico Senhor 
+Raposo.
+Também podem ser citados como longas do gênero stop 
+motion filmes como: A Festa do Monstro Maluco (1967); 
+ParaNorman (2012); Coraline (2009); Frankenweenie (2012); O 
+Fantástico Senhor Raposo (2009).
+Figura 10: Animação Paranorman; Figura 11: Animação Coraline.
+36
+37
+              Stop Motion em outras mídias
+A 
+técnica do stop motion não se limitou apenas ao cinema. 
+Foi utilizada também como recurso em outras mídias. Entre 
+elas podem ser citadas a televisão, tendo como exemplo o 
+desenho animado Pingu, uma série com 52 episódios, que foi 
+desenvolvida por Otmar Gutmann, criada no Tricksfilm Studios 
+da Suíça e Zeca & Joca, animação criada em 1976 pela dupla 
+Lubomir Benes e Vladimir Jiranek, da República Tcheca, ambas 
+transmitidas pela TV Cultura. Ainda com foco em televisão, pode 
+ser citado o uso do stop motion na propaganda. Empresas como 
+BIC, Moleskine, Melissa, Nokia e Kia fizeram uso desse recurso de 
+animação como forma criativa de divulgação de seus produtos, 
+procurando chamar a atenção do consumidor. 
+Uma outra mídia que tem atualmente explorado as técnicas 
+do stop motion é a de videoclipes. Um exemplo bastante criativo 
+e divertido do uso dessa animação pode ser visto no videoclipe 
+da música Strawberry Swing, da banda Coldplay.
+Figura 14: Animação stop motion Zeca & Joca; Figura 15: Animação Pingu.
+Figura 16: Videoclipe em stop motion da música Strawberry Swing, do Coldplay.
+38
+39
+               Diferenciais do Stop Motion
+O 
+que torna as animações em stop motion especiais é a 
+complexidade da sua produção, por unir primeiramente 
+um longo e delicado trabalho manual de modelagens, recortes, 
+montagens e composições ao posterior trabalho de registro e 
+edição computadorizada; uma junção de trabalho manual com 
+digital produzindo um resultado único. Ainda como justificativa 
+para a produção de animações com o uso dessa técnica, pode 
+ser citada a dissertação do Mestrado em Cultura Visual por 
+Flávio Gomes de Oliveira, pela Universidade Federal de Goiás 
+(UFG), a respeito do Panorama e Proposições da Animação em 
+Stop Motion. Em sua pesquisa de dados comparativos, foram 
+comprovadas a eficiência e viabilidade da técnica de stop motion 
+em relação à produção de animações digitais tridimensionais, 
+técnica mais utilizada na atualidade.
+Dentre os principais fatores que determinam o sucesso de 
+uma animação produzida com a técnica de stop motion, foi 
+destacado o aspecto indicial da animação que apresenta objetos 
+e bonecos em movimento, que realmente foram construídos 
+e existem ou existiram, ocupando um espaço. Esse é um fator 
+agregador de valor às animações do tipo e utilizado pela mídia 
+para divulgação dos filmes. Outro fato utilizado pela mídia como 
+mecanismo de divulgação é a dificuldade de produção deste tipo 
+de animação, enfatizando assim as roupas que seriam usadas 
+pela personagem ou detalhes minúsculos de cenários e objetos. 
+Conclui-se também que a animação feita com a técnica de 
+stop motion possui um caráter extremamente lúdico, capaz de 
+cativar crianças e adultos, tem grande aceitação e admiração por 
+parte da crítica e possui versatilidade para lidar com temas que 
+envolvam o imaginário popular, ocultismo e a mitologia em geral. 
+Por fim, os dados comparativos mostraram que as animações 
+tradicionais tridimensionais (stop motion) mais conhecidas 
+tiveram em média um menor custo de produção e maior lucro 
+em relação as animações tradicionais bidimensionais e digitais 
+tridimensionais.
+Figura 17: Set de produção e filmagem da animação stop motion Coraline.
+40
+41
+                Montagem de personagens
+A 
+respeito de materias, os mais comuns para a confecção dos 
+personagens são plastilina ou massa de modelar, bonecos 
+articuláveis em madeira, polimer clay, resinas diversas, gesso, 
+arame, tecido, borrachas de todos os tipos, silicones, isopor, 
+espuma de látex, plástico, vinil, dentre outros materiais que 
+possam compor a figura dos bonecos. No cinema o material 
+precisa ser mais resistente e maleável, visto que os modelos têm 
+que durar meses. Pouco se vê de animações e experimentos com 
+papel, devido a maior dificuldade de manuseio e representação 
+tridimensional. Porém, o efeito que o recorte, costura, colagem, 
+dobradura e sobreposição de papeis e tecidos de diferentes 
+tamanhos, cores, formas e texturas proporciona tem trazido um 
+aumento do uso desses materiais em projetos variados, técnica 
+nomeada atualmente como Tactile Design. Esse tipo de produção 
+busca simular uma tridimensionalidade, porém feita à mão, o 
+que confere o charme da imperfeição típica dos processos 
+manuais, além de gerar um produto autêntico e exclusivo, algo 
+mais difícil de se conseguir atualmente em trabalhos digitais e 
+tendo em vista os tutoriais disponíveis online. Em resumo, trata-
+se de uma ilustração 3D feita artesanalmente, construída pelo 
+próprio responsável ou por uma equipe, um processo que se 
+inicia na construção de uma peça, o registro e a pós produção 
+digital.
+O estúdio russo People Too é um dos que realiza projetos 
+utilizando apenas técnicas de manipulação em papel, aplicadas 
+a anúncios e publicidade em geral. Outros exemplos de projetos 
+com uso do papel são os realizados pela designer gráfica e 
+diretora de arte espanhola Noelia Lozano, que já teve como 
+clientes Havaianas, Vodafone, revista Computer Arts, revista Zupi 
+entre outros. Por fim, já com foco em stop motion, pode ser 
+BHS@C@@@MHL@b^N@UDNTQD@QS~OQNCTYHC@ODK@HKTRSQ@CNQ@
+Molly Crabapple, a musicista Kim Boekbinder e o animador Jim 
+Batt.  
+Figura 18: Detalhe de um dos trabalhos em papel do estúdio People Too.
+Figura 19: Trabalho para a Havaianas de Noelia Lozano; Figura 20: Detalhe dos personagens da ani-
+mação stop motion I Have Your Heart.
+42
+43
+            Animação e HQ: os Motion Comics
+A
+s histórias em quadrinhos possuem um público alvo bastante 
+diversificado e abrangente, de crianças e adultos até idosos. 
+Uma forma de arte considerada tanto pop quanto cult, capaz 
+de estar sempre se reinventando. A união entre duas vertentes, 
+animação e histórias em quadrinhos, é que pressupõe a técnica 
+dos motion comics. Trata-se de animações simples e limitadas, 
+em geral adaptações audiovisuais fieis de material previamente 
+publicado em quadrinhos. Através dessa técnica, as editoras 
+parecem conseguir atingir o público que perderam para a 
+internet, e o fazem através de produções que se apropriam 
+das possibilidades técnicas das novas mídias sem perder suas 
+referências nas mídias tradicionais. 
+Assim sendo, os motion comics reunem elementos da 
+linguagem estática da HQ com a linguagem da animação. Das 
+HQs eles herdaram o grafismo, traços simplificados e signos 
+como linhas de movimento, onomatopeias, balões de diálogos 
+e outras representações gráficas para experiências sensoriais. 
+Da animação herdaram o movimento, ainda que de forma 
+incipiente e limitada. Pode-se afirmar então que se trata de uma 
+mídia híbrida.
+É necessário destacar que por se tratar de uma mescla de 
+linguagem estática e de movimento, as técnicas de animação 
+utilizadas nos motion comics são diferentes presentes em 
+animações tradicionais. No caso das motion comics, há o recorte 
+das figuras em camadas de forma que essas sejam utilizadas para 
+reproduzir vários movimentos que normalmente seriam obtidos 
+com o processo quadro a quadro ou com o uso do 3D.  Isso 
+porque o material primário é um conjunto de desenhos estáticos 
+e bidimensionais, cujo movimento é anexado através do uso de 
+técnicas de animação digital variadas.
+Dessa forma, o movimento na maioria das motion comics se 
+restringe à animação de alguns elementos da cena, adição de 
+efeitos visuais tais como fumaça e iluminação à imagem estática 
+e ao uso de ângulos e movimentações de câmera. Os ângulos de 
+câmera, por sua vez, possuem uma função adicional de dirigir o 
+olhar do espectador. Assim, a animação pode ser usada quando 
+o movimento for necessário para transmitir alguma informação 
+ou intensificar a carga emocional de uma cena. 
+É notável também que os motion comics fazem, como a maioria 
+dos desenhos animados, uso de efeitos sonoros, dublagem e 
+trilha musical. Esses efeitos frequentemente coexistem com suas 
+representações gráficas, originárias dos quadrinhos.
+Embora em geral muito detalhados, os motion comics 
+frequentemente evidenciam a precariedade da arte do material 
+de origem, as HQs. Alguns aspectos de esboços e mesmo de 
+artes finalizadas despreocupadamente tornam-se mais aparentes 
+nessa técnica híbrida de animação do que nos quadrinhos, 
+estética grosseira de detalhes que chama muita atenção.
+Os motion comics são uma mídia que tem como seu principal 
+meio de veiculação a internet. Esta é nova se comparada a outros 
+meios como o cinema ou a televisão. Por isso, os motion comics 
+estão ainda em evolução, tendo apenas uma parcela de seus 
+usos potenciais sido explorada pelos produtores.
+Como bons exemplos de motion comics, podem ser citados: 
+Iron Man: Extremis; Astonishing X-Men; Watchmen; Batman: 
+Black and White e a motion comic brasileira Mascate, da editora 
+Draconian Comics.
+l
+d
+44
+45
+Figura 24: Mascate; Figura 25: Batman: Black and White.
+Figura 21: Iron Man: Extremis; Figura 22: Astonishing X-Men; Figura 23: Watchmen.
+46
+47
+48
+49
+Figura 26: Ilustração da capa de Batman: The Killing Joke.
+                       O que é o projeto
+A
+presentados os processos criativos de produção no capítulo 
+anterior, nota-se um aumento de projetos que unam técnicas 
+manuais e digitais, aproximando o criador das novas tecnologias, 
+mas sem abandonar antigos métodos. Ainda com esse foco, 
+tendo em mente o aumento do uso da internet e a expansão 
+digital, torna-se interessante transformar um projeto apenas 
+visual (ou mídia offline, como pode ser chamada) em um trabalho 
+audiovisual ou online. A partir dessa perspectiva surgiu a ideia 
+para o trabalho de conclusão de curso. Trata-se de uma animação 
+stop motion mesclada com técnicas de motion comic feita em 
+papel, tendo como base a história em quadrinho Batman: A Piada 
+Mortal (Batman: The Killing Joke), com roteiro de Alan Moore e 
+ilustração de Brian Bolland, publicada pela DC Comics em 1988. 
+Trata-se de uma versão para a origem do Coringa, principal vilão 
+do Batman. Apesar das várias versões existentes, essa tornou-se 
+a mais aceita pelos leitores e fãs do heroi em geral. Além disso, 
+2015 é o ano em que completa 75 anos da primeira aparição do 
+personagem. Essa seria então uma homenagem a um dos vilões 
+mais icônicos das histórias em quadrinhos.
+ 
+                   Desenvolvimento da marca
+S
+endo o projeto uma união entre animação e histórias em 
+quadrinhos, se fazia necessário o desenvolvimento de uma 
+marca que pudesse apresentar certa informalidade, ou mesmo 
+comicidade. Além disso, o nome deveria deixar claro o propósito 
+do projeto e todos os elementos envolvidos. Partindo desse 
+pressuposto, surgiu o nome: “Paper Killer - Motion Comics”. 
+“Paper “seria o indicador do uso de papel como matéria prima 
+principal, “Killer” - assassino em inglês - seria uma referência ao 
+principal personagem da trama de inspiração, o Coringa. E por 
+fim, “Motion Comics”, o resultante do projeto. 
+   Para o logotipo, foi utilizada também como referência a 
+característica mais marcante do vilão Coringa, o sorriso largo, 
+que expressa ao mesmo tempo a jocosidade de suas piadas e a 
+maldade de seus atos.
+   
+ 
+48
+49
+50
+51
+50
+      Foram utilizadas para a marca a família tipográfica Nirmala 
+UI (com alguns ajustes para facilitar o encaixe das letras) em três 
+pesos diferentes: Bold, Regular e Semilight.
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+                                         Nirmala UI Bold
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+                                        Nirmala UI Regular
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+                                        Nirmala UI Semilight
+      Para a paleta de cores, foram adicionados os três tons 
+principais do Coringa: roxo, verde e vermelho, sendo essas as 
+três versões do logotipo, permitindo aplicações da marca em 
+uma maior variação de fundos. O amarelo faz referência ao 
+sorriso amarelado, irônico.
+d
+d
+d
+d
+d
+      C=49, M=98, Y=43, K=39
+      C=83, M=17, Y=100, K=40
+      C=0, M=100, Y=100, K=8
+      C=0, M=100, Y=74, K=86
+      C=0, M=0, Y=74, K=0
+51
+52
+53
+Figura 28: Algumas peças já unidas e outras coladas no EVA, as que farão a simulação de 3D.
+Figura 27: Peças separadas da ilustração, reproduzidas por cima da imagem original, buscando o máximo
+                                                                                                         de fidelidade com a ilustração da HQ.
+                     Processo de produção
+A 
+matéria prima principal para a confecção dos quadrinhos foi 
+o papel, de diversos tamanhos, cores, texturas e gramaturas, 
+entre eles papel camurça, cartão, cartolina, laminado, crepon, 
+color set e EVA, sendo que esse último ficaria colado entre um 
+papel e outro, com a função de criar profundidade na imagem e 
+simular tridimensionalidade. A colagem de um ao outro foi feita 
+com cola de isopor/EVA. Além desses materiais, foram utilizados 
+ainda tesoura, palitos de churrasco e canetas nankim 0.4 e 0.8 
+e caneta pilot preta, para finalizar os detalhes das ilustrações. 
+Abaixo, fotos do processo de criação de uma das ilustrações em  
+feita em papel.
+Figura 29: Todas as peças já coladas; 
+Figura 30: Detalhe das figuras que formarão o “3D” da imagem.
+Figura 31: Imagem quase pronta com o cabelo em crepon.
+Figura 32: Imagem com o cabelo em crepon pronto.
+52
+54
+55
+Figura 33: Imagem pronta; Figura 34: Imagem pronta 
+comparada à ilustração original. 
+                  Processo de pós produção
+A 
+pós a confecção de todas as ilustrações dos quadrinhos 
+selecionados (os que estão ao longo do relatório), estes 
+foram levados ao estúdio e fotografados, utilizando uma câmera 
+NIKON D5200 e um único foco de luz dura, que variava de 
+posição (lateral, superior..) de acordo com o necessário, com o 
+objetivo de formar sombras bem marcadas e deixar em evidência 
+a profundidade simulada pelo distanciamento entre os papeis, 
+organizados e colados em camadas. 
+Feito esse processo, as imagens foram editadas nos 
+Softwares Adobe Photoshop CS6 e Adobe Lightroom 5.7, com o 
+objetivo de eliminar falhas nas imagens, como dobras de papel 
+e riscos de caneca, além de corrigir a iluminação, as sombras 
+e os contrastes. A seguir, as fotos já editadas dos quadrinhos 
+selecionados, comparados às ilustrações originais.
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+66
+68
+69
+      Ainda na pós produção, após a edição das fotos, foram feitas 
+interferências digitais nas imagens, para fins de detalhamento, 
+detalhes esses que seriam de difíceis representações em papel. 
+Por exemplo a chuva, as gotas caídas no chão, formando ondas, 
+textos em destaques, entre outros. Além disso, como são efeitos 
+que possuem movimento durante o processo de animação, 
+produzí-los digitalmente facilita o projeto. Assim, foi utilizado 
+como recurso o software Adobe Illustrator CS6 para produzir 
+desenhos vetoriais.
+ Por fim, já com a edição da animação, foram sequenciadas 
+as fotos, a fim de produzir o stop motion, mesclado com 
+técnicas do motion comics. A simulação de movimento ficou 
+por conta de recursos de animação de pequenas partes das 
+cenas (olhos, braços, sobrancelhas...), “zoom in” e “zoom out” 
+em alguns elementos da cena, ligando uma imagem à outra e 
+sequenciamento de fotos, como em um stop motion tradicional. 
+A edição de vídeo foi elaborada no software Adobe After Effects 
+CS6. A resolução escolhida para a composição foi HDTV 1080 
+a 24 quadros por segundo. Para a trilha sonora, foi composta 
+uma música original, que teve como inspiração as trilhas das 
+motion comics já citadas anteriormente. A seguir, alguns prints 
+da edição do vídeo com o recurso de zoom.
+                                 FICHA TÉCNICA
+Criação e produção: Natália Sentanin
+Animação: Natália Sentanin
+Roteiro: baseado na história em quadrinhos publicada pela DC 
+Comics, Batman: A Piada Mortal
+Fotografia: Daniel Guedes
+Música: Arthur Gurgel
+68
+70
+71
+71
+72
+73
+Conclusão
+       
+O desenvolvimento do cinema ao longo dos anos, novas 
+tecnologias, e o surgimento de técnicas cada vez mais avançadas 
+de pré e pós produção tem servido também como estímulo à 
+criação de projetos que sejam uma união de trabalho manual 
+e riqueza de detalhamento com a facilidade e agilidade dos 
+recursos digitais, como uma junção do melhor que os dois 
+métodos projetuais podem oferecer. O resultado são produções 
+audiovisuais cada vez melhores e verossímeis, projetos únicos, 
+que encantam pela ludicidade e riqueza de detalhes e que 
+possibilitam o entretenimento de diversas faixas etárias e 
+interesses. Lembrando ainda que o design é também o 
+responsável por agregar maior valor a essas produções, fazendo 
+uso de diversas técnicas criativas, aliadas ao desenvolvimento 
+digital.
+74
+75
+referências
+ê
+CAIRES, Augusto. Motion Comics: Recriando as histórias em quadrinhos e a animação. 
+2010. Disponível em: < http://fca.pucminas.br/verbo/pex/pe_motioncomics.pdf>. Acesso em: 
+04/04/2015.
+       
+CRABAPPLE, Molly. I Have Your Heart. 2012. Disponível em: <http://boingboing.
+net/2012/11/19/i-have-your-heart.html>. Acesso em: 04/04/2015.
+CUMMINS, Chris. The 10 Best Motion Comics. 2011. Disponível em: <http://www.toplessrobot.
+com/2011/06/the_10_best_motion_comics.php>. Acesso em: 07/04/2105.
+LEITE, Lucas. Um papo com João Paulo Lopes sobre Tactile Desing. 2014. Disponível em: <
+http://www.designculture.com.br/um-papo-com-joao-paulo-lopes-sobre-tactile-design/>. Aces-
+so em: outubro de 2014.
+LOZANO, Noelia. Disponível em: <http://www.noelialozano.com/contact/>. Acesso em: 
+04/04/2015.
+Midia Arte. Stop Motion. Disponível em: <http://www.eba.ufmg.br/midiaarte/quadroaquadro/
+stop/princip1.htm#intro>. Acesso em: Outubro de 2014.
+OLIVEIRA, Flávio Gomes de. Panorama e proposições da animação em stop motion. 2010. 
+Disponível em: <https://culturavisual.fav.ufg.br/up/459/o/2010_Flavio_Gomes_de_Oliveira.pdf>. 
+Acesso em: 11/03/2015.
+PAULA, Ana. Você sabe o que é Tactile Design? 2014. Disponível em: <
+ http://cadaris.com.br/blog/2014/05/15/voce-sabe-o-que-e-tactile-design/>. Acesso em: outubro 
+de 2014.
+PENKA, Renata. A história do stop motion + 10 vídeos legais. 2014. Disponível em: < http://
+somentecoisaslegais.com.br/curiosidades/a-historia-do-stop-motion-10-videos-legais>. Acesso 
+em: 11/03/2015.
+76
+77

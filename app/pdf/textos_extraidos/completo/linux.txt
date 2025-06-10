@@ -1,0 +1,203 @@
+O que é Linux
+Publicado por brain em Sáb, 2006-03-25 19:35. :: Documentação [http://br-
+linux.org/linux/taxonomy/term/13]
+por Augusto Campos 
+Este artigo responde a diversas dúvidas comuns de novos usuários, desenvolvedores
+interessados, ou alunos às voltas com trabalhos acadêmicos. Entre as questões,
+estão incluídas: 
+•
+O que é Linux 
+•
+Linux ou GNU/Linux 
+•
+O kernel Linux 
+•
+O sistema operacional Linux (ou GNU/Linux) 
+•
+Como fazer download ou adquirir o Linux 
+e muitas outras. Ao final há um guia de referências adicionais sobre o assunto. Leia
+também O que é uma distribuição de Linux [http://br-linux.org/linux/faq-distribuicao]
+e a FAQ BR-Linux - Lista de Perguntas Freqüentes [http://br-linux.org/linux/faq].
+O que é Linux
+Linux [http://kernel.org/] é ao mesmo tempo um kernel (ou núcleo) e o sistema
+operacional que roda sobre ele, dependendo do contexto em que você encontrar a
+referência. O kernel Linux foi criado em 1991 por Linus Torvalds
+[http://pt.wikipedia.org/wiki/Linus_Torvalds], então um estudante finlandês, e hoje é
+mantido por uma comunidade mundial de desenvolvedores (que inclui
+programadores individuais e empresas como a IBM, a HP e a Hitachi
+[http://en.wikipedia.org/wiki/OSDL]), coordenada pelo mesmo Linus, agora um
+desenvolvedor reconhecido mundialmente. 
+Linus Torvalds
+  
+O Linux adota a GPL, uma licença livre - o que significa, entre outras coisas, que
+todos os interessados podem usá-lo e redistribuí-lo. Aliado a diversos outros
+softwares livres, como o KDE [http://www.kde.org/], o GNOME
+[http://www.gnome.org/], o Apache [http://www.apache.org/], o Firefox
+[http://www.spreadfirefox.org/], os softwares do sistema GNU [http://www.fsf.org/] e
+o OpenOffice.org [http://www.openoffice.org.br/], o Linux pode formar um ambiente
+moderno, seguro e estável para desktops, servidores e sistemas embarcado. 
+Acima você vê 3 telas do sistema operacional Linux em ambiente PC desktop. Mas o
+sistema funciona em dezenas de outras plataformas, desde mainframes até relógios
+de pulso, passando por várias arquiteturas: Intel, StrongARM, PowerPC, Alpha etc.,
+com grande penetração também em dispositivos embarcados, como handhelds,
+PVR, vídeogames e centrais de entretenimento. 
+Linux ou GNU/Linux?
+A Free Software Foundation [http://www.fsf.org/] advoga que o sistema operacional
+formado pelo núcleo Linux e o conjunto de utilitários e aplicativos que incluem
+aqueles desenvolvidos pelo seu projeto GNU deve ser chamado de GNU/Linux, e não
+simplesmente de Linux. A questão tem sido objeto de intensos debates
+[http://en.wikipedia.org/wiki/GNU/Linux_naming_debate] há anos, sem que um
+posicionamento geral e definitivo seja alcançado. 
+Naturalmente a posição da FSF não é a única existente. São conhecidas
+[http://en.wikipedia.org/wiki/GNU/Linux_naming_debate] as declarações de Linus
+Torvalds (que acharia interessante a existência de uma distribuição chamada GNU
+Linux e mantida pelo projeto GNU), de Eric Raymond e de John Dvorak, entre
+outros. Há ainda uma interessante citação da própria FSF afirmando que um nome
+como GNU/X11/Apache/Linux/TeX/Perl/Python/FreeCiv seria absurdo, portanto é
+necessário estabelecer um limite. Mas, diz ela, "Não pode ser justo dar todo o
+crédito para uma contribuição secundária (Linux) enquanto se omite a contribuição
+principal (GNU)." Outra citação digna de nota vem de um editorial do veterano Linux
+Journal: "Talvez Richard Stallman esteja frustrado porque Linus recebeu as glórias
+por ter feito aquilo que Stallman pretendia fazer." 
+O kernel Linux
+(inclui trechos da Wikipédia) 
+Inicialmente, o kernel Linux foi desenvolvido como um hobby por Linus Torvalds
+(então um estudante) com o objetivo de desenvolver seu próprio sistema
+operacional "Unix-like" que rodasse em processadores Intel 80386. Linus chegou a
+estudar o Minix, um sistema similar de autoria do famoso acadêmico Andrew
+Tanenbaum, mas não ficou satisfeito com a arquitetura deste (que não era um
+software livre, inclusive) e resolveu criar o seu próprio sistema. O projeto Linux foi
+publicamente lançado em 1991 em uma famosa mensagem para a Usenet
+[http://pt.wikipedia.org/wiki/Linus_Torvalds#mensagem]. 
+Tux, o logo e mascote do Linux
+  
+Hoje o Linux é um kernel híbrido monolítico. Drivers de dispositivo e extensões do
+kernel tipicamente rodam com acesso total ao hardware, embora alguns rodem em
+espaço de usuário. Ao contrário dos kernels monolíticos padrão, os drivers de
+dispositivo são facilmente configurados como módulos, e carregados e
+descarregados enquanto o sistema está rodando. Também ao contrário de kernels
+monolíticos padrão, drivers de dispositivo podem ser pré-inseridos sob certas
+condições. Essa última característica foi adicionada para corrigir o acesso a
+interrupções de hardware, e para melhorar o suporte a multiprocessamento
+simétrico. 
+Embora Linus Torvalds não tenha tido como objetivo inicial tornar o Linux um
+sistema portável, ele evoluiu nessa direção. Linux é hoje, na verdade, um dos
+kernels de sistema operacional mais portados, rodando em sistemas desde o iPaq
+(um computador portátil) até o IBM S/390 (um volumoso e altamente custoso
+mainframe), passando por várias arquiteturas: Intel, StrongARM, PowerPC, Alpha
+etc., com grande penetração também em dispositivos embarcados, como handhelds,
+PVR, vídeogames e centrais de entretenimento. 
+De qualquer modo, é importante notar que os esforços de Linus foram também
+dirigidos a um outro tipo de portabilidade. Portabilidade, de acordo com Linus, era a
+habilidade de facilmente compilar aplicativos de uma variedade de origens no seu
+sistema; portanto o Linux originalmente se tornou popular em parte devido ao
+esforço para que fosse fácil fazer com que códigos de aplicativos disponíveis para
+outros sistemas (inclusive no Unix e no sistema GNU) rodassem no Linux. 
+Hoje, Linus Torvalds continua a dirigir o desenvolvimento do kernel, enquanto
+outros subsistemas (como ferramentas de desenvolvimento, ambientes gráficos e
+aplicativos) são desenvolvidos independentemente. A tarefa de integrar todos estes
+componentes para formar um sistema completo é desempenhada pelas empresas e
+organizações que mantêm distribuições de Linux. 
+O sistema operacional Linux (ou GNU/Linux)
+(inclui trechos da Wikipédia) 
+Logo que Linus Torvalds passou a disponibilizar o Linux, ele apenas disponibilizava o
+kernel (núcleo) de sua autoria juntamente com alguns utilitários básicos. O próprio
+usuário devia encontrar os outros programas, compilá-los e configurá-los e, talvez
+por isso, o Linux tenha começado a ter a fama de sistema operacional apenas para
+técnicos. Foi neste ambiente que surgiu a MCC (Manchester Computer Centre),
+a primeira distribuição Linux, feita pela Universidade de Manchester, na tentativa
+de poupar algum esforço na instalação do Linux. 
+Hoje em dia, um sistema operacional Linux completo (ou uma "distribuição de
+Linux") é uma coleção de softwares (livres ou não) criados por indivíduos, grupos e
+organizações ao redor do mundo, tendo o Linux como seu núcleo. Companhias como
+a Red Hat, a Novell/SUSE, a Mandriva (união da Mandrake com a Conectiva), bem
+como projetos de comunidades como o Debian, o Ubuntu, o Gentoo e o Slackware,
+compilam o software e fornecem um sistema completo, pronto para instalação e
+uso. 
+As distribuições de GNU/Linux começaram a ter maior popularidade a partir da
+segunda metade da década de 1990, como uma alternativa livre para os sistemas
+operacionais Microsoft Windows e Mac OS, principalmente por parte de pessoas
+acostumadas com o Unix na escola e no trabalho. O sistema tornou-se popular no
+mercado de servidores, principalmente para a Web e servidores de bancos de dados,
+inclusive no ambiente corporativo - onde também começou a ser adotado em
+desktops especializados. 
+No decorrer do tempo várias distribuições surgiram e desapareceram, cada qual
+com sua característica. Algumas distribuições são maiores outras menores,
+dependendo do número de aplicativos e sua finalidade. Algumas distribuições de
+tamanhos menores cabem em um disquete com 1,44 MB, outras precisam de vários
+CDs, existem até algumas que tem versões em DVD. Cada uma tem seu público e
+sua finalidade. 
+Veja também a questão O que é uma distribuição de Linux [http://br-
+linux.org/linux/faq-distribuicao]. 
+Download ou aquisição do Linux
+Embora provavelmente a forma mais fácil de obter o Linux seja através dos CDs
+distribuídos como brinde em diversas revistas nacionais (escolha sempre uma
+versão recente!), o jeito mais fácil de obter sua cópia sem desembolsar nada a mais
+é através do download de imagens ISO, que são arquivos (geralmente por volta de
+650MB cada um) trazendo o conteúdo completo de um CD-ROM, prontos para serem
+gravados em um CD, permitindo assim que você obtenha cópias idênticas de um CD
+original. Verifique na ajuda do seu programa favorito de gravação de CDs como
+fazer para gravar a partir de uma imagem ISO - quase todos os programas
+populares dispõem deste recurso, e a operação em geral é simples. 
+Algumas distribuições (como o Knoppix [http://www.knoppix.org/] e o brasileiro
+Kurumin [http://www.guiadohardware.net/linux/kurumin/])são especialmente
+disponibilizadas na forma de Live CDs, capazes de rodar diretamente do CD e
+dispensando instalação no disco de seu computador - é uma boa forma de ter seu
+primeiro contato. 
+Como o Linux é um software livre, a maior parte dos produtores disponibiliza
+imagens ISO contendo exatamente o mesmo conteúdo dos CDs vendidos em lojas
+ou na Internet, e você pode fazer o que quiser com elas - até mesmo gravar em
+CDs para revendê-las (e se você quiser comprar CDs deste tipo, lojas virtuais
+brasileiras como a Tempo Real [http://www.temporeal.com.br/] e a LinuxMall
+[http://www.linuxmall.com.br/] estão à disposição). Quando se trata de Linux, este
+tipo de cópia e revenda não é irregular nem anti-ético, pois é da essência do
+software livre. 
+Você pode procurar suas imagens ISO no site de sua distribuição preferida - às
+vezes será necessário fazer o download de mais do que uma imagem, e em outros
+casos o download da primeira imagem é obrigatório, e o das outras é opcional.
+Raras são as distribuições que não disponibilizam imagens ISO de instalação. 
+Se preferir, procure no site linuxiso.org, cuja especialidade é apontar links para
+imagens ISO dos CDs das distribuições de Linux do mundo todo. 
+Como se trata de um download grande (uma distribuição em 3 CDs corresponde a
+quase 2GB de dados), certifique-se de ter espaço suficiente no seu HD, e utilize um
+bom gerenciador de download. 
+Veja também o artigo Escolhendo, obtendo e gravando o Linux: como fazer o
+download ou comprar [http://br-linux.org/linux/download]. 
+Referências
+•
+BR-Linux
+  
+ [http://br-linux.org/]
+•
+The Linux Home Page at Linux Online
+  
+ [http://www.linux.org/]
+•
+Linux.com: The Enterprise Linux Resource
+  
+ [http://www.linux.com/]
+•
+Linux - Wikipédia
+  
+ [http://pt.wikipedia.org/wiki/Linux]
+•
+Linux - Wikipedia, the free encyclopedia
+  
+ [http://en.wikipedia.org/wiki/Linux]
+•
+The Linux Documentation Project
+  
+ [http://www.tldp.org/]
+•
+Escolhendo, obtendo e gravando o Linux: como fazer o download ou comprar
+  
+[http://br-linux.org/linux/download]
+•
+O que é uma distribuição de Linux
+  
+ [http://br-linux.org/linux/faq-distribuicao]
+Para citar esta página em seu trabalho acadêmico
+Dados para referência bibliográfica: 
+CAMPOS, Augusto. O que é Linux. BR-Linux. Florianópolis, março de 2006.
+Disponível em <http://br-linux.org/linux/faq-linux>. Consultado em [data da sua
+consulta]. 
