@@ -1,0 +1,234 @@
+
+
+
+
+
+
+
+
+
+
+at | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+at
+
+at [opções]
+Descrição
+Este comando agenda uma tarefa para que seja executada em determinado momento.
+Algumas opções do comando
+
+-c tarefa : o conteúdo da tarefa agendada é enviado para a saída padrão, onde tarefa corresponde a um número de identificação gerado pelo sistema.
+-d : deleta tarefa agendada. É um alias para o comando atrm.
+-f arquivo : a tarefa a ser executa está no arquivo especificado.
+-l : lista as tarefas agendadas. É um alias para o comando atq.
+-m : envia um e-mail para o usuário quando a tarefa for concluída.
+-M : nunca envia e-mail para o usuário.
+-q fila : armazena a tarefa em uma determinada fila. Quando o nome da fila não é fornecido, o sistema coloca a tarefa agendada pelo comando at na fila “a”. As filas podem ser de “a” a “z” e de “A” a “Z”. O nome da fila influencia na prioridade de execução (a fila “a” tem prioridade sobre a fila “b” e fila com letra minúscula tem prioridade sobre fila com letra maiúscula).
+-t time : o horário de execução da tarefa está no formato timestamp, ou seja, [[CC]YY]MMDDhhmm[.ss], onde
+
+CC : os dois primeiros dígitos do ano (opcional);
+YY : os dois últimos dígitos do ano (só são obrigatórios se os dois primeiros dígitos do ano forem fornecidos);
+MM : os dois dígitos correspondentes ao més;
+DD : os dois dígitos correspondentes ao dia;
+hh : os dois dígitos correspondentes à hora;
+mm : os dois dígitos correspondentes aos minutos;
+ss : os dois dígitos correspondentes aos segundos (opcional).
+
+
+
+Formato do horário
+
+São aceitas horas no formato HHMM ou no formato HH:MM. Outras opções válidas para horas são midnight (meia-noite), noon (meio-dia), teatime (hora do chá, ou seja 16:00) e now (agora).
+Junto com a hora pode-se também especificar o dia da tarefa no formato MMDDAA, MM/DD/AA ou MM.DD.AA. Além disso, é possível também definir datas como today (hoje) e tomorrow (amanhã).
+Outra forma de definir o horário de execução de uma tarefa é especificar uma hora mais um contador de tempo. Por exemplo, 8:00 + 3 days marca a tarefa para ser executada daqui a 3 dias às 8:00 horas da manhã. Pode-se usar como contador de tempo os termos minutes (minutos), hours (horas), days (dias) e weeks (semanas).
+
+Exemplos
+Considere o arquivo teste com o seguinte conteúdo:
+ls > arq1_teste 
+ps -aux > arq2_teste
+Para agendar a execução do arquivo teste às 17:22 do mesmo dia, basta digitar
+at -f teste 17:22
+Abaixo é apresentada a resposta do sistema: a tarefa recebeu o número de identificação 11 e será executada usando o shell padrão às 17:22 do dia 7 de novembro de 2018.
+warning: commands will be executed using /bin/sh 
+job 11 at Wed Nov 7 17:22:00 2018
+O agendamento fica armazenado no diretório /var/spool/cron/atjobs/ para ser executado pelo daemon atd. Portanto, para ver as tarefas agendadas, entre com
+sudo ls -al /var/spool/cron/atjobs/
+É possível ver abaixo uma possível saída para o comando. Neste caso, podemos deduzir que a tarefa foi agendada às 17:20 do dia 7 de novembro pelo usuário aluno. O número que identifica a tarefa foi gerado pelo daemon atd.
+-rwx—— 1 aluno daemon 3791 Nov 7 17:20 a0000b0157e96a
+Para ver se houve algum erro de execução, basta verificar o arquivo /var/log/auth.log. No caso em tela, a execução foi normal e o log só mostra o início e o fim do serviço.
+Nov 7 17:22:00 aluno atd[2670]: pam_unix(atd:session): session opened for user aluno by (uid=1)
+Nov 7 17:22:00 aluno atd[2670]: pam_unix(atd:session): session closed for user aluno
+É importante observar que o primeiro comando do arquivo “teste” corresponde a listagem dos arquivos do diretório onde o usuário aluno estava quando agendou a tarefa. Enquanto o segundo comando do arquivo “teste” independe de qualquer localização de onde partiu o agendamento.
+Comentários sobre as opções do comando
+No lugar de criar um arquivo com os comandos a serem executados, é possível fornecer os comandos usando o prompt do sistema. Para isto, basta entrar com o comando at e o horário da execução das tarefas. Abaixo alguns exemplos.
+
+at 20:00 tomorrow : amanhã às 20 horas.
+at teatime tomorrow : amanhã às 16 horas.
+at teatime +2 days : depois de amanhã às 16 horas.
+at -t 201212312355.45 : às 23:55:45 do dia 31 de dezembro de 2012 (timestamp).
+
+Neste caso, é aberto um editor de linhas. Pode-se então digitar um comando por linha e dar ENTER após cada comando ou pode-se digitar vários comandos por linha, separando-os por ponto-e-vírgula. Para encerrar o editor, deve-se digitar CTRL+D.
+
+
+Para ver as tarefas agendadas, digite
+at -l
+O comando acima informa o número da tarefa agendada, a data e a hora da execução, o nome da fila de execução (o padrão é a fila “a”) e o nome do usuário. Considerando que as tarefas acima foram agendadas no dia 7 de novembro, podemos ter a seguinte saída:
+
+
+
+14
+Fri
+Nov
+9
+16:00:00 2019 a aluno
+
+
+13
+Thu
+Nov
+8
+16:00:00 2019 a aluno
+
+
+12
+Thu
+Nov
+8
+20:00:00 2019 a aluno
+
+
+15
+Mon
+Dec
+31
+23:55:45 2019 a aluno
+
+
+
+ 
+Para ver o conteúdo da tarefa 12, basta digitar
+at -c 12
+Note que o sistema apresenta um arquivo onde as variáveis de ambiente são definidas antes da execução dos comandos. Portanto, o sistema primeiro recupera o ambiente onde o comando at foi digitado.
+Para remover a tarefa 12 do sistema é só entrar com o comando
+at -d 12
+Observações
+
+Caso a distribuição Linux não tenha o comando at, pode-se usar o comando apt-get para fazer a instalação.
+
+sudo apt-get install at
+
+O daemon responsável pela execução das tarefas agendadas pelo comando at é o atd.
+As tarefas agendadas ficam armazenadas em /var/spool/cron/atjobs.
+Informações sobre a execução podem ser encontradas em /var/log/auth.log.
+A tarefa agendada com o comando at é executada apenas uma vez. Para agendar tarefas que devem ser executadas periodicamente, use o comando crontab.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

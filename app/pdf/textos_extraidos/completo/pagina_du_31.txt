@@ -1,0 +1,210 @@
+
+
+
+
+
+
+
+
+
+
+modinfo | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+modinfo
+
+modinfo [opções]
+Descrição
+Este comando mostra informações sobre um módulo do kernel.
+Algumas opções do comando
+
+-F campo ou −−field campo : exibe apenas a informação solicitada no campo que pode ser o autor (author), descrição (description), licença (license), parâmetros (parm), dependências (depends), nome alternativo (alias) e nome de arquivo do módulo (filename).
+-a : exibe apenas o nome do autor do módulo.
+-d : exibe apenas as dependências do módulo.
+-l : exibe apenas a licença de uso do módulo.
+-p : exibe apenas parâmetros do módulo
+-n : exibe apenas o nome de arquivo do módulo.
+-h ou −−help : exibe as opções do comando.
+-V ou −−version : exibe informações sobre o comando.
+
+Exemplos
+
+O comando
+
+modinfo bnep
+fornece informações sobre o módulo bnep.
+
+
+
+filename:
+/lib/modules/3.2.0-35-generic-pae/kernel/net/bluetooth/bnep/bnep.ko
+
+
+alias:
+bt-proto-4
+
+
+license:
+GPL
+
+
+version:
+1.3
+
+
+description:
+Bluetooth BNEP ver 1.3
+
+
+author:
+Marcel Holtmann<marcel@holtmann.org></marcel@holtmann.org>
+
+
+srcversion:
+A5EC31AD4DDDB482F9B8BE2
+
+
+depends:
+bluetooth
+
+
+intree:
+Y
+
+
+vermagic:
+3.2.0-35-generic-pae SMP mod_unload modversions 686
+
+
+parm:
+compress_src:Compress sources headers (bool)
+
+
+parm:
+compress_dst:Compress destination headers (bool)
+
+
+
+ 
+
+É também possível pedir informações apenas sobre o nome de arquivo de um módulo. Por exemplo,
+
+modinfo −−field filename bnepoumodinfo -n bnep
+exibe apenas o nome de arquivo do módulo.
+Observações
+
+O comando depmod produz arquivo contendo as dependências dos módulos.
+O comando insmod carrega módulos do kernel na memória do sistema.
+O comando lsmod lista os módulos do kernel que estão carregados na memória.
+O comando modprobe carrega e remove módulos do kernel.
+O comando rmmod descarrega módulos do kernel da memória do sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

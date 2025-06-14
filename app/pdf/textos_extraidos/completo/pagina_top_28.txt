@@ -1,0 +1,181 @@
+
+
+
+
+
+
+
+
+
+
+Distribuições Linux | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+Distribuições Linux
+
+Descrição
+
+Uma Distribuição Linux é composta por uma coleção de aplicativos mais o kernel (núcleo) do sistema operacional.
+O Linux, na realidade, é apenas o nome do kernel do sistema operacional. Isto significa que todas as distribuições usam o mesmo kernel, mas podem acoplar diversos aplicativos de acordo com o objetivo do seu mantenedor.
+O Linux é um sistema operacional “Unix-like”, ou seja, tem comportamento similar ao do sistema operacional Unix (multi-tarefa e multiusuário).
+Uma distribuição Linux pode ser comercial ou não comercial. No primeiro caso, o usuário paga pelo sistema e recebe suporte técnico. No segundo caso, não há qualquer cobrança pelo uso do sistema, basta o usuário fazer o download na Internet. Como não há suporte técnico, o usuário deverá tentar resolver os problemas que ocorrerem através das listas de discussão da correspondente distribuição.
+Para obter informações sobre a distribuição usada, basta digitar um dos comandos abaixo.
+
+lsb_release -a
+cat /etc/lsb-release
+cat /etc/os-release
+cat /etc/issue.net
+Exemplos
+Existem atualmente dezenas de distribuições Linux. Abaixo, apenas alguns exemplos.
+ArchLinux 
+É uma distribuição não comercial e livre de Linux. O usuário tem liberdade para definir o que vai ser instalado no sistema e os pacotes são disponibilizados como foram liberados pelos desenvolvedores originais, sem qualquer alteração. A palavra “arch” em inglês significa “arco” e reflete a ideia que o objetivo da distribuição é ser apenas a estrutura de apoio dos softwares desenvolvidos por outros autores.
+ CentOS
+É uma distribuição Linux de classe corporativa derivada de códigos fonte gratuitamente distribuídos pela Red Hat Enterprise Linux e mantida pelo CentOS Project. CentOS significa “Community ENTerprise Operating System”.
+ Clear Linux
+É uma distribuição Rolling Release. O projeto é focado no hardware Intel (tudo o que for da Intel estará altamente otimizado a fim de garantir um excelente desempenho) e no cenário de um ambiente de nuvem com muitas máquinas.
+ Cloude Linux
+É uma distribuição Linux comercializada para provedores de hospedagem compartilhada. É desenvolvido pela empresa de software CloudLinux e é baseado no sistema operacional CentOS.
+Debian 
+É um sistema operacional de distribuição não comercial e livre que usa o kernel Linux ou kfreebsd (kernel do FreeBSD). Como o Debian se baseia no projeto GNU, normalmente é chamado de Debian GNU/Linux ou Debian Gnu/kFreeBSD. Atualmente várias distribuições comerciais se baseiam no Debian como, por exemplo, Kurumin e Ubuntu. O nome “Debian” vem da junção do nome do principal fundador, Ian, com o de sua esposa, Debra.
+ Deeph
+É uma distribuição baseada no Debian. Apresenta uma interface própria chamada Deepin Desktop Environment (DDE), além de uma acervo de aplicações próprias. É desenvolvida pela Wuhan Deepin Technology Company Limited, localizada em Wuhan, China.
+  Elementary OS
+É uma distribuição baseada no Ubuntu com suporte de longo prazo (LTS) e utiliza o ambiente de desktop Pantheon cuja interface visa ser intuitiva para novos usuários sem utilizar muitos recursos.
+Gentoo 
+É um sistema operacional livre que pode tanto ser baseado em Linux quanto em FreeBSD. Usa uma tecnologia chamada Portage que possibilita ao usuário customizar o sistema como quiser (ele escolhe os pacotes que irão fazer parte do sistema operacional). “Gentoo” é nome de uma das espécies de pinguim da Antártida. 
+Fedora 
+É uma distribuição não comercial do Linux voltada para desktop e patrocinada pela Red Hat Enterprise Linux (dona da marca Fedora). Ela nasceu quando a empresa norte-americana decidiu investir em uma versão comercial do Linux, o Red Hat. O nome “Fedora” corresponde ao tipo de chapéu que aparece no logotipo da Red Hat. 
+ Kali
+É uma distribuição não comercial voltada para os profissionais da área de segurança da informação. Ela disponibiliza várias ferramentas para detectar falhas de segurança que permitem a invasão de um sistema, por isso ela é definida como Penetration Testing Distribution. A distribuição Kali substituiu a distribuição backtrack que foi descontinuada (2013). Kali é o nome de uma deusa hindu com força destrutiva e significa “the black one” em sânscrito.
+ Mageia
+É uma distribuição criada a partir de um fork (novo projeto) da distribuição Mandriva (descontinuado a partir de 2015). Ela é desenvolvida sob a coordenação da Mageia.Org, uma associação francesa sem fins lucrativos.
+ Manjaro
+É uma distribuição baseada no Arch Linux e voltada principalmente para computadores pessoais, mas conta com o seu próprio conjunto de repositórios. Por ser uma distribuição Rolling Release, basta digitar “sudo pacman -Syu” no terminal para se usar a última versão.
+ Mint
+É uma distribuição não comercial de origem irlandesa e baseada nas distribuições Debian e Ubuntu. O nome “Mint” significa “hortelã” em inglês, por isso a cor e o formato do logo lembra essa planta.
+ MX Linux
+É uma distribuição Linux baseada em Debian e que utiliza o ambiente de desktop Xfce. É considerado muito leve e fácil de instalar com configuração simples, alta estabilidade e desempenho sólido.
+ Oracle Linux
+É uma distribuição Linux baseada na Red Hat,  empacotada e distribuída livremente pela Oracle e disponível parcialmente sob a Licença Pública Geral GNU.
+  Red Hat
+É uma distribuição comercial do Linux voltada para clientes corporativos. Foi a primeira distribuição linux a usar um sistema de gerenciamento de pacotes. O nome “Red Hat” é uma referênciais ao boné vermelho do time de Lacrosse da Universidade Cornell dado ao fundador da companhia Marc Ewing por seu avô.
+  Scientific Linux
+É uma distribuição baseada na Red Hat e que tem como objetivo disponibilizar um SO para uso em laboratórios e universidades que trabalham com experimentos físicos de alta energia e alta intensidade.
+Slackware 
+É uma distribuição não comercial que tem por objetivo fornecer um ambiente o mais próximo possível do ambiente Unix. Por isso, faz uso de arquivos de texto e de shell scripts para configuração e administração do sistema. O nome “Slackware” pode ser traduzido por “cuidado com a escória” e é uma referência à Igreja de Subgenius (Church of SubGenius), uma organização que ironiza as religiões conhecidas.
+ Solus
+É um sistema operacional independente baseado no kernel Linux e que usa o conceito de Rolling Release. O ambiente gráfico é o Budgie Desktop que disponibiliza diversos recursos como permitir a exibição de “widgets” como o calendário, player de música, controle de saída e entrada de áudio, etc.
+  SUSE
+É uma distribuição comercial com versões para empresa, servidor, computação em nuvem e virtualização. O nome “SUSE” vem de um acrônimo em língua alemã para “Software und System-Entwicklung” e que significa “Software e Desenvolvimento de Sistemas”.
+ Zorin OS
+É uma distribuição baseada no Ubuntu e voltada para novos usuários que são familiarizados com os sistemas operacionais MicroSoft Windows.
+ Ubuntu
+É um sistema operacional não comercial patrocinada pela Canonical e baseado na distribuição Debian. Atualmente, é uma das mais populares distribuições Linux. O nome “Ubuntu” é uma palavra sul-africana que significa “humanidade para com os outros” ou “sou o que sou pelo que nós somos”.
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

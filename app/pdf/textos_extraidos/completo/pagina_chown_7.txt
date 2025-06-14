@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+chgrp | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+chgrp
+
+chgrp [opções] grupo arquivo
+
+Descrição
+Este comando altera o nome de grupo de arquivos.
+Algumas opções do comando
+
+-c : informa quais arquivos estão tendo o nome de grupo alterado.
+-v : informa quais arquivos estão sendo processados (não necessariamente alterados).
+-R : altera, recursivamente, o nome de grupo dos arquivos.
+−−help : exibe opções do comando.
+−−version : exibe informações sobre o aplicativo.
+
+Exemplo
+Suponha, por exemplo, a existência de um diretório de nome teste. Queremos que este diretório e todo o seu conteúdo passe a pertencer ao grupo desenvolvimento. Podemos, então, digitar o comando
+chgrp -Rc desenvolvimento teste
+para alterar o grupo do diretório teste e de todos os arquivos e diretórios que estão hierarquicamente abaixo do diretório teste. Como a opção -c é usada, será mostrada a lista dos arquivos e diretórios que tiveram o nome do grupo alterado.
+Observações
+
+O comando chown altera o dono e/ou o grupo de arquivos.
+O comando chmod altera as permissões de arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

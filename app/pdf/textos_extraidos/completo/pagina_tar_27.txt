@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+exit | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+exit
+
+Descrição
+Este comando provoca o término normal de um processo.
+Exemplos
+
+O usuário pode executar outro shell, além do shell padrão. Para isto, basta digitar na linha de comando o nome do novo shell. Por exemplo, o comando
+
+/bin/tcsh
+passa a usar o shell tcsh para interpretar os comandos no terminal correspondente. Para retornar ao shell anterior, deve-se digitar exit.
+
+Caso o usuário não tenha chamado outro shell:
+
+No modo gráfico, o comando exit fecha a janela na qual o usuário digitou o comando;
+No modo texto, o comando exit encerra a sessão do usuário (volta para a tela inicial onde é feita a identificação dos usuários).
+
+
+
+Observações
+
+A informação sobre qual shell é usado por cada usuário é armazenada no arquivo /etc/passwd.
+A lista dos shells disponíveis no sistema está no arquivo /etc/shells.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

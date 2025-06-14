@@ -1,0 +1,182 @@
+
+
+
+
+
+
+
+
+
+
+patch | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+patch
+
+patch [opções] [arquivo original] [arquivo patch]
+Descrição
+Este comando atualiza um arquivo usando as diferenças geradas pelo comando diff.
+Algumas opções do comando
+
+-R ou −−reverse: assume que, na criação do patch, os arquivos originais ao serem comparados estavam em posições trocadas.
+-v ou −−version: informa a versão do comando.
+−−help : mostra opções do comando.
+
+Exemplo
+
+Suponha que o arquivo arq1 possui o conteúdo abaixo
+
+1 teste
+2 unirio
+4 ccet
+6 Linux
+7 Brasil
+enquanto o arquivo arq2 tem
+1 teste
+2 unirio
+3 BSI
+6 Linux
+7 Rio de Janeiro
+Vamos usar o comando diff para verfificar a diferença de arq2 em relação a arq1.
+diff arq1 arq2 > arq_patch
+Neste caso, o arquivo de saída, arq_patch, possui
+3c3
+< 4 ccet
+−−−
+> 3 BSI
+5c5
+< 7 Brasil
+−−−
+> 7 Rio de Janeiro
+Agora podemos atualizar um dos arquivos, arq1 ou arq2, usando arq_patch.
+
+Para atualizar o arquivo arq1, basta digitar
+
+patch arq1 arq_patch
+O sitema responderá
+patching file arq1
+e o conteúdo de arq1 passará a ser igual ao de arq2.
+
+Para atualizar o arquivo arq2, basta digitar
+
+patch arq2 arq_patch
+Como o arquivo gerado pelo comando diff usou arq1 como base, será perguntado se deve considerar alteração no sentido inverso.
+patching file arq2
+Reversed (or previously applied) patch detected! Assume -R? [n] y
+Como resultado, o conteúdo de arq2 passará a ser igual ao de arq1. Para se obter o mesmo resultado, pode-se também entrar com o comando
+patch -R arq2 arq_patch
+
+É possível também usar o pipe para juntar os comandos diff e patch em uma só linha.
+
+diff arq1 arq2 | patch arq1
+ou
+diff arq1 arq2 | patch -R arq2
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,175 @@
+
+
+
+
+
+
+
+
+
+
+addgroup | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+addgroup
+
+addgroup [opções] grupo
+Descrição
+Este comando adiciona um grupo ao sistema. O grupo é criado sem  usuários.
+Algumas opções do comando
+
+−−gid ID : especifica o GID do grupo sendo criado.
+−−system : especifica que o grupo a ser criado faz parte da administração do sistema (o valor do GID será, por padrão, de 100 a 999).
+−−version : mostra informação de versão e copyright.
+
+Exemplos
+
+Para criar o grupo alunos, basta digitar:
+
+sudo addgroup alunos
+O sistema então aloca um número de GID para o novo grupo e cria uma entrada em /etc/group. Quando se usa alocação dinâmica de GID, os valores de 1000 a 29999 são usados. Logo, se o grupo alunos é o primeiro a ser criado, ele terá GID igual a 1001, pois o valor 1000 já foi alocado para o grupo do usuário que instalou o sistema. Por padrão, os números menores de 100 são usados pelo kernel e os valores de 100 a 999 são reservados para a administração do sistema.  Entretanto, nada impede que se aloque qualquer valor que estiver disponível.
+
+Para o exemplo acima, uma possível entrada incluída no arquivo /etc/group é
+
+alunos:x:1001:
+onde x representa a senha criptografada do grupo, 1001 é o GID do grupo e não há ainda nenhum usuário neste grupo. 
+Só quem tem permissão de administrador pode executar este comando, por isso deve-se usar sudo.
+
+Para criar o grupo alunos com GID 2000, basta digitar:
+
+sudo addgroup −−gid 2000 alunos
+
+Neste caso, a entrada em /etc/group é
+alunos:x:2000:
+
+Para incluir o usuário maria no grupo alunos, onde tanto o usuário quanto o aluno já existem, digite
+
+sudo addgroup maria alunos
+Considerando que o grupo alunos tem GID 1001, a entrada no arquivo /etc/group passa a ser
+alunos:x:1001:maria
+Observações
+
+A configuração padrão usada pelo comando addgroup pode ser encontrada em /etc/adduser.conf. Por exemplo, é possível encontrar nesse arquivo os intervalos alocados para os grupos de administração do sistema e para os grupos de usuários comuns.
+
+
+FIRST_SYSTEM_GID=100
+LAST_SYSTEM_GID=999
+FIRST_GID=1000
+LAST_GID=29999
+
+Pode-se também usar adduser com a opção ––group para criar um grupo.
+O comando groupadd cria um novo grupo de usuários no sistema de forma idêntica ao comando addgroup. Mas, na realidade, o comando addgroup é um front end mais amigável para a ferramenta de baixo nível groupadd. 
+
+Os comandos delgroup e groupdel deletam grupos do sistema.
+O comando groupmod pode ser usado para alterar as características de um grupo como, por exemplo, nome e GID.
+Os comandos chgrp e chown permitem alterar o grupo de um arquivo/diretório.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

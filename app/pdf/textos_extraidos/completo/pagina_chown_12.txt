@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+groupdel | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+groupdel
+
+ groupdel grupo
+Descrição
+Este comando deleta um grupo de usuários do sistema.
+Exemplo
+O comando
+sudo groupdel teste
+apaga o grupo chamado teste.
+Observações
+
+A lista dos grupos existentes no sistema é armazenada em /etc/group.
+O comando groupdel normalmente exige o uso do comando sudo.
+Antes de usar o comando groupdel, deve-se remover os usuários do grupo. O sistema não aceita deletar um grupo primário (principal) com usuários, entretanto o sistema não verifica se existem arquivos alocados para o grupo a ser deletado.
+O comando delgroup também deleta um grupo de usuários. Na realidade, delgroup é um front end amigável para groupdel.
+Para criar grupos, use o comando groupadd ou o comando addgroup.
+Para modificar as características de um grupo como, por exemplo, nome e GID, use groupmod.
+Os comandos chgrp e chown permitem alterar o grupo de um arquivo/diretório.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

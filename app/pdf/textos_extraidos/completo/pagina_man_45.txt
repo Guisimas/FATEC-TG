@@ -1,0 +1,132 @@
+
+
+
+
+
+
+
+
+
+
+pwunconv | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+pwunconv
+
+Descrição
+Este comando usa o sistema shadow para migrar as senhas criptografadas do /etc/shadow para o /etc/passwd.
+Observações
+
+O comando pwconv usa o sistema shadow para proteger as senhas dos usuários.
+O comando grpconv usa o sistema gshadow para proteger as senhas dos grupos.
+O comando grpunconv elimina o uso do sistema gshadow de proteção de senhas.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

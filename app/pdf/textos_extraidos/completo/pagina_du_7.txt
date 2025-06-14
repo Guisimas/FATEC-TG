@@ -1,0 +1,171 @@
+
+
+
+
+
+
+
+
+
+
+ping | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+ping
+
+ping [opções] usuários
+Descrição
+Este comando utiliza o datagrama Echo Request (ping) do protocolo ICMP para testar a conectividade entre equipamentos.
+Algumas opções do comando
+
+-a: ping audível.
+-b: permite pingar um endereço de broadcast.
+-c n: o ping termina após enviar um número n de pacotes ao host.
+-f: flood ping. Envia novos pacotes antes de receber a resposta do pacote anterior.
+-h: exibe informações de ajuda.
+-i [n]: aguarda [n] segundos para enviar o próximo pacote.
+-m mark: permite marcar pacotes de saída.
+-N nodeinfo_option: Somente para o ping6. Envia Node Information Queries (RFC4620) em vez do datagrama Echo Request.
+-q: exibe apenas as linhas de sumário, no início e no término do programa.
+-R: registra a rota seguida pelos pacotes até chegar ao seu destino.
+-s [n]: especifica um número [n] de bytes de dados a ser enviado.
+-t: configura o protocolo TTL (Time To Live).
+-v: exibe informações detalhadas dos pacotes enviados e recebidos.
+-V: exibe a versão do comando.
+-w: permite ajustar um tempo limite, em segundos, antes do ping terminar, independentemente de quantos pacotes foram enviados ou recebidos.
+
+Exemplos
+
+Para pingar o IP do Google digite o comando:
+
+ping 8.8.8.8
+Uma possível saída é mostrada abaixo.
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_req=1 ttl=44 time=173 ms
+64 bytes from 8.8.8.8: icmp_req=2 ttl=44 time=160 ms
+64 bytes from 8.8.8.8: icmp_req=3 ttl=44 time=162 ms
+
+Para pingar o site do Google, digite o comando:
+
+ping www.google.com
+Uma possível saída é mostrada abaixo.
+PING www.l.google.com (190.98.170.34) 56(84) bytes of data.
+64 bytes from 190.98.170.34: icmp_req=1 ttl=57 time=8.22 ms
+64 bytes from 190.98.170.34: icmp_req=2 ttl=57 time=3.93 ms
+64 bytes from 190.98.170.34: icmp_req=3 ttl=57 time=4.83 ms
+Observações
+
+O comando ping é utilizado para fins de teste, medição e administração de uma rede.
+O ping6 é a versão IPv6 do ping e também pode enviar Node Information Queries (RFC4620) .
+Por padrão, o número de bytes de dados enviado pelo datagrama Echo Request é 56, que se traduz em 64 bytes de dados ICMP quando combinado com os 8 bytes de dados do cabeçalho ICMP.
+O protocolo TTL determina o tempo de vida de um datagrama (pacote de dados específico da camada de rede).
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

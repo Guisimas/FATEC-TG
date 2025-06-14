@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+cp | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+cp
+
+cp [opções] origem destino
+Descrição
+Este comando faz cópias de arquivos.
+Algumas opções do comando
+
+-b : gera cópia de segurança se o arquivo de destino já existir.
+-f : substitui arquivos existentes sem pedir confirmação.
+-i : pede permissão antes de substituir arquivos existentes.
+-l : cria um link para o arquivo de origem ao invés de copiar o arquivo.
+-r : copia arquivos e subdiretórios (recursivo).
+-u : copia apenas quando o arquivo de origem é mais novo que o arquivo de destino ou quando o arquivo de destino não existe.
+-v : lista os arquivos copiados.
+−−help : lista as opções disponíveis com o comando.
+−−version : exibe informação sobre o comando.
+
+Exemplos
+Para criar uma cópia do arquivo teste.txt com o nome teste_bak.txt, basta digitar
+cp teste.txt teste_bak.txt
+É possível especificar mais de um arquivo no comando cp usando os curingas *, ? e [ ]. O primeiro substitui um grupo qualquer de caracteres (qualquer número de caracteres, inclusive zero, e para qualquer valor de caractere), o segundo substitui apenas um caractere (qualquer caractere), e o terceiro substitui um único caractere dentro de uma faixa de valores. Abaixo são mostrados alguns exemplos.
+cp teste*.txt /tmp/. 
+cp teste?.txt /tmp/. 
+cp teste[1-3].txt /tmp/.
+O primeiro comando acima, copia todos os arquivos do diretório atual que começam por teste e têm extensão txt para o diretório /tmp. O segundo comando copia todos os arquivos que começam por teste, têm um caractere qualquer na sexta posição e extensão txt para o diretório /tmp. O último comando copia os arquivos teste1.txt, teste2.txt e teste3.txt (se existirem) para o diretório /tmp.
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

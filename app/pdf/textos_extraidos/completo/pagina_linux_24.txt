@@ -1,0 +1,149 @@
+
+
+
+
+
+
+
+
+
+
+mv | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+mv
+
+mv [opções] origem destino
+Descrição
+Este comando move (ou renomeia) arquivos.
+Algumas opções do comando
+
+-b : gera cópia de segurança se o arquivo de destino já existir.
+-f : move o arquivo sem pedir confirmação (mesmo que já exista um arquivo no destino com o mesmo nome).
+-i : move o arquivo, mas pede confirmação caso já exista um arquivo no destino com o mesmo nome.
+-v : exibe os nomes dos arquivos afetados pelo comando.
+−−help : exibe as opções do comando.
+−−version : exibe informações sobre o comando.
+
+Exemplos
+
+Para renomear o arquivo teste.txt para teste2.txt, basta digitar
+
+mv teste.txt teste2.txt
+
+Pode-se usar os caracteres ?, * e [ ] como curingas. O primeiro substitui apenas um único caractere, o segundo substitui um número qualquer de caracteres, enquanto o terceiro substitui um único caractere dentro de um certo limite de valor. Por exemplo, suponha que o diretório atual tenha os seguintes arquivos: teste1.txt, teste2.txt, teste3.txt e teste10.txt. O comando
+
+mv teste*.txt /tmp/.oumv teste* /tmp/.
+move os quatro arquivos para o diretório /tmp, enquanto o comando
+mv teste?.txt /tmp/.
+move apenas os arquivos teste1.txt, teste2.txt e teste3.txt para o diretório /tmp. Para mover apenas os dois primeiros arquivos, basta digitar
+mv teste[1-2].txt /tmp/.
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

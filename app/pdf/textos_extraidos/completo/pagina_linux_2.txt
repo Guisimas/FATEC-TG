@@ -1,0 +1,146 @@
+
+
+
+
+
+
+
+
+
+
+linux | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+linux
+
+Descrição
+
+
+
+Linux é o nome do kernel do sistema operacional inicialmente desenvolvido por Linus Torvalds.
+Uma Distribuição Linux é composta por uma coleção de aplicativos mais o kernel (núcleo) do sistema operacional.
+O mascote do Linux é o simpático pinguim Tux (Torvalds’ Unix).
+
+
+
+
+Observações
+
+Existem várias versões sobre a origem do nome Linux. Abaixo as duas mais aceitas.
+
+Linux = Linus + Minix – o Linux se baseou inicialmente no sistema operacional Minix usado por Tannnebaum em suas aulas.
+Linux = Linus + Unix – o Linux é um sistema operacional “Unix-like”, ou seja, tem comportamento similar ao do sistema operacional Unix.
+
+
+A distribuição Linux é um sistema operacional do tipo “Unix-like”.
+O kernel é o núcleo do Linux. Mais informações sobre o desenvolvimento do kernel podem ser encontradas aqui.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

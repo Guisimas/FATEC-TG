@@ -1,0 +1,146 @@
+
+
+
+
+
+
+
+
+
+
+who | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+who
+
+who [opções]
+Descrição
+Este utilitário informa quais os usuários que estão conectados.
+Algumas opções do comando
+
+-H : mostra o cabeçalho das colunas.
+-u : após um tempo de acesso, mostra o tempo que o usuário esteve inativo (hh:min). O valor ‘.‘ significa que o usuário esteve inativo no último minuto. O valor ‘old’ ou ‘antig’ significa que o usuário esteve inativo nas últimas 24 horas.
+-m : mostra o nome do usuário.
+-q : mostra os nomes e a quantidade total de usuários conectados.
+−−help : exibe as opções do utilitário.
+−−version : mostra informações sobre o utilitário.
+
+Exemplo
+O comando
+who -m
+identifica o usuário que está logado no terminal.
+Observações
+
+O comando users mostra os usuários que estão atualmente conectados ao sistema.
+O comando w informa quais os usuários que estão conectados e o que eles estão executando.
+O comando whoami fornece a identificação efetiva do usuário.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

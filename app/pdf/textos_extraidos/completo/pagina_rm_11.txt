@@ -1,0 +1,138 @@
+
+
+
+
+
+
+
+
+
+
+whoami | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+whoami
+
+whoami [opções]
+Descrição
+Este utilitário fornece a identificação efetiva do usuário.
+Algumas opções do comando
+
+−−help : exibe as opções do utilitário.
+−−version : mostra informações sobre o utilitário.
+
+Observações
+
+O comando users mostra os usuários que estão atualmente conectados ao sistema.
+O comando w informa quais os usuários que estão conectados e o que eles estão executando.
+O comando who informa quais os usuários que estão conectados.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

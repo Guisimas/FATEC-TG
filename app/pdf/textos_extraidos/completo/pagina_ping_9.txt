@@ -1,0 +1,350 @@
+
+
+
+
+
+
+
+
+
+
+Permissão de Acesso | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+Permissão de Acesso
+
+Descrição
+Cada arquivo do sistema está associado a um usuário (dono) e a um grupo. O dono de um arquivo pode definir quem tem acesso ao arquivo e qual tipo de acesso é permitido (leitura, gravação e/ou execução). Isto é chamado de permissão de acesso.
+Níveis de acesso
+As permissões dos arquivos no Linux são definidas por quatro dígitos que representam:
+
+permissões especiais;
+permissões da pessoa que criou o arquivo ou o diretório (dono ou user);
+permissões dos usuários membros do mesmo grupo do dono do arquivo ou do diretório (grupo ou group);
+permissões do resto dos usuários do sistema (outros ou others).
+
+Permissões comuns
+As permissões comuns para o dono, o grupo e os outros são de 3 tipos:
+
+leitura (r) – permite ler o conteúdo de um arquivo/diretório.
+escrita (w) – permite alterar um arquivo/diretório.
+execução (x) – permite executar um arquivo ou acessar um diretório e executar comandos.
+
+A tabela abaixo mostra as combinações possíveis para se definir uma permissão.
+
+
+
+Valor Octal
+Valor Binário
+rwx
+Caracteres
+Significado
+
+
+0
+000
+−−−
+nenhuma permissão de acesso
+
+
+1
+001
+−−x
+permissão de execução
+
+
+2
+010
+-w-
+permissão de gravação
+
+
+3
+011
+-wx
+permissão de gravação e execução
+
+
+4
+100
+r−−
+permissão de leitura
+
+
+5
+101
+r-x
+permissão de leitura e execução
+
+
+6
+110
+rw-
+permissão de leitura e gravação
+
+
+7
+111
+rwx
+permissão de leitura, gravação e execução
+
+
+
+Por exemplo, suponha que a resposta ao comando “ls -l teste” seja a seguinte:
+-rw-rw-r−− 1 aluno curso 1024 Fev 13 10:55 teste
+A primeira coluna mostra as permissões de acesso dos subdiretórios e arquivos.
+
+O primeiro caractere diz qual é o tipo do objeto:
+
+– para arquivo comum;
+b para dispositivos de bloco (oferecem grandes quantidades de dados de cada vez).
+c para dispositivo de caracteres (oferecem dados de um caractere de cada vez);
+d para diretório;
+l para link simbólico;
+p para FIFO ou Named Pipe;
+s para socket mapeado em arquivo;
+
+
+Os três caracteres seguintes mostram as permissões do dono (permissão de leitura e escrita).
+O quinto, o sexto e o sétimo caracteres dizem quais as permissões do grupo (permissão de leitura e escrita).
+Os três últimos caracteres especificam as permissões dos outros (permissão de leitura).
+
+Como não há qualquer permissão especial definida no exemplo, é possível dizer que o arquivo teste tem permissão 0664.
+Permissões especiais
+Para executar um processo, o Linux usa as permissões do usuário que o iniciou. Isso significa que os privilégios do usuário se aplicam a todas as ações do processo. O problema é que somente o root pode fazer tudo no sistema e um usuário pode, por exemplo, não ter permissão para usar um navegador da Internet.
+Para contornar este problema, o Linux divide a identificação (ID) do usuário e do grupo do usuário em real e efetivo: o primeiro indica qual o UID e o GID do usuário no sistema; enquanto o segundo indica quais UID e GID estão sendo realmente utilizados pelo usuário. A alteração dos IDs durante a execução de programas é feita através de três permissões especiais.
+
+SUID – com esta permissão, o usuário executa o arquivo como se fosse o dono (não funciona em diretório). Isto significa que será usado o UID do dono do arquivo ao invés do UID do usuário que executa o programa.
+SGID – com esta permissão, o usuário executa o arquivo ou acessa o diretório como membro do grupo ao qual pertence o arquivo/diretório. Isto significa que o usuário assume o GID do grupo (ele é membro desse grupo, mas é outro o seu grupo padrão).
+sticky bit – o usuário pode criar/alterar/deletar (apenas) os seus próprios arquivos no diretório que possui esta permissão, mesmo que não seja o dono do diretório e nem membro do grupo ao qual o diretório pertence. Quando o sticky bit é usado em um arquivo, significa que este arquivo é compartilhado por vários usuários.
+
+Note que estas permissões se referem a execução de um arquivo ou a autorização de acesso a um diretório. Portanto, elas estão relacionadas a permissão x. Os seguintes valores são usados para identificar o uso de permissão especial em um arquivo/diretório.
+
+
+
+Valor Octal
+Valor Binário
+ugo
+Significado
+
+
+0
+000
+nenhuma permissão especial
+
+
+1
+001
+sticky bit
+
+
+2
+010
+SGID
+
+
+3
+011
+SGID e sticky bit
+
+
+4
+100
+SUID
+
+
+5
+101
+SUID e sticky bit
+
+
+6
+110
+SUID e SGID
+
+
+7
+111
+SUID, SGID e sticky bit
+
+
+
+Por exemplo, suponha que a resposta ao comando “ls -l teste” seja a seguinte:
+-rwSrwSr−− 1 aluno curso 1024 Fev 13 10:55 teste
+A string “-rwSrwSr−−” indica que:
+
+é um arquivo comum (primeiro “-“);
+“rwS” define permissão de leitura, escrita e SUID (quem executar o programa usará a UID do aluno);
+“rwS” define permissão de leitura, escrita e SGID (quem executar o programa usará a GID do curso);
+“r−−” define permissão de leitura para os outros.
+
+Para esse exemplo, é possível dizer que o arquivo teste tem permissão 6664.
+A tabela abaixo mostra o significado das letras quando existem permissões especiais. Note que a a permissão especial só informa como a execução será feita, não autoriza a execução. Portanto, no exemplo acima com permissões “-rwSrwSr−−”, ninguém conseguirá executar o arquivo teste, pois ninguém tem permissão para isto.
+
+
+
+Permissão
+Nível
+Significado
+
+
+S
+dono
+SUID
+
+
+s
+dono
+SUID + permissão de execução para o dono
+
+
+S
+grupo
+SGID
+
+
+s
+grupo
+SGID + permissão de execução para o grupo
+
+
+T
+outros
+sticky bit
+
+
+t
+outros
+sticky bit + permissão de execução para outros
+
+
+
+São exemplos do uso das permissões especiais no Linux:
+
+O comando ping precisa de permissões de root (um soquete de rede precisa ser aberto para a transmissão de pacotes ICMP). Neste caso, é usada a permissão SUID e o comando tem permissões 4755.
+
+-rwsr-xr-x 1 root root 44168 Mai 7 2014 /bin/ping
+
+A ferramenta crontab usa SGID para permitir que os usuários agendem tarefas. As permissões usadas são 2755.
+
+-rwxr-sr-x 1 root crontab 35984 Fev 9 2013 /usr/bin/crontab
+
+O diretório /tmp tem permissão sticky bit (todos os usuário do sistema podem criar, ler, alterar e deletar arquivos desde que sejam os donos).
+
+drwxrwxrwt 8 root root 4096 Fev 13 11:40 tmp
+De acordo com o que já foi discutido, as permissões do diretório /tmp são 1777.
+Observações
+
+Para aumentar a segurança do sistema, é sempre preferível usar os atibutos de capacidade dos threads ao invés de usar permissões especiais.
+Os comandos chgrp, chmod e chown permitem alterar, respectivamente, grupo, permissões e dono dos arquivos.
+O comando umask define as permissões que não estão disponíveis, por padrão, aos usuários do sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

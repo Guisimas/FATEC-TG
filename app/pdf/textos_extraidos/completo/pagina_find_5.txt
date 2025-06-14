@@ -1,0 +1,168 @@
+
+
+
+
+
+
+
+
+
+
+locate | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+locate
+
+locate expressão
+Descrição
+Este comando utiliza um banco de dados de nomes de arquivos para pesquisar um determinado nome. Esta base de dados é criada/atualizada pelo administrador do sistema através do comando updatedb e é armazenada em /var/lib/mlocate/mlocate.db.
+Algumas opções do comando
+
+-b, −−basename : define uma parte do nome do arquivo a ser procurado.
+-d, −−database DBPATH : define a base de dados a ser usada ao invés da base de dados padrão.
+-h, −−help : exibe as opções do utilitário.
+-V, −−version : mostra informações sobre o utilitário.
+
+Exemplo
+
+O comando
+
+locate *syslog
+pode apresentar parte da  saída abaixo. Note que a string syslog fazer parte do nome do diretório do arquivo.
+
+/etc/default/rsyslog
+/etc/init.d/rsyslog
+/etc/logcheck/ignore.d.server/rsyslog
+/etc/logrotate.d/rsyslog
+/etc/rc0.d/K03rsyslog
+/etc/rc1.d/K03rsyslog
+/snap/core/6130/etc/default/rsyslog
+/snap/core/6130/etc/init.d/rsyslog
+/usr/share/doc/rsyslog/NEWS.Debian.gz
+/usr/share/doc/rsyslog/README.Debian
+/usr/share/doc/rsyslog/changelog.Debian.gz
+
+Os comandos
+
+locate \syslog
+e
+locate *syslog*
+procuram pelos arquivos cujos nomes possuem a string syslog. Neste caso, considera-se como parte do nome de arquivo todos os diretórios hierarquicamente superior ao arquivo.
+
+Para pesquisar a string syslog apenas nos nomes de arquivos (não considera os nomes de diretórios), digite
+
+locate -b syslog
+Observações
+
+O comando find pesquisa arquivos em uma hierarquia de diretórios.
+O comando whereis lista a localização de programas binários, fontes e documentação.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

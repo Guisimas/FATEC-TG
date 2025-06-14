@@ -1,0 +1,157 @@
+
+
+
+
+
+
+
+
+
+
+hwclock | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+hwclock
+
+hwclock [opções] 
+Descrição
+Existem dois relógios no sistema Linux que fornecem:
+
+Hora da máquina (Hardware Clock) – é independente de qualquer programa de controle executando na CPU e funciona mesmo com a máquina desligada.
+Hora do sistema (System Time) – corresponde ao relógio dentro do kernel do Linux e representa a quantidade de segundos desde meia-noite de primeiro de janeiro de 1970 (tempo do Unix). Ele funciona apenas quando o Linux está sendo executado na máquina e é o tempo que realmente importa. Quando a máquina é inicializada, o Linux copia a hora da máquina para o tempo do sistema e não mais volta a acessar o tempo da máquina.
+
+O comando hwclock permite exibir e/ou modificar a hora desses relógios.
+Algumas opções do comando
+
+-r : exibe a data e a hora do relógio da máquina.
+-w : copia a hora do sistema para o relógio da máquina.
+-s : copia a hora da máquina para a hora do sistema.
+–set –date=novadata : modifica a data e a hora do relógio da máquina.
+−−help : mostra as opções do comando.
+−−version : exibe informação sobre o comando.
+
+Exemplos
+
+O comando
+
+sudo hwclock -r
+mostra a data e a hora do relógio da máquina no formato abaixo.
+2019-03-15 09:50:06.405546-0300
+
+O comando
+
+sudo hwclock –set –date=”9/22/19 18:55:10″
+define a nova data como 22 de setembro de 2019 e a nova hora como 18:55:10.
+Observações
+
+O comando date pode ser usado para alterar a data do sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

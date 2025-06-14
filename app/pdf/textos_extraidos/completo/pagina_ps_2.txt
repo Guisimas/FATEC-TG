@@ -1,0 +1,162 @@
+
+
+
+
+
+
+
+
+
+
+pstree | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+pstree
+
+pstree [opções]
+
+Descrição
+Este utilitário lista os processos em execução usando o formato de árvore.
+Algumas opções e argumentos do comando
+
+-H processo : destaca o processo especificado dentro da estrutura de árvore;
+-n : ordena a saída pelos números dos PIDs dos processos.
+-p : mostra os PIDs dos processos.
+-s : mostra os processos-pai do processo especificado.
+-V ou −−version: mostra informações sobre o utilitário.
+usuário : mostra apenas os ramos com os processos inicializados pelo usuário especificado.
+
+Exemplos
+
+O comando
+
+pstree -np
+exibe os processos e seus PIDs onde os ramos de um nível são ordenados por ordem crescente dos PIDs.
+
+Para ver a árvore com os processos inicializados pelo usuário aluno, basta digitar
+
+pstree aluno
+Uma possível resposta é mostrada abaixo.
+
+
+Suponha que o shell bash usado no terminal  tem PID igual a 4030. Então o comando
+
+pstree -s 4030
+fornece uma saída similar à mostrada abaixo.
+
+Observações
+
+Os comandos ps e top exibem informações sobre os processos.
+
+Se o PID de um processo é omitido, o comando usa o valor 1 (processo init).
+O diretório /proc possui a lista dos processos que estão em execução no sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

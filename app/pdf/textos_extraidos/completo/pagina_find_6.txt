@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+nohup | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+nohup
+
+nohup [opções] [comando]
+Descrição
+O nohup ignora os sinais de interrupção durante a execução do comando especificado. Assim, é possível o comando continuar a executar mesmo depois que o usuário se desconectar do sistema.
+Opções do comando
+
+−−help : exibe as opções do comando.
+−−version : exibe informações sobre o comando.
+
+Exemplo
+Por exemplo,
+nohup find / -name gcc &
+executa o comando find em background (&) e sem permitir interrupções (nohup).
+Observações
+
+Se a saída padrão é uma tty, esta saída e o erro padrão são redirecionados para o arquivo nohup.out (primeira opção) ou para o arquivo $HOME/nohup.out(segunda opção). Caso nenhum destes dois arquivos possam ser criados (ou alterados se já existem), o comando não é executado.
+O nohup não coloca o comando que ele executa em background. Isto deve ser feito explicitamente pelo usuário.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

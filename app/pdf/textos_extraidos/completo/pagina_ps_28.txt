@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+id | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+id
+
+id [opções] [usuário]
+Descrição
+Este comando informa o UID, o GID e os grupos de um determinado usuário.
+Algumas opções do comando
+
+-g : lista o número de identificação (GID) do grupo primário do usuário.
+-G : lista os números de identificação (GID) dos grupos segundários do usuário.
+-n : mostra o nome do usuário e/ou o nome do grupo ao invés do número de identificação (deve vir junto com outra opção).
+-u : lista apenas o número de identificação (UID) do usuário.
+
+Exemplos
+O comando
+id aluno
+informa o UID e o GID do usuário aluno, enquanto o comando
+id -nG aluno
+informa os nomes dos grupos dos quais o usuário aluno é membro.
+Observações
+
+O uso do comando id, sem parâmetros, faz com que o sistema informe o UID, o GID e os grupos do usuário que digitou o comando.
+O comando groups pode também ser usado para listar os grupos de um usuário.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

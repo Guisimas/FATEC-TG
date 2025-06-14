@@ -1,0 +1,403 @@
+
+
+
+
+
+
+
+
+
+
+kernel | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+kernel
+
+Descrição
+
+O Linux, na realidade, é apenas o nome do kernel do sistema operacional. Uma distribuição Linux é composta por uma coleção de aplicativos mais o kernel Linux.
+O kernel foi idealizado e inicialmente desenvolvido por um estudante de computação chamado Linus Torvalds. Atualmente, ele é desenvolvido por centenas de pessoas ao redor do mundo sob a supervisão do seu criador.
+O Linux adota a tecnologia de kernel monolítico, ou seja, um bloco único onde estão compilados todos os serviços disponibilizados pelo sistema. O usuário interage com o kernel através de um shell (interpretador de comandos) ou de um ambiente operacional gráfico.
+O kernel é composto por subsistemas, onde cada subsistema é responsável por implementar algumas funções do sistema operacional. São exemplos de subsistemas do Linux:
+
+Process Management (PM) – controla o acesso dos processos ao processador (CPU);
+Memory Management (MM) – controla o acesso dos processos à memória;
+Virtual File System (VFS) – fornece uma interface para os dados armazenados nos dispositivos de hardware;
+Networking Layer (NL) – permite a conexão com outros dispositivos da rede;
+Interprocess Communications (IPC) – controla a comunicação entre os processos;
+
+
+Cada subsistema é formado por um ou mais módulos, onde um módulo é um programa com a implementação de uma determinada facilidade no sistema operacional. Por exemplo, o subsistema MM é composto por:
+
+um módulo que define a interface para o hardware;
+um módulo responsável pelo mapeamento e swapping da memória virtual;
+um módulo que controla o acesso aos processos.
+
+
+É possível incluir módulos no kernel em tempo real (durante a execução do sistema). Isto permite, por exemplo, acoplar um novo hardware à máquina sem precisar reinicializá-la (neste caso, o módulo é um device driver).
+Outra forma para incluir um módulo consiste em recompilar o kernel com o parâmetro built-in para o módulo desejado. Neste caso, o módulo passa a fazer parte do código do kernel (aumenta o número das linhas de código) e a remoção só é possível com uma nova compilação. Naturalmente, será preciso reinicializar a máquina para usar o novo kernel.
+
+
+Execução
+Quando o Linux está sendo executado, a memória RAM da máquina é divida em duas regiões:
+
+Espaço do kernel (kernel space) – local onde o kernel é executado.
+Espaço do usuário (user space) – local onde os processos dos usuários são executados.
+
+Um processo é executado ou na área do kernel ou na área do usuário. Quando um processo é executado na área do usuário, ele tem privilégios normais e não tem autorização para fazer algumas coisas (liberdade vigiada). Quando um processo é executado na área do kernel, ele tem privilégios especiais e pode fazer qualquer coisa.
+O kernel space pode ser acessado por processos dos usuários através das chamadas de sistema (system calls). Uma chamada de sistema nada mais é que um pedido ao kernel para fazer um serviço que requer privilégios especiais como, por exemplo, uma operação de I/O, a criação/deleção de um processo ou a alteração das permissões de um arquivo.
+
+Características
+
+O kernel do Linux é distribuído sob os termos da GPL (GNU General Public License) – isto significa que é distribuído sem cobrança de taxas. Além disso, é possível alterar o código e distribui-lo livremente.
+Tem preempção (preemptive) – a execução de uma tarefa é interrompida, após um tempo, e outra tarefa ganha o direito de usar o processador. Isto evita que uma tarefa monopolize o processador por um longo tempo.
+Não implementa aritmética de ponto flutuante.
+Não é paginável – todo o código do kernel deve ser armazenado na memória física.
+Quando um processo ou uma tarefa termina, o Kernel Linux libera os recursos e notifica os outros processos ou tarefas que estavam associados a eles (um processo pode ter uma ou mais tarefas a executar e cada tarefa é executada por uma thread).
+Executa operações em segundo plano através das threads.
+Não há um suporte explícito para threads – uma thread é tratada da mesma forma de um processo.
+Permite o carregamento dinâmico de módulos no espaço do kernel.
+Tem suporte do multiprocessador simétrico (SMP) – dois ou mais processadores idênticos compartilham a memória principal.
+
+Versão
+Inicialmente, o kernel era oficialmente identificados por três números e o pacote de instalação era composto por:
+
+o número principal – o número da versão.
+o número secundário – mudava apenas quando mudanças substanciais eram feitas no kernel. Os números pares (0,2,4,…) indicavam versões estáveis e os números ímpares (1,3,5,…) indicam versões de teste.
+o nível de revisão-manutenção – o primeiro número era alterado quando ocorria uma pequena mudança no kernel, enquanto o segundo número mudava quando um erro era corrigido na revisão disponibilizada.
+
+Por exemplo, o pacote linux-2.6.38.6, de maio de 2011, é do kernel 2.6.38 e possui 6 correções.
+Entretanto, essa forma de numeração se tornou ponto de discussão entre os desenvolvedores do kernel. Em um email de 2005, Linus Torvalds admite que a forma adotada não era a ideal.
+
+“The problem with major development trees like 2.4.x vs 2.5.x was that the release cycles were too long, and that people hated the back- and forward-porting. That said, it did serve a purpose – people kind of knew where they stood, even though we always ended up having to have big changes in the stable tree too, just to keep up with a changing landscape.”
+RFD: Kernel release numbering – 2 Mar 2005
+
+Para comemorar os 20 anos do Linux, em maio de 2011, Linus Torvalds anunciou mudanças na forma de enumerar as versões.
+
+A versão 2.6.39 foi seguida pela versão 3.0 – não existiu uma razão técnica para a mudança do primeiro número;
+As versões oficiais passaram a ter apenas dois números;
+As versões estáveis passaram a ter três números, onde o terceiro número indica as correções feitas;
+As versões de teste (kernel estável + patch) passam a ser identificadas por rc (release candidate) – a versão 3.0-rc1 foi lançada depois da 2.6.39 e antes da 3.0.
+
+Por exemplo, o pacote linux-3.2.21, de junho de 2012, é do kernel 3.2 e possui 21 correções.
+
+“I decided to just bite the bullet, and call the next version 3.0. It will get released close enough to the 20-year mark, which is excuse enough for me, although honestly, the real reason is just that I can no longe rcomfortably count as high as 40.”
+Linux 3.0-rc1 – 29 May 2011
+
+Em abril de 2015, Torvalds decidiu novamente alterar o número da versão do Linux. O que seria tecnicamente 3.20 foi chamado de 4.0. Não há modificações radicais nesta nova versão. Entretanto, ela trouxe uma característica muito importante: a possibilidade de fazer atualizações no kernel sem a necessidade de reinicializar o computador.
+
+“Feature-wise, 4.0 doesn’t have all that much special. Much have been made of the new kernel patching infrastructure, but realistically, that not only wasn’t the reason for the version number change, we’ve had much bigger changes in other versions. So this is very much a “solid code progress” release”.
+Linux 4.0 released – 12 April 2015
+
+A partir da versão original do kernel disponibilizada em https://www.kernel.org/pub/linux/kernel/, as equipes de desenvolvimento podem incluir outras identificações ao preparar uma distribuição Linux. Por exemplo, a 3.17-rc1-utopic corresponde ao kernel 3.17-rc1 customizado para a distribuição Ubuntu 14.10 (apelidada de utopic Unicorn). Note que, neste caso, o rc (release candidate) indica que a Ubuntu usou uma versão ainda em teste para o kernel 3.17 (ainda não definitivo).
+Tipos
+As versões do kernel liberadas em www.kernel.org são chamadas de “vanilla” (sabor básico de sorvete) ou “mainline”. Elas possuem o básico do Linux e são usadas como matéria-prima para o desenvolvimento das distribuições Linux. Quando uma distribuição não acrescenta novos pacotes e nem faz alterações no código original, ela é classificada como uma distribuição vanilla. Gentoo e Arch são exemplos deste tipo de distribuição.
+Os kernels vanilla são classificados em:
+
+Prepatch – é também chamado de kernel rc (release candidate), pois implementa conceitos novos, ainda em discussão, nos grupos de desenvolvedores. Quando um kernel prepatch é liberado, ele passa a ser considerado mainline. O próprio Linus Torvalds é o responsável pela manutenção e liberação deste tipo de kernel.
+Mainline – é a principal linha de desenvolvimento do Linux onde novas características são introduzidas, melhor desenvolvidas e testadas exaustivamente. Linus Torvalds é o responsável pela manutenção e liberação deste tipo de kernel.
+Stable – quando um kernel mainline é liberado, ele passa a ser considerado estável. Entretanto, este tipo de kernel continua a receber correções para qualquer erro detectado.
+Longterm – é um kernel estável antigo que recebe correções só para erros importantes.
+EOL (End of Life) – é um kernel que raramente recebe manutenção da equipe de desenvolvedores do kernel. Não é aconselhável usar este tipo de kernel.
+
+A figura abaixo mostra a situação dos kernels em janeiro de 2019. Note que a versão 5.0 está sendo testada e que existem 1 kernel stable e 6 kernels longterms.
+
+Quando um kernel passa de stable para longterm, ele recebe uma previsão para a duração da sua vida útil.
+
+É interessante observar que as distribuições Linux normalmente customizam o kernel para que este receba determinadas características. Assim, os kernels liberados pelas equipes de desenvolvimento das distribuições possuem outras identificações além do número da versão do kernel. Por exemplo, a distribuição Ubuntu trabalha com os seguintes projetos de kernel:
+
+generic – é o kernel de uso geral e é distribuído, por padrão, com o Ubuntu.
+preempt – é baseado no kernel generic, mas possui configurações diferentes para reduzir latência (tempo de resposta do sistema operacional). É conhecido como soft real-time kernel.
+lowlatency – é similar ao preempt kernel, mas usa uma configuração mais agressiva para reduzir a latência. É também conhecido como soft real-time kernel.
+rt – corresponde ao kernel generic com o patch PREEMPT_RT. É conhecido como hard real-time kernel.
+realtime – é similar ao rt kernel, pois usa o generic kernel com o patch PREEMPT_RT. Entretanto, possui uma configuração mais agressiva para permitir características de tempo real ao sistema operacional. É também conhecido como hard real-time kernel.
+
+Assim, a versão 3.18.1-031801-lowlatency corresponde a versão da Ubuntu para o kernel 3.18.1 em ambientes onde a redução de latência é importante.
+Verificação
+Para saber a versão do kernel, use o comando uname.
+
+uname -r
+É também possível descobrir a versão do kernel olhando o arquivo /proc/version.
+Suponha que a saída do comando acima seja
+4.15.0-45-generic
+Neste caso, temos a distribuição Ubuntu com o kernel Linux 4.15. O kernel não sofreu qualquer correção de erro, mas a distribuição Ubuntu teve 45 correções. O termo “generic” indica que esta versão é de uso geral.
+Cabeçalhos
+Os cabeçalhos definem as APIs (application programming interface) para as funções e estruturas do kernel Linux. Como a maioria das distribuições fornecem aplicativos em pacotes pré-compilados (binários), estes cabeçalhos normalmente não são necessários. Entretanto, você vai precisar deles se for, por exemplo, compilar módulos do kernel ou compilar o próprio kernel (eles vão ser executados no espaço do kernel e, por isso, precisam usar as estruturas de dados e as funções do kernel).
+Os cabeçalhos são compostos por arquivos com extensão .h como o module.h (possui a definição da estrutura de dados dos módulos) e o printk.h (esta função é similar à função printf() do C, mas funciona no espaço do kernel).
+Se você apenas deseja instalar os cabeçalhos (headers) da versão do kernel que está usando, basta digitar
+sudo apt-get update
+sudo apt-get install linux-headers-$(uname -r)
+Se o kernel estiver desatualizado, o comando acima pode não funcionar. Portanto, é melhor atualizar o kernel antes de instalar os cabeçalhos.
+Os cabeçalhos do kernel normalmente são encontrados em vários diretórios do /usr/src/<versão do kernel>/ como:
+
+include/uapi/linux – contém o user space API do kernel, ou seja, os cabeçalhos usados nos aplicativos desenvolvidos pelos usuários.
+include/linux/ – contém os cabeçalhos usados pelo próprio kernel. Ele contém arquivos do uapi/linux com algumas modificações e arquivos exclusivos para uso do kernel.
+arch – contém os cabeçalhos específicos das arquiteturas suportadas pelo Linux como o diretório x86 para a arquitetura x86 da Intel.
+
+Por exemplo, para o kernel 4.15 da distribuição Ubuntu, temos
+
+/usr/src/linux-headers-4.15.0-45-generic/include/linux/
+/usr/src/linux-headers-4.15.0-45-generic/include/uapi/linux/
+/usr/src/linux-headers-4.15.0-45-generic/arch/
+
+Atualização
+No Ubuntu, é possível atualizar o kernel e instalar os headers com os comando abaixo.
+sudo apt-get update
+sudo apt-get install linux-generic
+Outra forma é baixar os fontes do kernel e fazer a instalação manualmente (isto permite instalar a versão da sua escolha).
+
+O primeiro passo é baixar o código-fonte completo da versão desejada do kernel. Os arquivos para a distribuição Ubuntu podem ser encontrados em http://kernel.ubuntu.com/~kernel-ppa/mainline/. Eles possuem extensão .deb, pois foram empacotados usando o gerenciador de pacotes da distribuição Debian (o Ubuntu é baseado na distribuição Debian). Os arquivos necessários para a atualização são:
+
+linux-headers-*all.deb
+linux-headers-*generic*.deb
+linux-image-*generic*.deb
+
+A imagem abaixo mostra os arquivos do kernel 4.15.
+
+
+Portanto, para a arquitetura AMD/Intel (64 bits), temos os  arquivos abaixo.
+
+Todos os cabeçalhos do kernel 4.15: linux-headers-4.15.0-041500_4.15.0-041500.201802011154_all.deb
+Os cabeçalhos da versão 4.15-generic: linux-headers-4.15.0-041500-generic_4.15.0-041500.201802011154_amd64.deb
+
+Os cabeçalhos da versão 4.15-lowlatency: linux-headers-4.15.0-041500-lowlatency_4.15.0-041500.201802011154_amd64.deb
+O kernel da versão 4.15-generic: linux-image-4.15.0-041500-generic_4.15.0-041500.201802011154_amd64.deb
+O kernel da versão 4.15-lowlatency: linux-image-4.15.0-041500-lowlatency_4.15.0-041500.201802011154_amd64.deb
+
+
+O segundo passo consiste em instalar os arquivos debian:
+
+sudo dpkg -i linux-*.deb
+
+Em seguida, basta reinicializar a máquina.
+
+sudo reboot
+Remoção
+Para remover uma versão do kernel instalada na máquina, basta digitar
+sudo apt-get remove linux-headers-3.18.0* linux-image-3.18.0*
+sudo reboot
+Não é necessário atualizar o grub, pois o comando apt-get já faz isto após deletar os arquivos informados.
+É importante observar que não é possível remover o kernel que está sendo usado pelo sistema. Neste caso, é necessário reinicializar a máquina e escolher um outro kernel para uso. Caso, não esteja vendo as opções no menu inicial, basta entrar no arquivo /etc/default/grub e comentar (com #) a linha abaixo.
+#GRUB_HIDDEN_TIMEOUT=0
+Se quiser aumentar o tempo de apresentação do menu, é só aumentar o valor do parâmetro do timeout.
+GRUB_TIMEOUT=10
+Compilação
+1) Baixar o código-fonte do kernel Linux que se deseja compilar em www.kernel.org/pub/linux/kernel/. Vamos assumir neste tópico que desejamos compilar o kernel 3.16.7.
+2) Abra um terminal (CTRL+ALT+T) e vá para o diretório onde está o arquivo baixado.
+3) Descompactar o arquivo
+
+O kernel Linux vem com a extensão “.tar.xz”. Para descompactar o arquivo com o kernel 3.16.7 deve-se digitar
+
+tar -x –xz -f linux-3.16.7.tar.xz
+
+
+
+Opções:
+
+-x corresponde a extrair o conteúdo do aquivo no formato tar;
+–xz corresponde a descomprimir o conteúdo do arquivo no formato xz;
+-f especifica o nome do arquivo.
+
+
+Resumindo: o diretório com os arquivos do kernel foram agrupados em um único arquivo (.tar) e depois comprimido com o algoritmo XZ.
+Talvez seja preciso instalar os pacotes “xz-lzma”, “xzdec”, “xzoom”, “xz-utils”, “xzgv”, e “xzip” na distribuição que você está usando. Embora alguns desses pacotes sirvam para descompactar arquivos com imagens, é melhor instalar todos.
+
+
+
+4) A execução do passo anterior cria um diretório com o código-fonte do kernel 3.16.7. Este será o diretório de trabalho para a compilação do kernel.
+cd linux-3.16.7
+5) Configurar o kernel
+
+O arquivo README mostra várias opções para gerar o arquivo .config no diretório de trabalho. Este novo arquivo terá as configurações usadas na compilação do kernel.
+Exemplos de como o arquivo .config pode ser gerado usando o utilitário make.
+
+make config – usa modo texto.
+make menuconfig – usa modo texto com cor, radiolists e diálogos (requer as bibliotecas ncurses).
+make localmodconfig – cria um .config baseado na configuração atual e nos módulos carregados.
+make oldconfig – cria um .config baseado na configuração atual do sistema (com todos os módulos, carregados ou não).
+
+
+A opção “make menuconfig” é considerada a mais simples e fácil de usar, pois oferece um menu simples para navegar.
+
+Para entrar em qualquer opção, use a tecla ENTER;
+Para navegar nas opções, use as setas de direção;
+Para selecionar, use a barra de espaços;
+Para obter mais informações sobre cada opção é só pressionar as teclas Shift+?. Para sair, tecle ENTER.
+Para cada módulo, pode-se escolher três opções.
+
+built-in – o módulo é incorporado ao kernel na compilação (passa a fazer parte do código-fonte do kernel);
+não habilitado – não é carregado na inicialização do sistema, mas está disponível quando for necessário;
+habilitado – o módulo é carregado na inicialização do sistema (mas não faz parte do código-fonte do kernel).
+
+
+Para sair, pressione a tecla ESC duas vezes seguidas.
+
+
+Para obter as informações do hardware da máquina que usará o kernel, e assim definir corretamente a configuração, veja os arquivos do diretório /proc.
+Se você apenas deseja criar um kernel para entender o processo de compilação, a maneira mais simples e rápida é usar a opção “make oldconfig” e dar Enter em todas as perguntas que são feitas (usa o padão atual do sistema).
+
+6) Compilar e instalar o kernel
+
+Compilar os módulos necessários de acordo com o arquivo .config – compila o kernel e cria o arquivo vmlinux (imagem do kernel não compactada) e o arquivo bzImage (imagem do kernel compactada). O primeiro arquivo fica no diretório de trabalho, enquanto o segundo fica no diretório boot da arquitetura correspondente (por exemplo, arch/x86_64/boot/).
+Para executar este passo, deve-se digitar
+
+make
+ou
+make modules
+O alvo (target) “modules” é o padrão, por isso não precisa ser informado.
+
+Também é possível definir parâmetros com o utilitário make. Abaixo alguns exemplos.
+
+Para construir os módulos em silêncio (só mostra as mensagens de erro)
+
+
+
+make V=0 all
+
+
+
+Para ver todas as mensagens em tempo de compilação
+
+
+
+make V=1 all
+
+
+
+Para mostrar porque determinado alvo está sendo reconstruído
+
+
+
+make V=2 all
+
+Instalar os módulos compilados em /lib/modules/<versão do kernel>. É preciso ter permissão de root para executar esse passo.
+
+sudo make modules_install
+
+Executar o comando
+sudo make install
+para instalar os seguintes arquivos no /boot:
+
+vmlinuz – o termo “vm” significa virtual memory e o termo “linuz” significa o kernel compactado no formato bzImage (big zImage). Portanto, o arquivo vmlinuz contém a imagem compactada do kernel usada para carregar o sistema durante a inicialização (tem outras informações além do executável do kernel). A compactação é necessária para manter a compatibilidade com arquiteturas mais antigas onde o espaço disponível para armazenar o kernel é limitado (a imagem pode ser descompactada em áreas não contínuas da memória). Além disso, o antigo zImage descompactava o kernel na área baixa da memória (os primeiros 640k), enquanto o atual bzImage descompacta o kernel na memória alta (acima de 1M).
+initrd – imagem com os arquivos necessários para suportar o segundo estágio do boot, pois carrega um sistema de arquivos temporário na memória durante o boot do sistema;
+config – arquivo texto com a configuração do kernel;
+System.map – tabela de símbolos do kernel e seus endereços na memória, onde um símbolo pode ser o nome de uma variável ou de uma função; é importante para depurar kernel panic.
+
+
+
+O alvo “install” também providencia a atualização do arquivo /boot/grub/grub.cfg e cria a imagem initramfs correspondente (esta imagem contém o sistema de arquivos do root a ser carregado na memória durante o boot).
+
+Resumindo : para compilar e instalar o kernel e os seus módulos, basta digitar na linha de comando (após criar o arquivo .config):
+
+make && sudo make modules_install && sudo make install
+7) Agora é só reinicializar a máquina e escolher o novo kernel no menu inicial do grub. Para o exemplo acima, a resposta ao comando “uname -r” é
+3.16.7
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

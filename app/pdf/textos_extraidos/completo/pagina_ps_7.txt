@@ -1,0 +1,152 @@
+
+
+
+
+
+
+
+
+
+
+wget | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+wget
+
+wget [opções] [url]
+Descrição
+Este aplicativo permite baixar arquivos usando os protocolos HTTP, HTTPS e FTP.
+Algumas opções do comando
+
+-c : continua um download que havia sido interrompido.
+-b : executa em segundo plano.
+-F : força a tratar a entrada como HTML.
+-h ou −−help : mostra as opções do comando.
+-q : executa sem mostrar informações.
+-V ou −−version : mostra a versão do wget.
+
+Exemplos
+
+O comando
+
+wget -c http://ftp.gnu.org/pub/gnu/wget/wget-1.10.1.tar.gz
+continua o download exatamente do ponto em que foi interrompido.
+
+O comando
+
+wget -b http://ftp.gnu.org/pub/gnu/wget/wget-1.10.1.tar.gz
+executa o download em background (veja o comando bg) e gera um arquivo de status com o nome “wget.log”.
+Observações
+
+Possui comandos particulares para os protocolos HTTP, HTTPS e FTP.
+Serve para executar as principais tarefas de download de arquivos via internet.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,153 @@
+
+
+
+
+
+
+
+
+
+
+su | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+su
+
+ 
+su [opções] [usuário]
+Descrição
+
+Este comando permite mudar de usuário em um ambiente shell.
+Caso o nome do usuário não seja fornecido, assume-se que o objetivo é se tornar o usuário root.
+Na distribuição Ubuntu, usa-se o comando sudo quando se deseja executar comandos com os privilégios de outro usuário. Portanto, deve-se usar sudo no lugar de su caso o objetivo seja se tornar o usuário root.
+
+Algumas opções do comando
+
+-, -l, −−login : fornece um ambiente similar ao que o usuário teria se tivesse inicializado a sessão.
+-c, −−command COMMAND : um comando é executado usando os privilégios do usuário especificado.
+-s, −−shell SHELL : define o ambiente shell a ser usado com o usuário especificado.
+-h, −−help : exibe as opções do comando.
+
+Exemplos
+
+Para se tornar o root existem duas formas. O comando
+
+sudo su
+faz o usuário se transformar em root mantendo a maioria da definições do ambiente, enquanto o comando
+sudo su –
+assume todas as definições do ambiente do usuário root (corresponde a iniciar uma sessão como root). Para retornar ao ambiente anterior, basta digitar exit.
+
+
+O comando
+
+sudo su -s /bin/dash
+faz com que o shell dash seja utilizado com o usuário root.
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

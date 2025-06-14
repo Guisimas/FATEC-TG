@@ -1,0 +1,168 @@
+
+
+
+
+
+
+
+
+
+
+ls | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+ls
+
+ls [opções] [diretório]
+Descrição
+Este comando lista o conteúdo de um diretório.
+Algumas opções do comando
+
+-a : lista todos os arquivos do diretório (inclusive os arquivos ocultos).
+-h : usado junto com a opção -l, exibe o tamanho do arquivo em formato mais compreensível para o ser humano.
+-i : lista o número do índice (inode) de cada arquivo. Se dois arquivos em um mesmo sistema de arquivos possuem o mesmo inode, então ele estão vinculados a um mesmo arquivo físico (ligação direta).
+-l : lista permissões, número de entidades (se for diretório, mostra a quantidade de subdiretórios existentes dentro dele; se for arquivo, mostra o número de referências que apontam para o arquivo), dono, grupo, tamanho do arquivo, data e hora da última atualização e o nome do arquivo.
+-m : lista arquivos e diretórios separados por vírgulas.
+-o : apresenta listagem longa sem os donos dos arquivos.
+-r : lista em ordem reversa.
+-t : lista os arquivos por ordem decrescente das datas de atualização
+-F : adiciona um “/” no final dos nomes de diretórios, um “*” no final dos nomes de arquivos executáveis, um “@” no final dos nomes de links, etc.
+-R : lista diretórios e subdiretórios recursivamente.
+-S : classifica os arquivos por tamanho.
+-X : classifica por ordem alfabética considerando primeiro as extensões e depois os nomes dos arquivos.
+-1 : apresenta um arquivo por linha.
+
+Exemplos
+
+Para listar todos os arquivos (inclusive os ocultos) do diretório corrente no formato longo, basta digitar
+
+
+ls -al
+
+O comando
+
+
+ls /home/aluno
+lista todos os arquivos do subdiretório aluno que se encontra no diretório /home, enquanto o comando
+ls /etc /usr
+lista todos os arquivos e subdiretórios dos diretórios /etc e /usr.
+Observações
+
+O Linux mantém 3 timestamps (informações de data) para cada arquivo que podem ser vistos com o comando ls.
+
+O comando “ls -l arquivo” mostra a data da última atualização dos dados (gravação) do arquivo.
+O comando “ls -lc arquivo” mostra a data da última atualização do status (permissões, dono, grupo, etc) do arquivo.
+O comando “ls -lu arquivo” mostra a data do último acesso (leitura) do arquivo.
+
+
+Para saber mais sobre as informações sobre estas datas veja a documentação das chamadas de sistema stat(), lstat(), fstat().
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,172 @@
+
+
+
+
+
+
+
+
+
+
+less | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+less
+
+less [opções] [arquivo]
+Descrição
+Este comando permite fazer a paginação de arquivos ou da entrada padrão.
+Algumas opções do comando
+
++ : se a opção começa com este sinal, então a opção é usada como um comando inicial para o aplicativo less.
+-? ou −−help: lista um sumário das opções do aplicativo less.
++num : mostra arquivo a partir da linha num.
+-N : numera as linhas do arquivo.
+-n : não numera as linhas do arquivo (é o padrão).
+-f or −−force : força a abertura de um arquivo não regular.
++F : continua indefinidamente tentando ler caracteres no final do arquivo (assume que o arquivo está crescendo). O comportamento é semelhante ao comando tail -f.
++G : posiciona no final do arquivo.
+
+Teclas disponíveis
+
+Use as teclas Page-Down, Ctrl+F ou Space para avançar nas páginas.
+Use as teclas Page-Up ou Ctrl+B para voltar as páginas.
+Use Enter para avançar apenas uma linha por vez.
+Digite h para ver a lista das teclas disponíveis para navegação no aplicativo (digite q para voltar ao texto).
+Para procurar uma palavra, digite / e, em seguida, entre com a palavra. Para procurar a próxima palavra e a palavra anterior no texto use, respectivamente, n e N.
+Para sair do aplicativo digite q.
+
+Exemplos
+
+Para visualizar o arquivo teste, basta digitar
+
+less teste
+
+Para redirecionar a saída de um comando para o less use o pipe. Por exemplo, o comando
+
+ls | less
+faz com que a listagem dos arquivos do diretório corrente seja paginada pelo aplicativo less.
+
+Para ver o manual on-line sobre o comando ls, numerando as suas linhas e mostrando a partir da linha 20, basta digitar
+
+man ls | less -N +20
+
+Para examinar arquivos que estão sendo constantemente atualizados use a opção F. Por exemplo,
+
+last | less +F
+mostra as últimas linhas do arquivo que armazena informações sobre login e logout dos usuários. Para sair tecle CTRL+C (para cancelar) e depois q (de quit).
+Observações
+
+Na realidade, o aplicativo less é uma versão melhorada do aplicativo more.
+Para personalizar as teclas a serem usadas no aplicativo less use o comando lesskey.
+Os comandos cat e tac também permitem visualizar conteúdo de arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

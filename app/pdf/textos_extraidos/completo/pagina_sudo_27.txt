@@ -1,0 +1,175 @@
+
+
+
+
+
+
+
+
+
+
+mkswap | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+mkswap
+
+mkswap [opções] dispositivo [bloco]
+Descrição
+Este comando configura uma área de troca (swap) do Linux.
+
+O argumento dispositivo pode ser uma partição de disco (ex: /dev/sdb7) ou um arquivo.
+O argumento bloco é a quantidade de blocos de 1024 bytes usada pelo sistema de arquivos. Se este parâmetro não for fornecido, o mswap usará toda a partição ou todo o arquivo. Este parâmetro é considerado supérfluo e é mantido apenas por questão de compatibilidade com os sistemas mais antigos (portanto, é aconselhável não usá-lo).
+
+Algumas opções do comando
+
+-c : verifica a existência de blocos ruins antes de criar o sistema de arquivos.
+-h ou −−help : lista as opções disponíveis com o comando.
+-U UUID ou −−uuid UUID : especifica o UUID a ser usado.
+−−version : exibe informação sobre o comando.
+
+Exemplo
+O comando
+mkswap /dev/sda5
+prepara a partição /dev/sda5 para ser usada como área de swap.
+Observações
+
+Antes de criar uma área de swap, é preciso verificar o tamanho de página usada no sistema. Podemos obter esta informação no arquivo /proc/cpuinfo. O comando swapon não aceita criar uma área menor que 10 páginas, mas não existe limite máximo de tamanho.
+Para obter informações sobre a área de swap utilizada no seu sistema, basta ver o conteúdo do arquivo /proc/swaps. Abaixo é mostrado um possível exemplo.
+
+
+
+
+Filename
+Type
+Size
+Used
+Priority
+
+
+/dev/sda5
+partition
+2085884
+0
+-1
+
+
+
+ 
+Note que, neste caso, a área de swap é a partição de disco /dev/sda5 com tamanho de 2GBytes (são 2085884 blocos de 1024 bytes).
+
+Pode-se também obter informações sobre a área de swap com o comando fdisk, basta digitar
+
+sudo fdisk -l
+
+Após criar a área de swap, é preciso usar o comando swapon para inicializá-la.
+O comando swapoff desabilita áreas de swap.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

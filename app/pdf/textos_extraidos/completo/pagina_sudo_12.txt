@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+
+
+quota | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+quota
+
+quota [opções]
+Descrição
+Este comando fornece informações sobre o sistema de cotas do disco.
+Algumas opções do comando
+
+-u [usuário] : informações sobre a cota do usuário.
+-g [grupo] : informações sobre a cota de um grupo do qual o usuário é membro.
+−−help : lista as opções disponíveis com o comando.
+−−version : exibe informação sobre o comando.
+
+Exemplo
+O comando
+quota -u aluno
+exibe informações sobre a cota do usuário aluno.
+Observações
+
+Para instalar o sistema de cotas usando apt-get, digite
+
+sudo apt-get install quota
+
+O comando quota exibe informações sobre as quotas de todos os sistemas de arquivos listados em /etc/mtab.
+O comando quotaoff desabilita o sistema de cotas.
+O comando quotaon habilita o sistema de cotas.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

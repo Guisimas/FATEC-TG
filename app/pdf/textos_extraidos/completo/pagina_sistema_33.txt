@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+quotaoff | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+quotaoff
+
+quotaoff [opções] [sistema de arquivos]
+Descrição
+Este comando desabilita o sistema de cotas de um sistema de arquivos.
+Algumas opções do comando
+
+-a : desabilita as cotas de todos os sistemas de arquivos definidos no /etc/fstab.
+-u : desabilita as cotas de usuários. É o padrão.
+-g : desabilita as cotas dos grupos.
+−−help : lista as opções disponíveis com o comando.
+−−version : exibe informação sobre o comando.
+
+Exemplo
+O comando
+quotaoff /dev/hda2
+desabilita o sistema de cotas do /dev/hda2.
+Observações
+
+O comando quota fornece informações sobre o sistema de cotas do disco.
+O comando quotaon habilita o sistema de cotas de um sistema de arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

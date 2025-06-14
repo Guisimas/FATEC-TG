@@ -1,0 +1,153 @@
+
+
+
+
+
+
+
+
+
+
+getcap | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+getcap
+
+getcap [opções] arquivos
+Descrição
+Este comando informa as capacidades dos arquivos.
+Algumas opções do comando
+
+-r : faz pesquisa recursiva.
+-h : exibe as opções do comando.
+-v : permite fornecer mais de um arquivo na linha de comandos.
+
+Exemplos
+
+Para ver as capacidades do comando ping, digite
+
+getcap /bin/ping
+Uma possível resposta pode ser
+/bin/ping = cap_net_raw+p
+Neste caso, o comando tem permissão para abrir soquetes de rede e transmitir/receber pacotes de dados.
+
+Para ver as capacidades de mais de um arquivo é preciso usar a opção -v.
+
+getcap -v /bin/ping /usr/bin/crontab /bin/grep
+A resposta abaixo informa que apenas o comando ping possui capacidade definida.
+/bin/ping = cap_net_raw+p
+/usr/bin/crontab
+/bin/grep
+Observações
+
+O comando setcap permite alterar/incluir/deletar capacidades.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

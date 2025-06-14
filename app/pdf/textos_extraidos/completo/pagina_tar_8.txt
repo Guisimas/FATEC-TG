@@ -1,0 +1,152 @@
+
+
+
+
+
+
+
+
+
+
+tree | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+tree
+
+tree [opções] [diretório]
+Descrição
+Este utilitário lista o conteúdo de um diretório usando o formato de árvore. Ele tem a mesma função do comando ls. A diferença consiste na maneira como as informações são exibidas.
+Algumas opções do comando
+
+-a : lista todos os arquivos, inclusive os arquivos ocultos.
+-d : lista somente os subdiretórios.
+-f : exibe o caminho completo dos arquivos.
+-p : exibe as permissões dos arquivos.
+−−help : exibe as opções do utilitário.
+−−version : mostra informações sobre o utilitário.
+
+Exemplos
+
+O comando
+
+tree /etc
+exibe arquivos e diretórios que estão abaixo do diretório /etc.
+
+Para ver a organização apenas dos diretórios que estã abaixo do diretório atual, digite
+
+tree -d
+Observações
+
+Caso o usuário não forneça o nome do diretório, assume-se o diretório atual.
+Caso o aplicativo não esteja instalado, digite
+
+sudo apt-get install tree
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

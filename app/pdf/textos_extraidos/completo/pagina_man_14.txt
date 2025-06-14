@@ -1,0 +1,154 @@
+
+
+
+
+
+
+
+
+
+
+touch | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+touch
+
+touch [opções] arquivo
+Descrição
+Este utilitário permite alterar a data e a hora do último acesso e/ou data de modificação de um arquivo.
+Algumas opções do comando
+
+-a : altera apenas a data do útimo acesso.
+-c, −−no-create : não cria qualquer arquivo.
+-m : altera apenas a data de modificação do arquivo.
+-t [[CC]YY]MMDDhhmm[.ss] : define o tempo a ser usado pelo utilitário ao invés do tempo atual.
+−−help : exibe as opções do utilitário.
+−−version : mostra informações sobre o arquivo.
+
+Exemplos
+
+Se o arquivo teste não existe, o comando
+
+touch teste
+cria um arquivo vazio.
+
+Para alterar as datas de modificação e de acesso do arquivo teste para 12:31 do dia 01/05 do ano corrente, digite
+
+touch -t 05011231 teste
+
+Para atualizar as datas de todos os arquivos do diretório corrente, digite
+
+touch *
+Observações
+
+Se as opções não especificarem qual data deve ser alterada, o utilitário altera as duas datas do arquivo: acesso e modificação.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

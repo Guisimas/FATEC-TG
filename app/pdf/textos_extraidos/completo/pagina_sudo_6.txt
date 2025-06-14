@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+passwd | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+passwd
+
+passwd [opções] [usuário]
+Descrição
+Este comando altera as senhas dos usuários.
+Algumas opções do comando
+
+-d : deleta a senha de um usuário.
+-e : passa a considerar a senha expirada. Isto significa que o usuário terá que alterar a senha no próximo login.
+-h ou −−help : exibe as opções do comando.
+-u : a atualização só é efetuada após a data de expiração da senha atual.
+
+Exemplos
+
+O usuário pode alterar a própria senha digitando
+
+passwd
+
+O usuário root pode alterar a senha de outro usuário digitando
+
+sudo passwd usuário
+
+As senhas dos usuários são armazenadas no arquivo /etc/passwd. Caso o sistema shadow esteja sendo usado, as senhas são criptografadas e armazenadas no arquivo /etc/shadow.
+O comando vipw edita os arquivos /etc/passwd e /etc/shadow.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

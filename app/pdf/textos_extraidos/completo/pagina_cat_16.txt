@@ -1,0 +1,142 @@
+
+
+
+
+
+
+
+
+
+
+hostname | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+hostname
+
+hostname [opções] [computador]
+Descrição
+Este comando mostra ou muda o nome do computador na rede.
+Algumas opções do comando
+
+-a : mostra o alias da máquina (se for usado).
+-i : mostra o(s) endereço(s) IP(s) da máquina.
+-s : mostra o nome curto da máquina (até o primeiro ‘.’).
+−−help : lista as opções do aplicativo.
+−−version : mostra informações sobre o aplicativo.
+
+Observações
+
+Se o comando hostname for usado sem parâmetros, o nome da máquina é exibido.
+Se o comando hostname for seguido por um nome, é alterado o nome da máquina.
+O nome da máquina fica armazenado em /etc/hostname.
+As informações sobre as máquinas da rede são armazenadas em /etc/hosts.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,186 @@
+
+
+
+
+
+
+
+
+
+
+expr | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+expr
+
+expr opção     ou     expr expressão
+Descrição
+É um comando que avalia expressões (não necessariamente aritméticas).
+Opções e expressões do comando
+
+−−help : exibe as opções da linguagem.
+−−version : exibe a versão atual da linguagem.
+
+Expressões
+
+ARG1 = ARG2 – retorna 1 se ARG1 for igual a ARG2, em caso contrário retorna zero.
+ARG1 != ARG2 – retorna 1 se ARG1 não for igual a ARG2, em caso contrário retorna zero.
+ARG1 < ARG2 – retorna 1 se ARG1 for menor que ARG2, em caso contrário retorna zero.
+ARG1 <= ARG2 – retorna 1 se ARG1 for menor que ou igual a ARG2, em caso contrário retorna zero.
+ARG1 > ARG2 – retorna 1 se ARG1 for maior que ARG2, em caso contrário retorna zero.
+ARG1 >= ARG2 – retorna 1 se ARG1 for maior que ou igual a ARG2, em caso contrário retorna zero.
+ARG1 + ARG2 – retorna a soma de ARG1 e ARG2.
+ARG1 – ARG2 – retorna a diferença de ARG1 e ARG2.
+ARG1 * ARG2 – retorna o produto aritmético de ARG1 e ARG2.
+ARG1 / ARG2 – retorna o quociente da divisão de ARG1 por ARG2.
+ARG1 % ARG2 – retorna o resto da divisão de ARG1 por ARG2.
+STRING : PADRÃO – procura por PADRÃO na STRING. Retorna o número de caracteres de PADRÃO se comparação é bem sucedida. Retorna zero se PADRÃO não é encontrado a partir do primeiro caractere de STRING.
+length STRING – retorna o número de caracteres da STRING.
+
+Exemplos
+
+Para calcular a soma de dois números:
+
+expr 5 + 2
+
+Para calcular a diferença de dois números:
+
+expr 5 – 2
+
+Para multiplicar dois números:
+
+expr 5 \* 2
+Note que \ é usada para impedir que o shell interprete o operador *.
+
+Para obter o quociente da divisão de dois números:
+
+expr 5 / 2
+
+Para obter o resto da divisão de dois números:
+
+expr 5 % 2
+
+Para verificar se o padrão “Linux” existe na string “Linux Ubuntu”:
+
+expr “Linux Ubuntu” : “Linux”
+Neste caso, a resposta será 5 (número de caracteres do padrão). Por outro lado, a resposta será zero para
+expr “Linux Ubuntu” : “Ubuntu”
+pois a expressão “Ubuntu” não é encontrada no início da expressão fornecida.
+
+Para verificar o tamanho da string “Linux Ubuntu”:
+
+expr length “Linux Ubuntu”
+Observações
+
+O comando expr só trabalha nas operações aritméticas com números inteiros. Use a linguagem bc para números com ponto flutuante.
+O comando dc também pode ser usado para operações aritméticas.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

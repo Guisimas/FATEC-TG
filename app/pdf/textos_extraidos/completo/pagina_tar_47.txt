@@ -1,0 +1,211 @@
+
+
+
+
+
+
+
+
+
+
+bzip2 | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+bzip2
+
+bzip2 [opções] [arquivo(s)]
+Descrição
+É um programa de compactação/descompactação de arquivos.
+Algumas opções do comando
+
+-z ou −−compress : força compactação do arquivo.
+-d ou −−decompress : força descompactação do arquivo. Pode-se usar também “bunzip2” no lugar de “bzip2 -d“.
+-h ou −−help : exibe as opções do comando.
+-k, −−keep : mantém (não deleta) os arquivos de entrada.
+-t, −−test : testa a integridade do arquivo compactado.
+-f, −−force : sobrescreve arquivos de saída.
+-t, −−test : testa a integridade do arquivo compactado.
+-[num] : especifica a compactação que será feita utilizando números entre 1 (menor e mais rápida compactação) e 9 (maior e melhor compactação). Pode-se também usar −−fast no lugar de -1 ou −−best no lugar de -9.
+
+Exemplos
+
+É possível utilizar o bzip2 para a compactação sem a inserção de opções. Por exemplo a compactação do arquivo Final.xls, feita com e sem opções:
+
+bzip2 -z Final.xls
+bzip2 Final.xls
+Nos dois casos, o arquivo Final.xls deixará de existir e no seu lugar entrará o arquivo gerado Final.xls.bz2.
+
+Para descompactar o arquivo vivaldi.htm, considerando que ele estava no formato .bz2, digite
+
+bzip2 -d vivaldi.htm.bz2
+
+É possível escolher o nível de compactação a ser utilizado usando valores de 1 a 9. Para compactar o arquivo texto.txt usando a compactação máxima, digiteb
+
+zip2 -9 texto.txt
+Abaixo é apresentada uma tabela onde um arquivo de cerca de 4M foi compactado com os noves níveis disponibilizados pelo comando. Quando não foi informado o nível de compactação, o comando utilizou o nível 9. Isto significa que o comando tenta, por padrão, compactar o máximo possível o arquivo (pode ser que não seja possível melhorar a compactação à medida que se aumenta o nível). 
+
+
+
+Nível de
+compactação
+Tamanho
+(bytes)
+
+
+Sem compactação
+4.209.804
+
+
+1
+1.042.061
+
+
+2
+984.797
+
+
+3
+953.252
+
+
+4
+932.815
+
+
+5
+858.208
+
+
+6
+778.766
+
+
+7
+712.746
+
+
+8
+633.170
+
+
+9
+610.610
+
+
+
+Observações
+
+A extensão dos arquivos compactados pelo bzip2 é .bz2. No processo de descompactação, se o arquivo não possuir nenhuma das terminologias conhecidas (.bz2, .bz, .tbz2 ou .tbz), ele recebe o nome original com .out no final. Por exemplo, do arquivo teste.xxx compactado com bzip2 será gerado o arquivo descompactado teste.xxx.out.
+O bzip2 é muito utilizado em conjunto com o comando tar. Para isso, deve-se utilizar o parâmetro -j nas opções do tar.
+São exemplos de comandos para agrupar e/ou compactar arquivos: ar, zip, gzip e compress.
+Quando comparado a outros compactadores disponíveis no Linux, o bzip2 normalmente é apontado como mais eficiente, mas é considerado mais lento e maior consumidor de processamento.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

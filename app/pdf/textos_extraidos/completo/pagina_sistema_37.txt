@@ -1,0 +1,134 @@
+
+
+
+
+
+
+
+
+
+
+finger | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+finger
+
+finger [usuário ou usuário@domain]
+
+Descrição
+Este comando exibe informações sobre um usuário.
+Observações
+
+Se não for fornecido o nome do usuário, o sistema mostra a lista de todos os usuários conectados no momento.
+Os dados informados com este comando estão armazenados no arquivo /etc/passwd na entrada correspondente ao usuário.
+Para alterar as informações mostradas pelo comando finger, use o comando chfn.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

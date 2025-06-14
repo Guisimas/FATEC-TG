@@ -1,0 +1,164 @@
+
+
+
+
+
+
+
+
+
+
+oclock | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+oclock
+
+oclock [opções]
+
+Descrição
+Este comando exibe um relógio analógico com a hora atual do sistema.
+Algumas opções do comando
+
+
+
+-fg color : define uma cor para os ponteiros e a joia do relógio.
+-bg color : define uma cor para o fundo do relógio.
+-jewel color : define uma cor para a joia do relógio (na posição 12 horas).
+-minute color : define uma cor para o ponteiro dos minutos.
+-hour color : define uma cor para o ponteiro das horas.
+-bd color : define uma cor para a borda do relógio.
+-geometry widthxheight+xoff+yoff : define tamanho e posição do relógio onde: width = largura do relógio; height = altura do relógio; xoff = quantidade de pixels distantes da borda esquerda da janela (se o valor é negativo, considera-se a borda direita); yoff = quantidade de pixels distantes da borda superior da janela (se o valor é negativo, considera-se a borda inferior).
+−−help : exibe as opções do comando.
+−−version : exibe informações sobre o comando.
+
+
+
+Exemplo
+
+O comando
+
+oclock -geometry 150×150+300+100 -bd black -bg red -minute blue -hour orange
+exibe o relógio analógico com tamanho 150 X 150 pixels, distante 300 pixels da borda esquerda da janela e 100 pixels distante da borda superior. O relógio tem borda preta, fundo vermelho, ponteiro dos minutos tem cor azul e o ponteiro das horas tem cor laranja. A imagem abaixo mostra o relógio padrão e o relógio criado pelo comando acima.
+
+Observações
+
+O arquivo /etc/X11/app-defaults/Clock-color possui as cores padrão usados pelo aplicativo.
+
+Clock*Background: grey
+Clock*BorderColor: light blue
+Clock*hour: yellow
+Clock*jewel: yellow
+Clock*minute: yellow
+
+Pode-se usar o comando date para alterar a data e hora do sistema.
+Pode-se usar o comando hwclock para alterar o relógio da máquina.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

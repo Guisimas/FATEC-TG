@@ -1,0 +1,191 @@
+
+
+
+
+
+
+
+
+
+
+comandos do Linux | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+comandos do Linux
+
+ comando [opções] [argumentos] 
+Descrição
+
+Os comandos do Linux são utilizados na linha de comandos (prompt) do sistema: as opções definem parâmetros do comando e usualmente começam com o caractere “-” seguido de uma ou mais letras; e os argumentos definem dados a serem usados no processamento do comando.
+O responsável por interpretar um comando é o shell do usuário. Um comando pode ser execuado pelo próprio shell (builtin command) ou pode ser executado po uma aplicação presente em um dos diretórios do sistema como, por exemplo, /bin, /sbin, /usr/bin, etc.
+
+Exemplos
+
+Por exemplo, para listar os arquivos e os diretórios filhos do diretório atual, basta digitar
+
+ls
+Já o comando
+ls -al
+exibe informações (tamanho, dono, grupo, etc) sobre os arquivos e os diretórios (opção l) e inclui na listagem os arquivos escondidos (opção a).
+Importante: os arquivos escondidos no Linux possuem nomes que começam com um ponto (“.”).
+
+As opções podem possuir um ou mais argumentos. Além disso, é possível existir argumentos que não pertençam a uma opção. Observe, por exemplo, o comando abaixo.
+
+awk -F: -farq.txt /etc/passwd
+Neste caso, temos o comando awk com duas opções (F e f) e três argumentos (:, arq.txt e /etc/passwd), sendo que o último argumento não pertence a nenhuma opção (é usada pelo comando).
+
+Para obter informações on-line sobre algum comando externo ao shell, digite man seguido do nome do comando. Por exemplo, para obter uma explicação sobre o comando ls digite
+
+man ls
+
+Para os comandos internos do shell, deve-se usar help. Por exemplo, para saber mais do comando bg, basta digitar
+
+
+help bg
+Entrada e saída padrão
+
+
+stdin (standard input) – entrada padrão para os comandos do Linux. Normalmente, a entrada padrão é o teclado, mas é possível usar o redirecionador de saída < para alterar a entrada padrão. Por exemplo, o comando
+
+tr a-z A-Z < teste
+usa o arquivo teste como entrada para o comando tr.
+
+stdout (standard output) – saída padrão dos comandos do Linux. Normalmente, a saída padrão é a tela da sessão onde o comando foi digitado, mas é possível usar o redirecionador de saída > ou 1> para alterar a saída padrão. Por exemplo,
+
+ls > testeouls 1> teste
+cria o arquivo teste com o conteúdo do diretório atual.
+
+stderr (standard error) – saída padrão para os erros encontrados durante a execução de um comando do Linux. Normalmente, a saída padrão é a tela da sessão onde o comando foi digitado, mas é possível usar o redirecionador de saída 2> para alterar a saída padrão. Suponha que o diretório /meu_dir não exista. Portanto, o comando
+
+ls /meu_dir 2> teste
+cria o arquivo teste com a mensagem de erro relacionada a execução do comando acima.
+
+É possível digitar mais de um comando de uma vez. Se “;” for usado para separar os comandos, então o sistema executa todos os comandos, independentemente do resultado.
+
+man ls > teste; ls -l teste
+Se “&&” for usado entre os comandos, um comando só é executado quando os comandos anteriores não apresentam erro.
+man ls > teste && ls -l teste
+Observações
+Neste Guia de Referências foi adotada a seguinte norma na apresentação dos comandos:
+
+opções/argumentos não obrigatórios (os usuários podem ou não digitá-los) estão entre colchetes.
+argumentos obrigatórios (devem ser fornecidos pelos usuários) não são delimitados por nenhum símbolo.
+
+Por exemplo, o comando
+cat [-n] arquivo
+possui uma opção (-n) e um argumento (arquivo), sendo que apenas o segundo deve ser obrigatoriamente informado pelo usuário. Por exemplo, suponha que você queira exibir o conteúdo do arquivo teste.txt, então você pode digitar
+cat -n teste.txt
+ou
+cat teste.txt
+onde o primeiro comando numera as linhas do arquivo e o segundo comando apenas exibe o arquivo.
+Veja Também
+A página “Linux Commands Cheat Sheet” apresenta uma lista exaustiva de comandos Linux (básicos e avançados).
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

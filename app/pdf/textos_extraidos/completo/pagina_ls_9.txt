@@ -1,0 +1,171 @@
+
+
+
+
+
+
+
+
+
+
+lsof | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lsof
+
+lsof [opções]
+Descrição
+Este aplicativo lista os arquivos abertos (em uso) pelos processos. O termo lsof significa list open files.
+Algumas opções do comando
+
+−−help : mostra as opções do aplicativo.
+-i [endereço] [tipo] : mostra a lista dos arquivos abertos que estão associados ao endereço de Internet especificado. Se nenhum endereço é especificado, o comando fornece a lista todos os arquivos abertos associados aos endereços de internet. Pode-se também definir um tipo de comunicação como porta,  protocolos IPv4 e IPv6 e tipo de socket.
+
+-s : mostra o tamanho do arquivo.
+-p PID : mostra os arquivos abertos do processo com o PID informado.
+-u usuário : mostra apenas informações de um determinado usuário.
+-U : lista os sockets Unix.
+
+Exemplos
+
+Para ver a lista de todos os arquivos abertos pelos processos em execução no sistema, entre com
+
+lsof
+
+Para ver apenas os processos do usuário aluno, digite
+
+lsof -u aluno
+Se você quiser ver apenas a quantidade de aquivos abertos do usuário aluno, use o comando wc para contar a quantidade de linhas na resposta (subtrai 1 da resposta para ignorar o cabeçalho).
+lsof -u aluno | wc -l
+
+Para ver os arquivos abertos pelo processo com PID 3761, basta digitar
+
+
+lsof -p 3761
+
+Para listar os processos relacionados com a porta 80, entre com
+
+lsof -i :80
+
+Para obter a lista dos arquivos associados com o protocolo IPv4, entre com
+
+lsof -i 4
+
+Para listar os processos com socket UNIX, digite
+
+
+lsof -i -U
+Observações
+
+O comando fuser identifica os processos que estão usando um determinado arquivo.
+O comando stat fornece informações sobre arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

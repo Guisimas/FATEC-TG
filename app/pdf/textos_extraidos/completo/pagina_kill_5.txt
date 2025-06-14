@@ -1,0 +1,363 @@
+
+
+
+
+
+
+
+
+
+
+sinal | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+sinal
+
+Descrição
+
+É um mecanismo usado para notificar um processo da ocorrência de um evento.
+É uma interrupção de software.
+Um sinal é definido como um número inteiro, mas recebe um nome simbólico com prefixo “SIG” (o número pode variar nos sistemas Unix-like, mas o nome é sempre o mesmo).
+
+Tipos de sinal
+No Linux, existem duas categorias de sinal:
+
+Padrão (standard) – os sinais recebem numeração de 1 a 31. Apenas um dos sinais do mesmo tipo é enfileirado para ser processado, o resto é ignorado.
+Tempo real (realtime) – os sinais recebem numeração acima de 31. Todos os sinais são enfileirados e processados na ordem de chegada.
+
+Ações
+Cada sinal tem uma disposição que determina como o processo se comporta quando recebe um sinal.
+
+Term – a ação padrão é terminar o processo.
+Ign – a ação padrão é ignorar o sinal.
+Core – a ação padrão é terminar o processo e gerar um dump core.
+Stop – a ação padrão é parar a execução do processo até receber uma outra ordem (para continuar ou terminar).
+Cont – a ação padrão é continuar a execução do processo.
+
+Comandos
+A lista dos sinais do Linux que você está usando pode ser obtida com os seguintes comandos:
+
+man – a seção 2 do manual fornece informações sobre a chamada de sistema signal( ), enquanto a seção 7 apresenta uma visão geral sobre sinais.
+
+man 7 signal
+
+kill – para ver a lista dos sinais, basta digitar
+
+
+kill -l
+Abaixo uma possível saída. Note que o prefixo “SIG” não é mostrado.
+HUP INT QUIT ILL TRAP ABRT BUS FPE KILL USR1 SEGV USR2 PIPE ALRM TERM STKFLT CHLD CONT STOP TSTP TTIN TTOU URG XCPU XFSZ VTALRM PROF WINCH POLL PWR SYS
+A saída do comando corresponde aos nomes de todos os sinais usados no sistema, inclusive os sinais da categoria realtime.1) SIGHUP2) SIGINT3) SIGQUIT4) SIGILL5) SIGTRAP6) SIGABRT7) SIGBUS8) SIGFPE9) SIGKILL10) SIGUSR111) SIGSEGV12) SIGUSR213) SIGPIPE14) SIGALRM15) SIGTERM16) SIGSTKFLT17) SIGCHLD18) SIGCONT19) SIGSTOP20) SIGTSTP21) SIGTTIN22) SIGTTOU23) SIGURG24) SIGXCPU25) SIGXFSZ26) SIGVTALRM27) SIGPROF28) SIGWINCH29) SIGIO30) SIGPWR31) SIGSYS34) SIGRTMIN35) SIGRTMIN+136) SIGRTMIN+237) SIGRTMIN+338) SIGRTMIN+439) SIGRTMIN+540) SIGRTMIN+641) SIGRTMIN+742) SIGRTMIN+843) SIGRTMIN+944) SIGRTMIN+1045) SIGRTMIN+1146) SIGRTMIN+1247) SIGRTMIN+1348) SIGRTMAX+1449) SIGRTMAX+1550) SIGRTMAX-1451) SIGRTMAX-1352) SIGRTMAX-1253) SIGRTMAX-1154) SIGRTMAX-1055) SIGRTMAX-956) SIGRTMAX-857) SIGRTMAX-758) SIGRTMAX-659) SIGRTMAX-560) SIGRTMAX-461) SIGRTMAX-362) SIGRTMAX-263) SIGRTMAX-163) SIGRTMAX 
+
+fuser
+
+fuser -l
+Abaixo o resultado do comando. Note que existem diferenças em relação ao comando anterior que podem ser explicadas pelo fato de um sinal ter mais de um nome (sinônimos): ABRT = IOT; POLL = IO; SYS = UNUSED.
+HUP INT QUIT ILL TRAP ABRT IOT BUS FPE KILL USR1 SEGV USR2 PIPE ALRM TERM STKFLT CHLD CONT STOP TSTP TTIN TTOU URG XCPU XFSZ VTALRM PROF WINCH IO PWR SYS UNUSED
+Lista
+A tabela abaixo os sinais da categoria standard (padrão) atualmente usados pelo kernel 4.15.
+
+
+
+Número
+Nome
+ Ação 
+Evento
+
+
+1
+SIGHUP
+Term
+Fechamento do terminal associado ao processo ou término do processo de controle
+
+
+2
+SIGINT
+Term
+Solicitada a interrupção (término) do processo
+
+
+3
+SIGQUIT
+Core
+Solicitado o término do processo e a geração de um core dump
+
+
+4
+SIGILL
+Core
+Instrução inválida, incorretamente formatada ou sem permissão
+
+
+5
+SIGTRAP
+Core
+Encontrada condição marcada pelo debugger/trace
+
+
+6
+SIGABRT
+Core
+Solicitado o término anormal do processo
+
+
+7
+SIGBUS
+Core
+Erro no acesso a um endereço de memória
+
+
+8
+SIGFPE
+Core
+Erro aritmético
+
+
+9
+SIGKILL
+Term
+Ordena o término imediato do processo
+
+
+10
+SIGUSR1
+Term
+Livre (uso a ser definido pelo programador)
+
+
+11
+SIGSEGV
+Core
+Acesso a um endereço de memória inválido
+
+
+12
+SIGUSR2
+Term
+Livre (uso a ser definido pelo programador)
+
+
+13
+SIGPIPE
+Term
+O processo-destino (de um pipe, de uma FIFO ou um desocket) não está conectado
+
+
+14
+SIGALRM
+Term
+Tempo especificado para um alarme expirou
+
+
+15
+SIGTERM
+Term
+Ordena o término do processo (este sinal pode ser ignorado)
+
+
+16
+SIGSTKFLT
+Term
+Definido para “stack fault on coprocessor“, mas não é usado (este tipo de erro não ocorre nos co-processadores x86)
+
+
+17
+SIGCHLD
+Ign
+Término ou parada de um processo-filho
+
+
+18
+SIGCONT
+Cont
+Permissão para continuar a execução
+
+
+19
+SIGSTOP
+Stop
+O processo deve parar a execução até receber uma outra ordem
+
+
+20
+SIGTSTP
+Stop
+O processo deve parar a execução até receber uma outra ordem (este sinal pode ser ignorado)
+
+
+21
+SIGTTIN
+Stop
+Processo em background tentou ler de um terminal (tty)
+
+
+22
+SIGTTOU
+Stop
+Processo em background tentou escrever em um terminal (tty)
+
+
+23
+SIGURG
+Ign
+Existem dados urgentes para serem lidos no socket
+
+
+24
+SIGXCPU
+Core
+Tempo limite de CPU excedido
+
+
+25
+SIGXFSZ
+Core
+Tamanho limite de um arquivo excedido
+
+
+26
+SIGVTALRM
+Term
+Tempo limite de CPU no modo usuário expirado
+
+
+27
+SIGPROF
+Term
+Tempo limite de CPU no modo kernel e no modo usuário expirado
+
+
+28
+SIGWINCH
+Ign
+Mudança no tamanho da janela do terminal
+
+
+29
+SIGIO
+Term
+Arquivo disponível para I/O
+
+
+30
+SIGPWR
+Term
+Nível de energia do nobreak está baixo
+
+
+31
+SIGSYS
+Core
+Argumento da chamada de sistema inválido
+
+
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

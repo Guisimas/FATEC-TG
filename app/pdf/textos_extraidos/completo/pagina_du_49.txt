@@ -1,0 +1,156 @@
+
+
+
+
+
+
+
+
+
+
+root | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+root
+
+Descrição
+O root é o usuário com maior nível de autorização dentro do Linux. Por exemplo, o root pode criar novos usuários, remover usuários, alterar a configuração do sistema, etc.
+Observações
+
+Na distribuição Ubuntu, se um usuário pertence ao grupo sudo, ele pode executar tarefas e/ou comandos como root nas duas formas descritas abaixo.
+
+Basta usar sudo antes do comando e, quando solicitado pelo sistema, digitar a própria senha. Por exemplo, para ver a tabela de partição do disco com o comando fdisk basta digitar
+
+
+
+sudo fdisk -l
+e depois fornecer a própria senha.
+
+
+
+Pode se tornar root com o comando su no ambiente shell em que se está trabalhando, digitando
+
+
+
+sudo su
+e fornecer em seguida a própria senha. A partir da autenticação, não há mais necessidade de usar o comando sudo, pois o usuário passa a ser tratado como root pelo sistema. Para retornar ao ambiente de usuário comum, basta digitar exit.
+
+Para descobrir quais os usuários que estão no grupo sudo, basta verificar o arquivo /etc/group. Por exemplo, a linha abaixo mostra uma configuração onde dois usuários, maria e pedro, estão no grupo sudo.
+
+sudo:x:27:maria, pedro
+
+Para incluir um usuário no grupo sudo, use o comando addgroup. Abaixo, é mostrado um exemplo onde o usuário aluno ganha a permissão de executar qualquer comando como root.
+
+sudo addgroup aluno sudo
+
+Outra forma de permitir que um usuário execute algumas (ou todas) tarefas como root é alterando o arquivo /etc/sudoers.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

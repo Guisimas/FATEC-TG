@@ -1,0 +1,231 @@
+
+
+
+
+
+
+
+
+
+
+módulos | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+módulos
+
+Definição
+O kernel do Linux é do tipo monolítico. Isto significa que o kernel corresponde a um único arquivo executável binário. Para alterar o kernel é preciso recompilá-lo.
+Na inicialização do sistema, somente um kernel residente mínimo é carregado na memória. Quando uma funcionalidade que não está presente no kernel é solicitada, um módulo do kernel é dinamicamente carregado para atender a esta necessidade. Este módulo passa a fazer parte do kernel, embora não seja parte do executável do kernel.
+Portanto, é possível inicializar o sistema com um kernel qualquer e adicionar os módulos necessários sem precisar reinicializar o sistema.
+
+Características
+Os módulos
+
+são executados no espaço do kernel;
+só podem executar funções definidas pelo kernel;
+são orientados a eventos (executam uma determinada tarefa apenas quando recebem uma solicitação);
+possuem uma função de inicialização que o prepara para receber as solicitações;
+possuem uma função de finalização que libera os recursos alocados antes da desinstalação.
+
+Módulo “alomundo“
+Abaixo, é apresentado o código do arquivo alomundo.c.
+#include <linux/module.h> 
+MODULE_LICENSE(“Dual BSD/GPL”); 
+static int alo_inicio(void) { 
+    printk(“Alo, Mundo!\n”); 
+    return 0; 
+} 
+static void alo_fim(void) { 
+    printk(“Adeus, Mundo Cruel!\n”); 
+} 
+module_init(alo_inicio); 
+module_exit(alo_fim);
+Observação : ao copiar o programa acima, é possível que seja necessário substituir as aspas duplas devido a problema de codificação do caractere.
+Inicialmente é incluído o cabeçalho module.h que possui as definições necessárias para a compilação de módulos.
+
+MODULE_LICENSE() – esta macro informa a licença do módulo (no exemplo, o código é disponibilizado sob as licenças BSD e GPL).
+module_init() – macro que define quais funções são chamadas quando o módulo é carregado. Neste exemplo, apenas a função alo_inicio() é chamada.
+module_exit() – macro que define quais funções são chamadas antes do módulo ser removido. Neste exemplo, apenas a função alo_fim() é chamada.
+printk() – função que escreve mensagens do kernel em /var/log/syslog.
+
+Makefile
+Para compilar e gerar o arquivo .ko do módulo, crie o arquivo Makefile.
+obj-m := alomundo.o 
+all: 
+       make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules 
+clean: 
+       make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+Observação : não se deve usar espaços no início das duas linhas com o comando make. Use a tecla tab para evitar erro de compilação.
+No arquivo
+
+obj-m – especifica os arquivos-objeto que serão usados para gerar os módulos carregáveis do kernel. Neste exemplo, será usado o arquivo alomundo.o para gerar o arquivo alomundo.ko.
+-C diretório – esta opção muda para o diretório especificado antes de ler o Makefile (vai usar esse ambiente na geração dos módulos).
+M diretório modules – vai para o diretório especificado antes de gerar os módulos (os arquivos serão armazenados nesse diretório).
+
+O Makefile tem dois alvos (targets):
+
+all – compila o arquivo arquivo.c e gera o módulo. Basta digitar
+
+make all
+Como este é o padrão, pode-se digitar apenas
+make
+
+clean – deleta todos os arquivos gerados na execução do Makefile.
+
+make clean
+Veja o comando make para saber mais sobre o funcionamento do arquivo Makefile.
+Carregando o módulo
+Para carregar o módulo sem verificar erros, use o comando insmod.
+sudo insmod alomundo.ko
+Verificando os módulos
+Para ver quais módulos estão carregados, use o comando lsmod.
+lsmod
+ou verifique o conteúdo do arquivo modules do diretório /proc.
+less /proc/modules
+Uma possível saída é mostrada abaixo.
+Module      Size      Used by
+alomundo  16384  0
+Informações do módulo
+Para ver as informações do módulo use o comando modinfo.
+modinfo alomundo.ko
+Abaixo, é mostrada uma possível resposta ao comando.
+filename: /home/aluno/alomundo.ko
+license: Dual BSD/GPL
+srcversion: F4BDAC69830A42F9C7F1104
+depends:
+retpoline: Y
+name: alomundo
+vermagic: 4.15.0-45-generic SMP mod_unload
+
+Dependências
+Para verificar as dependências dos módulos use o comando depmod.
+sudo depmod
+Este comando grava o arquivo modules.dep no diretório /lib/modules/<versão do Linux> com as dependências de todos os módulos.
+Removendo o módulo
+Para remover o módulo, use o comando rmmod.
+sudo rmmod alomundo
+Log do sistema
+Para ver as mensagens do módulo no log do sistema, use o comando dmesg.
+dmesg
+Abaixo é mostrado o log produzido pelo carregamento e pela remoção do módulo alomundo.ko. Por padrão, no início dos registros é colocado o timestamp do kernel, ou seja, a quantidade de segundos após a inicialização do sistema.
+[ 3693.344434] Alo, Mundo! 
+[ 3900.333562] Adeus, Mundo Cruel!
+Outra forma para verificar as mensagens do log é olhar o arquivo syslog.
+less /var/log/syslog
+Uma possível saída é mostrada abaixo.
+Jan 9 17:43:36 Aluno kernel: [ 3693.344434] Alo, Mundo! 
+Jan 9 17:47:03 Aluno kernel: [ 3900.333562] Adeus, Mundo Cruel!
+Observações
+
+Os módulos carregáveis são armazenados em /lib/modules/<versão do kernel>. Por exemplo, /lib/modules/4.15.0-43-generic/kernel/drivers/ possui os drivers do kernel 4.15.
+O comando modprobe também pode ser usado para adicionar e remover módulos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

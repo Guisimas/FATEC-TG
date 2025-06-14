@@ -1,0 +1,172 @@
+
+
+
+
+
+
+
+
+
+
+cat | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+cat
+
+cat [opções] arquivos
+Descrição
+Este comando envia o conteúdo de um ou mais arquivos para a saída padrão ou para um outro arquivo. Portanto, cat conCATena (junta) arquivos.
+Algumas opções do comando
+
+-n : numera todas as linhas.
+−−help : mostra as opções do aplicativo.
+−−version : mostra informações sobre o aplicativo.
+
+Exemplos
+
+Podemos usar o comando cat para exibir os arquivos na tela. Por exemplo,
+
+cat teste1 teste2
+mostra na tela o conteúdo dos arquivos teste1 e teste2.
+
+Para parar a rolagem da tela e permitir a navegação com o resultado do comando cat, use os comandos more ou less junto com o pipe (caractere “|”).
+
+cat teste1 teste2 | more
+ou
+cat teste1 teste2 | less
+
+Para concatenar vários arquivos e colocar o resultado em um outro arquivo deve-se usar o redirecionador de saída >. Por exemplo,
+
+cat arq1 arq2 arq3 > arq_final
+gera o arquivo arq_final que corresponde a concatenação dos arquivos arq1, arq2 e arq3. Se já existe um arquivo chamado arq_final, este arquivo é deletado e criado novamente.
+
+Para inserir o arquivo arq4 no final do arquivo arq_final digite
+
+cat arq4 >> arq_final
+
+Também é possível criar um arquivo usando o comando cat junto com o redirecionador de saída >.
+
+
+cat > teste
+Em seguida, basta digitar as linhas do arquivo (tecle ENTER ao final das linhas e CTRL+D ao final do arquivo).
+
+Para numerar as linhas do arquivo basta usar o parâmetro n. Por exemplo,
+
+cat -n teste1.txt
+exibe o número e o conteúdo de cada linha do arquivo teste1.txt.
+Observações
+
+O comando tac funciona como o comando cat, só que as linhas dos arquivos aparecem na ordem decrescente (a última linha aparece primeiro e a primeira linha aparece por último).
+
+O comando nl corresponde ao comando “cat -n“.
+Os comandos more e less também podem ser usados para verificar o conteúdo de um arquivo.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

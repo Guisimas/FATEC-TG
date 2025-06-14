@@ -1,0 +1,385 @@
+
+
+
+
+
+
+
+
+
+
+dmidecode | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+dmidecode
+
+dmidecode [opções]
+Descrição
+Este comando decodifica tabelas DMI (Destktop Management Information).
+Algumas opções do comando
+
+-t tipo : mostra informações apenas do tipo especificado como, por exemplo, bios, processor, memory, cache, etc. Veja tabelas abaixo.
+-h ou −−help : exibe as opções do comando.
+-V ou −−version : mostra informações sobre o comando.
+
+Tipos DMI
+Existem duas formas de especificar o tipo para o comando dmidecode.
+
+Fornecendo a numeração dos tipos desejados.
+
+
+
+Tipo
+Informação
+
+
+0
+BIOS
+
+
+1
+System
+
+
+2
+Base Board
+
+
+3
+Chassis
+
+
+4
+Processor
+
+
+5
+Memory Controller
+
+
+6
+Memory Module
+
+
+7
+Cache
+
+
+8
+Port Connector
+
+
+9
+System Slots
+
+
+10
+On Board Devices
+
+
+11
+OEM Strings
+
+
+12
+System Configuration Options
+
+
+13
+BIOS Language
+
+
+14
+Group Associations
+
+
+15
+System Event Log
+
+
+16
+Physical Memory Array
+
+
+17
+Memory Device
+
+
+18
+32-bit Memory Error
+
+
+19
+Memory Array Mapped Address
+
+
+20
+Memory Device Mapped Address
+
+
+21
+Built-in Pointing Device
+
+
+22
+Portable Battery
+
+
+23
+System Reset
+
+
+24
+Hardware Security
+
+
+25
+System Power Controls
+
+
+26
+Voltage Probe
+
+
+27
+Cooling Device
+
+
+28
+Temperature Probe
+
+
+29
+Electrical Current Probe
+
+
+30
+Out-of-band Remote Access
+
+
+31
+Boot Integrity Services
+
+
+32
+System Boot
+
+
+33
+64-bit Memory Error
+
+
+34
+Management Device
+
+
+35
+Management Device Component
+
+
+36
+Management Device Threshold Data
+
+
+37
+Memory Channel
+
+
+38
+IPMI Device
+
+
+39
+Power Supply
+
+
+40
+Additional Information
+
+
+41
+Onboard Device
+
+
+42
+Management Controller Host Interface
+
+
+
+ 
+Fornecendo palavras-chaves. Abaixo alguns exemplos.
+
+
+
+Palavra-chave
+Tipos
+
+
+bios
+0, 13
+
+
+system
+1, 12, 15, 23, 32
+
+
+baseboard
+2, 10, 41
+
+
+chassis
+3
+
+
+processor
+4
+
+
+memory
+5, 6, 16, 17
+
+
+cache
+7
+
+
+connector
+8
+
+
+slot
+9
+
+
+
+
+
+Exemplos
+
+Para ver as informações sobre a versão do programa usado pelo BIOS, basta digitar
+
+sudo dmidecode -t 1
+
+Para ver as informações sobre o BIOS e o sistema, digite
+
+sudo dmidecode -t 0,1
+
+Para ver as informações das tabelas DMI sobre a memória, pode-se usar
+
+sudo dmidecode -t memory
+Neste caso, serão lidas as tabelas dos tipos 5, 6, 16 e 17.
+Observações
+
+O comando dmidecode sem parâmetros apresenta as informações de todas as tabelas DMI.
+Algumas pessoas preferem usar o termo “tabelas SMBIOS” (System Management BIOS) ao invés de tabelas DMI.
+O comando biosdecode decodifica informações do BIOS (Basic Input/Output System).
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

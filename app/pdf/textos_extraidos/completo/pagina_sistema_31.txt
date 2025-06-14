@@ -1,0 +1,154 @@
+
+
+
+
+
+
+
+
+
+
+consoles virtuais | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+consoles virtuais
+
+Um Pouco de História
+Quando existiam apenas os grandes mainframes, terminal e console eram equipamentos separados do computador. O primeiro era usado pelos usuários finais, enquanto o segundo era usado pelos administradores do sistema para controlar o mainframe (incluir e deletar programas dos usuários, alterar a prioridade de execução dos programas, etc).
+Com a evolução dos computadores e o surgimento dos PCs, o console passou a ser interno ao sistema e o terminal passou a ser um programa (executado pelo sistema) que emula um ambiente e permite que o usuário interaja com o sistema (por isso, esse programa é chamado de emulador de terminal). Para acessar o console, o administrador também precisa de um emulador de terminal.
+O Linux
+No Linux, o sistema é acessado através de vários consoles virtuais (também chamados de terminais virtuais). Como quase tudo é arquivo nos sistemas Unix-like, os consoles virtuais são representados por arquivos especiais que ficam armazenados no /dev como tty1, tty2, tty3, etc. Na realidade, estes arquivos são interfaces para os drivers dos componentes do sistema que assim podem ser acessados usando as chamadas de sistema.
+
+/dev/console é um conjunto virtual de equipamentos inicializados durante o boot do sistema.
+/dev/tty é o terminal de controle do processo corrente. Para ver a associação entre processo e terminal, digite
+
+ps -a
+
+/dev/tty0 é o console atual em uso.
+/dev/tty[1-x] são os consoles virtuais.
+
+A distribuição Ubuntu 18.04 cria, por padrão, seis consoles virtuais (o primeiro com interface gráfica e os outros com interface texto). Assim, a partir de uma mesma máquina é possível acessar o Linux usando diferentes usuários ao mesmo tempo e de forma independente. Para isto, basta logar cada usuário em um determinado console virtual.
+Abaixo são apresentadas duas imagens do primeiro console (tty1) que tem uma interface gráfica. Note que a segunda imagem mostra o console com um terminal aberto.
+Interface gráfica
+Interface gráfica com um terminal
+Pode-se acessar os outros consoles virtuais usando a combinação de teclas Alt+F1 até Alt+F6 (se o computador está em modo texto) ou Ctrl+Alt+F1 até Ctrl+Alt+F6 (se o computador está em modo gráfico).
+Por exemplo, na interface gráfica, digite Ctrl+Alt+F2. Aparecerá então o segundo console que não tem interface gráfica. Logo, é possível usar outro login e senha para acessar o sistema. Para retornar à interface gráfica, digite Alt+F1.
+A quantidade de terminais virtuais que são criados na inicialização do sistema é definida no arquivo /etc/systemd/logind.conf.
+#NAutoVTs=6
+Emuladores de Terminais
+Existem vários emuladores de terminais disponíveis nas interfaces gráficas (xterm, konsole, gnome terminal, pterm, aterm, etc.). Um emulador de terminal pode ser utilizado tanto para a administração do sistema quanto para tarefas do usuário.
+Leia Também
+
+
+Sobre terminais, consoles e terminais virtuais. Abrantes Araújo Silva Filho. 23/04/17.
+The TTY demystified. Linus Åkesson. 25/07/08.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

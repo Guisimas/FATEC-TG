@@ -1,0 +1,192 @@
+
+
+
+
+
+
+
+
+
+
+ar | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+ar
+
+ar [opções] repositório arquivo
+Descrição
+Este comando permite:
+
+agrupar arquivos em um repositório (arquivo maior);
+extrair arquivo de um repositório de arquivos;
+modificar/deletar arquivo armazenado em um repositório de arquivos.
+
+O repositório armazena de cada arquivo:
+
+o conteúdo;
+as permissões;
+a data do arquivo (timestamp);
+a identificação do dono e do grupo.
+
+Algumas opções do comando
+São operações que podem ser executadas:
+
+c : cria o repositório (mesmo que já exista).
+d : deleta arquivo(s) do repositório.
+m : altera posição de arquivo dentro do repositório.
+p : lista o conteúdo dos arquivos do repositório.
+q : adiciona arquivo no final do repositório.
+r : substitui/adiciona arquivo ao repositório.
+t : lista a tabela do repositório.
+x : extrai arquivos do repositório.
+
+São exemplos de modificadores para as operações com o repositório:
+
+a : adiciona um novo arquivo após um determinado arquivo do repositório.
+b : adiciona um novo arquivo antes de um determinado arquivo do repositório.
+o : mantém cópia do arquivo no repositório apó extração.
+v : fornece mais informações da operação sendo executada no repositório.
+
+Exemplos
+
+Para criar o repositório teste e copiar todos os arquivos com extensão html do diretório atual para o repositório, digite
+
+ar r teste *.html
+
+Para ver a lista dos arquivos deste repositório, basta digitar
+
+ar t teste
+Considere que você obteve a seguinte saída:
+dicas_linux
+gsl-ref.ps
+linux_instalacao.odt
+Se você usar o modificador “v” no comando
+ar tv teste
+a saída mostrará mais informações
+
+rw-r–r– 1000/1000 624 Sep 10 19:20 2012 dicas_linux
+rw-r–r– 1000/1000 4108966 Oct 27 15:53 2006 gsl-ref.ps
+rw-r–r– 1000/1000 27095 Sep 4 19:01 2012 linux_instalacao.odt
+
+Para extrair o arquivo “prova” do repositório “teste”, entre com
+
+ar x teste prova
+Observação
+
+Não é obrigatório o uso do operador “-” em conjunto com a opção especificada no comando ar. Isto significa que tanto faz digitar
+
+ar t teste
+como
+ar -t teste
+
+São exemplos de comandos para agrupar e/ou compactar arquivos:  tar, zip, gzip, compress e bzip2.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

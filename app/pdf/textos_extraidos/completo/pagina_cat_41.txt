@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+updatedb | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+updatedb
+
+Descrição
+Este comando atualiza banco de dados de nome de arquivos acessado com o comando locate.
+Algumas opções do comando
+
+-h, −−help : exibe as opções do utilitário.
+-V, −−version : mostra informações sobre o utilitário.
+
+Exemplo
+Para atualizar o banco de dados, é preciso ter autorização de administrador do sistema.
+sudo updatedb
+Observações
+
+O banco de dados de nomes de arquivos é chamado de mlocate e fica localizado em /var/lib/mlocate/mlocate.db.
+O arquivo /etc/updatedb.conf possui a configuração do comando.
+O comando find pesquisa arquivos em uma hierarquia de diretórios.
+O comando whereis lista a localização de programas binários, fontes e documentação.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+gdb | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+gdb
+
+gdb [opções] [programa]
+Descrição
+GDB significa GNU Debugger e é utilizado para depuração de programas C e C++.
+Algumas opções do comando
+
+-c arquivo: define o nome do arquivo a ser examinado pela ferramenta.
+-cd=diretório : define o diretório de trabalho para executar o gdb.
+-h : lista as opções do aplicativo.
+
+Comentários sobre o comando
+
+É possível executar gdb sem argumentos ou opções. Entretanto, o mais comum é inicializar o aplicativo fornecendo o nome do programa executável.
+
+gdb programa
+
+O uso da opção -c na linha de comando supõe a existência do arquivo core gerado durante a execução do programa devido a ocorrência de erros (use a opção -g na compilação de programas C e C++ para gerar este arquivo quando um erro for detectado).
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

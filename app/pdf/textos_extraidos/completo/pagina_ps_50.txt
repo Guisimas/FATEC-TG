@@ -1,0 +1,146 @@
+
+
+
+
+
+
+
+
+
+
+fg | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+fg
+
+fg [num]
+ou
+fg [%ordem]
+Descrição
+Este comando move processo em segundo plano (background) para o primeiro plano (foreground). O processo pode ser identificado pelo seu número (PID) ou pela ordem de entrada do processo em background.
+Exemplo
+Suponha que ao usar o comando jobs, o sistema forneça a resposta abaixo.
+[1]- Parado vi teste
+[3] Parado vi teste3
+[4]+ Parado vi teste2
+Isto significa que existem 3 arquivos (teste, teste2 e teste3) abertos pelo usuário e que estão suspensos (o usuário usou CTRL+Z). Para voltar a edição do arquivo teste3, basta digitar
+fg 3
+ou
+fg %3
+Observações
+
+Caso o comando seja digitado sem nenhum argumento, o sistema assume que o último processo a entrar em background é o primeiro a sair do background.
+O comando bg faz com que um processo seja executado em segundo plano.
+O comando ps fornece informações sobre os processos em execução.
+O comando fg é um comando interno do shell sendo usado. Para maiores informações, digite na linha de comandos do Linux:
+
+help fg
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

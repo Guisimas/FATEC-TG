@@ -1,0 +1,162 @@
+
+
+
+
+
+
+
+
+
+
+hwinfo | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+hwinfo
+
+hwinfo [opções]
+Descrição
+Este comando coleta e apresenta a maior quantidade possível de informações sobre o hardware da máquina.
+Algumas opções do comando
+
+−−help : exibe as opções do comando.
+−−log arquivo : escreve as informações para o arquivo especificado.
+−−short : exibe um resumo do hardware encontrado.
+−−version : exibe informações sobre o aplicativo.
+−−componente : exibe informações sobre um determinado componente de hardware como, por exemplo, all, bios, block, cdrom, cpu, disk, keyboard, memory,modem, monitor, mouse, network e partition.
+
+Exemplos
+
+O comando
+
+hwinfo –memory
+mostra informações sobre a memória. Abaixo uma possível saída.
+01: None 00.0: 10102 Main Memory
+   [Created at memory.61]
+   Unique ID: rdCR.CxwsZFjVASF
+   Hardware Class: memory
+   Model: “Main Memory”
+   Memory Range: 0x00000000-0x7d41dfff (rw)
+   Memory Size: 2 GB
+   Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+O comando
+
+hwinfo –block –short –log teste
+grava as informações sobre os HDs e as partições (primeiro apresenta um relatório completo e depois um resumo) no arquivo teste.
+
+O comando
+
+hwinfo –storage –short
+apresenta informações sobre as controladoras de HDs. Por exemplo,
+storage:
+         Intel 82801HBM/HEM (ICH8M/ICH8M-E) IDE Controller
+         Intel 82801HBM/HEM (ICH8M/ICH8M-E) SATA AHCI Controller
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

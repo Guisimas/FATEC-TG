@@ -1,0 +1,159 @@
+
+
+
+
+
+
+
+
+
+
+renice | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+renice
+
+renice [opções]
+Descrição
+Este comando altera o valor nice usado para calcular a prioridade de execução de um processo normal.
+PR = 20 + NI
+onde NI é o valor nice e pode  variar de -20 (maior prioridade) a 19 (menor prioridade). Logo, um processo normal pode ter prioridade de execução de zero (maior prioridade) a 39 (menor prioridade).
+
+Algumas opções do comando
+
+-n, −−priority prioridade : o uso de -n ou de −−priority é opcional. Mas quando usado, deve ser o primeiro argumento.
+-g gid : altera a prioridade de todos os processos que possuem o GID especificado.
+-u usuário : altera a prioridade de todos os processos do usuário especificado.
+-p pid : altera a prioridade do processo que possui o PID especificado. É o padrão.
+-v, −−version : informa a versão do aplicativo.
+-h, −−help : exibe as opções do aplicativo.
+
+Exemplos
+
+O comando
+
+renice 5 -p 374 895 -u aluno
+faz NI = 5 e PR = 25 para os processos com PID 374 e 895 e para todos os processos do usuário aluno.
+
+O comando
+
+sudo renice -6 -p 4497
+faz com que o processo com PID 4497 passe a ser executado com NI = -6 e PR = 14. Note que para aumentar a prioridade do processo, em relação à prioridade em uso, é preciso usar o comando sudo.
+Observações
+
+Apenas o administrador do sistema (root) pode alterar prioridades dos processos de outros usuários.
+Os usuários comuns podem somente incrementar o valor das prioridade dos seus processos, ou seja, diminuir a prioridade de execução.
+No Linux, os processos em tempo real possuem prioridade negativa. O usuário não pode alterar as prioridades deste tipo de processo.
+PID é o número de identificação (ID) de um processo.
+Os comandos ps, pstree e top exibem informações sobre os processos que estão executando na máquina.
+O comando nice define a prioridade de execução na inicialização do processo.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

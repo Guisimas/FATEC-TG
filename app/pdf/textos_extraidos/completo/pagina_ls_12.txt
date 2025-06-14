@@ -1,0 +1,135 @@
+
+
+
+
+
+
+
+
+
+
+separador de comandos | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+separador de comandos
+
+Descrição
+Um separador de comandos permite que o usuário digite vários comandos antes de mandá-los para o sistema executar. Os comandos serão executados de forma sequencial como se o usuário digitasse um comando e esperasse o resultado antes de digitar o comando seguinte.
+O separador ;
+É possível digitar vários comandos em uma única linha de comandos, basta separar os comandos com o símbolo ponto-e-vírgula (“;“). Por exemplo,
+cp teste.txt teste2.txt; ls
+faz com que o sistema, primeiro copie o arquivo teste.txt para teste2.txt e, em seguida, liste os arquivos do diretório corrente. Caso o primeiro comando tenha um erro, uma mensagem de erro é mostrada e o segundo comando é executado.
+O separador ;\
+É também possível digitar vários comandos em diversas linhas antes do Linux executá-los. Para isto, basta separá-los com ponto-e-vírgula e barra (“;\“). Usando o mesmo exemplo acima temos
+cp teste.txt teste2.txt;\
+ls
+Caso o primeiro comando tenha um erro, uma mensagem de erro é mostrada e o segundo comando é executado.
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

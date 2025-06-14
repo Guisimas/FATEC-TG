@@ -1,0 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+mount | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+mount
+
+mount [opções]
+
+Descrição
+
+Em um sistema Linux, os arquivos estão organizados em uma grande árvore, onde o diretório raiz (pai de todos os outros diretórios) é representado como /. Estes arquivos podem estar distribuídos por diversos dispositivos como HDs, cd-rooms, pendrivers, etc.
+O comando mount é usado para incluir o sistema de arquivos de um dispositivo qualquer no sistema de arquivos do Linux.
+
+Algumas opções do comando
+
+-a : monta todos os sistemas de arquivos especificados no arquivo /etc/fstab.
+-h ou −−help : exibe as opções do comando.
+-r : monta a partição somente para leitura.
+-t tipo : especifica o tipo de sistema de arquivo que será montado como, por exemplo, ext, ext2, ext3, ext4, minix, msdos, nfs, ntfs, etc.
+-v : lista o sistema de arquivo de cada dispositivo montado.
+-w : monta a partição para leitura/gravação (é o padrão).
+-V ou −−version : exibe informações sobre o comando.
+
+Exemplo
+Para montar um pen drive, que possui sistema de arquivos do tipo vfat, em uma interface SCSI e abaixo do diretório /media/teste (já existente), basta digitar
+mount -t vfat /dev/sdb1 /media/teste
+Observações
+
+O arquivo /etc/mtab possui a lista de todos os sistemas de arquivos atualmente montados no Linux.
+O comando mount sem parâmetros faz o sistema listar o conteúdo do arquivo /etc/mtab.
+O comando umount desmonta sistemas de arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

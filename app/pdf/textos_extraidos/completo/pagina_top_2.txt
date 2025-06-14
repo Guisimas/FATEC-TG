@@ -1,0 +1,146 @@
+
+
+
+
+
+
+
+
+
+
+slabtop | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+slabtop
+
+slabtop [opções]
+Descrição
+Este comando exibe informações em tempo real sobre a memória cache.
+Algumas opções do comando
+
+–delay=n, -d n : atualiza as informações sobre a cache a cada n segundos.
+−−once, -o : mostra as informações sobre a cache apenas uma vez e encerra o aplicativo.
+−−version, -V : informa a versão do aplicativo.
+−−help : exibe as opções do aplicativo.
+
+Exemplo
+O comando
+sudo slabtop -d 5
+mostra informações atualizadas sobre a cache a cada 5 segundos.
+
+Observações
+
+Slab representa uma pedaço contínuo de memória usualmente feito de várias páginas físicas contínuas.
+O comando dmidecode -t memory exibe informações sobre a memória.
+O comando free exibe a quantidade de memória livre/usada no sistema.
+O comando vmstat exibe estatísticas sobre a memória virtual.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

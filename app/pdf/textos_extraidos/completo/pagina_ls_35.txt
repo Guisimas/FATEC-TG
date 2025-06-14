@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+rmmod | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+rmmod
+
+rmmod [opções] módulo
+Descrição
+Este comando remove módulos do kernel que está executando.
+São algumas das opções deste comando
+
+-s : redireciona a saída do comando para o syslog.
+-v −−verbose : exibe mensagens sobre a execução do comando.
+-V −−version : informa a verão do aplicativo.
+
+Observações
+
+O comando depmod produz arquivo contendo as dependências dos módulos.
+O comando insmod carrega módulos do kernel na memória do sistema.
+O comando lsmod lista os módulos do kernel que estão carregados na memória.
+O comando modinfo mostra informações sobre um módulo do kernel.
+O comando modprobe carrega e remove módulos do kernel.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

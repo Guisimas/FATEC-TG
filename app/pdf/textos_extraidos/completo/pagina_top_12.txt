@@ -1,0 +1,176 @@
+
+
+
+
+
+
+
+
+
+
+free | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+free
+
+free [opções]
+Descrição
+Este comando mostra a quantidade de memória livre e utilizada, a área de swap no sistema, a memória compartilhada e os buffers utilizados pelo kernel.
+Algumas opções do comando
+
+-k : as informações são dadas em Kbytes (é o padrão).
+-m : as informações são dadas em Mbytes.
+-o : oculta a linha com as informações sobre os buffers utilizados pelo kernel.
+-t : mostra uma linha contendo a quantidade total de memória do sistema, a quantidade de memória livre e a quantidade de memória em uso.
+-s num : mostra a quantidade de memória livre usada a cada num segundos.
+
+Exemplos
+
+Ao entrar com o comando
+
+free -t
+uma possível resposta é
+
+O exemplo acima informa que o sistema tem 16GBytes de memória: 8GBytes de memória RAM e 8GBytes de área de swap.
+
+Para mostrar, a cada 5 segundos, a quantidade de memória livre e ocupada do sistema, digite
+
+free -s 5
+Observações
+
+Também é possível ver a quantidade de memória física lendo o arquivo /proc/meminfo.
+
+
+less /proc/meminfo
+
+Abaixo é mostrada uma parte desse arquivo.
+MemTotal: 8039708 kB
+MemFree: 4615828 kB
+MemAvailable: 5602520 kB
+Buffers: 129208 kB
+Cached: 1348984 kB
+SwapCached: 0 kB
+Active: 2279180 kB
+Inactive: 889532 kB
+Active(anon): 1692448 kB
+Inactive(anon): 309844 kB
+Active(file): 586732 kB
+Inactive(file): 579688 kB
+Unevictable: 48 kB
+Mlocked: 48 kB
+SwapTotal: 8257532 kB
+SwapFree: 8257532 kB
+
+O comando dmidecode -t memory exibe informações sobre a memória.
+O comando slabtop exibe informações em tempo real sobre a memória cache.
+O comando vmstat exibe estatísticas sobre a memória virtual.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

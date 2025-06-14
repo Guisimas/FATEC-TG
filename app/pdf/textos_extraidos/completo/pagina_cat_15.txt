@@ -1,0 +1,146 @@
+
+
+
+
+
+
+
+
+
+
+lsb_release | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lsb_release
+
+lsb_release [opções]
+Descrição
+Este comando exibe informações sobre a distribuição Linux usada, onde LSB significa Linux Standard Base.
+Algumas opções do comando
+
+-a ou −−all : exibe todas as informações disponíveis.
+-h ou −−help : exibe as opções do comando.
+-i ou −−id : identifica a distribuição.
+-c ou −−codename : exibe o nome de código da distribuição.
+-d ou −−description : descreve a distribuição instalada.
+-r ou −−release : informa o número da versão instalada.
+-v ou −−version : mostra a versão do aplicativo.
+
+Exemplo
+O comando
+lsb_release -a
+fornece todas as informações sobre a distribuição Linux usada. Abaixo é apresentada uma possível saída.
+
+Observações
+
+Use o comando uname para obter informações sobre o kernel usado.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,149 @@
+
+
+
+
+
+
+
+
+
+
+lsblk | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lsblk
+
+lsblk [opções] [dispositivo]
+Descrição
+Este comando exibe informações sobre as partições do HD e outros dispositivos de armazenamento como pen drives e CDs em formato de árvore.
+Algumas opções do comando
+
+-a ou −−all : lista também dispositivos vazios (que por padrão não são exibidos).
+-i ou −−ascii : usa caracteres ASCII para a formatação da árvore.
+-l ou −−list : produz a saída em formato de lista.
+-S ou −−scsi : considera apenas os dispositivos SCSI.
+-h ou −−help : exibe informações sobre o comando.
+-V ou −−version : exibe  a versão do aplicativo.
+
+Exemplos
+
+O comando
+
+lsblk
+pode ter, por exemplo, a saída abaixo.
+
+
+Para ver apenas os dispositivos SCSI, digite
+
+ lsblk -S
+Uma possível saída é mostrada abaixo.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

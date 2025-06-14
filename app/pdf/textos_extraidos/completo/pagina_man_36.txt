@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+
+
+lsusb | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lsusb
+
+lsusb [opções]
+Descrição
+Este comando exibe informações sobre dispositivos USB (Universal Serial Bus).
+Algumas opções do comando
+
+-v, −−verbose : mostra informações detalhadas.
+-D device : exibe informações apenas do dispositivo especificado.
+-V, −−version : exibe informações sobre o aplicativo.
+-h ou −−help : exibe informações sobre o comando.
+
+Exemplo
+O comando
+lsusb
+pode, por exemplo, apresentar a saída abaixo.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

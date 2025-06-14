@@ -1,0 +1,164 @@
+
+
+
+
+
+
+
+
+
+
+shutdown | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+shutdown
+
+shutdown [opções] [msg]
+Descrição
+Este comando desliga, reinicializa ou suspende o uso da máquina.
+Algumas opções do comando
+
+-c : cancela um shutdown sendo executado.
+-h : desliga o sistema.
+-H : suspende o funcionamento da máquina.
+-k : envia mensagem de alerta aos usuários logados e impede novos logins, mas não derruba o sistema.
++m, hh:mm : executa o comando após m minutos ou na hora hh:mm.
+now : executa o comando imediatamente.
+-r : reinicializa o sistema após a parada.
+−−help : mostra as opções do comando.
+
+Exemplos
+
+Para desligar o sistema imediatamente, digite
+
+sudo shutdown -h now
+
+Para enviar uma mensagem para os usuários e desligar o sistema em 15 minutos, basta digitar
+
+sudo shutdown -h +15 “O sistema será encerrado em 15 minutos”
+
+Para reinicializar o sistema imediatamente, digite
+
+sudo shutdown -r now
+
+Para enviar uma mensagem para os usuários e reinicializar o sistema às 15:30, basta digitar
+
+sudo shutdown -r 15:30 “o sistema será reinicializado às 15:30”
+Observações
+
+Outra forma de reinicializar o sistema é usar a combinação das teclas CTRL+ALT+DEL. Para restringir o uso desta forma de reinicialização, basta criar o arquivo /etc/shutdown.allow.
+Os comandos init e systemctl podem também serem usados no lugar do comando shutdown. Para parar o sistema podemos usar
+
+init 0   ou   systemctl shutdown
+
+e para reinicializar o sistema podemos usar
+init 6   ou   systemctl reboot
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

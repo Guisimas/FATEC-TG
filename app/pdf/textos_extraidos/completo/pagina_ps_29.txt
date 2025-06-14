@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+newgrp | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+newgrp
+
+newgrp [grupo]
+Descrição
+Este comando muda, temporariamente, o grupo do usuário.
+Exemplo
+Suponha que o grupo principal de um usuário é linux e que ele digita o seguinte comando:
+newgrp teste
+Isto significa que o usuário passa a usar o grupo teste na sessão e que, se ele criar um novo arquivo, este pertencerá ao grupo teste. Entretanto, se o usuário abrir outro terminal, o grupo do usuário será o grupo linux, pois a alteração para o grupo teste é temporária e só vale para a sessão em curso.
+Observações
+
+Para retornar ao grupo anterior, basta digitar exit.
+Se nenhum nome de grupo é fornecido com o comando, assume-se que o novo grupo corresponde ao grupo padrão do usuário (para saber qual é o grupo padrão de um usuário veja o arquivo /etc/passwd).
+Os comandos groupadd e addgroup criam um novo grupo de usuários.
+Os comandos groupdel e delgroup deletam um grupo de usuários.
+O comando groupmod modifica um grupo de usuários.
+O comando groups lista os grupos aos quais um usuário pertence.
+O comando chgrp altera o nome de grupo de arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

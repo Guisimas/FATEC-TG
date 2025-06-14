@@ -1,0 +1,173 @@
+
+
+
+
+
+
+
+
+
+
+fuser | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+fuser
+
+fuser [options] nome…
+Descrição
+Este comando identifica os processos que estão usando um determinado arquivo.
+Algumas opções do comando
+
+-i : pede confirmação antes de matar um processo (usado junto com a opção -k).
+-k : mata os processos que estão acessando o arquivo/diretório especificado.
+-l : lista os nomes de sinais que podem ser enviados para os processos.
+-u : identifica o usuário de cada processo.
+-v : informa para cada processo listado, o usuário que está acessando, o PID do processo acessando, como o processo acessa o arquivo/diretório e o comando usado para acessar.
+-V : mostra a versão do aplicativo.
+
+Tipos de Acesso
+
+Um processo pode ter os seguintes tipos de acesso a um arquivo/diretório:
+
+c = diretório atual (a partir do qual o processo foi inicializado);
+e = arquivo sendo executado pelo processo;
+f = arquivo aberto;
+F = arquivo aberto para escrita;
+r = diretório raiz do sistema;
+m = arquivo mmap (mapeamento de memória) ou biblioteca compartilhada.
+
+Exemplos
+
+Por exemplo, para exibir os processos (com a identificação dos respectivos usuários) que estão usando o shell bash, o editor de texto vim e o diretório /home/aluno1, digite
+
+fuser -u /bin/bash /usr/bin/vim /home/aluno1
+Uma possível saída para este comando é:
+/bin/bash: 1113e(root) 1125e(aluno1) 1154e(aluno2)
+/usr/bin/vim: 1350e(aluno1)
+/home/aluno1: 1125c(aluno1) 1350c(aluno1)
+onde temos três processos usando o arquivo /bin/bash (1113, 1125 e 1154), apenas um processo usando o arquivo /bin/vim (1350) e dois processos usando o diretório /home/aluno1 (1125 e 1350). Ao lado do número de um processo (PID) temos uma letra que representa o tipo de acesso e temos a identificação do usuário a quem pertence o processo. Note que, no exemplo acima, o processo 1350 aparece nas duas últimas linhas exibidas pelo comando fuser. Isto significa que o aplicativo vim foi chamado a partir do diretório /home/aluno1.
+
+Para se obter mais informações sobre os processos pode-se usar a opção -v.
+
+fuser -v /bin/bash /home/aluno
+
+Para ver os sinais que podem ser enviados para os processos, basta digitar
+
+fuser -l
+Abaixo a lista de sinais fornecida pelo kernel 4.15 (distribuição Ubuntu).
+HUP INT QUIT ILL TRAP ABRT BUS FPE KILL USR1 SEGV USR2 PIPE ALRM TERM STKFLT CHLD CONT STOP TSTP TTIN TTOU URG XCPU XFSZ VTALRM PROF WINCH POLL PWR SYS
+Observações
+
+A lista completa dos processos em execução no sistema pode ser vista no diretório /proc ou com o comando ps -aux.
+Para ver a lista os arquivos abertos por algum processo, use o comando lsof.
+O comando stat fornece informações sobre os arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,203 @@
+
+
+
+
+
+
+
+
+
+
+setcap | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+setcap
+
+setcap [opções] arquivo
+Descrição
+Este comando permite alterar/incluir/deletar capacidades de arquivos.
+Algumas opções do comando
+
+–  : as capacidades são lidas da entrada padrão.
+-q : não mostra mensagens do comando.
+-r : remove capacidades.
+-h : exibe as opções do comando.
+-v : permite fornecer mais de um arquivo na linha de comandos.
+
+Operadores e Flags
+A tabela abaixo mostra as operações permitidas com o comando setcap.
+
+
+
+Operador
+Descrição
+
+
+=
+Define capacidades
+
+
++
+Inclui capacidades
+
+
+–
+Deleta capacidades
+
+
+
+Pode definir capacidades de três tipos como mostradas na tabela abaixo.
+
+
+
+Flag
+Descrição
+
+
+e
+Capacidades efetivas
+
+
+i
+Capacidades herdáveis (inheritable)
+
+
+p
+Capacidades permitidas
+
+
+
+Exemplos
+
+Para permitir que o comando ping possa abrir soquetes de rede e transmitir/receber pacotes de dados, digite
+
+sudo setcap cap_net_raw+p /bin/ping
+É possível incluir capacidades para mais de um arquivo usando o mesmo comando.
+sudo setcap cap_net_raw+p /bin/ping cap_net_raw+p /usr/bin/crontab
+
+O comando abaixo adiciona as capacidades cap_dac_override e cap_sys_tty_config para as capacidades efetivas e para as capacidades permitidas.
+
+sudo setcap cap_dac_override,cap_sys_tty_config+ep /bin/ping
+
+Para adicionar todas as capacidades possíveis para as capacidades efetivas e para as capacidades permitidas, use o comando abaixo.
+
+sudo setcap all+ep /bin/ping
+
+Para remover as capacidades do comando ping, basta digitar
+
+sudo setcap -r /bin/ping
+É possível remover as capacidades de mais de um arquivo usando o mesmo comando.
+sudo setcap -r /bin/ping -r /usr/bin/crontab
+Observações
+
+O comando getcap informa quais as capacidades dos arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+usermod | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+usermod
+
+usermod [opções] usuário
+Descrição
+Este comando modifica uma conta de usuário do sistema.
+Algumas opções do comando
+
+-d diretório [-m] : cria um novo diretório home para o usuário. A opção -m faz com que os arquivos do diretório atual do usuário sejam movidos para o novo diretório.
+-e yyyy-mm-dd : altera a data de expiração da conta do usuário.
+-g grupo : altera o GID do grupo padrão do usuário para o valor especificado.
+-G grupo1[,grupo2, …] : define o GID dos outros grupos aos quais o usuário pertence.
+-l nome : altera o nome de identificação do usuário (o usuário não pode estar logado).
+-s shell : altera o shell do usuário.
+-u uid : altera o número de UID do usuário.
+
+Exemplo
+O comando
+sudo usermod -s /bin/ash aluno
+faz com que o shell padrão do usuário aluno passe a ser o /bin/ash.
+Observações
+
+O comando usermod normalmente exige o uso do comando sudo.
+Este comando altera (se necessário) as entradas relacionadas ao usuário especificado nos seguintes arquivos: /etc/passwd, /etc/shadow e /etc/group.
+Os comandos adduser e useradd criam usuários.
+Os comandos deluser e userdel deletam usuários.
+O comando chsh altera o shell padrão do usuário.
+Os comandos chgrp e chown permitem alterar o grupo de um arquivo/diretório. Além disso, é também possível usar o segundo comando para alterar o dono do arquivo.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

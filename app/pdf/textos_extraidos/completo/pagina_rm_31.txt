@@ -1,0 +1,154 @@
+
+
+
+
+
+
+
+
+
+
+mkdir | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+mkdir
+
+mkdir diretório
+Descrição
+Este comando cria diretórios.
+Algumas opções do comando
+
+-m ou  −−mode : define as permissões do diretório.
+-p ou −−parents : cria hierarquia de diretórios.
+−−help : lista as opções disponíveis com o comando.
+−−version : exibe informação sobre o comando.
+
+Exemplos
+
+Para criar o diretório testes dentro do diretório atual, basta digitar
+
+mkdir testes
+
+Para criar o diretório testes e dentro deste diretório o subdiretório linux, digite
+
+mkdir -p testes/linux
+
+Para criar o diretório testes com permissões de leitura e escrita para o grupo e permissão de leitura para outros, deve-se digitar
+
+mkdir unirio2 -m 64
+Abaixo são mostradas as permissões do arquivo criado.
+d−−−rw-r−− 2 aluno aluno 4096 Mar 31 15:14 testes
+Observações
+
+Para criar um novo diretório é preciso ter permissão de gravação no diretório pai.
+Por padrão, as permissões associadas a um diretório são 777 (leitura, gravação e execução para todos os usuários do sistema) menos as permissões definidas no umask.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

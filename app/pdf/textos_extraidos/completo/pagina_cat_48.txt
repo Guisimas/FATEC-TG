@@ -1,0 +1,169 @@
+
+
+
+
+
+
+
+
+
+
+fsck | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+fsck
+
+fsck [opções] [sistema]
+Descrição
+Este comando é usado para verificar e, opcionalmente, reparar um ou mais sistemas de arquivos.
+Algumas opções do comando
+
+-a : repara automaticamente o sistema de arquivos com defeito.
+-A : analisa o arquivo /etc/fstab e tenta verificar todos os arquivos listados de uma vez.
+-N : não executa, apenas mostra o que seria feito.
+-r : pergunta se o sistema de arquivos deve ser reparado quando detecta alguma falha.
+-V : produz uma saída detalhada.
+
+Exemplos
+
+O comando
+
+fsck -N
+informa o que o sistema faria se o aplicativo fsck fosse executado. Abaixo é mostrada a resposta do comando onde o HD possui uma única partição do tipo ext4 e, por isso, seria chamado o verificador de arquivos /sbin/fsck.ext4.
+fsck de util-linux 2.31.1
+[/sbin/fsck.ext4 (1) — /] fsck.ext4 /dev/sda1
+
+Para verificar a partição /dev/sda1, digite
+
+fsck /dev/sda1
+Observações
+
+Para verificar e reparar uma partição, a partição não pode estar montada. Use o comando umount para desmontar a partição.
+Se nenhum sistema de arquivo é especificado na linha de comando, o fsck irá verificar os sistemas de arquivos listados no /etc/fstab.
+O código de erro retornado é a soma das seguintes condições:
+
+0 – nenhum erro.
+1 – erros corrigidos.
+2 – o sistema deve ser reiniciado.
+4 – erros não corrigidos.
+8 – erro operacional.
+16 – erro de uso ou de sintaxe.
+32 – cancelado pelo usuário.
+128 – erro de biblioteca compartilhada.
+
+Na realidade, o fsck é simplesmente um intermediário para os vários verificadores de sistemas de arquivos disponíveis no Linux (por exemplo, fsck.ext4 para sistemas de arquivo do tipo ext4). O executável específico é procurado em /sbin, /sbin/fs.d, /sbin/fs, /etc/fs, /etc e, finalmente, nos diretórios listados na variável de ambiente PATH.
+O comando fdisk é utilizado para gerenciar partições.
+O comando df exibe informações sobre os espaços, livres e ocupados, das partições.
+O comando du exibe informações sobre o espaço usado pelos diretórios e arquivos.
+O comando hdparm exibe/altera os parâmetros de discos SATA/IDE do sistema.
+O comando smartctl exibe relatório detalhado sobre os discos IDE/SCSI existentes no sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

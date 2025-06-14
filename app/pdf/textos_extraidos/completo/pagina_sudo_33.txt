@@ -1,0 +1,209 @@
+
+
+
+
+
+
+
+
+
+
+ulimit | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+ulimit
+
+ulimit [opções]
+Descrição
+Este comando permite controlar os recursos disponibilizados para o shell e para os processos inicializados pelo shell.
+Algumas opções do comando
+
+-H : informa os limites hard. Estes limites são definidos pelo administrador (root) e implementados pelo kernel.
+-S : informa os limites soft. Estes limites são interpretados como valores padrões. Os limites soft não podem ultrapassar os valores definidos pelos limites hard.
+-T : exibe a quantidade máxima de threads.
+-a : exibe informações sobre todos os recursos.
+-b : exibe o tamanho máximo do buffer de socket.
+-c : exibe o tamanho máximo dos arquivos core criados (estes arquivos armazenam informações sobre processos que terminaram de forma anormal).
+-d : exibe o tamanho máximo de um segmento de dados do processo.
+-e : exibe a prioridade máxima que pode ser usada para escalonar os processos.
+-f : exibe o tamanho máximo dos arquivos criados pelo shell e por seus processos-filhos.
+-i : exibe o número máximo de sinais pendentes.
+-l : exibe o tamanho máximo da memória RAM que pode ser bloqueada (locked memory), onde uma página bloqueada não pode ser selecionada para sair da memória.
+-n : exibe o número máximo de descritores de arquivos que podem estar abertos ao mesmo tempo.
+-q : exibe o número máximo de bytes em filas de mensagens.
+-r : exibe a prioridade máxima para escalonamento dos processos em tempo real.
+-s : exibe o tamanho máximo das pilhas de dados.
+-t : exibe a quantidade máxima de CPU que pode ser alocada em segundos.
+-u : exibe a quantidade máxima de processos para um único usuário.
+-v : exibe a quantidade máxima de memória virtual disponível para o shell.
+-x : exibe a quantidade máxima de arquivos bloqueados.
+
+Exemplos
+
+Para verificar os valores definidos para os recursos no ambiente de trabalho (limite soft), digite
+
+ulimit -a
+Abaixo é apresentada uma possível saída: a primeira coluna corresponde ao recurso; a segunda coluna informa a unidade (quando existe) e a opção usada no comando ulimit para este recurso; e a terceira coluna mostra o valor padrão (soft) definido para o recurso.
+core file size (blocks, -c) 0
+data seg size (kbytes, -d) unlimited
+scheduling priority (-e) 0
+file size (blocks, -f) unlimited
+pending signals (-i) 31168
+max locked memory (kbytes, -l) 16384
+max memory size (kbytes, -m) unlimited
+open files (-n) 1024
+pipe size (512 bytes, -p) 8
+POSIX message queues (bytes, -q) 819200
+real-time priority (-r) 0
+stack size (kbytes, -s) 8192
+cpu time (seconds, -t) unlimited
+max user processes (-u) 31168
+virtual memory (kbytes, -v) unlimited
+file locks (-x) unlimited
+
+O exemplo acima informa que os arquivos core por padrão possuem zero bytes. Para saber o tamanho máximo que um arquivo core pode ter, basta verificar o limite hard digitando
+
+ulimit -Hc
+Uma possível resposta ao comando é
+
+unlimited
+Isto significa que o sistema não define qualquer limite para um arquivo core no ambiente atual.
+
+Para definir que os arquivos criados não podem ser maiores que 300 KBytes, basta digitar
+
+ulimit -f 300
+Note que nem a opção “-H” (limite hard) e nem a opção “-S” (limite soft) foi fornecida com o comando acima. Isto significa que os limites hard e soft são alterados para o valor especificado.
+
+Para ver o número padrão máximo de arquivos que podem ser abertos por um processo, digite
+
+
+ulimit -Sn
+A resposta pode ser
+1024
+Para ver o limite máximo que pode ser adotado pelo administrador do sistema, basta digitar
+
+ulimit -Hn
+A possível resposta é
+4096
+Observações
+
+Se um valor é fornecido sem qualquer opção, o aplicativo assume que o recurso cujo valor limite será alterado é o tamanho máximo dos arquivos (opção “-f”) e o valor fornecido será interpretado como quantidade de blocos de 1024 Bytes.
+O comando ulimit altera os valores apenas para o ambiente em que ele é executado. Para fazer que uma alteração seja incorporada ao sistema é preciso incluir a definição em /etc/security/limits.conf. Por exemplo, para impedir que arquivos core sejam criados, basta incluir a linha abaixo, onde “*” corresponde a todos os usuários.
+
+* hard core 0
+
+O usuário comum só pode diminuir o valor disponibilizado para o recurso. Além disso, existe um bug no shell bash: o comando ulimit não funciona junto com o comando sudo. Isto significa que, mesmo tendo senha de administrador, o usuário não poderá aumentar os valores especificados.
+O ulimit é um comando interno do shell. Portanto, use
+
+help ulimit
+
+para saber mais sobre este comando.
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,169 @@
+
+
+
+
+
+
+
+
+
+
+dc | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+dc
+
+dc [opções]
+Descrição
+O utilitário dc (desk calculator) realiza cálculos utilizando a notação polonesa inversa. Para imprimir o resultado utiliza-se o comando ‘p’ e para sair o comando ‘q’.
+Algumas opções do comando
+
+-e, −−expression : calcula uma expressão.
+-h, −−help : exibe as opções do programa.
+-v, −−version : imprime a versão do programa.
+
+Exemplos
+
+Para calcular 100 * 0.5, basta digitar
+
+dc
+100
+0.5
+*
+p
+ou
+dc -e ‘100 0.5 * p’
+e será exibido
+50.0
+
+Para calcular (-2) + (-1), digite
+
+dc <<< ‘_2_1+p’
+Naturalmente a resposta será-3
+
+O comando
+
+dc <<< ’81vp’
+calcula a raiz quadrada (v) de 81.
+
+Para calcular 4 elevado a 3, basta digitar
+
+dc <<< ‘4 3 ^p’
+Observações
+
+A calculadora dc permite o uso de registradores, macros, loops e condicionais. Veja o manual on-line para mais informações.
+
+man dc
+
+Os comandos expr ou bc também podem ser usados para calcular expressões aritméticas.
+
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

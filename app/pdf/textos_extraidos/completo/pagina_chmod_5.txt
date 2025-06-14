@@ -1,0 +1,449 @@
+
+
+
+
+
+
+
+
+
+
+Capacidades | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+Capacidades
+
+Descrição
+
+Capacidades são atributos dos threads (processos em execução).
+Para executar um processo, o Linux usa as permissões do usuário que o iniciou. Isso significa que os privilégios do usuário se aplicam a todas as ações do processo. Processos não privilegiados (UID diferente de zero) estão sujeitos ao controle das permissões do sistema (normalmente:  UID efetivo, GID efetivo e lista de grupos adicionais).
+Quando uma determinada capacidade está habilitada, o thread ganha privilégios de root para executar as tarefas associadas com a correspondente capacidade.
+
+Conjunto de capacidades
+Existem quatro conjuntos de capacidades por thread, onde cada conjunto é representado no sistema por um mapa de bits.
+
+Efetivas (effective) – são usadas pelo kernel para verificar as permissões para o thread. Quando um processo tenta fazer uma operação privilegiada, o sistema verifica a permissão (valor 1) correspondente no mapa de bits do processo.
+Permitidas (permitted) – são as capacidades que o thread pode assumir. Este conjunto limita as capacidades efetivas que o thread pode ter. Uma capacidade habilitada neste mapa, mas desabilitada no mapa das capacidades efetivas, indica que o processo pode habilitar esta capacidade quando precisar. Se alguma capacidade é descartada, ela não pode ser readquirida (exceto no caso de usuário root).
+Hereditárias (inheritable) – são herdadas do processo-pai através da chamada de sistema execve().
+Ambientes (ambient) – corresponde ao conjunto de capacidades que são mantidas com a execução da chamada execve() de um programa que não tem privilégios (existe desde o Linux 4.3).
+
+Além disso, existe o mapa de bits bset (bounding set) que indica quais as capacidades suportadas pelo sistema.
+Implementação
+Uma implementação completa das capacidades requer que:
+
+Para todas as operações privilegiadas, o kernel verifique se o thread tem a capacidade correspondente no seu conjunto de capacidades efetivas.
+O kernel forneça chamadas de sistema que permitam alterar o conjunto de capacidades dos threads.
+O sistema de arquivos suporte alterações nas capacidades durante a execução de um arquivo.
+
+Lista das capacidades
+A tabela abaixo mostra um resumo das capacidades usadas no Linux. Para obter mais detalhes, veja o arquivo /usr/include/linux/capability.h ou use o comando “man capabilities”.
+
+
+
+Bit
+Nome
+Descrição
+
+
+0
+CAP_CHOWN
+Altera UID e GID do arquivo
+
+
+1
+CAP_DAC_OVERRIDE
+Não verifica permissões do arquivo para ler, escrever e executar (DAC significa “discretionary access control”)
+
+
+2
+CAP_DAC_READ_SEARCH
+Não verifica permissões de leitura e faz pesquisa em arquivos e diretórios (DAC significa “discretionary access control”)
+
+
+3
+CAP_FOWNER
+Não verifica se o UID do usuário é igual ao UID do processo
+
+
+4
+CAP_FSETID
+Ignora a necessidade do UID do usuário ser igual ao UID do processo quando os bits S_ISUID e S_ISGID estão marcados
+
+
+5
+CAP_KILL
+Não verifica permissões para enviar sinal
+
+
+6
+CAP_SETGID
+Altera o GID do processo
+
+
+7
+CAP_SETUID
+Altera o UID do processo
+
+
+8
+CAP_SETPCAP
+Remove todas as capacidades ou autoriza todas as capacidades
+
+
+9
+CAP_LINUX_IMMUTABLE
+Modifica os atributos S_IMMUTABLE e S_APPEND dos arquivos
+
+
+10
+CAP_NET_BIND_SERVICE
+Abre um soquete de rede com um número de porta menor que 1024 (portas privilegiadas)
+
+
+11
+CAP_NET_BROADCAST
+Envia mensagens  broadcasts (para todos) e receber mensagens  multicasts (de todos)
+
+
+12
+CAP_NET_ADMIN
+Executa várias operações de rede
+
+
+13
+CAP_NET_RAW
+Abre soquetes de rede
+
+
+14
+CAP_IPC_LOCK
+Bloqueia compartilhamento de memória
+
+
+15
+CAP_IPC_OWNER
+Não verifica permissões nas operações de comunicação entre processos
+
+
+16
+CAP_SYS_MODULE
+Carrega/descarrega módulos do kernel
+
+
+17
+CAP_SYS_RAWIO
+Executa várias operações de I/O
+
+
+18
+CAP_SYS_CHROOT
+Pode alterar o diretório-raiz do processo
+
+
+19
+CAP_SYS_PTRACE
+Permite observar e controlar a execução de um outro processo
+
+
+20
+CAP_SYS_PACCT
+Configura monitoramento dos processos
+
+
+21
+CAP_SYS_ADMIN
+Executa várias operações de administração do sistema
+
+
+22
+CAP_SYS_BOOT
+Reinicializa o sistema
+
+
+23
+CAP_SYS_NICE
+Altera prioridades de execução de processos
+
+
+24
+CAP_SYS_RESOURCE
+Configura recursos do sistema
+
+
+25
+CAP_SYS_TIME
+Altera relógio do sistema
+
+
+26
+CAP_SYS_TTY_CONFIG
+Executa várias operações em terminais virtuais
+
+
+27
+CAP_MKNOD
+Cria um arquivo especial (caracteres, blocos ou FIFO)
+
+
+28
+CAP_LEASE
+Estabelece locação em outros arquivos
+
+
+29
+CAP_AUDIT_WRITE
+Grava registros no log de auditoria do kernel
+
+
+30
+CAP_AUDIT_CONTROL
+Habilita/desabilita auditoria do processo pelo kernel
+
+
+31
+CAP_SETFCAP
+Altera as capacidades do arquivo
+
+
+32
+CAP_MAC_OVERRIDE
+Configura o controle para acesso aos recursos (Mandatory Access Control)
+
+
+33
+CAP_MAC_ADMIN
+Ignora a política de controle para acesso aos recursos (Mandatory Access Control)
+
+
+34
+CAP_SYSLOG
+Configura o syslog do kernel
+
+
+35
+CAP_WAKE_ALARM
+Inicializa relógio para despertar o sistema
+
+
+36
+CAP_BLOCK_SUSPEND
+Impede que o sistema seja suspenso
+
+
+
+Exemplo
+A melhor forma de mostrar a utilização das capacidades e a melhoria que este tipo de implementação traz para a segurança do sistema é por meio de um exemplo. Para isto, vamos usar o programa ping.
+O comando ping precisa de privilégio de root para abrir um soquete de redes e, assim, transmitir/receber pacotes ICMP. Por isto, o comando ganha, normalmente, permissão especial SUID. Este tipo de permissão é representada pela letra “s” no grupo de permissões do dono do arquivo e autoriza qualquer pessoa a executar o programa como se fosse o próprio root.
+-rwsr-xr-x 1 root root 44168 Mai 7 2014 /bin/ping
+Podemos, por exemplo, usar comando ping para verificar a página do Google.
+ping www.google.com.br
+Abaixo uma possível saída para o comando.
+PING www.google.com.br (173.194.42.184) 56(84) bytes of data. 64 bytes from rio01s06-in-f24.1e100.net (173.194.42.184): icmp_seq=1 ttl=55 time=9.41 ms
+64 bytes from rio01s06-in-f24.1e100.net (173.194.42.184): icmp_seq=2 ttl=55 time=9.69 ms
+64 bytes from rio01s06-in-f24.1e100.net (173.194.42.184): icmp_seq=3 ttl=55 time=10.7 ms
+Note que o SUID permite que QUALQUER comando dentro do ping seja executado como root. Isto pode representar uma falha grave de segurança. Vamos então usar o comando chmod para remover o bit SUID das permissões.
+sudo chmod u-s /bin/ping
+O novo conjunto de permissões do ping é mostrado abaixo. Não existe mais a permissão SUID.
+-rwxr-xr-x 1 root root 44168 Mai 7 2014 /bin/ping
+Se testarmos novamente o comando ping, veremos que ocorre um erro.
+ping: icmp open socket: Operation not permitted
+Isto significa que o programa precisa de permissão para abrir soquetes de rede. Este tipo de permisão é fornecida pela capacidade cap_net_raw (bit 13). Podemos então usar o comando setcap para adicioná-la ao conjunto das capacidades permitidas (p) do programa.
+sudo setcap cap_net_raw+p /bin/ping
+Podemos usar o comando getcap para verificar as capacidades do comando ping.
+getcap /bin/ping
+A resposta obtida é mostrada abaixo.
+/bin/ping = cap_net_raw+p
+Se usarmos novamente o comando ping, veremos que ele não mais apresenta problema de permissão.
+PING www.google.com.br (173.194.42.184) 56(84) bytes of data. 64 bytes from rio01s06-in-f24.1e100.net (173.194.42.184): icmp_seq=1 ttl=55 time=12.2 ms
+64 bytes from rio01s06-in-f24.1e100.net (173.194.42.184): icmp_seq=2 ttl=55 time=11.6 ms
+64 bytes from rio01s06-in-f24.1e100.net (173.194.42.184): icmp_seq=3 ttl=55 time=11.4 ms
+Da discussão acima podemos deduzir que não há necessidade de dar permissão geral para o programa ping executar como root. Basta permitir que o programa use soquetes de rede.
+
+
+
+Atenção: A substituição da permissão SUID pela capacidade cap_net_raw trouxe mais segurança ao sistema. O ping não tem mais permissão para executar qualquer comando como se fosse o root. Ele agora só tem permissão para agir como  root quando for abrir um soquete de rede.
+
+
+
+Observações
+
+Desde o Linux 2.6.33, as capacidades fazem parte do kernel. Mas em algumas distribuições Linux é preciso instalar a biblioteca libcap para ter acesso às funções e aos comandos que manipulam as capacidades.
+O arquivo /proc/sys/kernel/cap_last_cap informa a quantidade de bits usada em cada mapa.
+Para descobrir quais os conjuntos de capacidades de um thread, verifique o arquivo /proc/PID/task/TID/status, onde PID é o número do processo e TID é o número do thread. Normalmente, PID = TID. Por exemplo, suponha um processo com PID = 2127 sendo executado em uma máquina de 64 bits. Logo,
+
+more /proc/2127/task/2127/status
+pode mostrar algo como
+
+
+
+CapInh:
+0000000000000000
+
+
+CapPrm:
+0000000000000000
+
+
+CapEff:
+0000000000000000
+
+
+CapBnd:
+0000003fffffffff
+
+
+CapAmb:
+0000000000000000
+
+
+
+ 
+onde a primeira linha mostra as capacidades hereditárias; a segunda linha mostra as capacidades permitidas; a terceira linha mostra as capacidades efetivas; a quarta linha mostra o bset com 38 posições (numeradas de zero a 37); e a última mostra as capacidades de ambiente (disponível apenas a partir do Linux 4.3). Abaixo são apresentadas as capacidades do processo 1 (init). Note que ele possui todas as capacidades definidas no Linux.
+
+
+
+CapInh:
+0000000000000000
+
+
+CapPrm:
+0000003fffffffff
+
+
+CapEff:
+0000003fffffffff
+
+
+CapBnd:
+0000003fffffffff
+
+
+CapAmb:
+0000000000000000
+
+
+
+ 
+
+Para decodificar um mapa de bits, basta usar o comando capsh.
+
+capsh −−decode=ffffffffffffffff
+Abaixo são mostradas as capacidades correspondentes aos bits de zero a 36. Note que, conforme já discutido, apenas os 37 primeiros bits tem capacidades alocadas atualmente. Os bits de 37 a 63 estão livres.
+0xffffffffffffffff=cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_kill,cap_setgid,
+cap_setuid,cap_setpcap,cap_linux_immutable,cap_net_bind_service,cap_net_broadcast,cap_net_admin,cap_net_raw,
+cap_ipc_lock,cap_ipc_owner,cap_sys_module,cap_sys_rawio,cap_sys_chroot,cap_sys_ptrace,cap_sys_pacct,cap_sys_admin,cap_sys_boot,cap_sys_nice,cap_sys_resource,cap_sys_time,cap_sys_tty_config,cap_mknod,cap_lease,cap_audit_write,cap_audit_control,cap_setfcap,cap_mac_override,cap_mac_admin,cap_syslog,cap_wake_alarm,cap_block_suspend,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Para ver apenas as 37 capacidades, digite
+capsh ––decode=0000001fffffffff
+
+O arquivo /proc/PID/status mostra o conjunto de capacidades do thread principal do processo.
+Um thread pode manipular suas capacidades usando as chamadas de sistema capget() e capset().
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

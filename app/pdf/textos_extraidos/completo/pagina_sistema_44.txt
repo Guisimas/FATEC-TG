@@ -1,0 +1,164 @@
+
+
+
+
+
+
+
+
+
+
+apt-get | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+apt-get
+
+ apt-get [opções] 
+Descrição
+Este utilitário permite a instalação, atualização e remoção de pacotes do sistema.
+Algumas opções do comando
+
+u, −−show-upgraded  : mostra a lista de pacotes sendo atualizada.
+install pacotes : atualiza os pacotes especificados.
+remove pacotes : remove os pacotes especificados.
+update : atualiza a lista das versões dos pacotes disponíveis.
+upgrade : atualiza os pacotes instalados no sistema.
+-h, −−help : mostra as opções do comando.
+-v, −−version : mostra informações sobre o programa.
+
+Exemplos
+
+Para atualizar a lista das versões dos pacotes disponíveis nos repositórios listados em /etc/apt/sources.list, digite
+
+sudo apt-get update
+
+Para atualizar os pacotes instalados no sistema, basta digitar
+
+sudo apt-get -u upgrade
+É importante que o comando apt-get seja executado primeiro com a opção update. Isto garantirá que o sistema será atualizado com as versões mais novas disponíveis.
+
+Para atualizar uma distribuição inteira sincronizando os pacotes (já instalados) para que sejam compatíveis entre si, entre com
+
+apt-get -u dist-upgrade
+
+Para instalar o analisador de tráfego de redes wireshark, digite
+
+sudo apt-get install wireshark
+
+Para remover a ferramenta wireshark, basta digitar
+
+sudo apt-get remove wireshark
+Observações
+
+A distribuição Ubuntu tem na sua interface gráfica a Central de Programas do Ubuntu que permite instalar e remover pacotes.
+Para instalar pacotes no Linux pode-se também usar aptitude, dpkg, rpm, yum ou snap.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

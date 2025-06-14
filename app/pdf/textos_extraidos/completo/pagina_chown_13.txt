@@ -1,0 +1,157 @@
+
+
+
+
+
+
+
+
+
+
+groupadd | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+groupadd
+
+groupadd [opções] grupo
+Descrição
+Este comando cria um novo grupo de usuários.
+Algumas opções do comando
+
+-g GID : fornece a identificação numérica do grupo (GID) sendo criado. O valor padrão é o menor valor, maior que 999, que ainda não está alocado a outro grupo. Valores entre 0 e 99 são tipicamente reservados para o Kernel, enquanto valores entre 100 e 999 são reservados para a administração do sistema.
+-f : força a criação do grupo. Caso o GID especificado já exista, o sistema escolhe outro valor (usado em conjunto com a opção -g).
+-r : cria uma conta do sistema. Por padrão, o valor escolhido é o maior valor disponível entre 0 e 999, a menos que a opção -g seja usada.
+
+Exemplo
+
+O comando
+
+sudo groupadd teste
+cria o grupo teste com o menor GID disponível a partir de 1000. Uma possível entrada para este grupo no arquivo /etc/group é
+teste:x:1001:
+O GID 1000 é normalmente alocado para o grupo do usuário que instalou o sistema, assim o primeiro GID disponível é 1001 (suponha que outros grupos ainda não foram criados).
+
+O comando
+
+sudo groupadd -r teste
+cria um grupo do sistema chamado teste. Uma possível entrada para este grupo no arquivo /etc/group é
+teste:x:999:
+Isto significa que o GID do grupo teste é 999, o maior valor disponível menor que 1000.
+Observações
+
+A lista dos grupos existentes no sistema é armazenada em /etc/group.
+O comando groupadd nomalmente exige o uso do comando sudo.
+O comando addgroup é um front end mais amigável para a ferramenta de baixo nível groupadd.
+Os comandos delgroup e groupdel deletam grupos de usuários.
+O comando groupmod pode ser usado para alterar as características de um grupo como, por exemplo, nome e GID.
+Os comandos chgrp e chown permitem alterar o grupo de um arquivo/diretório.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

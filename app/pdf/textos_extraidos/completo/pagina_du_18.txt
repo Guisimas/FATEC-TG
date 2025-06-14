@@ -1,0 +1,161 @@
+
+
+
+
+
+
+
+
+
+
+atrm | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+atrm
+
+atrm [opções] tarefa
+Descrição
+Este comando remove tarefas agendadas com o comando at.
+Opção do comando
+
+-V : fornece a versão do comando atrm e informa para quem se deve reportar erro.
+
+Exemplos
+Suponha que a seguinte saída seja fornecida com o comando atq ou com o comando “at -l”.
+
+
+
+14
+Fri
+Nov
+9
+16:00:00 2018 a aluno
+
+
+15
+Fri
+Nov
+9
+20:00:00 2018 a aluno
+
+
+
+ 
+Isto significa que o usuário aluno possui duas tarefas agendadas. A primeira tarefa será executada às 16 horas do dia 9 de novembro de 2018, enquanto a segunda tarefa será executada às 20 horas do mesmo dia. Note que o número de identificação destas tarefa são 14 e 15, respectivamente. Para remover apenas a primeira tarefa, basta digitar,
+atrm 14
+Para deletar as duas tarefas acima, digite
+atrm 14 15
+Observações
+
+O comando atrm é um alias para “at -d”.
+As tarefas agendadas ficam armazenadas no diretório /var/spool/cron/atjobs.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,179 @@
+
+
+
+
+
+
+
+
+
+
+stat | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+stat
+
+stat [options] arquivo
+Descrição
+Este comando mostra informações sobre um arquivo.
+Algumas opções do comando
+
+−c : define o formato da saída.
+−−help : mostra informações sobre o aplicativo.
+−−version : mostra a versão instalada do aplicativo.
+
+Exemplos
+
+Para obter informações sobre o arquivo teste, basta digitar
+
+stat teste
+Abaixo uma possível saída.
+Arquivo: teste
+Tamanho: 7760 Blocos: 16 bloco de E/S: 4096 arquivo comum
+Dispositivo: 801h/2049d Inode: 4495466 Links: 1
+Acesso: (0644/-rw-r−−r−−) Uid: (1000/aluno) Gid: (1000/aluno)
+Acesso: 2019-01-19 22:24:51.872552878 -0200
+Modificação: 2019-01-19 22:24:51.992554703 -0200
+Alteração: 2019-01-19 22:24:51.992554703 -0200
+Criação: –
+
+
+Abaixo é apresentado o resultado do comando para o sistema de arquivos que fica na partição /dev/sda1.
+
+ Arquivo: /dev/sda1
+Tamanho: 0 Blocos: 0 bloco de E/S: 4096 arquivo especial de bloco
+Dispositivo: 6h/6d Inode: 363 Links: 1 Tipo de dispositivo: 8,1
+Acesso: (0660/brw-rw−−−−) Uid: ( 0/ root) Gid: ( 6/ disk)
+Acesso: 2019-01-19 21:23:43.858293340 -0200
+Modificação: 2019-01-19 21:23:37.674293216 -0200
+Alteração: 2019-01-19 21:23:37.674293216 -0200
+Criação: –
+
+
+Para ver apenas as permissões do arquivo teste em octal, digite:
+
+stat -c ‘%a’ teste
+
+Uma possível resposta é
+644
+Para obter as permissões em formato mais fácil de entender, basta usar ” %A”.
+-rw-r–r–
+
+Para ver apenas o inode do arquivo teste, basta digitar:
+
+stat -c ‘%i’ teste
+Observações
+
+Para saber mais sobre as informações fornecidas pelo comando stat, veja a documentação das chamadas de sistema stat(), lstat() e fstat().
+O comando lsof lista os arquivo em uso.
+O comando fuser mostra informações sobre um arquivo.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

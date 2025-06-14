@@ -1,0 +1,206 @@
+
+
+
+
+
+
+
+
+
+
+date | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+date
+
+date [opções] 
+Descrição
+Este comando exibe ou modifica a data e a hora do sistema.
+São algumas das opções deste comando
+
+-d : fornece informação sobre a data.
+−−help : mostra as opções do comando.
+−−version : exibe informação sobre o comando.
+
+São alguns formatos usados pelo comando
+
+%A : dia da semana (domingo, …, sábado).
+%B : nome do mês (janeiro, …, dezembro).
+%H : hora do dia (0 a 23).
+%M : minuto (0 a 59).
+%S : segundos (0 a 61).
+%T : hora no formato hh:mm:ss.
+%Y : ano.
+%a : dia da semana abreviado (dom, …, sab).
+%b : nome do mês abreviado (jan, …, dez).
+%c : dia da semana, data e hora.
+%d : dia do mês.
+%j : dia ano (1 a 366).
+%m : mês (1 a 12).
+%s : número de segundos desde das zero horas de 01/01/1970.
+%w : dia da semana, onde 0 = domingo, 1 = segunda, …, 6 = sábado.
+%x : representação da data local.
+%y : os dois últimos dígitos do ano.
+MMDDhhmm[[CC]YY] : altera o mês (MM), o dia (DD), a hora (hh), os minutos (mm), os dois primeiros dígitos do ano (CC) e os dois útimos dígitos do ano (YY), onde os dois últimos argumentos (CC e YY) são opcionais.
+
+Exemplos
+
+Para imprimir o dia da semana, basta digitar
+
+date +%A
+
+É também possível usar o comando date para calcular datas. Para isto, deve-se usar a opção -d ou –date. Suponha que queremos saber a data de 2 meses e 15 dias a partir da data de hoje, então podemos digitar
+
+date -d ‘2 months 15 days’
+
+Para saber a data de 2 meses e 15 dias atrás, basta digitar
+
+date -d ‘2 months 15 days ago’
+
+Para obter o dia da semana em que cai o natal de 2019, entre com
+
+date -d ’25 dec 2019′ ‘+%A’
+
+Para obter a hora do Unix (Unix time), ou seja, o tempo em segundos desde a meia-noite de 01/01/1970, digite
+
+date +%s
+Suponha que a resposta do comando seja
+1552653365
+Para converter a hora do Unix para o calendário gregoriano, basta digitar
+date -d @1552653365
+que fornecerá como saída neste exemplo
+sex mar 15 09:36:05 -03 2019
+
+
+O script abaixo recebe uma data e informa o dia da semana da data fornecida e quantos dias existem entre a data fornecida e a data do dia da execução do script.
+
+
+#!/bin/bash
+now=$(date +%s)
+echo “Insira uma data (MM/DD/YYYY):”
+read user_date
+data_inserida=$(date -d $user_date +%s)
+echo -n “O dia da semana da data inserida é “
+dia_semana= date -ud @$data_inserida +%A
+echo -n “O número de dias entre as duas data é ” 
+if [ $now -gt $data_inserida ]
+then
+   diferenca_datas= bc <<< “scale=0;($now – $data_inserida) / 86400” 
+else
+  diferenca_datas= bc <<< “scale=0;($data_inserida – $now) / 86400” 
+fi
+Observações
+
+Ao digitar o comando date, sem parâmetros, o sistema informa o dia da semana, a data, a hora e o fuso horário utilizado.
+Para que as alterações feitas na data e na hora do sistema sejam permanentes, pode-se usar o comando hwclock da seguinte forma
+
+hwclock -w
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

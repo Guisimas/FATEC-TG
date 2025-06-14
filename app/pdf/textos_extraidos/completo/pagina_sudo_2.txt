@@ -1,0 +1,158 @@
+
+
+
+
+
+
+
+
+
+
+sudo | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+sudo
+
+sudo [opções] [comando]
+Descrição
+Este comando permite executar um comando como se fosse o superusuário (root) ou um outro usuário.
+Algumas opções do comando
+
+-h : exibe as opções do comando.
+-l : lista os comandos permitidos (e os comandos proibidos) para o usuário no ambiente de trabalho atual.
+-u usuário : o sudo executa o comando com os privilégios do usuário especificado.
+-V : fornece informações sobre o comando.
+
+Exemplos
+
+O comando
+
+ sudo vi /etc/shadow
+permitirá que o usuário, após fornecer a senha, veja o arquivo com as senhas criptografadas dos usuários do sistema.
+
+Para saber quais comandos são permitidos ao usuário com o comando sudo, digite
+
+sudo -l
+Abaixo é mostrada uma possível saída para o usuário aluno. Neste exemplo, o usuário tem amplos poderes na máquina em que digitou o comando.
+Entradas correspondentes padrões para aluno nesta máquina:
+env_reset, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+Usuário aluno pode executar os seguintes comandos nessa máquina:
+(ALL : ALL) ALL
+Observações
+
+Para executar um comando sudo, é preciso que exista a autorização no arquivo /etc/group. Por exemplo, a linha abaixo mostra uma configuração onde o usuário aluno está no grupo adm. Os membros deste grupo podem ganhar privilégios de root com o uso de sudo e confirmação de senha.
+
+adm:x:4:syslog,aluno
+
+Outra forma de permitir que um usuário execute algumas (ou todas) tarefas como root é alterando o arquivo /etc/sudoers.
+O comando su executa um shell com substituição de usuário e grupo.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

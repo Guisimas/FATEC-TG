@@ -1,0 +1,165 @@
+
+
+
+
+
+
+
+
+
+
+echo | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+echo
+
+echo [opções] [argumentos]
+Descrição
+Este comando mostra texto na saída padrão seguido por uma nova linha.
+Algumas opções do comando
+
+-n : não adiciona uma nova linha após mostrar os argumentos.
+-e : habilita interpretação dos códigos de escape após barra invetida.
+-E : suprime explicitamente a interpretação de códigos de escape após barra invertida.
+
+São exemplos de códigos de escape:
+
+\a : alerta (Sino).
+\b : retroceder.
+\c : suprime próxima saída.
+\e : caractere de escape.
+\f : alimentação de página (FF).
+\n : nova linha (NL).
+\r : retorno de carro (CR).
+\t : tabulação horizontal.
+\v : tabulação vertical.
+
+Exemplos
+
+O comando
+echo teste
+apenas mostra a palavra “teste” na saída padrão, enquanto o comando
+echo
+mostra uma linha em branco.
+Este comando pode ser usado para exibir todos os nomes de arquivos de um diretório em ordem alfabética. Por exemplo,
+echo /*
+lista o conteúdo do diretório raiz.
+O comando
+echo -e /etc/* “\n” /*
+mostra o conteúdo do diretório /etc, define uma nova linha com o código de escape “\n” e, em seguida, mostra o conteúdo diretório raiz.
+Este comando pode também ser utilizado na programação shell para escrever mensagens na saída padrão. Por exemplo,
+echo ‘erro de execução’
+mostra a mensagem definida entre aspas simples no terminal do usuário.
+Para verificar o conteúdo da variável de ambiente PATH, basta digitar na linha de comando
+ echo “$PATH”
+
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

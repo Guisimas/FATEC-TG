@@ -1,0 +1,200 @@
+
+
+
+
+
+
+
+
+
+
+grep | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+grep
+
+grep [opções] expressão arquivo
+Descrição
+Este comando procura padrões em um arquivo.
+Algumas opções do comando
+
+-a, −−text : trata arquivos binários como se fossem arquivos de texto.
+-c : imprime somente a contagem das linhas com expressão.
+-e padrão : define qual padrão deve ser procurado (usado apenas quando a pesquisa usa mais de um padrão).
+-i : ignora a diferença entre letras maiúsculas e letras minúsculas.
+-l : exibe o nome do arquivo ao invés da saída normal do comando grep.
+-n : mostra o número de cada linha em arquivo com expressão.
+-s, −−no-messages : não exibe mensagens de erro.
+-v : mostra todas as linhas de arquivo, exceto as linhas com expressão.
+
+Exemplos
+Abaixo o comando grep é usado para fazer busca de padrões no arquivo projeto.txt.
+
+Quando a expressão procurada é composta por mais de uma palavra, deve-se usar aspa simples.
+
+grep ‘teste de ‘ projeto.txt
+
+Para ver apenas as linhas que são iniciadas com o caractere “#”.
+
+grep ^# projeto.txt
+
+Para ver apenas as linhas que não são iniciadas com o caractere “#”.
+
+grep -v ^# projeto.txt
+
+Para ver apenas as linhas que terminam com a palavra “false”.
+
+grep false$ projeto.txt
+
+Para ver apenas as linhas que começam o caractere “s” e terminam com a palavra “false”.
+
+grep ^s projeto.txt | grep false$
+
+O ponto (.) em um padrão representa qualquer caractere.
+
+grep ‘projeto.lin’ projeto.txt
+
+Uma string entre colchetes compara qualquer caractere definido na string.
+
+grep ‘[Pp]rojeto’ projeto.txt
+
+Pode-se usar o hífen para indicar uma série de caracteres.
+
+grep ‘Projeto[a-x]’ projeto.txt
+
+Pode-se usar ^ para indicar os caracteres que não estão na lista.
+
+grep ‘Projeto[^a-m]’ projeto.txt
+
+Uma expressão precedida por ^ encontra as linhas iniciadas pela expressão.
+
+grep ‘^Projeto’ projeto.txt
+
+Uma expressão seguida por $ encontra as linhas terminada pela expressão.
+
+grep ‘Projeto$’ projeto.txt
+
+A expressão ^$ indica linhas vazias e a opção -n mostra a linha do arquivo da ocorrência.
+
+grep -n ^$ projeto.txt
+
+A barra invertida desativa qualquer significado especial que um caractere possa ter.
+
+grep ‘projeto\.lin’ projeto.txt
+
+Pode-se usar a opão -e para definir mais de um padrão de pesquisa. No caso abaixo, procura-se a palavra DESCRIPTION (sozinha no começo de uma linha) e a string all (em qualquer posição das linhas).
+
+grep -e ^DESCRIPTION$ -e all projeto.txt
+Observações
+
+O aplicativo zgrep procura padrões em um arquivo compactado com compress.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

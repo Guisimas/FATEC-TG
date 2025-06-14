@@ -1,0 +1,132 @@
+
+
+
+
+
+
+
+
+
+
+grpconv | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+grpconv
+
+Descrição
+Este comando usa o sistema gshadow para migrar as senhas criptografadas do /etc/group para o /etc/gshadow. Neste caso, a posição da senha em /etc/group é preenchida com um “x”.
+Observações
+
+O comando grpunconv elimina o uso do sistema gshadow de proteção de senhas.
+O comando pwconv usa o sistema shadow para proteger as senhas dos usuários.
+O comando pwunconv elimina o uso do sistema shadow de proteção de senhas.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+
+
+
+
+
+
+
+
+
+
+pwd | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+pwd
+
+Descrição
+Este comando exibe o nome do diretório corrente.
+Algumas opções do comando
+
+-L , –logical : informa o diretório, mesmo que seja um link simbólico.
+-P, –phisical : evita links simbólicos.
+−−help : exibe as opções do comando.
+−−version : exibe informações sobre o comando.
+
+Observações
+Este comando não requer parâmetros.
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

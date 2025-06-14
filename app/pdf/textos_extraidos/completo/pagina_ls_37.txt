@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+depmod | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+depmod
+
+depmod [opções]
+Descrição
+O comando verifica as dependências dos módulos do kernel e grava o resultado no arquivo /lib/modules/versão do kernel/modules.dep. Por exemplo, para a versão 4.15.0-43-generic do kernel, o arquivo gerado será /lib/modules/4.15.0-43-generic/modules.dep.
+Algumas opções do comando
+
+-a : verifica as dependências de todos os módulos do kernel. Esta opção é usada na ausência de qualquer outra opção.
+-b diretório : define o nome do diretório base para gravar o arquivo de saída.
+-h : fornece informações sobre o comando.
+-n : direciona o arquivo com as dependências para a saída padrão.
+-v : informa os módulos processados.
+-V : informa a versão do utilitário.
+
+Observações
+
+O comando lsmod exibe informações sobre os módulos que estão instalados no kernel.
+O comando modinfo mostra informações sobre um módulo do kernel.
+O comando modprobe carrega e remove módulos do kernel.
+O comando insmod insere um módulo no kernel do Linux.
+O comando rmmod retira um módulo do kernel do Linux.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

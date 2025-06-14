@@ -1,0 +1,165 @@
+
+
+
+
+
+
+
+
+
+
+uname | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+uname
+
+uname [opções]
+Descrição
+Este comando exibe informações sobre o sistema.
+São algumas das opções deste comando
+
+-a : exibe todas as informações sobre o sistema.
+-m : exibe o tipo de máquina (hardware).
+-n : exibe o nome de rede da máquina.
+-p : informa o tipo do processador (CPU).
+-r : exibe a versão do sistema operacional.
+-s : exibe o nome do sistema operacional.
+-v : exibe a data de compilação do sistema operacional.
+−−help : mostra as opções do comando.
+−−version : mostra aversão do aplicativo.
+
+Exemplo
+O comando
+uname -a
+pode apresentar uma saída semelhante a
+Linux aluno 5.8.0-55-generic #62~20.04.1-Ubuntu SMP Wed Jun 2 08:55:04 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+onde temos
+
+ o nome do kernel : Linux 
+o nome de rede da máquina : aluno 
+a versão do kernel : 5.8.0-55-generic #62~20.04.1-Ubuntu
+
+a data de compilação do kernel : SMP Wed Jun 2 08:55:04 UTC
+
+o hardware da máquina : x86_64 
+o tipo do processador : x86_64
+
+ a plataforma do hardware : x86_64
+
+o nome do sistema operacional : GNU/Linux
+
+Observações
+
+Caso nenhuma opção seja definida, apenas o nome do sistema operacional é apresentado (equivale a opção -s).
+O comando arch informa a arquitetura da máquina.
+O comando lshw exibe informações sobre o hardware.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

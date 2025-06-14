@@ -1,0 +1,153 @@
+
+
+
+
+
+
+
+
+
+
+lsscsi | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lsscsi
+
+lsscsi [opções]
+Descrição
+Este comando lista os dispositivos scsi.
+Algumas opções do comando
+
+-l ou −−long : exibe informação adicional para cada dispositivo SCSI.
+-L ou −−list : exibe informação adicional nos pares =.
+-p ou −−protection : exibe informação adicional sobre a integridade dos dados.
+-v ou −−verbose : exibe o nome dos diretórios de onde as informações foram retiradas.
+-h ou −−help : exibe informações sobre o comando.
+-V ou −−version : exibe  a versão do aplicativo.
+
+Exemplos
+
+O comando
+
+lsscsi
+mostra a saída padrão.
+
+
+Para ver mais detalhes, use o comando
+
+lsscsi -l
+
+Observações
+
+Para usar lsscsi, é preciso instalá-lo, através do comando
+
+sudo apt-get install lsscsi
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+uuid | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+uuid
+
+Descrição
+UUID (Universally Unique Identifier) é um campo de 128 bits representado por 32 dígitos hexadecimais, exibidos em cinco grupos separados por hifens. Por exemplo,
+
+22ed1a08-cfe8-4833-b8a0-945a0264beb6
+
+O UUID fornece uma identificação única para uma determinada informação do sistema.
+Versões
+Existem 5 versões disponíveis para uso (veja  RFC 4122 para mais detalhes).
+
+Versão 1: são gerados a partir de um tempo e um node id (geralmente o endereço MAC);
+Versão 2: são gerados a partir de um identificador (geralmente um id de grupo ou de usuário), tempo e um node id;
+Versões 3 e 5: produzem UUIDs gerados por hashing de um identificador de namespace e nome;
+Versão 4: são gerados usando um número aleatório ou pseudoaleatório.
+
+Exemplos
+Para ver as UUIDs das partições do disco pode-se ver o arquivo /etc/fstab ou digitar
+ls -l /dev/disk/by-uuid/
+Também é possível ver os UUIDs do kernel no arquivo /boot/grub/grub.cfg que é o arquivo de configuração do GRUB.
+Observações
+
+É possível gerar UUIDs independentes do ambiente e da linguagem de programação.
+O uso de UUIDs facilita a sincronização dos dados armazenados em locais diferentes.
+O Linux disponibiliza o programa uuidgen para a geração de UUIDs e o servidor (daemon) uuidd.
+Existem vários programas e sites disponíveis para a geração de UUIDs.
+
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

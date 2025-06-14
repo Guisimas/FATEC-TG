@@ -1,0 +1,233 @@
+
+
+
+
+
+
+
+
+
+
+snap | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+snap
+
+snap [opções]
+Descrição
+
+Permite instalar, configurar, atualizar e remover snaps.
+Pacotes snaps são autocontidos (não necessitam instalação no computador para serem executados). Isto significa que funcionam em diferentes distribuições Linux sem exigir adaptações (diferente do tradicional tratamento de dependência dado, por exemplo, em deb ou rpm).
+
+Instalação
+Na distribuição Ubuntu, para instalar, basta digitar
+sudo apt install snapd
+Por padrão, o snap já vem instalado a partir da distribuição Ubuntu 16.04 LTS desktop.
+Algumas opções do comando
+
+find : mostra snaps que podem ser instalados.
+info : mostra informações detalhadas sobre os snaps.
+install : instala snaps no sistema.
+list : mostra os snaps instalados.
+refresh : atualiza snaps.
+remove : remove snaps instalados.
+revert : reverte o estado de um snap.
+start : inicializa serviços.
+stop : para serviços.
+-h ou −−help  : mostra opções do comando.
+−−version : mostra informações sobre o programa.
+
+Exemplos
+
+Para ver os snaps já instalados no sistema, digite
+
+snap list
+Abaixo é mostrada uma possível saída.
+
+
+Para saber quais os pacotes que estão disponíveis no snap, basta entrar com
+
+snap find
+Para obter mais informações sobre um determinado snap, por exemplo gimp, digite
+snap find gimp
+Abaixo é mostrada a resposta obtida. O primeiro item é a ferramenta GIMP propriamente dita, enquanto o segundo item é uma ferramenta que cria arquivos PDFs e onde o GIMP pode que ser usado para melhorar a qualidade do documento gerado.
+
+
+Para instalar, por exemplo, o snap hello (um snap disponível para testes), digite
+
+sudo snap install hello
+Para executar, basta entrar com
+hello
+Para remover o snap hello, digite
+snap remove hello
+
+Para obter mais informações sobre o snap hello, entre com
+
+snap info hello
+
+
+Os snaps são atualizados automaticamente em background (veja o comando bg para mais detalhes). Mas é possível fazer a atualização manualmente de todos os snaps com
+
+snap refresh
+Para fazer a atualização apenas de um determinado snap, basta fornecer o nome no comando acima. Por exemplo,
+snap refresh gimp
+Armazenamento, Versões e Revisões
+
+
+Os snaps são armazenados, por padrão, no diretório /snap. Um exemplo dos snaps armazenados em um sistema é mostrado abaixo.
+
+
+O diretório /snap/bin possui links simbólicos (veja ln) para as aplicações snaps instaladas no sistema.
+
+Na realidade, todas as aplicações snap são compactadas em uma única imagem armazenada em /usr/bin. Para permitir o acesso às aplicações snaps instaladas no sistema, são criados dispositivos (devices) virtuais com o nome loopX, onde X é um valor numérico. Cada dispositivo virtual aponta para a área da imagem onde o aplicativo correspondente está.
+
+Outra forma de ver os dispositivos virtuais criados pelo snap é digitando
+losetup -a
+
+Quando um pacote snap é atualizado, a versão anterior não é descartada. É possível ver todas as versões que o sistema possui.
+
+
+A coluna Version apresenta a versão da aplicação definida pelos desenvolvedores, enquanto a coluna Revision informa o número de sequência assinalado pela loja quando o snap foi carregado.
+Note que o gnome tem 2 versões instaladas, onde cada versão teve uma revisão. Para saber mais sobre uma das versões, pode-se digitar, por exemplo,
+snap info gnome-3-28-1804
+
+Para remover um determinado snap, use a opção remove indicando o número da revisão. Por exemplo,
+
+sudo snap remove gnome-logs −−revision=45
+elimina apenas o snap correspondente mostrado na lista acima.
+
+Para eliminar todos os snaps desabilitados, pode-se usar awk.
+
+for i in $(snap list –all |grep disabled | awk ‘{print $1″;”$3}’); do sudo snap remove ${i%;*} –revision ${i#*;}; done
+A imagem abaixo mostra a lista atualizada dos snaps após a remoção dos snaps desabilitados.
+
+
+Para ver a quantidade de espaço usado pelo diretório /snap, digite
+
+du -h /snap
+
+É possível definir o número máximo de revisões armazenadas pelo sistema. O comando abaixo define que no máximo são armazenadas 2 revisões.
+
+sudo snap set system refresh.retain=2
+
+As configurações das aplicações snaps usadas pelo usuário ficam no diretório ~/snap.
+
+
+Observações
+
+A ferramenta que gerencia os pacotes snaps chama-se snapd.
+A ferramenta para programadores empacotar seus programas no formato snap é a snapcraft.
+A extensão do formato de arquivo é .snap.
+Ao instalar um snap, o sistema não verifica se já existe uma versão do mesmo software em outro formato. Diferentes versões (snap e outro tipo de pacote) podem conviver no sistema.
+Para instalar pacotes no Linux pode-se também usar apt-get,  aptitude, dpkg ou yum.
+Para ver outros exemplos de snaps, veja a loja da snapcraft e o site da uApp Explorer.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

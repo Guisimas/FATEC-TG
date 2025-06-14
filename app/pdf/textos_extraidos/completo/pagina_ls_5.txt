@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+lscpu | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lscpu
+
+lscpu [opções]
+Descrição
+Este comando exibe informações sobre a arquitetura da CPU.
+Algumas opções do comando
+
+-x ou –parse : usa máscara hexadecimal para exibir as CPUs.
+-h ou −−help : exibe informações sobre o comando.
+-V ou −−version : exibe  a versão do aplicativo.
+
+Exemplo
+
+O comando
+
+lscpu
+pode apresentar uma saída como mostrada abaixo.
+
+Observações
+
+A informação básica exibida sobre a CPU (família, modelo etc.) é sempre baseada na primeira CPU.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

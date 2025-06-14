@@ -1,0 +1,161 @@
+
+
+
+
+
+
+
+
+
+
+sort | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+sort
+
+sort [opções] arquivo
+Descrição
+Este utilitário ordena as linhas de arquivos textos e exibe o resultado na saída padrão.
+Algumas opções do comando
+
+-b : ignora espaços em branco.
+-c : retorna uma mensagem de erro se o arquivo não estiver ordenado.
+-f : ignora a diferença entre letras maiúsculas e letras minúsculas.
+-r : organiza em ordem decrescente.
+-n : os valores numéricos são organizados na ordem aritmética.
+−−help : informa as opções do aplicativo.
+−−version : exibe a versão implementada do aplicativo.
+
+Exemplo
+Por exemplo, suponha um arquivo chamado teste.txt com o seguinte conteúdo:
+aaa
+BBB
+  53
+0101
+02
+2
+34
+Aa
+aA
+A saída para o comando
+sort teste.txt
+é a seguinte
+  53
+0101
+02
+2
+34
+Aa
+BBB
+aA
+aaa
+Note que o comando trata o arquivo como um conjunto de caracteres onde a ordem crescente é: espaços, números, letra maiúsculas [A-Z] e letras minúsculas [a-z].
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

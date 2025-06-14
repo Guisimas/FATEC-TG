@@ -1,0 +1,143 @@
+
+
+
+
+
+
+
+
+
+
+userdel | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+userdel
+
+userdel [opções] usuário
+Descrição
+Este comando remove um usuário do sistema.
+Algumas opções do comando
+
+-h, −−help : exibe as opções do comando.
+-r, −−remove : deleta o diretório home e todos os seus arquivos.
+
+Exemplo
+Para deletar o usuário aluno, basta digitar
+sudo userdel aluno
+Observações
+
+O comando userdel normalmente exige o uso do comando sudo.
+O comando userdel deleta todas as entradas relacionadas ao usuário nos seguintes arquivos: /etc/passwd, /etc/shadow e /etc/group.
+O comando deluser também deleta usuários do sistema e é um front end amigável para userdel.
+Os comandos adduser e useradd criam usuários.
+O comando usermod pode ser usado para alterar alguma característica do usuário como, por exemplo, nome, UID e GID.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

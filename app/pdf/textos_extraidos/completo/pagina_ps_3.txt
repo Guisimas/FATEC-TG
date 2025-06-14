@@ -1,0 +1,207 @@
+
+
+
+
+
+
+
+
+
+
+ps | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+ps
+
+ps [opções]
+Descrição
+Este comando exibe informações sobre os processos que estão executando na máquina.
+Algumas opções do comando
+
+-a : mostra os processos de todos os usuários.
+-A ou -e : mostra todos os processo.
+-f : mostra a árvore de execução de comandos.
+-g grupo : mostra os processos de um determinado nome de grupo.
+-o formato : usa o formato definido pelo usuário, Deve-se usar palavras-chaves conhecidas como pid, ppid, ni, pri (prioridade) e comm (comando).
+-x : mostra os processos que não foram iniciados no console.
+-u : fornece o nome do usuário e a hora de início do processo.
+
+Exemplos
+
+O comando
+
+ps
+exibe os processos sendo executados no terminal. Abaixo um exemplo.
+
+
+
+PID
+TTY
+TIME
+CMD
+
+
+4030
+pts/1
+00:00:00
+bash
+
+
+5649
+pts/1
+00:00:00
+ps
+
+
+
+ 
+Note que o próprio comando ps cria um processo que faz parte do resultado final do comando.
+
+Para exibir todos os processos do sistema, independente de terminal, basta digitar
+
+ps -aux
+
+Para ver os processos do grupo adm, digite
+
+ps -g adm
+Abaixo uma possível saída para o comando.
+
+
+
+PID
+TTY
+TIME
+CMD
+
+
+979
+?
+00:00:00
+kerneloops
+
+
+
+ 
+
+O comando
+
+ps -eo pid,ppid,ni,pri,gid,comm
+lista as seguintes informações de todos os processos: PID, PPID, valor de nice, prioridade, GID e o comando (programa executável) que deu origem ao processo.
+Observações
+
+O diretório /proc possui a lista dos processos que estão em execução no sistema.
+Os comando pstree e top também exibem informações sobre os processos em execução.
+Por razões históricas, as prioridades exibidas por ps variam de -40 a 99, diferente das prioridades mostradas pela ferramenta top.
+PID é o número de identificação (ID) de um processo.
+PPID é número de identificação (ID) do processo-pai.
+
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

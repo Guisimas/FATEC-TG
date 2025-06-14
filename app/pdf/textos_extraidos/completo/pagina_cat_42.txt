@@ -1,0 +1,265 @@
+
+
+
+
+
+
+
+
+
+
+find | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+find
+
+find [caminho] [expressão]
+Descrição
+Este comando pesquisa arquivos em uma hierarquia de diretórios.
+Algumas Opções
+
+-daystart : medem o tempo do início do dia ou de até 24 horas atrás.
+-depth : processa o conteúdo de cada diretório antes do diretório em si.
+-follow : resolve as ligações simbólicas.
+-help: imprime um resumo do uso das linhas de comando de find e finaliza.
+-inum n : acha arquivo com inode n.
+-maxdepth n : desce no máximo em n níveis (um inteiro não negativo) de diretórios sob os argumentos da linha de comando. A opção “-maxdepth 0” significa a aplicação dos testes e ações somente nos argumentos da linha de comandos.
+-mindepth n : não aplica qualquer teste ou ação a níveis menores que n níveis (um inteiro não negativo). A opção “-mindepth 1” significa testar todos os arquivos exceto os argumentos da linha de comandos.
+-version : lista o número da versão do comando find e finaliza.
+-xdev : não desce diretórios em outros sistema de arquivos.
+
+Alguns Testes
+
+-amin n : arquivo foi acessado há n minutos.
+-atime n : procura por arquivos acessados há n dias.
+-cmin n : o status do arquivo foi alterado em até n minutos atrás.
+-cnewer arq : o status do arquivo foi alterado mais recentemente do que arq foi modificado.
+-ctime n : o status do arquivo foi mudado nos últimos n dias.
+-empty : o arquivo está vazio e é ou um arquivo regular ou um diretório.
+-gid n : o GID (Group Identification) do arquivo é n.
+-group gname : arquivo pertence ao grupo gname (pode-se também usar aqui o GID do grupo).
+-inum n : procura por arquivo com inode n.
+-mmin n : os dados dos arquivos foram modificados há n minutos.
+-mtime n : os dados foram modificados em até n dias atrás.
+-name arquivo : procura pelo arquivo especificado.
+-path padrão : define o padrão do caminho do arquivo.
+-perm : procura por uma determinada permissão de acesso.
+-size n[bckw] : procura por arquivos que tem n unidades de espaço. Ao usar + (-) antes de n procura-se por um arquivo maior (menor) que n. As unidades são:
+
+b – blocos de 512 bytes (padrão);
+c – bytes;
+k – kilobytes;
+w – palavras de 2 bytes.
+
+
+-type tipo : procura arquivos de um determinado tipo. São tipos possíveis:
+
+b – blocos especiais (buffer)
+c – caracteres especiais
+d – diretórios
+p – conector definido (FIFO)
+f – arquivo regular
+l – ligação simbólica
+s – socket
+
+
+-uid n : o UID do dono do arquivo é igual a n.
+-user nome : arquivo pertence ao usuário especificado em nome (pode-se também usar aqui o UID do dono).
+
+O argumento n dos testes acima pode assumir:
+
++n : valores maiores que n.
+-n : valores menores que n.
+n : valor exatamente igual a n.
+
+Algumas Ações
+
+-exec comando : executa comando se o status de saída zero for retornado. Todos os argumentos para find serão considerados como argumentos do comando até que um argumento consistido por ‘;’ seja encontrado.
+-fprint arq : verdadeiro; lista o nome completo em um arquivo arq. Caso arq não exista quando find está sendo executado, ele será criado; caso ele exista, será recriado sem conteúdo.
+-print : verdadeiro; imprime o nome completo do arquivo na saída padrão, seguido de nova linha.
+-prune : caso -depth não seja informado, será verdadeiro; não descendo a partir do diretório atual. Caso -depth seja informado, será falso e não terá efeito.
+
+Operadores
+Listados em ordem de precedência decrescente:
+
+( expr ) – força a precedência.
+! expr – verdadeiro se expr for falsa.
+-not expr – o mesmo que ! expr.
+expr1 expr2 – a expr2 não será avaliada se expr1 for falsa.
+expr1 -a expr2 – o mesmo que expr1 expr2.
+expr1 -and expr2 – o mesmo que expr1 expr2.
+expr1 -o expr2 – expr2 não é avaliada se expr1 for verdadeira.
+expr1 -or expr2 – o mesmo que expr1 -o expr2.
+expr1 , expr2 – expr1 e expr2 são avaliadas.
+
+Exemplos
+
+Para procurar o arquivo teste.tex no diretório atual e em todos subdiretórios abaixo do diretório atual, digite
+
+
+find -name teste.tex
+
+Para procurar o arquivo teste.tex a partir do diretório Linux que é um subdiretório do diretório atual, basta digitar
+
+
+find -path ‘./Linux/*’ -name teste.tex
+
+Para procurar o arquivo teste.tex a partir do diretório /home (~/) descendo no máximo 3 níveis de diretórios, entre com
+
+
+find ~/ -maxdepth 3 -name teste.tex
+
+Para listar todos os arquivos encontrados a partir do diretório corrente exceto os arquivos que estão no diretório testes ou em algum dos seus subdiretórios, use o comando abaixo.
+
+
+find . -path ‘./testes’ -prune -o -print
+
+Para listar os arquivos com mais de 1000k de tamanho a partir do diretório atual:
+
+find . -size +1000k
+
+Para localizar os arquivos com permissão SUID, digite
+
+
+find / -perm -4000
+
+Para localizar os arquivos com permissão SGID, basta digitar
+
+
+find / -perm /g=s
+
+Para localizar os arquivos com permissão sticky bit, entre com
+
+find / -perm -1000
+
+Use a opção atime para localizar programas novos ou acessados com mais frequência. Por exemplo, o comando
+
+find /etc -atime -1
+lista os arquivos do diretório /etc que foram acessados há um dia ou menos, enquanto o comando
+find ~/ -atime +10
+lista os arquivos, a partir do diretório /home do usuário, que foram acessados pela última vez há 10 dias ou mais.
+
+Para procurar por todos os links e os imprimir na saída padrão, digite
+
+
+find / -type l
+
+O comando
+
+find . -user aluno1 -exec chown aluno2 {}
+altera o dono (veja comando chown) de todos os arquivos e subdiretórios a partir do diretório corrente de aluno1 para aluno2.
+Observações
+
+O uso do comando find, sem argumentos, faz com seja exibida a lista de todos os arquivos que ficam hierarquicamente abaixo do diretório corrente.
+O comando locate lista os arquivos cujos nomes coincidem com o padrão informado.
+O comando whereis lista a localização de programas binários, fontes e documentação.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

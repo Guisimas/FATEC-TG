@@ -1,0 +1,149 @@
+
+
+
+
+
+
+
+
+
+
+tac | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+tac
+
+tac [opções] [arquivo]
+Descrição
+O comando tac mostra o conteúdo de um ou mais arquivos sendo que cada arquivo é exibido de forma inversa (da última até a primeira linha).
+Algumas opções do comando
+
+−−help : mostra as opções do aplicativo.
+−−version : exibe informações sobre o aplicativo.
+
+Exemplos
+
+Suponha que o arquivo teste1 tem o conteúdo do manual on-line sobre o comando tac. O comando
+
+tac teste1
+exibe a página do manual sobre o tac de trás para frente.
+
+Suponha também que o arquivo teste2 tem o conteúdo do manual on-line sobre o comando ls. O comando
+
+tac teste1 teste2
+exibe a página do manual sobre o tac de trás para frente e, em seguida, exibe a página do manual sobre o ls de trás para frente.
+Observações
+
+Note que o nome tac corresponde a cat lido de trás para frente. O comando tac funciona de forma similar ao comando cat, a principal diferença entre os dois comandos se encontra na ordem de leitura do conteúdo de cada arquivo.
+Quando nenhum nome de arquivo é fornecido ou quando o arquivo é igual a “-“, o sistema ler a entrada padrão.
+Os comandos more e less também podem ser usados para verificar o conteúdo de um arquivo.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

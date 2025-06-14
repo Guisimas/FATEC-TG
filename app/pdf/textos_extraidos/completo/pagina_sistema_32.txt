@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+quotaon | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+quotaon
+
+quotaon [opções] [sistema de arquivos]
+Descrição
+Este comando habilita o sistema de cotas de um sistema de arquivos.
+Algumas opções do comando
+
+-a : habilita as cotas de todos os sistemas de arquivos definidos no /etc/fstab.
+-u : habilita as cotas de usuários. É o padrão.
+-g : habilita as cotas dos grupos.
+−−help : lista as opções disponíveis com o comando.
+−−version : exibe informação sobre o comando.
+
+Exemplo
+Por exemplo, o comando
+quotaon /dev/hda2
+habilita o sistema de cotas do /dev/hda2 conforme definido em /etc/fstab.
+Observações
+
+O comando quota fornece informações sobre o sistema de cotas do disco.
+O comando quotaoff desabilita o sistema de cotas de um sistema de arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

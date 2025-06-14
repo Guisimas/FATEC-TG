@@ -1,0 +1,155 @@
+
+
+
+
+
+
+
+
+
+
+chown | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+chown
+
+chown dono[:grupo] arquivo
+Descrição
+Este comando permite alterar o nome do dono e/ou do grupo de arquivos.
+Algumas opções do comando
+
+-c : informa quais arquivos estão sendo alterados.
+-h : altera o link, não o arquivo apontado pelo link.
+-v : informa quais arquivos estão sendo processados (não necessariamente alterados).
+-R : altera, recursivamente, dono e/ou grupo de arquivos.
+−−help : exibe opções do comando.
+−−version : exibe informações sobre o aplicativo.
+
+Exemplos
+
+Suponha, por exemplo, a existência de um diretório de nome teste. Queremos que este diretório e todo o seu conteúdo passe a pertencer ao usuário aluno e ao grupo informatica. Podemos, então, digitar o comando
+
+chown -Rc aluno:informatica teste
+para alterar o dono e o grupo do diretório teste e de todos os arquivos e diretórios que estão hierarquicamente abaixo do diretório teste. Como o argumento -c é usado, será mostrada apenas a lista dos arquivos e diretórios alterados.
+
+Para alterar apenas o dono dos arquivos, digite 
+
+chown -Rc aluno teste
+
+Se o objetivo é alterar apenas o grupo dos arquivos, basta digitar
+
+chown -Rc :informatica teste
+Observações
+
+O comando chgrp altera o grupo de arquivos.
+O comando chmod altera as permissões de arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

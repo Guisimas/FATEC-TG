@@ -1,0 +1,170 @@
+
+
+
+
+
+
+
+
+
+
+cd | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+cd
+
+cd [diretório]
+Descrição
+Este comando permite ao usuário mudar o diretório de trabalho. A mudança de diretório pode ser feita de forma sequencial (de diretório pai para diretório filho ou vice-versa) ou pode ser feita de forma aleatória (de um diretório qualquer para outro diretório qualquer).
+Exemplos
+São exemplos de uso deste comando:
+
+Para ir para o seu diretório home, digite
+
+cd
+ou
+cd ~/
+
+Para ir para o diretório raiz do Linux, digite
+
+cd /
+
+Para ir para um diretório filho do diretório atual, digite
+
+cd nome-do-diretório
+
+Para ir para o diretório pai do diretório atual, digite
+
+cd ..
+
+Para ir para um diretório do mesmo nível (diretório irmão) do diretório atual, digite
+
+cd ../nome-do-diretório
+
+Para voltar ao último diretório visitado antes do diretório atual, digite
+
+cd –
+
+você pode também fornecer o caminho completo do diretório para onde quer ir. Por exemplo,
+
+cd /usr/lib
+Observações
+
+Se a variável de ambiente CDPATH for definida (veja shell para mais detalhes), o sistema faz a busca pelo diretório de acordo com o conteúdo desta variável. Por exemplo,
+
+CDPATH=.:~:/etc
+faz com que o sistema procure pelo diretório especificado na seguinte ordem: a partir do diretório atual (representado na definição pelo caractere .); a partir do diretório raiz do usuário (representado na definição pelo caractere ~); a partir do diretório /etc.
+Note que as três opções definidas na variável estão separadas por dois pontos (caractere :).
+
+O comando cd é um comando interno do shell. Para ter mais informações, digite
+
+help cd
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

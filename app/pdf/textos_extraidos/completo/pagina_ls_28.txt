@@ -1,0 +1,181 @@
+
+
+
+
+
+
+
+
+
+
+chamadas de sistema | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+chamadas de sistema
+
+Descrição
+As chamadas de sistemas são funções (interfaces) usadas pelos aplicativos para solicitar a execução de algum serviço ao kernel do sistema operacional. Por isso, as chamadas de sistemas são instruções com maior privilégio quando comparadas às outras instruções.
+Com as chamadas de sistemas é possível, por exemplo, definir acesso a recursos de baixo nível como alocação de memória, periféricos e arquivos. Além disso, são as chamadas de sistemas que permitem a criação e a finalização de processos.
+Quando a execução de uma chamada de sistema é solicitada, o sistema operacional salva todo o contexto do processo (para continuar mais tarde de onde parou), verifica as permissões envolvidas no pedido e autoriza (se for o caso) o processador a executar o serviço solicitado.
+Quando o processador termina a execução da chamada de sistema, o sistema operacional retorna o controle para o processo, colocando-o novamente na fila de processos prontos para a execução.
+No Linux, kernel 4.11, existem cerca de 400 chamadas de sistemas disponibilizadas na biblioteca C (a biblioteca faz a interface entre o aplicativo e o kernel).
+Programação
+O programador normalmente não utiliza as chamadas de sistema no seu código. Ele utiliza uma função de biblioteca que é transformada em uma ou mais chamadas de sistema quando o código executável é gerado e há necessidade de pedir um serviço ao kernel. Por exemplo, a função printf() da Linguagem C é mapeada na chamada write() para escrever em um arquivo. Já a função matemática sqrt( ) não precisa de privilégios especiais para ser executada e não há necessidade de pedir ajuda ao kernel.
+
+O programador pode usar as chamadas de sistema no seu código se, por exemplo, está usando a Linguagem C. Com isto, ele ganha rapidez na compilação do programa (não precisa fazer a conversão), mas diminui a portabilidade do código (o formato das chamadas pode variar com as arquiteturas).
+Lista
+As chamadas de sistema do Linux podem ser encontradas no arquivo /usr/include/unistd.h ou podem ser obtidas com o comando
+man syscalls
+Exemplo
+O exemplo abaixo imprime a data e o horário a cada 5 segundos.
+1. #include<unistd.h.h> 
+2. #include<stdio.h> 
+3. #include<time.h> 
+4. #include<signal.h> 
+5. void mensagem(int signum) 
+6. { 
+7.       time_t tp; 
+8.       time(&tp); 
+9.       printf(“%s”, ctime(&tp)); 
+10. } 
+11. void main( ) 
+12.{ 
+13.      signal(SIGALRM, mensagem); 
+14.      printf(“*** inicio do programa\n”); 
+15.      while (1) 
+16.            { 
+17.                  alarm(5); 
+18.                  pause( ); 
+19.            } 
+20.}
+
+Linhas de 1 a 4 : é feita a inclusão dos arquivos headers da biblioteca C.
+
+unistd.h – cabeçalho com as chamadas de sistema.
+stdio.h – cabeçalho com a definição das funções de E/S dos arquivos como, por exemplo, printf().
+time.h – cabeçalho com as funções para manipular datas e horas.
+signal.h – cabeçalho com a definição dos sinais.
+
+
+Linhas de 5 a 10 : a função mensagem() é chamada quando um sinal SIGALRM é capturado pelo processo. Esta função apenas imprime o dia e a hora local obtidos com a chamada de sistema time() e formatada com a função ctime().
+Linha 11 : início da função main() cujos comandos vão da linha 13 a linha 19.
+Linha 13 : usa a chamada signal() para definir que a função mensagem( ) deve ser executada quando o sinal SIGALRM é capturado pelo processo.
+Linhas de 15 a 19 : define um loop infinito.
+Linha 17 : usa a chamada alarm() para definir que um sinal SIGALRM deve ser entregue ao processo em 5 segundos.
+Linha 18 : usa a chamada pause() para suspender o processo até o recebimento de um sinal (neste exemplo, a espera é pelo sinal SIGALRM).
+
+Abaixo, um exemplo de saída do programa.
+*** inicio do programa
+Sun Feb 3 18:08:01 2019
+Sun Feb 3 18:08:06 2019
+Sun Feb 3 18:08:11 2019
+Sun Feb 3 18:08:16 2019
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

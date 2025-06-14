@@ -20,4 +20,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-# Linux sistemas operacionais ls cd chmod chown rm mkdir touch cat ps kill man top df du grep find sudo echo ping ifconfig tar scp"
+# Linux sistemas operacionais ls cd chmod chown rm mkdir touch cat ps kill man top df du grep find sudo echo ping ifconfig tar scp

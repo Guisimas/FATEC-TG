@@ -1,0 +1,151 @@
+
+
+
+
+
+
+
+
+
+
+bg | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+bg
+
+bg [num]
+Descrição
+Este comando faz com que um processo (identificado por num), que está sendo executado em primeiro plano, passe a ser executado em segundo plano.
+Exemplos
+
+Suponha que o comando abaixo é digitado.
+
+xcalc
+Neste caso, uma calculadora é aberta e o terminal fica preso ao aplicativo. Para suspender a execução e liberar a linha de comandos, basta digitar CTRL+Z. O problema é que não é possível continuar a usar a calculadora. Podemos então digitar
+bg
+
+A calculadora volta então a ser executada sem prender o terminal.
+
+Podemos também inicializar um programa/comando em segundo plano usando o caractere &. Por exemplo,
+
+xcalc &
+faz com que a calculadora seja inicializada em segundo plano e portanto, o terminal em que o comando foi digitado continua livre para receber novos comandos.
+Observações
+
+Caso o número do processo não seja fornecido, o sistema assume que o processo a ser colocado em background é o último processo que foi suspenso pelo usuário.
+O comando jobs pode ser usado para verificar a identificação do processo que se deseja colocar em background (quando existem vários processos suspensos).
+A grande vantagem em se colocar um processo em background é deixar o terminal livre para a entrada de outros comandos, ou seja, o processo está sendo executado, mas ele não está alocado a um terminal.
+O comando fg faz com que um processo seja executado em primeiro plano.
+O comando ps fornece informações sobre os processos em execução.
+O comando bg é um comando interno do shell sendo usado.Para maiores informações, digite na linha de comandos do Linux:
+
+help bg
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

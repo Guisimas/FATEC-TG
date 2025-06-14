@@ -1,0 +1,153 @@
+
+
+
+
+
+
+
+
+
+
+vipw | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+vipw
+
+vipw [opções]
+Descrição
+Este aplicativo edita os arquivos /etc/passwd e /etc/shadow.
+
+Algumas opções do comando
+
+-h, −−help : exibe as opções do aplicativo.
+-s, −−shadow : edita o arquivo /etc/shadow.
+
+Exemplos
+
+Para editar o arquivo /etc/passwd, basta digitar
+
+sudo vipw
+
+Para editar o arquivo /etc/shadow, digite
+
+sudo vipw -s
+Observações
+
+O editor padrão de vipw é o vim. Para alterar o editor padrão deve-se alterar (ou definir, caso não exista) a variável ambiente EDITOR. Por exemplo, o comando
+
+export EDITOR=pico
+configura o pico como editor padrão do vipw.
+
+É importante notar que o comando vipw apenas edita o arquivo /etc/passwd e permite que o root altere o seu conteúdo. Nenhuma verificação de consistência é feita pelo aplicativo. Portanto, é da responsabilidade do root garantir que a alteração feita corresponde a realidade. 
+O comando vigr edita os arquivos /etc/group e /etc/gshadow.
+O comando visudo edita o arquivo /etc/sudoers.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

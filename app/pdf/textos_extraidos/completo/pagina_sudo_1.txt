@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+visudo | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+visudo
+
+visudo [opções]
+Descrição
+Este aplicativo edita o arquivo /etc/sudoers.
+Algumas opções do comando
+
+-h : exibe as opções do aplicativo.
+-f sudoers : define a localização do arquivo sudoers.
+-V : exibe informações sobre o aplicativo..
+
+Exemplos
+
+Para editar o arquivo /etc/sudoers, basta digitar
+
+sudo visudo
+Observações
+
+O aplicativo não costuma respeitar a definição da variável ambiente EDITOR.
+É importante notar que o comando visudo apenas edita o arquivo /etc/sudoers e permite que o root altere o seu conteúdo. Nenhuma verificação de consistência é feita pelo aplicativo.
+O comando vigr edita os arquivos /etc/group e /etc/gshadow.
+O comando vipw edita os arquivos /etc/passwd e /etc/shadow.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

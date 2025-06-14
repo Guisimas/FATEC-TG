@@ -1,0 +1,185 @@
+
+
+
+
+
+
+
+
+
+
+kill | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+kill
+
+kill [opções] [pid]
+Descrição
+Este comando envia um sinal para um processo.
+Algumas opções do comando
+
+-l : lista os nomes dos sinais.
+-l número : fornece o nome do sinal identificado pelo número fornecido.
+-s sinal : especifica o sinal a ser enviado, onde sinal pode ser um nome ou um número.
+-sinal : especifica o sinal a ser enviado, onde sinal é um número.
+
+Comentários sobre o comando
+Suponha que o resultado do comando ps seja como mostrado abaixo.
+
+
+
+PID
+TTY
+TIME
+CMD
+
+
+841
+pts/0
+00:00:00
+bash
+
+
+1314
+pts/0
+00:00:00
+teste
+
+
+
+ 
+Neste exemplo temos dois processos sendo executados: bash e teste. Para finalizar o processo teste, basta digitar
+kill 1314
+que corresponde a enviar o sinal SIGTERM (ou 15) ao processo com PID 1314.
+Caso o processo não seja encerrado, você pode forçar o término do processo com o seguinte comando
+kill -9 1314
+O comando acima corresponde a enviar o sinal SIGKILL (ou 9) ao processo. Esta opção informa ao sistema que o comando kill não pode ser ignorado, ele deve ser imediatamente processado. Neste caso, o sistema não se preocupa em salvar dados ou apagar arquivos temporários criados durante a execução do processo.
+São exemplos de sinais que podem ser enviados com o comando kill:
+
+SIGHUP (1) : reinicializa o processo (o processo ler novamente os seus arquivos de configuração).
+SIGTSTP (20) : suspende a execução de um processo.
+
+Os nomes e os números dos sinais
+
+Para obter a lista dos sinais do Linux, basta digitar
+
+kill -l
+Abaixo, uma possível saída.1) SIGHUP2) SIGINT3) SIGQUIT4) SIGILL5) SIGTRAP6) SIGABRT7) SIGBUS8) SIGFPE9) SIGKILL10) SIGUSR111) SIGSEGV12) SIGUSR213) SIGPIPE14) SIGALRM15) SIGTERM16) SIGSTKFLT17) SIGCHLD18) SIGCONT19) SIGSTOP20) SIGTSTP21) SIGTTIN22) SIGTTOU23) SIGURG24) SIGXCPU25) SIGXFSZ26) SIGVTALRM27) SIGPROF28) SIGWINCH29) SIGIO30) SIGPWR31) SIGSYS34) SIGRTMIN35) SIGRTMIN+136) SIGRTMIN+237) SIGRTMIN+338) SIGRTMIN+439) SIGRTMIN+540) SIGRTMIN+641) SIGRTMIN+742) SIGRTMIN+843) SIGRTMIN+944) SIGRTMIN+1045) SIGRTMIN+1146) SIGRTMIN+1247) SIGRTMIN+1348) SIGRTMAX+1449) SIGRTMAX+1550) SIGRTMAX-1451) SIGRTMAX-1352) SIGRTMAX-1253) SIGRTMAX-1154) SIGRTMAX-1055) SIGRTMAX-956) SIGRTMAX-857) SIGRTMAX-758) SIGRTMAX-659) SIGRTMAX-560) SIGRTMAX-461) SIGRTMAX-362) SIGRTMAX-263) SIGRTMAX-163) SIGRTMAX
+O comando
+
+kill -l 9
+fornece o nome do sinal identificado pelo número 9: TERM.
+Observações
+
+O comando killall envia um determinado sinal a um conjunto de processos que usam o mesmo nome.
+Os comandos ps, pstree e top exibem informações sobre os processos em execução.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

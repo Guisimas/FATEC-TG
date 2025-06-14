@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+lshw | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lshw
+
+lshw [opções]
+Descrição
+Este comando exibe informações sobre o hardware.
+Algumas opções do comando
+
+-version : exibe a versão do aplicativo.
+-help : exibe as opções do aplicativo.
+-businfo : mostra informações sobre barramento, detalhando endereços SCSI, USB, IDE e PCI.
+
+Exemplos
+
+Para obter informações completas, deve-se usar o comando sudo.
+
+sudo lshw
+
+Para ver informações sobre barramento, digite
+
+sudo lshw -businfo
+Observações
+
+O comando arch informa a arquitetura da máquina.
+O comando uname exibe informações sobre o sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

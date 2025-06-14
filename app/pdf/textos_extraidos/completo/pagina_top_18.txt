@@ -1,0 +1,172 @@
+
+
+
+
+
+
+
+
+
+
+nice | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+nice
+
+nice [opções] [comando]
+Descrição
+Define o valor de ajuste da prioridade  para a execução de um comando. 
+A prioridade de execução de um processo normal pode variar de 0 (maior prioridade) a 39 (menor prioridade). Neste caso, a prioridade é calculada como
+PR = 20 + NI
+onde NI é o valor nice usado alterar a prioridade de um comando do usuário. O NI pode variar de -20 a 19.
+Opções do comando
+
+-n valor ou -valor : adiciona o valor especificado à prioridade de execução.
+−help : lista as opções disponíveis com o comando.
+−−version : exibe informação sobre o comando.
+
+Exemplos
+
+Ao digitar
+
+nice top
+O aplicativo top é executado com NI = 10 e PR = 30, pois quando o valor NI não é especificado com o comando nice, assume-se que NI = 10. Neste caso, se o aplicativo top tivesse sido chamado sem o comando nice, o sistema teria usado NI = 0 e PR = 20.
+
+Para diminuir a prioridade, podemos definir
+
+
+nice -6 top
+ou
+nice -n 6 top
+Neste caso, o aplicativo é executado com NI = 6 e PR = 26.
+
+
+O comando
+
+sudo nice −−6 top
+ou
+sudo nice -n -6 top
+faz com que o aplicativo seja executado com NI = -6 e PR = 14. Isto significa que foi aumentada a prioridade de execução. Somente o administrador do sistema (root) pode definir um valor negativo para nice. Caso o comando não seja digitado com sudo, o valor da prioridade não será alterado (NI = 0, PR = 20).
+
+Caso seja fornecido um valor NI fora dos limites, o sistema usa o valor mais próximo possível. Assim, para
+
+nice -30 top
+temos NI = 19 e PR = 39. E para
+sudo nice −−30 top
+temos NI = -20 e PR = 0.
+Observações
+
+No Linux, os processos em tempo real possuem prioridade negativa. O usuário não pode alterar as prioridades deste tipo de processo.
+PID é o número de identificação (ID) de um processo.
+Os comandos ps, pstree e top exibem informações sobre os processos que estão executando na máquina.
+O comando renice altera a prioridade de um processo que está executando.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

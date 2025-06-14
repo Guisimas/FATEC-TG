@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+variáveis de ambiente | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+variáveis de ambiente
+
+Descrição
+
+As variáveis de ambiente são usadas para customizar o ambiente shell.
+O usuário pode alterar o conteúdo das variáveis, remover variáveis existentes e/ou criar novas variáveis de ambiente. Entretanto, as alterações feitas por um usuário não afetam os outros usuários do sistema. Além disso, estas alterações podem ser permanentes (continuam valendo no próximo acesso do usuário) ou podem ser temporárias.
+As definições/alterações feitas no ambiente do usuário sobrepõem as definições feitas pelo sistema. Um exemplo disto está na definição do prompt da linha de comando. Existe uma variável de ambiente (PS1) que define o formato do prompt. O root pode definir um prompt padrão para todos os usuários do sistema, mas cada usuário pode customizar esta variável localmente.
+
+Observações
+
+As variáveis de ambiente específicas de um usuário são definidas em um arquivo no diretório raiz do usuário (caso o usuário use o shell bash, este arquivo é o .bashrc).
+O comando export define variáveis de ambiente.
+O comando unset remove variáveis de ambiente.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

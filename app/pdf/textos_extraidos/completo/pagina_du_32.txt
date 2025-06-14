@@ -1,0 +1,171 @@
+
+
+
+
+
+
+
+
+
+
+lsmod | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lsmod
+
+Descrição
+Este comando lista os módulos do kernel que estão carregados na memória.
+Exemplo
+Abaixo é apresentada parte de uma saída deste comando, onde cada linha do exemplo mostra as seguintes informações: nome, tamanho, contador de uso e lista dos módulos que referenciam o módulo em questão (dependem do módulo).
+
+
+
+Module
+Size
+Used by
+
+
+joydev
+17393
+0
+
+
+arc4
+12473
+2
+
+
+bnep
+17830
+2
+
+
+rfcomm
+38139
+0
+
+
+bluetooth
+158479
+10 bnep,rfcomm
+
+
+
+Observações
+
+Na realidade, o comando lsmod apenas exibe o conteúdo do arquivo /proc/modules.
+O comando depmod produz arquivo contendo as dependências dos módulos.
+O comando insmod carrega módulos do kernel na memória do sistema.
+O comando modinfo mostra informações sobre um módulo do kernel.
+O comando modprobe carrega e remove módulos do kernel.
+O comando rmmod descarrega módulos do kernel da memória do sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

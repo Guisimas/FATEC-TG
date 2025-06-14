@@ -1,0 +1,135 @@
+
+
+
+
+
+
+
+
+
+
+PPID | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+PPID
+
+Descrição
+PPID (Parent Process IDentification) é o número de identificação do processo-pai.
+Observações
+
+Quando um processo inicia outro processo, passa a existir uma relação de pai-filho dentro do sistema: o processo que cria um outro processo é o processo-pai; o processo criado é o processo-filho.
+O processo init é o único que não possui um processo-pai, pois é o primeiro processo a ser inicializado no sistema.
+Quando um processo termina a sua execução, ele avisa o processo-pai (envia um sinal). Os recursos do processo só são liberados e o processo é realmente finalizado quando o processo-pai sinaliza que está ciente do término. Durante este período, o processo-filho é conhecido como zombie (morreu, mas ainda não sabe).
+Quando um processo-pai termina antes do processo-filho, o processo init adota o processo órfão e passa a monitorar a sua execução.
+O PID é o número de identificação (ID) de um processo.
+Os comandos ps, pstree e top exibem informações sobre os processos que estão executando na máquina.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

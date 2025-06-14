@@ -1,0 +1,143 @@
+
+
+
+
+
+
+
+
+
+
+cut | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+cut
+
+cut [opções] [arquivo/entrada padrão]
+Descrição
+Este comando seleciona partes de um arquivo e exibe o resultado na saída padrão (normalmente a tela).
+Algumas opções do comando
+
+-c : define os caracteres a serem selecionados.
+-b : define os bytes a serem selecionados.
+-d [caractere] : determina qual será o caractere delimitador de campos a ser utilizado no lugar do delimitador padrão, o TAB.
+-f [campos] : exibe a lista dos campos selecionados. Quando não há o caractere delimitador na linha, ela é exibida completa.
+−−version : fornece a versão do aplicativo.
+
+Exemplos
+O comando
+cut -c10-30 teste.txt
+exibe, na tela, da décima a trigésima coluna do arquivo teste.txt, enquanto o comando
+cut -c10 teste.txt
+exibe apenas a décima coluna do arquivo teste.txt.
+Para extrair a lista dos usuários do arquivo /etc/passwd, digite
+cut -d: -f 1 /etc/passwd
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

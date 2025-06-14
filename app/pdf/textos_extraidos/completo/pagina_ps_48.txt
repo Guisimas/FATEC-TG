@@ -1,0 +1,169 @@
+
+
+
+
+
+
+
+
+
+
+jobs | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+jobs
+
+jobs [opções] [JOB …]
+Definição
+Lista os processos inicializados a partir do terminal.
+Opções do comando
+
+-l : lista também os PIDs dos processos.
+-n : lista apenas processos que tiverem seu status alterado desde a última notificação.
+-p : lista apenas os PIDs dos processos.
+-r : mostra apenas os processos em execução.
+-s : mostra apenas os processos parados.
+
+Exemplos
+
+Suponha que abaixo seja mostrado o resultado do comando jobs digitado na linha de comando.
+
+[1] Parado vi teste
+[2]- Parado vi teste2
+[3]+ Parado vi teste3
+[4] Executando xcalc &
+Isto significa que existem 3 processos suspensos (teste, teste2 e teste3) e um processo em execução (xcalc). O operador + indica o processo parado que foi acessado mais recentemente pelo usuário, enquanto o operador – indica o segundo processo parado mais recentemente acessado.
+
+Ao digitar
+
+jobs -l
+O comando fornece também o PID dos processos.
+[1] 2742 Parado vi teste
+[2]- 2744 Parado vi teste2
+[3]+ 2745 Parado vi teste3
+[4] 2784 Executando xcalc &
+
+Para ver o PID apenas dos processos em execução, digite
+
+jobs -lr
+
+Para ver apenas as informações dos processos com identificação 1 e 3, basta digitar
+
+jobs 1 3
+Observações
+
+O comando fg faz com que um processo seja executado em primeiro plano.
+O comando bg faz com que um processo seja executado em segundo plano.
+O comando ps pode ser usado para obter a lista dos processos em execução e seus respectivos números.
+O comando jobs é um comando interno do shell sendo usado. Para maiores informações, digite na linha de comandos do Linux:
+
+help jobs
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

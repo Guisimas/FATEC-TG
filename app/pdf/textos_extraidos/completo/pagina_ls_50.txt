@@ -1,0 +1,234 @@
+
+
+
+
+
+
+
+
+
+
+sistemas de arquivos | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+sistemas de arquivos
+
+Partições
+Podemos dividir um disco rígido em várias partes ou partições, onde cada partição é independente das outras, ou seja, cada partição pode ter o seu próprio sistema de arquivo e um diferente sistema operacional. Isto significa que uma partição do disco não interfere nas outras partições. Podemos, por exemplo, instalar o Linux em uma partição e o Windows em outra partição.
+Atualmente existem dois padrões que determinam como os dados são armazenados no disco.
+
+MBR (Master Boot Record) – padrão antigo que só permite 4 partições (chamadas de primárias) no mesmo disco. Por isso, costuma-se usar a quarta partição como partição estendida para  criar várias partições lógicas (em outras áreas do disco).
+GPT (GUID Partition Table) – pode criar 128 ou mais partições (depende do sistema operacional usado). Neste caso, não há necessidade de criar partição estendida (embora seja possível).
+
+O Linux utiliza a seguinte nomenclatura para identificar discos e partições.
+
+Por exemplo, podemos ter:
+
+/dev/sda1 – Primeira partição do primeiro disco rígido SATA ou SCSI.
+/dev/sda2 – Segunda partição do primeiro disco rígido SATA ou SCSI.
+/dev/sdb1 – Primeira partição do segundo disco rígido SATA ou SCSI.
+/dev/sdb2 – Segunda  partição do segundo disco rígido SATA ou SCSI.
+/dev/hda1 – Primeira partição do primeiro disco rígido IDE.
+/dev/hda2 – Segunda partição do primeiro disco rígido IDE.
+/dev/hdb1 – Primeira partição do segundo disco rígido IDE.
+/dev/hdb2 – Segunda partição do segundo disco rígido IDE.
+
+No exemplo abaixo, um disco de 1 TeraByte é dividido em 2 discos. O primeiro disco tem duas partições: a primeira partição com 512 MB possui o sistema EFI (Extensible Firmware Interface) que é responsável pela inicialização do sistema; a segunda partição com 931 GB possui os arquivos do sistema. O segundo disco de 119,2 GB é usado como área de dados.
+/dev/sda1 2048 1050623 1048576 512M Sistema EFI 
+/dev/sda2 1050624 1953523711 1952473088 931G Linux sistema de arquivos
+/dev/sdb1 2048 250068991 250066944 119,2G Linux sistema de arquivos
+O programa mais comumente usado no Linux para particionar discos é o fdisk. O problema com este aplicativo é que ele destrói os dados armazenados ao particionar o disco.
+Sistemas de arquivos
+
+Um sistema de arquivos é um conjunto de estruturas lógicas que permite o sistema operacional controlar o acesso a um dispositivo de armazenamento como disco rígido, pen drive, cd-room, etc. Diferentes sistemas operacionais podem usar diferentes sistemas de arquivos.
+A partição Linux nativo é conhecida por diretório raiz do Linux e é representada por /.
+Atualmente, o NTFS (New Technology File System) é o sistema de arquivos padrão do Windows, enquanto o ext4 é o do Linux.
+Para verificar quais os sistemas de arquivos que o seu Linux suporta, basta verificar o conteúdo do arquivo /proc/filesystems.
+O suporte para diferentes sistemas de arquivos pode ser obtido através de módulos de kernel carregáveis no diretório /lib/modules/XXX/kernel/fs, onde XXX é a versão atual do Linux.
+
+Linux
+No Linux, um diretório (corresponde ao conceito de pasta do Windows) pode ter outros diretórios ou arquivos. Dizemos que um diretório é filho de outro diretório quando ele está logo abaixo do diretório em questão. O diretório que está um nível acima é chamado de diretório pai.
+O diretório raiz do Linux (ou diretório /) é o diretório com maior hierarquia entre todos os diretórios do sistema. Isto significa que todos os diretórios do Linux ficam abaixo deste diretório. A seguir são apresentados exemplos de diretórios que normalmente ficam abaixo do diretório raiz.
+
+bin – diretório com os comandos disponíveis para os usuários comuns (não privilegiados).
+boot – diretório com os arquivos estáticos do boot de inicialização.
+dev – diretório com as definições dos dispositivos de entrada/saída.
+etc – diretório com os arquivos de configuração do sistema.
+home – diretório que armazena os diretórios dos usuários do sistema.
+lib – diretório com as bibliotecas e módulos (carregáveis) do sistema.
+lost+found – é usado pelo fsck para armazenar arquivos/diretórios/devices corrompidos.
+media – ponto de montagem temporário para mídias removíveis.
+mnt – ponto de montagem temporário para sistemas de arquivos.
+opt – softwares adicionados pelos usuários.
+proc – diretório com informações sobre os processos do sistema.
+root – diretório home do root.
+run – armazena arquivos temporários da inicialização do sistema.
+sbin – diretório com os aplicativos usados na administração do sistema.
+snap – diretório com pacotes snaps (podem ser executados em diferentes distribuições Linux).
+srv – dados para serviços providos pelo sistema.
+sys – contém informações sobre  devices, drivers e características do kernel.
+tmp – diretório com arquivos temporários.
+usr – diretório com aplicativos e arquivos utilizados pelos usuários como, por exemplo, o sistema de janelas X, jogos, bibliotecas compartilhadas, programas de usuários e de administração, etc.
+var – diretório com arquivos de dados variáveis (spool, logs, etc).
+
+Para ver os diretórios e arquivos que ficam abaixo do diretório /, basta usar o comando ls.
+ls /
+Convém também observar que é possível colocar os subdiretórios do diretório raiz em partições separadas. O objetivo é facilitar a manutenção do sistema e aumentar a segurança dos dados. Portanto, a distribuição do diretório raiz em várias partições é uma escolha pessoal do administrador do sistema. Normalmente, é sugerido que os seguintes diretórios possuam uma partição própria: /home, /opt, /tmp, /usr e /usr/local.
+Tipos de Sistemas de Arquivos
+A escolha do sistema de arquivos depende do sistema operacional utilizado. Abaixo, alguns exemplos de sistemas de arquivos suportados por determinados sistemas operacionais.
+
+
+
+Sistema operacional
+sistema de arquivos suportados
+
+
+Linux
+EXT3, EXT4, XFS, JFS
+
+
+MacOS
+HFS
+
+
+Windows
+FAT, HPFS, NTFS
+
+
+FreeBSD, OpenBSD
+UFS
+
+
+Sun Solaris
+UFS
+
+
+IBM AIX
+JFS
+
+
+
+ 
+
+EXT3 (third extended filesystem) – foi adotado como padrão Linux a partir de 2001. Introduziu o registro (journal) que melhora a confiabilidade e permite recuperar o sistema em caso de desligamento não programado. EXT3 suporta 16TB (1 terabyte corresponde a 240 bytes) de tamanho máximo no sistema de arquivos, e 2TB de tamanho máximo de um arquivo. Um diretório pode ter, no máximo, 32.000 subdiretórios.
+EXT4 (fourth extended filesystem) – passou a ser o padrão Linux a partir de 2008. EXT4 suporta 1EB (1 exabyte corresponde a 260 bytes) de tamanho máximo de sistema de arquivos e 16TB de tamanho máximo de arquivos. É possível ter um número ilimitado de subdiretórios
+XFS (Extended Filesystem) – usado como padrão por algumas distribuição Linux desde 2014. XFS é um sistema de arquivos desenvolvido em 64 bits, compatível com sistemas de 32 bits. Ele suporta até 16 EB de tamanho total do sistema de arquivos e até 8 EB de tamanho máximo para um arquivo individual. É considerado um sistema de arquivos de alto desempenho.
+JFS (Journaled File System) – é um sistema de arquivos de 64 bits com journaling desenvolvido pela IBM.
+HFS (Hierarchical File System) – é um sistema de arquivos proprietário da Apple.
+FAT (File Allocation Table) – é um sistema desenvolvido para o MS-DOS e usado em versões do Microsoft Windows até o Windows 95. É suportado praticamente por todos os sistemas operacionais existentes. Existem 3 versões do sistema: FAT (12 bits, usado pelos disquetes), FAT16 (para OS 16 bits ou 32 bits) e FAT32 (só para SO a 32 bits)
+NTFS (New Technology File System) é o sistema de arquivos padrão do sistema operacional Microsoft Windows.São algumas características deste tipo de sistema: aceita volumes de até 2 TB; o tamanho do arquivo é limitado apenas pelo tamanho do volume; é um sistema de arquivos muito mais seguro que o FAT; NTFS podem se recuperar de um erro mais facilmente.
+HPFS –  é o sistema de arquivos utilizado pelo OS/2 da IBM, com recursos que se aproximam muito dos permitidos pelo NTFS.
+UFS (Unix File System) – é um sistema de arquivos usado por muitos sistemas operacionais Unix e assemelhados.
+
+Para ver o tipo do sistema de arquivo usado no seu Linux, basta usar o comando df.
+df -Tm
+Também é possível usar o comando blkid para obter informações sobre os sistemas de arquivos usados pelo Linux (o uso de sudo com o comando fornece uma resposta completa) .
+sudo blkid
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

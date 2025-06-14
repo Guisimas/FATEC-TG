@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+groupmod | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+groupmod
+
+groupmod [opções] grupo
+Descrição
+Este comando modifica um grupo de usuários do sistema.
+São opções do comando
+
+-g gid : altera a identificação numérica do grupo (GID).
+-n nome : altera o nome do grupo.
+-o : altera o GID do grupo mesmo que já exista outro grupo com o GID especificado (usado em conjunto com a opção -g). Neste caso, o sistema passará a ter dois grupos com o mesmo GID.
+
+Exemplo
+O comando
+groupmod -n teste2 teste
+altera o nome do grupo teste para teste2. O uso do comando sudo não é necessário se o usuário for membro dos grupos teste e teste2.
+Observações
+
+A lista dos grupos existentes no sistema é armazenada em /etc/group.
+Os comandos addgroup e groupadd criam grupos de usuários.
+Os comandos delgroup e groupdel deletam grupos do sistema.
+Os comandos chgrp e chown permitem alterar o grupo de um arquivo/diretório.
+Arquivos/diretórios com o GID antigo devem ser alterados manualmente. O Linux não faz qualquer tipo de verificação.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

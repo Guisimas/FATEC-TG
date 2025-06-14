@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+whereis | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+whereis
+
+whereis [opções] arquivo
+Descrição
+Este utilitário lista a localização de arquivos binários, fontes e documentação.
+Algumas opções do comando
+
+-b : lista apenas arquivos binários.
+-m : lista apenas arquivos de documentação.
+-s : lista apenas arquivos fontes.
+-h, −−help : mostra as opções do comando.
+-V, −−version : mostra informações sobre o aplicativo.
+
+Exemplo
+O comando
+whereis shells
+pode fornecer a seguinte saída
+shells: /etc/shells /usr/share/man/man5/shells.5.gz
+onde /etc/shells é um arquivo texto com os nomes dos shells que o usuário pode usar e /usr/man/man5/shells.5.gz é a documentação sobre os shells.
+Observações
+
+O comando find pesquisa arquivos em uma hierarquia de diretórios.
+O comando locate lista os arquivos cujos nomes coincidem com o padrão informado.
+
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

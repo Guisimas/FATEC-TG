@@ -1,0 +1,157 @@
+
+
+
+
+
+
+
+
+
+
+more | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+more
+
+more [opções] [arquivo]
+Descrição
+Este comando permite fazer a paginação de arquivos ou da entrada padrão.
+Algumas opções do comando
+
+–num : mostra num linhas do arquivo a cada enter.
++num : mostra o arquivo a partir da linha num.
+−−help : mostra as opções do aplicativo.
+−−version : exibe informações sobre o aplicativo.
+
+Teclas
+
+para sair do aplicativo digite q (de quit em inglês que significa sair).
+use as teclas f, Ctrl+F, Enter ou Space para avançar.
+Use as teclas b ou Ctrl+B para voltar as páginas.
+Digite h para ver a lista das teclas disponíveis para navegação no aplicativo (tecle espaço para voltar ao texto).
+Para sair do aplicativo digite q.
+
+Exemplos
+
+Para visualizar o arquivo teste a partir da linha 30, basta digitar
+
+more +30 teste
+
+Para redirecionar a saída de um comando para o more use o pipe. Por exemplo, o comando
+
+ls | more
+faz com que a listagem dos arquivos do diretório corrente seja paginada pelo aplicativo more.
+Observações
+
+O comando less também permite fazer a paginação de arquivos ou da entrada padrão.
+Os comandos cat e tac também permitem visualizar conteúdo de arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

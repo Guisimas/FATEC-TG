@@ -1,0 +1,163 @@
+
+
+
+
+
+
+
+
+
+
+umask | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+umask
+
+Descrição
+Quando o usuário cria um arquivo (diretório), o sistema associa ao objeto criado um conjunto de permissões de acesso. Estas permissões indicam quem pode ler, alterar e/ou executar (acessar) o arquivo (diretório).
+Por padrão,
+
+as permissões iniciais de um arquivo são 0666 (leitura e gravação para todo e qualquer usuário do sistema);
+as permissões iniciais de um diretório são 0777 (leitura, gravação e acesso para todo e qualquer usuário do sistema).
+
+Quando um usuário cria um arquivo (ou diretório), o sistema associa a este arquivo (diretório) o resultado da operação
+“permissão padrão” – umask
+onde umask tem as permissões não liberadas para os usuários.
+Exemplos
+
+Para verificar a configuração atual de umask, basta digitar na linha de comando
+
+umask
+Abaixo é mostrada a definição padrão do Linux.
+0002
+Para visualizar a representação simbólica,  digite
+umask -S
+A saída para o valor 0002 será
+u=rwx,g=rwx,o=rx
+
+Suponha que o usuário aluno tenha umask igual a 0022. Quando este usuário cria o arquivo teste, as permissões do arquivo então corresponde ao valor 0644.
+
+-rw-r−−r−− 1 aluno aluno 0 May 28 17:20 teste
+
+Para alterar o valor de umask, basta incluir o novo valor após o comando umask. Por exemplo, o comando
+
+umask 0036
+define que, por padrão, novos arquivos terão permissão 0640, enquanto novos diretórios terão permissão 0741. Abaixo, um arquivo e um diretório criados com estas permissões.
+ -rw-r−−−−− 1  aluno aluno  1024  Fev 12  20:45 arq_teste
+drwxr−−−−x 2  aluno aluno  4096  Fev 12   20:47 dir_teste
+Observações
+
+O termo umask corresponde a “user mask”, ou seja, máscara do usuário.
+O comando chmod permite alterar as permissões de acesso de arquivos/diretórios.
+O Linux trata o dígito 1 no umask como zero na criação de arquivos. Por exemplo, a umask 0011, gera arquivos com permissão 666 (parece ser uma definição antiga do Linux).
+Foram reportados alguns bugs no comando umask nas versões Ubuntu 17 e 18 (ex: bug 1685754).
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

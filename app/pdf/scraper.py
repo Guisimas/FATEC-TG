@@ -1,65 +1,60 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.options import Options as FirefoxOptions
 import requests
-import time
+from bs4 import BeautifulSoup
 import os
-from urllib.parse import urlencode
+from urllib.parse import quote_plus
 from app.pdf.extractor import processar_pdfs_da_pasta
 
 
-def busca_sites(termo_busca, paginas=5):
-    # Cabeçalhos para simular um navegador real
+def busca_sites(termo_busca):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     }
 
-    # Firefox em modo invisível
-    options = FirefoxOptions()
-    options.add_argument("--headless")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--window-size=1920x1080")
+    termo_codificado = quote_plus(termo_busca)
+    urls_coletadas = []
 
-    driver = webdriver.Firefox(options=options)
+    for pagina in range(1, 6):
+        url_busca = f"https://guialinux.uniriotec.br/page/{pagina}/?s={termo_codificado}"
+        print(f"[INFO] Acessando página {pagina}: {url_busca}")
 
-    # Diretório para salvar PDFs
-    pdf_dir = "./pdfs"
-    os.makedirs(pdf_dir, exist_ok=True)
+        response = requests.get(url_busca, headers=headers)
+        if response.status_code != 200:
+            print(
+                f"[ERRO] Falha ao acessar a página {pagina} - Status: {response.status_code}")
+            continue
 
-    base_url = "https://oasisbr.ibict.br/vufind/Search/Results"
+        soup = BeautifulSoup(response.content, "html.parser")
+        resultados = soup.find_all("h1", class_="entry-title")
 
-    for i in range(paginas):
+        for resultado in resultados:
+            a_tag = resultado.find("a")
+            if a_tag:
+                href = a_tag.get("href")
+                texto = a_tag.text.strip().lower()
+                if "sumário" not in texto and href not in urls_coletadas:
+                    urls_coletadas.append(href)
 
-        params = {
-            "lookfor": termo_busca,
-            "type": "AllFields",
-            "page": str(i + 1)
-        }
-        url = f"{base_url}?{urlencode(params)}"
-        print(f"[INFO] Buscando: {url}")
-        driver.get(url)
-        time.sleep(3)
+    print(f"[INFO] {len(urls_coletadas)} links coletados no total")
 
-        # Pega todos os links da página
-        links = driver.find_elements(By.TAG_NAME, "a")
+    # Criar pasta para salvar textos
+    html_dir = "./app/pdf/textos_extraidos"
+    os.makedirs(html_dir, exist_ok=True)
 
-        for link in links:
-            href = link.get_attribute("href")
-            if href and href.endswith(".pdf"):
-                try:
-                    response = requests.get(href, headers=headers)
-                    if response.status_code == 200:
-                        nome_arquivo = href.split("/")[-1].split("?")[0]
-                        caminho_pdf = os.path.join(pdf_dir, nome_arquivo)
-                        with open(caminho_pdf, "wb") as f:
-                            f.write(response.content)
-                        print(f"[PDF] Baixado: {caminho_pdf}")
-                    else:
-                        print(
-                            f"[ERRO] Falha ao baixar {href} - Status: {response.status_code}")
-                except requests.RequestException as e:
-                    print(f"[ERRO] Erro ao baixar PDF: {e}")
+    for idx, url in enumerate(urls_coletadas):
+        try:
+            resp = requests.get(url, headers=headers)
+            if resp.status_code == 200:
+                page = BeautifulSoup(resp.content, "html.parser")
+                conteudo = page.get_text()
+                nome_arquivo = f"pagina_{termo_busca}_{idx+1}.txt"
+                caminho_arquivo = os.path.join(html_dir, nome_arquivo)
+                with open(caminho_arquivo, "w", encoding="utf-8") as f:
+                    f.write(conteudo)
+                print(f"[HTML] Texto salvo em: {caminho_arquivo}")
+            else:
+                print(
+                    f"[ERRO] Falha ao acessar {url} - Status: {resp.status_code}")
+        except Exception as e:
+            print(f"[ERRO] Falha ao processar {url}: {e}")
 
-    driver.quit()
     processar_pdfs_da_pasta()

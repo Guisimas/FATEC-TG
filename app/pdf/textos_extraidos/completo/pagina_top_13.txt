@@ -1,0 +1,174 @@
+
+
+
+
+
+
+
+
+
+
+vmstat | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+vmstat
+
+vmstat [opções]
+
+Descrição
+Este comando exibe estatísticas sobre a memória virtual.
+Algumas opções do comando
+
+-d : exibe estatísticas do disco.
+-D : apresenta um resumo sobre as atividades do disco.
+-s : apresenta uma tabela com estatísticas sobre a memória e sobre os eventos.
+-S unidade : muda a unidade do relatório. Use k para 1000 bytes, K para 1024 bytes, m para 1000000 bytes e M para 1048576 bytes.
+-V, −−version : exibe informações sobre o aplicativo.
+-h, −−help : mostra informações e encerra.
+
+Exemplos
+Para obter a tabela com estatísticas sobre a memória e sobre os eventos em MBytes, basta digitar
+vmstat -S M -s
+Uma possível saída é apresentada abaixo.
+ 7851 M de memória total
+1674 M de memória usada
+2028 M de memória ativa
+833 M de memória inativa
+4754 M de memória livre
+119 M de memória em buffer
+1302 M de cache de swap
+8063 M de swap total
+0 M de swap usada
+8063 M de swap livre
+120726 tiques não-nice de cpu de usuário
+283 tiques nice de cpu de usuário
+29355 tiques de cpu de sistema
+1685580 tiques de cpu ocioso
+53049 tiques de cpu de aguardo de E/S
+0 tiques de cpu de IRQ
+458 tiques de cpu de softirq
+0 tiques de cpu roubada
+1016780 páginas paginadas IN
+502544 páginas paginadas OUT
+0 páginas em swap IN
+0 páginas em swap OUT
+3240826 interrupções
+17751633 trocas de contexto de CPU
+1548243481 tempo de inicialização
+3790 forks
+Observações
+
+
+O comando dmidecode -t memory exibe informações sobre a memória.
+O comando free  exibe a quantidade de memória livre/usada no sistema.
+O comando slabtop exibe informações em tempo real sobre a memória cache.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+
+mandb | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+mandb
+
+Descrição
+Este comando cria/atualiza os índices da base de dados das páginas do manual do sistema.
+Algumas opções do comando
+
+−−help : lista as opções disponíveis com o comando.
+−−version : exibe informação sobre o aplicativo.
+
+Exemplo
+Para atualizar a base de dados dos manuais, basta digitar
+ sudo mandb
+Observações
+
+O comando mandb exige o uso do comando sudo.
+Os comandos apropos e man -k pesquisam por determina expressão nas páginas do manual do sistema.
+O comando whatis mostra o resumo sobre um ou mais comandos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

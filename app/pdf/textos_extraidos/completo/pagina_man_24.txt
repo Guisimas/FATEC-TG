@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+
+shadow e gshadow | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+shadow e gshadow
+
+Descrição
+
+O sistema shadow consiste no uso do arquivo /etc/shadow para armazenar as senhas criptografadas das contas dos usuários.
+O sistema gshadow consiste no uso do arquivo /etc/gshadow para armazenar as senhas criptografadas dos grupos do sistema.
+São campos armazenados nos arquivos: conta; senha criptografada; dias decorridos entre 1 de janeiro de 1970 e a última alteração da senha; número de dias até que a senha deva ser alterada; número de dias após o qual a senha deve ser alterada; número de dias antes da expiração da senha no qual o usuário será avisado; número de dias após a expiração da senha que a conta deve ser desabilitada; dias decorridos entre 1 de janeiro de 1970 e a data em que a conta foi desabilitada; campo reservado.
+A data de 01/01/1970 é chamada de tempo do Unix (Unix time).
+
+Comandos
+
+O comando pwconv ativa o uso do sistema shadow.
+O comando pwunconv desativa o uso do sistema shadow de proteção de senhas.
+O comando vipw edita os arquivos /etc/passwd e /etc/shadow.
+O comando grpconv ativa o sistema gshadow para proteger as senhas dos grupos.
+O comando grpunconv elimina o uso do sistema gshadow de proteção de senhas.
+O comando vigr edita os arquivos /etc/group e /etc/gshadow.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

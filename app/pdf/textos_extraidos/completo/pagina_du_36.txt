@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+umount | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+umount
+
+umount [opções]
+
+Descrição
+Este comando desmonta sistemas de arquivos.
+São algumas das opções deste comando
+
+-a : desmonta todos os sistemas de arquivos especificados em /etc/mtab.
+-r : no caso da desmontagem falhar, tenta remontar apenas para leitura.
+-v : exibe mensagens durante o processo de desmontagem da partição.
+
+Exemplo
+Para desmontar o sistema de arquivos de um pen drive, montado no diretório /media/TESTE, basta digitar
+umount /media/TESTE
+Observações
+
+O comando mount monta sistemas de arquivos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

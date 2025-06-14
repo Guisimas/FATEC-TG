@@ -1,0 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+GID | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+GID
+
+Descrição
+
+O termo GID significa Group IDentifier (identificador de grupo).
+No Linux, os arquivos (e diretórios) são organizados em grupos. O GID de um arquivo é inicialmente herdado do usuário que cria o arquivo.
+Um grupo pode ter zero, um ou vários arquivos. Um arquivo pertence a um único grupo, mas os usuários do sistema podem ser membros de um ou mais grupos.
+
+Valores de GID
+
+O valor de GID é não negativo, sendo que valores de zero a 99 são tipicamente reservados para o kernel, os valores de 100 a 999 são reservados para a administração do sistema e os valores de 1000 a 59999 são alocados para os grupos de usuários do sistema.
+A configuração padrão do GID pode ser encontrada no arquivo em /etc/adduser.conf.
+
+FIRST_SYSTEM_GID=100
+LAST_SYSTEM_GID=999
+FIRST_GID=1000
+LAST_GID=59999
+
+O GID zero concede (a um usuário ou a um arquivo) acesso irrestrito ao sistema. Embora isso não seja o mesmo que ser o root, deve-se usá-lo com cuidado.
+
+Observações
+
+O UID identifica os usuários do sistema.
+A lista dos grupos existentes no sistema é armazenada em /etc/group.
+O comando groups permite listar os grupos aos quais faz parte um usuário, enquanto o comando id identifica o GID de usuários.
+O root (administrador do sistema) pode usar os comandos groupadd (ou addgroup), groupmod e groupdel (ou delgroup) para, respectivamente, criar, modificar e deletar grupos.
+Os comandos chgrp e chown permitem alterar o grupo de um arquivo/diretório.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

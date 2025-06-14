@@ -1,0 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+inxi | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+inxi
+
+inxi [opções]
+Descrição
+O inxi é uma série de scripts que detectam uma grande variedade de informações sobre hardware, incluindo informações de fornecedor, configuração de drivers, etc.
+Algumas opções do comando
+
+-A : informações sobre áudio.
+-b : informações básicas sobre o sistema.
+-d : exibe lista dos drives ópticos (leitor e gravador de CD, DVD por exemplo).
+-D : exibe informações sobre detalhes do HD, como modelo e capacidade.
+-F : informações mais detalhadas sobre o sistema.
+-G : informações sobre vídeo.
+-n : informações sobre as interfaces de rede.
+-p : informações sobre as partições do HD.
+
+Exemplo
+
+O comando
+
+inxi -F
+pode fornecer, por exemplo, a saída abaixo
+
+Observações
+
+Para usar inxi, é preciso instalá-lo, através do comando
+
+sudo apt-get install inxi
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

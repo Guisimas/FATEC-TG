@@ -1,0 +1,160 @@
+
+
+
+
+
+
+
+
+
+
+info | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+info
+
+info [opções]
+Descrição
+Este aplicativo lê a documentação no formato info.
+Algumas opções do comando
+
+-k, −−apropos=STRING : procura a string definida em todos os índices de todos os manuais.
+-d, −−directory=DIR : inclui o diretório especificado na lista de diretórios pesquisado pelo aplicativo.
+-h, −−help : mostra as opções do aplicativo.
+−−version : exibe informações sobre o aplicativo.
+-w, −−where, −−location : informa a localização do arquivo info.
+
+Exemplos
+
+Ao digitar
+
+info
+o usuário tem acesso ao índice da documentação disponibilizada pelo aplicativo.
+
+Para ver onde está o arquivo info com informações sobre o comando env, basta digitar
+
+info -w env
+que mostrará provavelmente a seguinte resposta
+/usr/share/info/coreutils.info.gz
+
+O comando
+
+info -k swap
+procura a palavra swap em todos os índices de todos os manuais.
+Observações
+
+O comando man formata e apresenta páginas do manual on-line.
+O aplicativo info é considerado mais amigável de usar que o aplicativo man, pois a informação está organizada de forma hierárquica. Isto significa que é possível navegar entre vários documentos a partir de um determinado ponto.
+O comando apropos pesquisa por determina expressão nas páginas do manual do sistema.
+O comando whatis mostra um resumo sobre um ou mais comandos.
+O comando xman é um navegador para as páginas on-line.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

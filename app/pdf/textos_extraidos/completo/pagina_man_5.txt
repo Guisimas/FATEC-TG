@@ -1,0 +1,267 @@
+
+
+
+
+
+
+
+
+
+
+man | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+man
+
+man [opções] comando
+Definição
+Este utilitário formata e apresenta páginas do manual on-line sobre um determinado comando.
+Algumas opções do comando
+
+-a : mostra todas as páginas para o nome definido seguindo a ordem das seções definida em /etc/manpath.config.
+-f ou –whatis : apresenta apenas uma pequena descrição do comando. Esta opção fornece o mesmo resultado do comando whatis.
+-k palavra ou –apropos palavra : procura nos índices do manual a palavra especificada. Esta opção fornece o mesmo resultado do comando apropos.
+
+Exemplos
+
+O comando
+
+man ls
+apresenta a página do manual com as informações sobre o comando ls.
+
+Para copiar o conteúdo do manual on-line para o arquivo teste, basta digitar
+
+
+man ls > teste
+
+Para obter mais informações sobre o comando man, digite
+
+man man
+
+Para ler mais sobre a formatação das páginas do manual on-line, digite
+
+man 7 man
+
+Para ver apenas uma pequena descrição do comando ls, digite
+
+
+man -f ls
+que terá a seguinte saída:
+ls (1) – list directory contents
+
+Para saber quais as páginas do manual tem a palavra swap, digite
+
+man -k swap
+Abaixo uma possível saída para o comando.
+
+
+
+all-swaps (7)
+– event signalling that all swap partitions have been activated
+
+
+mkswap (8)
+– set up a Linux swap area
+
+
+swab (3)
+– swap adjacent bytes
+
+
+swapcontext (3)
+– manipulate user context
+
+
+swaplabel (8)
+– print or change the label or UUID of a swap area
+
+
+swapoff (2)
+– start/stop swapping to file/device
+
+
+swapoff (8)
+– enable/disable devices and files for paging and swapping
+
+
+swapon (2)
+– start/stop swapping to file/device
+
+
+swapon (8)
+– enable/disable devices and files for paging and swapping
+
+
+XdbeSwapBuffers (3)
+– swaps front and back DBE buffers.
+
+
+
+ 
+
+Para ver todas as seções com o comando swapon, digite
+
+man -a swapon
+O sistema então mostrará o swapon da seção 8 e depois o swapon da seção 2. Para sair da primeira página e ir para a segunda página, basta teclar q e depois Enter.
+Teclas
+
+Para sair do manual on-line digite q (de quit em inglês que significa sair).
+Use as teclas Page-Down, Ctrl+F ou Space para avançar nas páginas do manual.
+Use as teclas Page-Up ou Ctrl+B para voltar páginas no manual.
+Use Enter para avançar apenas uma linha por vez.
+Digite h para ver a lista das teclas disponíveis para navegar no manual on-line (tecle q para sair desta lista e retornar ao manual).
+
+Observações
+
+O manual on-line possui várias seções.
+
+(1) programas executáveis ou comandos shell
+(2) chamadas do sistema (funções fornecidas pelo kernel)
+(3) chamadas de bibliotecas (funções de bibliotecas)
+(4) arquivos especiais
+(5) formatos e convenções de arquivo
+(6) jogos
+(7) diversos (inclui pacotes de macro e convenções)
+(8) comandos de administração do sistema
+(9) rotinas do kernel
+Para saber qual a seção que um determinado comando/utilitário pertence, basta observar o número que aparece ao lado do comando na página do manual.
+
+A lista dos diretórios que possuem as páginas do manual e a ordem em que as páginas devem ser recuperadas são definidas no arquivo /etc/manpath.config. Atualmente, a ordem padrão de procura das páginas é
+
+1 n l 8 3 2 3posix 3pm 3perl 3am 5 4 9 6 7
+Note que a definição possui 6 extensões (não instaladas por padrão no sistema), sendo que 4 delas são subseções da seção 3 (chamadas de bibliotecas).
+(n) funções tcl 
+(l) rotinas da biblioteca de matemática
+(n) funções tcl 
+(3posix) funções posix 
+(3pm) módulos perl 
+(3perl) comandos perl
+(3am) funções gnu awk
+
+Quando uma determinada extensão não está na lista do arquivo manpath.config, ela é mostrada com o resto da seção a qual pertence. Assim, só se torna necessário explicitar as extensões quando se deseja forçar uma determinada ordem de pesquisa.
+
+Se comandos de níveis diferentes possuem o mesmo nome, apenas a primeira página encontrada será mostrada. Para obter a página do comando de um determinado nível, digite
+
+man n comando
+onde n corresponde ao nível de execução do comando. Por exemplo, digite
+man swapon
+e depois
+man 2 swapon
+A primeira página no exemplo acima é da seção 8 e explica o comando swapon usado para controlar a área de troca. A segunda página é da seção 2 e explica a chamada de sistema swapon.
+Observações
+
+O comando apropos pesquisa por determina expressão nas páginas do manual do sistema.
+O comando info ler documentos no formato info.
+O comando mandb cria/atualiza os índices da base de dados das páginas do manual do sistema.
+O comando whatis mostra um resumo sobre um ou mais comandos.
+O comando xman é um navegador para as páginas on-line.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

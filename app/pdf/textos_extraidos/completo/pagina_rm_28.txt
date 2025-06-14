@@ -1,0 +1,143 @@
+
+
+
+
+
+
+
+
+
+
+nl | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+nl
+
+nl [opções] [arquivo]
+Descrição
+Este comando exibe o conteúdo de um arquivo enumerando as linhas.
+Algumas opções do comando
+
+-i num : a numeração das linhas é feita com incremento de num.
+-v num : a numeração das linhas começa com num.
+−−help : exibe as opções do comando.
+−−version : exibe informações sobre o comando.
+
+Exemplo
+O comando
+nl -i 10 -v 100 teste
+exibe o conteúdo do arquivo teste numerando as linhas a partir do valor 100 com incremento de 10.
+Observações
+
+Se o nome do arquivo não é fornecido com o comando, a entrada padrão é lida.
+O comando “nl arquivo” corresponde ao comando cat -n.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

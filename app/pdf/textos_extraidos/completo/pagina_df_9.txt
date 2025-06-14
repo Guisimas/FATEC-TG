@@ -1,0 +1,161 @@
+
+
+
+
+
+
+
+
+
+
+du | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+du
+
+du [opções]
+Descrição
+Este comando exibe informações sobre o espaço usado pelos diretórios.
+Algumas opções do comando
+
+-a : mostra também o espaço ocupado pelos arquivos (de forma recursiva).
+-b : mostra o espaço ocupado em bytes.
+-c : mostra o total do espaço ocupado.
+-h : apresenta o espaço ocupado em formato compreensível para o ser humano (1K, 1M, 1G, etc).
+-k : mostra o espaço ocupado em Kbytes (é o padrão).
+-m : mostra o espaço ocupado em Mbytes.
+-s : mostra apenas o total ocupado (sumário).
+−−version : exibe informações sobre o aplicativo.
+
+Exemplos
+
+Para ver o tamanho do arquivo teste.txt em bytes, digite
+
+du -b teste.txt
+
+Para obter o tamanho, em Kbytes, de todos os arquivos do diretório corrente com extensão txt e o total de espaço ocupado por estes arquivos, basta digitar
+
+du -c *.txt
+
+Para verificar o total de espaço ocupado pelo diretório testes, digite
+
+du -sh testes
+Observações
+
+O comando du, sem qualquer opção e sem nome de arquivo ou diretório, fornece a quantidade de espaço ocupada por cada subdiretório que se encontra hierarquicamente abaixo do diretório atual.
+O comando df exibe informações sobre os espaços, livres e ocupados, das partições.
+O comando fdisk é utilizado para gerenciar partições.
+
+O comando fsck verifica e recupera sistemas de arquivos.
+O comando hdparm exibe/altera os parâmetros de discos SATA/IDE do sistema.
+O comando smartctl exibe relatório detalhado sobre os discos IDE/SCSI existentes no sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

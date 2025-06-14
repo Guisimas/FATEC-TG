@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+diff | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+diff
+
+diff [opções] arquivos
+Descrição
+Este comando compara dois arquivos linha a linha.
+Algumas opções do comando
+
+-a : trata os arquivos como texto e os compara linha a linha, mesmo que não sejam arquivos de texto.
+-i : ignora as diferenças entre letras maiúsculas e letras minúsculas.
+-q : mostra apenas se os arquivos são diferentes.
+-r : compara recursivamente qualquer diretório encontrado.
+-v ou −−version: informa a versão do comando.
+−−help : mostra opções do comando.
+
+Exemplos
+O comando
+diff teste1 teste2
+compara os arquivos teste1 e teste2. Enquanto o comando
+diff -rq dir1 dir2
+
+compara os arquivos dos diretórios dir1 e dir2: lista os arquivos que só existem em cada diretório e os arquivos que, embora estejam nos dois diretórios (mesmo nome), são diferentes.
+Observações
+
+Use o comando patch para atualizar um dos arquivos com as diferenças encontradas pelo diff.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

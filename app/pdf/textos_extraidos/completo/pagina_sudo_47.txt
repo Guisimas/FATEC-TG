@@ -1,0 +1,151 @@
+
+
+
+
+
+
+
+
+
+
+deluser | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+deluser
+
+ deluser [opções] [usuário] 
+Descrição
+Este comando remove um usuário ao sistema.
+Algumas opções do comando
+
+−−group grupo : deleta um grupo de usuários.
+−−help : mostra as opções do aplicativo.
+−−system : especifica que o grupo a ser deletado é do sistema.
+−−version : mostra a versão do aplicativo.
+
+Exemplos
+
+Para deletar o usuário aluno, basta digitar
+
+sudo deluser aluno
+Se aluno for o único usuário do grupo também chamado aluno, o grupo também será deletado. O diretório home do aluno não é deletado.
+
+Também é possível deletar o grupo de usuários aluno com o comando abaixo.
+
+sudo deluser −−group aluno
+Observações
+
+O comando deluser normalmente exige o uso do comando sudo.
+O comando userdel também deleta usuários do sistema. O comando deluser é um front end amigável para userdel.
+Os comandos adduser e useradd criam usuários.
+O comando usermod pode ser usado para modificar as características dos usuários como, por exemplo, nome e UID.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

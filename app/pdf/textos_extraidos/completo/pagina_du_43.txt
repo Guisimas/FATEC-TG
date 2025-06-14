@@ -1,0 +1,149 @@
+
+
+
+
+
+
+
+
+
+
+biosdecode | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+biosdecode
+
+biosdecode [opções]
+Descrição
+Este comando decodifica informações do BIOS (Basic Input/Output System). Na realidade, o biosdecode apenas mostra as estruturas usadas pelo BIOS.
+Algumas opções do comando
+
+-h ou −−help : exibe as opções do comando.
+-V ou −−version : mostra informações sobre o comando.
+
+Exemplo
+O comando
+sudo biosdecode
+mostra todas as informações relacionadas a BIOS.
+
+Observações
+
+BIOS é um programa gravado na memória ROM (read only memory) que tem duas funções básicas: dar suporte para o acesso inicial ao hardware e carregar o sistema operacional.
+Outros programas armazenados na memória ROM:
+
+SETUP (configurar) – permite alterar a configuração do BIOS;
+POST (Power On Self Test) – verifica se o hardware está operacional.
+
+
+CMOS (complementary metal-oxide-semiconductor) é uma memória temporária que armazena as configurações do computador feitas pelo BIOS. Para que estas informações sejam preservadas, mesmo quando o computador é desligado, o CMOS é alimentado por uma bateria de lítio.
+O comando dmidecode decodifica tabelas DMI (Destktop Management Information).
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

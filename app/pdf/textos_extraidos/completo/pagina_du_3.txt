@@ -1,0 +1,187 @@
+
+
+
+
+
+
+
+
+
+
+adduser | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+adduser
+
+ adduser [opções] usuário 
+Descrição
+Este comando adiciona um usuário ao sistema.
+Algumas opções do comando
+
+−−home DIR : define o diretório home do usuário.
+−−uid UID : especifica o UID do novo usuário.
+−−gid GID : especifica o GID do grupo primário (principal) ao qual o usuário pertence.
+−−shell SHELL : especifica o shell padrão do usuário.
+−−ingroup GROUP : define GROUP como o grupo primário (principal) do novo usuário, onde GROUP é o nome de um grupo que já existe.
+−−system : especifica que o usuário a ser criado é da administração do sistema (o valor do UID será, por padrão, de 100 a 999).
+
+Exemplos
+
+Para criar o usuário aluno, basta digitar:
+
+sudo adduser aluno
+O sistema então executa as seguintes tarefas para o comando acima: aloca um número de UID para o novo usuário e cria uma entrada em /etc/passwd (o valor escolhido será o menor valor disponível de UID depois de 1000); cria um grupo para o novo usuário (com o mesmo nome do usuário), aloca um número de GID para esse grupo e cria uma entrada em /etc/group (o valor escolhido será o menor valor disponível para GID depois de 100); cria o diretório aluno em /home e copia os arquivos de /etc/skel para esse diretório; solicita a senha de acesso do novo usuário; solicita dados do novo usuário para incluir na entrada de /etc/passwd.
+O sistema utiliza como padrão as configurações definidas no arquivo /etc/adduser.conf. Por exemplo, é possível ver:
+FIRST_SYSTEM_UID=100
+LAST_SYSTEM_UID=999
+FIRST_UID=1000
+LAST_UID=29999
+Isto significa que, quando se usa alocação dinâmica de UID, os valores ficam entre 1000 e 29999. Logo, se o usuário aluno é o primeiro a ser criado, ele terá UID e GID iguais a 1001, pois o valor 1000 já foi alocado para o usuário que instalou o sistema.
+Por padrão, os valores menores que 100 são usados pelo kernel e os valores de 100 a 999 são reservados para a administração do sistema. Mas nada impede que o administrador aloque qualquer valor que estiver disponível.
+
+Para definir /home/meudir como o diretório home do usuário aluno:
+
+sudo adduser −−home /home/meudir aluno
+
+O UID do novo usuário  corresponde ao menor número, maior que 1000, que ainda não está alocado. Entretanto, é possível definir o UID de um determinado usuário:
+
+sudo adduser −−uid 2000 aluno
+Quando um novo usuário é criado e o grupo padrão do novo usuário não é fornecido, o sistema automaticamente cria um novo grupo para este usuário com GID igual ao número de UID. Entretanto, o comando acima pode falhar em duas situações: o  valor de UID já está alocado a outro usuário; o GID com valor igual ao UID já está alocado a outro grupo.
+
+Para definir o GID como 3000, basta digitar:
+
+sudo adduser −−uid 2000 −−gid 3000 aluno
+Se o GID já estiver alocado a um grupo, o usuário será incluído no grupo definido pelo GID.
+
+Para adicionar o novo usuário ao grupo UNIRIO que já existe:
+
+sudo adduser −−uid 2000 −−ingroup UNIRIO aluno
+Se o grupo UNIRIO não existir, o comando falha e o sistema não cria o usuário.
+Arquivos
+
+O comando adduser cria uma entrada para o usuário no arquivo /etc/passwd. Esta entrada tem o nome, a senha (caso seja usado o sistema shadow para criptografar as senhas, apenas um x ou um * é exibido neste campo, a senha criptografada é armazenada no arquivo /etc/shadow), o UID (user identifier), GID (group identifier), informações sobre o usuário (se foram fornecidas), o diretório home do usuário e o shell padrão do usuário. Por exemplo, a linha abaixo mostra a entrada criada em /etc/passwd para o usuário aluno que tem UID e GID iguais a 1001 e usa o shell bash como padrão.
+
+aluno:x:1001:1001::/home/aluno:/bin/bash
+
+Caso seja criado um novo grupo, o comando adduser cria uma entrada para o grupo no arquivo /etc/group. Esta entrada tem o nome do grupo, a senha (caso seja usado o sistema shadow para criptografar as senhas, apenas um x ou um * é exibido neste campo, a senha criptografada é armazenada no arquivo /etc/gshadow), o GID do grupo e a lista dos usuários que são membros do grupo. Por exemplo, a linha abaixo mostra a entrada criada em /etc/group para o grupo aluno que tem GID igual a 1001 e onde o usuário maria também é membro.
+
+aluno:x:1001:maria
+Observações
+
+A configuração padrão usada pelo comando adduser pode ser encontrada em /etc/adduser.conf.
+O comando adduser normalmente exige o uso do comando sudo.
+O comando useradd  adiciona um novo usuário com as configurações padrão, mas sem criar o diretório home.  Na realidade, o comando adduser é um front end mais amigável para a ferramenta de baixo nível useradd.
+
+Os comandos addgroup e groupadd criam um novo grupo de usuários no sistema.
+Os comandos deluser e userdel deletam usuários do sistema.
+O comando usermod pode ser usado para alterar alguma característica do usuário como, por exemplo, nome, UID e GID.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

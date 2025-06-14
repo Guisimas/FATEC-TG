@@ -1,0 +1,172 @@
+
+
+
+
+
+
+
+
+
+
+capsh | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+capsh
+
+capsh [opções]
+Descrição
+Este comando permite alterar/verificar as capacidades de um processo.
+Algumas opções do comando
+
+−−decode=xxx : converte uma string hexadecimal em uma lista de capacidades.
+−−drop=xxx : remove capacidades do bset.
+−−gid=n : altera GID para n.
+−−help : mostra as opções do comando.
+−−inh=xxx : define XXX como capacidades no conjunto de capacidades hereditárias.
+−−print : exibe informações sobre as capacidades do processo.
+−−uid=n : altera UID para n.
+
+Exemplos
+
+Para ver informações das capacidades do shell sendo usado no terminal, digite na linha de comandos
+
+capsh −−print
+Abaixo é mostrada uma possível resposta. Note que atualmente o processo não tem capacidades habilitadas.
+Current: = 
+Bounding set = cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_kill,cap_setgid,
+cap_setuid,cap_setpcap,cap_linux_immutable,cap_net_bind_service,cap_net_broadcast,cap_net_admin,cap_net_raw,
+cap_ipc_lock,cap_ipc_owner,cap_sys_module,cap_sys_rawio,cap_sys_chroot,cap_sys_ptrace,cap_sys_pacct,
+cap_sys_admin,cap_sys_boot,cap_sys_nice,cap_sys_resource,cap_sys_time,cap_sys_tty_config,cap_mknod,cap_lease,
+cap_audit_write,cap_audit_control,cap_setfcap,cap_mac_override,cap_mac_admin,cap_syslog,cap_wake_alarm,
+cap_block_suspend,37
+Securebits: 00/0x0/1’b0
+    secure-noroot: no (unlocked)
+    secure-no-suid-fixup: no (unlocked)
+    secure-keep-caps: no (unlocked)
+uid=1000(aluno)
+gid=1000(aluno)
+groups=4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(lpadmin),124(sambashare),1000(aluno)
+
+Para apenas ver as 37 capacidades disponibilizadas atualmente no Linux, digite
+
+capsh −−decode=0000001fffffffff
+A resposta do sistema é mostrada abaixo.
+0x0000001fffffffff=cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_kill,cap_setgid,
+cap_setuid,cap_setpcap,cap_linux_immutable,cap_net_bind_service,cap_net_broadcast,cap_net_admin,cap_net_raw,
+cap_ipc_lock,cap_ipc_owner,cap_sys_module,cap_sys_rawio,cap_sys_chroot,cap_sys_ptrace,cap_sys_pacct,
+cap_sys_admin,cap_sys_boot,cap_sys_nice,cap_sys_resource,cap_sys_time,cap_sys_tty_config,cap_mknod,cap_lease,
+cap_audit_write,cap_audit_control,cap_setfcap,cap_mac_override,cap_mac_admin,cap_syslog,cap_wake_alarm,
+cap_block_suspend
+Observações
+
+Um thread pode manipular suas capacidades usando as chamadas de sistema capget() e capset().
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,146 @@
+
+
+
+
+
+
+
+
+
+
+w | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+w
+
+w [opções] [usuário]
+Descrição
+Este utilitário informa quais os usuários que estão conectados e o que eles estão executando.
+Algumas opções do comando
+
+-f : omite a coluna “FROM” (DE).
+-h : não mostra o cabeçalho das colunas.
+-s : listagem curta.
+-u : não mostra o UID dos processos.
+-V : mostra informações sobre o utilitário.
+−−help : mostra as opções do comando.
+
+Exemplos
+O comando
+w -s
+exibe uma listagem curta dos usuários do sistema e o que estão fazendo.
+Observações
+
+O comando users mostra os usuários que estão atualmente conectados ao sistema.
+O comando who informa quais os usuários que estão conectados.
+O comando whoami  fornece a identificação efetiva do usuário.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

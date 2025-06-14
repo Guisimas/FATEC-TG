@@ -1,0 +1,138 @@
+
+
+
+
+
+
+
+
+
+
+swap | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+swap
+
+Descrição
+O swap é uma área de troca usada para aumentar a quantidade de memória RAM do sistema.
+Observações
+
+O tamanho máximo de uma área de swap depende da arquitetura e da versão do kernel (não há limite para versões superiores a 2.3.3).
+O Linux permite a definição de até 32 áreas de swap.
+O arquivo /proc/swaps possui a configuração da área de swap  utilizada pelo sistema.
+
+O arquivo /proc/meminfo possui informações sobre a memória do sistema.
+O comando free exibe a quantidade de memória livre/usada no sistema.
+O comando mkswap formata uma área de swap.
+O comando swapoff desabilita áreas de swap.
+O comando swapon habilita áreas de swap.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+useradd | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+useradd
+
+ useradd [opções] usuário
+Descrição
+Este comando cria um novo usuário sem alocar recursos.
+Algumas opções do comando
+
+-d, −−home HOME_DIR : define o nome do diretório home do usuário (mas não o cria).
+-s, −−shell SHELL : define o shell padrão do usuário.
+-h, −−help : exibe as opções do comando.
+
+Exemplos
+O comando
+sudo useradd -d /home/aluno -s /bin/bash aluno
+cria o usuário aluno e define o nome do diretório home (não cria o diretório) e o shell padrão.
+Observações
+
+O comando useradd adiciona um novo usuário com a configuração padrão (caso não sejam especificada), mas  não cria o diretório home do novo usuário. Use o comando adduser caso queira especificar os recursos a serem alocados.
+Os comandos addgroup e groupadd criam um novo grupo de usuários no sistema.
+Os comandos deluser e userdel deletam usuários do sistema.
+O comando usermod pode ser usado para alterar alguma característica do usuário como, por exemplo, nome, UID e GID.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

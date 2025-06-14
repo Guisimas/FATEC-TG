@@ -1,0 +1,166 @@
+
+
+
+
+
+
+
+
+
+
+basename | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+basename
+
+ basename arquivo [sufixo] 
+ou
+ basename opções arquivo 
+Descrição
+Este comando exibe o nome de um arquivo removendo todos os componentes do caminho que fazem parte do nome do arquivo. Se especificado um sufixo, ele também é removido.
+Algumas opções do comando
+
+-a, −−multiple : recebe múltiplos argumentos e trata cada um como um nome de arquivo diferente.
+-s, −−suffix=SUFFIX : remove um sufixo seguindo o nome de um arquivo.
+−−help : exibe as opções do comando.
+−−version : informa a versão do programa.
+
+Exemplos
+
+O comando
+
+basename /usr/bin/sort
+retona
+sort
+
+O comando
+
+basename include/stdio.h .h
+
+ou o comando
+basename -s .h include/stdio.h
+mostrará como resposta
+stdio
+
+Para exibir o nome de mais de um arquivo, basta digitar
+
+basename -a any/str1 any/str2
+e a saída será
+str1 
+str2
+
+Para ver os cabeçalhos da biblioteca C que estão em /usr/include, digite
+
+basename -s .h /usr/include/*.h
+
+Se o nome do arquivo terminar em “/” esse caractere também será removido.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,158 @@
+
+
+
+
+
+
+
+
+
+
+rm | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+rm
+
+rm [opções] arquivo/diretório
+Descrição
+Este comando remove arquivos.
+Algumas opções do comando
+
+-f : apaga sem pedir confirmação.
+-i : apaga após pedir confirmação.
+-r : apaga arquivos e subdiretórios.
+-v : lista arquivos deletados.
+
+Exemplos
+
+Para apagar o arquivo teste.txt, basta digitar
+
+rm teste.txt
+
+Para apagar o diretório teste e todo o seu conteúdo, digite
+
+rm -fr teste
+
+Pode-se usar os caracteres ?, *, [ ] e { } como curingas. O primeiro substitui apenas um único caractere, o segundo substitui um número qualquer de caracteres, o terceiro substitui um único caractere dentro de um certo limite de valor e o último substitui vários caracteres. Por exemplo, suponha que o diretório atual tenha os seguintes arquivos: teste1.txt, teste2.txt, teste3.txt e teste10.txt. O comando
+
+rm teste*.txt ou rm teste*
+apaga os quatro arquivos, enquanto o comando
+rm teste?.txt
+apaga apenas os arquivos teste1.txt, teste2.txt e teste3.txt. Para apagar apenas os dois primeiros arquivos, basta digitar
+rm teste[1-2].txt
+e para apagar os dois primeiros e o último use o comando
+rm teste{[1-2],10}.txt
+Observações
+
+É preciso ter permissão de gravação para remover um arquivo.
+O comando rmdir remove diretórios vazios.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

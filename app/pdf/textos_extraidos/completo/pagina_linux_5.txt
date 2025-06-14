@@ -1,0 +1,168 @@
+
+
+
+
+
+
+
+
+
+
+yum | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+yum
+
+yum [options] [command] [package …]
+Descrição
+
+YUM (Yellowdog Updater, Modified) é um gerenciador de pacotes para linha de comandos.
+YUM permite atualizações automáticas e verificação de dependências para distribuições Linux baseadas em RPM (Red Hat Package Manager).
+Os arquivos de configuração do repositório YUM estão localizados no diretório /etc/yum.repos.d/ e devem ter extensão “.repo”.
+
+Algumas opções do comando
+
+ -q, −−quiet : faz operação discreta.
+-v, −−verbose : faz operação detalhada.
+-y, −−assumeyes : responde sim para todas as perguntas na execução do programa.
+-h, −−help : exibe as opções do utilitário.
+−−version : mostra informações sobre o utilitário.
+
+Alguns comandos
+
+check-update : verifica as atualizações disponíveis para os pacotes.
+deplist : lista as dependências de um pacote.
+distribution-synchronization : sincroniza os pacotes instalados com as últimas versões disponíveis
+erase : remove um ou mais pacotes do seu sistema.
+info : mostra detalhes sobre um pacote ou grupos de pacotes.
+install : instala um ou mais pacotes no seu sistema.
+list : lista um pacote ou grupos de pacotes.
+reinstall : reinstala um pacote.
+update : atualiza um ou mais pacotes.
+
+Exemplos
+
+Para verificar os pacotes instalados, digite
+
+yum check-update
+
+Para atualizar todos os pacotes e as suas dependências, basta entrar com
+
+yum update
+
+Para instalar o pacote undev
+
+yum install undev
+Observações
+
+Para instalar pacotes no Linux pode-se também usar apt-get, aptitude, dpkg, rpm ou snap.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

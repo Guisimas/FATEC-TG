@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+
+
+modprobe | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+modprobe
+
+modprobe [opções] [módulo]
+Descrição
+Este comando carrega e remove módulos do kernel.
+Algumas opções do comando
+
+-a : insere módulos.
+-d diretório : diretório onde os módulos podem ser encontrados. Por padrão, os módulos ficam armazenados em /lib/modules/RELEASE, onde RELEASE corresponde a versão do kernel.
+-r : remove módulos.
+-V ou −−version : exibe informações sobre o comando.
+
+Comentários sobre o comando
+O modprobe lê o arquivo de dependências de módulos gerado pelo comando depmod. Por isso, deve-se executar o comando
+depmod -a
+para produzir um novo arquivo contendo as dependências de módulo. Após executá-lo, pode-se usar o comando modprobe para instalar qualquer módulo e ter os outros módulos dos quais ele depende automaticamente instalados.
+Observações
+
+Para acrescentar um módulo automaticamente a cada inicialização do sistema, inclua o comando correspondente no arquivo /etc/modules.
+O uso do comando sem parâmetros faz com que o menu de opções seja fornecido.
+O comando depmod produz arquivo contendo as dependências dos módulos.
+O comando insmod carrega módulos do kernel na memória do sistema.
+O comando lsmod lista os módulos do kernel que estão carregados na memória.
+O comando modinfo mostra informações sobre um módulo do kernel.
+O comando rmmod descarrega módulos do kernel da memória do sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

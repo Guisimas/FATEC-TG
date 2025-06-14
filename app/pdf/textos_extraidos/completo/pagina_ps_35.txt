@@ -1,0 +1,152 @@
+
+
+
+
+
+
+
+
+
+
+pidof | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+pidof
+
+pidof [opções] programa
+Descrição
+Fornece o PID de um programa em execução.
+Algumas opções do comando
+
+-s : retorna apenas um PID.
+-o pid : omite processo com o PID especificado.
+
+Exemplos
+
+Para ver quais processos foram iniciados pelo programa chrome, digite
+
+pidof chrome
+
+Abaixo é mostrada uma possível saída.
+2693 2656 2462 2089 2068 1894 1886 1863
+
+Para eliminar o processo com PID igual a 1863 da lista, basta digitar
+
+pidof -o 1863 chrome
+
+A resposta agora é
+2693 2656 2462 2089 2068 1894 1886
+Observações
+
+O diretório /proc possui a lista dos processos que estão em execução no sistema.
+Os comandos ps, pstree e top exibem informações sobre os processos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

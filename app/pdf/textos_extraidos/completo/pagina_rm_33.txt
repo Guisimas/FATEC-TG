@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+lastlog | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lastlog
+
+lastlog [opções]
+Descrição
+Este comando exibe informações referentes ao último login dos usuários.
+Algumas opções do comando
+
+-u usuário : exibe informações referentes apenas ao usuário especificado.
+-t dias : exibe informações referentes aos últimos t dias.
+
+Exemplos
+
+O comando
+
+lastlog -u aluno
+informa o dia e a hora que o usuário aluno logou no sistema pela útima vez.
+
+O comando
+
+lastlog -t 3
+exibe a lista dos usuários que logaram no sistema nos últimos 3 dias e informa o dia e a hora do último acesso de cada um desses usuários.
+Observações
+
+Caso nenhum argumento seja passado, o comando lastlog exibe todas as informações armazenadas no arquivo /var/log/lastlog de todos os usuários do sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

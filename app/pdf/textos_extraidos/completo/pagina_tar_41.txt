@@ -1,0 +1,142 @@
+
+
+
+
+
+
+
+
+
+
+atq | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+atq
+
+atq [opções]
+Descrição
+Este comando lista as tarefas agendadas para execução pelo comando at.
+Opções do comando
+
+-V : fornece a versão do comando at e informa para quem se deve reportar erro.
+-q fila : lista apenas as tarefas que estão na fila especificada. Por padrão, a fila com as tarefas agendadas pelo comando at é a fila “a”.
+
+Comentários sobre o comando
+O comando atq informa o número da tarefa agendada, a data e a hora da execução, o nome da fila de execução (o padrão é a fila “a”) e o nome do usuário. Por exemplo,
+14 Fri Nov 9 16:00:00 2012 a aluno
+nos diz que existe uma tarefa agendada para ser executada às 16 horas do dia 9 de novembro de 2012. O usuário que a agendou foi aluno, o número de identificação da tarefa é 14 e a fila é “a”.
+Observações
+
+O comando atq é um alias para “at -l”.
+As tarefas agendadas ficam armazenadas em /var/spool/cron/atjobs.
+O comando atrm remove tarefas agendadas.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

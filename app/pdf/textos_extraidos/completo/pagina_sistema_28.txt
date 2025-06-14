@@ -1,0 +1,137 @@
+
+
+
+
+
+
+
+
+
+
+tempo do unix | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+tempo do unix
+
+Descrição
+
+O tempo do Unix ou o tempo da época corresponde ao número de segundos desde a meia-noite de 01/01/1970. Esta data é considerada pelo Linux como o início dos tempos (na realidade é a data aproximada da criação do projeto que daria origem ao Unix).
+O tempo do Unix usado pelo Linux é calculado a partir do relógio da máquina (hardware clock).
+O tempo do Unix é também conhecido como Unix timestamp (carimbo do tempo Unix), pois é usado para marcar eventos. Por exemplo, quando um arquivo é criado, ele é associado a três timestamps: o tempo da última data de acesso, o tempo da última modificação dos dados do arquivo e o tempo da última modificação do status do arquivo (ex: permissões, dono, etc).
+
+Observações
+
+O comando date permite exibir o tempo do Unix na linha de comandos.
+O comando hwclock permite exibir/modificar a hora de máquina e a hora do sistema.
+O comando ls pode ser usado para verificar os três timestamps de um arquivo.
+A chamada de sistema time( ) fornece o tempo do Unix em segundos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

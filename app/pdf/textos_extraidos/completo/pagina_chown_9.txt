@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+delgroup | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+delgroup
+
+ delgroup [options] [grupo] 
+Descrição
+Este comando remove um grupo de usuários do sistema.
+Algumas opções do comando
+
+−−help : mostra as opções do aplicativo.
+−−system : especifica que o grupo a ser deletado é do sistema.
+−−version : mostra a versão do aplicativo.
+
+Exemplo
+Para deletar o grupo alunos, basta digitar:
+delgroup alunos
+Neste caso, o grupo alunos só será deletado se não existir usuários que tenham este grupo como primário (grupo principal).
+Observações
+
+A lista dos grupos existentes no sistema é armazenada em /etc/group.
+Antes de usar o comando delgroup, deve-se remover os usuários do grupo. O sistema não aceita deletar um grupo primário (principal) com usuários, entretanto o sistema não verifica se existem arquivos alocados para o grupo a ser deletado.
+O comando groupdel também deleta um grupo de usuários. Na realidade, delgroup é um front end amigável para o programa groupdel.
+O arquivo /etc/deluser.conf contém a configuração de deluser.
+Para criar grupos, use o comando addgroup ou o comando groupadd.
+Para modificar as características de um grupo como, por exemplo, nome e GID, use groupmod.
+Os comandos chgrp e chown permitem alterar o grupo de um arquivo/diretório.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

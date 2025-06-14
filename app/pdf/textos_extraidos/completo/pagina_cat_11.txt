@@ -1,0 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+rmdir | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+rmdir
+
+rmdir [opções] diretório
+Descrição
+Este comando remove diretórios vazios.
+Algumas opções do comando
+
+-p, −−parents : remove uma hierarquia de diretórios.
+-v, −−verbose : exibe informações para cada diretório processado.
+−−help : informa as opções do aplicativo.
+−−version : exibe a versão implementada do aplicativo.
+
+Exemplos
+
+O comando
+
+rmdir testes
+remove o diretório testes dentro do diretório atual.
+
+Para remover uma árvore de diretórios, use a opção -p com o comando rmdir. Por exemplo, o comando
+
+rmdir -p testes/linux
+remove o subdiretório linux e, em seguida, remove o diretório testes. Se ocorrer falha na remoção do primeiro diretório (não está vazio), o segundo diretório também não é apagado. Portanto, o diretório testes só será removido se ficar vazio após a deleção do diretório linux.
+Observações
+
+É preciso ter permissão de gravação para remover um diretório.
+O comando rm remove diretórios não vazios.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

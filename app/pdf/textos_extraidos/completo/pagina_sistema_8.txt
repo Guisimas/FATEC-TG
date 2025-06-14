@@ -1,0 +1,137 @@
+
+
+
+
+
+
+
+
+
+
+users | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+users
+
+Descrição
+O comando fornece a lista dos usuários atualmente logados no sistema.
+Algumas opções do comando
+
+−−help : exibe ajuda para este comando.
+−−version : exibe a versão do aplicativo users.
+
+Tópicos relacionados
+
+O comando w informa quais os usuários que estão conectados e o que eles estão executando.
+O comando who informa quais os usuários que estão conectados.
+O comando whoami  fornece a identificação efetiva do usuário.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

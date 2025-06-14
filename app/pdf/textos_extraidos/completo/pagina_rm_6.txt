@@ -1,0 +1,156 @@
+
+
+
+
+
+
+
+
+
+
+hdparm | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+hdparm
+
+hdparm [opções] dispositivo
+Descrição
+Este utilitário exibe/altera os parâmetros de discos SATA/IDE do sistema.
+Algumas opções do comando
+
+-h : informa as opções do aplicativo.
+-i : exibe identificação do dispositivo.
+-I : exibe informações detalhadas do dispositivo.
+-t : verifica a taxa de leitura do dispositivo.
+-V : informa versão do aplicativo.
+
+Exemplos
+
+O comando
+
+sudo hdparm -i /dev/sda
+exibe informações do disco. 
+
+Para ver o desempenho (taxa de leitura) da partição /dev/sda1, digite
+
+sudo hdparm -t /dev/sda1
+Abaixo é mostrada uma possível resposta.
+/dev/sda1:
+Timing buffered disk reads: 360 MB in 3.01 seconds = 119.55 MB/sec
+Observações
+
+O comando df exibe informações sobre os espaços, livres e ocupados, das partições.
+O comando du exibe informações sobre o espaço usado pelos diretórios e arquivos.
+O comando fdisk é utilizado para gerenciar partições.
+O comando fsck verifica e recupera sistemas de arquivos.
+O comando smartctl exibe relatório detalhado sobre os discos IDE/SCSI existentes no sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

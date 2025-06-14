@@ -1,0 +1,154 @@
+
+
+
+
+
+
+
+
+
+
+history | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+history
+
+history [número]
+Descrição
+Este aplicativo mostra os últimos comandos utilizados pelo usuário.
+Exemplo
+O comando
+history 5
+mostra os últimos 5 comandos digitados pelo usuários. Abaixo, é apresentada uma possível saída. Note que o sistema tem armazenado 508 comandos do usuário.
+504 ls
+505 top
+506 vi teste
+507 cd
+508 history 5
+Observações
+
+É possível limpar o histórico com o comando “history -c”.
+No shell bash, o arquivo que armazena os comandos mostrados pelo history é o .bash_history.
+A distribuição Ubuntu define os seguintes padrões no arquivo .bashrc para o comando history:
+
+Ignora linhas duplicadas (comandos repetidos)
+HISTCONTROL=ignoreboth
+Os novos comandos digitados são adicionados no final do arquivo usado pelo history.
+shopt -s histappend
+O termo “shopt -s” indica que a opção histappend deve ser habilitada no shell.
+Define o número de comandos que devem ser lembrados. O padrão é 1000.
+HISTSIZE=1000
+Define o tamanho máximo de linhas do arquivo usado pelo history. O padrão é 2000 linhas.
+HISTFILESIZE=2000
+
+Note que nas definições acima foram usadas três variáveis de ambiente: HISTCONTROL, HISTSIZE e HISTFILESIZE.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

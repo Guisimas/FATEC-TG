@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+
+
+lspci | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lspci
+
+lspci [opções]
+Descrição
+Este comando exibe informações sobre dispositivos PCI (Peripheral Controller Interconnect).
+Algumas opções do comando
+
+-v : mostra informações detalhadas.
+-k : exibe informações sobre drivers e módulos do kernel.
+−−help : exibe informações sobre o comando.
+−−version : exibe informações sobre o aplicativo.
+
+Exemplo
+O comando
+lspci
+pode, por exemplo, apresentar a saída abaixo:
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

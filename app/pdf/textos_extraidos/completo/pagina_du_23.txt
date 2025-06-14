@@ -1,0 +1,175 @@
+
+
+
+
+
+
+
+
+
+
+tar | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+tar
+
+tar [opções] repositório.tar [arquivos]
+Descrição
+O utilitário tar (Tape ARchiving) agrupa/desagrupa arquivos.
+Algumas opções do comando
+
+-c : cria um novo arquivo tar.
+-j ou −−bzip2 : compacta/descompacta os arquivos usando bzip2.
+-J ou −−xz : descompacta os arquivos .xz e .lzma.
+-t : lista o conteúdo do arquivo tar.
+-x : extrai o conteúdo do arquivo tar.
+-v : mostra mensagens.
+-f arquivo : define o nome do arquivo tar.
+-z ou −−gzip ou −−gunzip : compacta/descompacta os arquivos usando gzip/gunzip.
+-Z ou −−compress ou −−uncompress : compacta/descompacta os arquivos usando compress.
+-?, −−help : mostra as opções do comando.
+Display a short option summary and exit. No arguments allowed.
+−−version : mostra informações sobre o aplicativo.
+
+Exemplos
+
+Para criar o arquivo colecao_txt contendo todos os arquivos txt do diretório atual, basta digitar:
+
+tar cvf colecao_txt *.txt
+É importante fazer duas observações: 1) O comando acima não compacta os arquivos, apenas os agrupa; 2) pode-se também usar a opção -cvf no comando acima, o resultado é o mesmo.
+
+Para verificar o conteúdo do arquivo colecao_txt, digite
+
+tar tvf colecao_txt
+
+Para extrair todos arquivos de colecao_txt, digite
+
+tar xvf colecao_txt
+
+Para extrair apenas um determinado arquivo de colecao_txt, digite
+
+tar xvf colecao_txt nome_arquivo
+
+É possível compactar os arquivos agrupados por tar. Por exemplo, para compactar com gzip os arquivos que começam por teste no repositório colecao, digite
+
+tar czvf colecao.tar teste*
+Para compactar com bzip2 os arquivos que começam por teste no repositório colecao2, basta digitar
+tar cjvf colecao2.tar teste*
+Normalmente, o bzip2 obém um maior grau de compactação como mostrado no exemplo abaixo.
+29095 fev 7 09:45 colecao.tar
+27378 fev 7 09:45 colecao2.tar
+Observações
+
+Se a primeira letra das opções for uma função como criar (letra “c”), extrair (letra “x”) ou listar (letra”t”), não há necessidade de usar o caractere “-” antes da letra.
+A extensão .tar não é obrigatória para os arquivos gerados com o comando tar, mas é aconselhável. O uso desta extensão facilita a identificação do tipo do arquivo (você também pode usar o comando file para verificar o tipo do arquivo).
+São exemplos de comandos para agrupar e/ou compactar arquivos:  ar, zip, gzip, compress e bzip2.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

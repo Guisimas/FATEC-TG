@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+UID | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+UID
+
+Descrição
+A sigla UID significa User IDentifier (identificador de usuário). O Linux utiliza o número de UID para monitorar os usuários e para verificar as permissões desses usuários. Os arquivos e diretórios possuem inicialmente o mesmo UID de quem os criou, ou seja, do dono.
+Valores de UID
+
+O valor de UID é não negativo, sendo que valores de zero a 99 são tipicamente reservados para o Kernel, os valores de 100 a 999 são reservados para a administração do sistema e os valores de 1000 a 59999 são alocados para os grupos de usuários do sistema.
+A configuração padrão do UID pode ser encontrada no arquivo em /etc/adduser.conf.
+
+FIRST_SYSTEM_UID=100
+LAST_SYSTEM_UID=999
+FIRST_UID=1000
+LAST_UID=59999
+
+O UID zero concede (a um usuário ou a um arquivo) acesso irrestrito ao sistema. Embora isso não seja o mesmo que ser o root, deve-se usá-lo com cuidado.
+
+Observações
+
+O GID é número de identificação dos grupos de usuários do sistema.
+O comando id identifica o UID de usuários.
+O root (administrador do sistema) pode usar os comandos useradd (ou adduser), usermod e userdel (ou deluser) para, respectivamente, criar, modificar e deletar usuários.
+O comando chown permite alterar o dono (usuário) de um arquivo/diretório.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

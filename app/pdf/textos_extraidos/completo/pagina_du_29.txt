@@ -1,0 +1,171 @@
+
+
+
+
+
+
+
+
+
+
+dmesg | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+dmesg
+
+dmesg [opções]
+Descrição
+Este comando exibe as mensagens do buffer do kernel.
+Algumas opções do comando
+
+-n num : define o nível das mensagens a serem exibidas.
+
+-c : apaga as mensagens após exibi-las (apenas o root pode usar este parâmetro).
+-C : apenas apaga as mensagens do buffer.
+ -f, −−facility : restringe a saída do comando a recursos definidos como kern, user, mail, daemon, auth, syslog, lpr e news.
+-k : exibe apenas as mensagens do Kernel.
+ -l, −−level list : define o nível das mensagens a serem mostradas. São os níveis das mensagens: emerg (emergengy), alert (alerta), crit (crítico), err (erro), warn (advertência), notice (importante), info (informativo), debug (depuração).
+-s tamanho : define o tamanho do buffer do Kernel.
+
+-S, −−syslog : força o uso do /var/log/dmesg em vez do /dev/kmsg.
+-t : não mostra o horário das mensagens.
+-T : mostra o horário das mensagens em formato compreensível para os humanos (não usa o formato timestamp).
+-u, −−userspace : exibe apenas as mensagens do espaço de usuário
+-h, −−help :  mostra as opções do comando.
+-v, −−version : mostra a versão do aplicativo.
+
+Exemplos
+
+O comando
+
+sudo dmesg -n 1
+exibe as mensagens de nível 1 (panic messages) ocorridas durante a inicialização do sistema. É preciso ter autorização de administrador do sistema.
+
+
+Para ver apenas as mensagens do Kernel, digite
+
+dmesg -k
+
+É possível ver apenas as mensagens que apresentaram erro ou advertência.
+
+dmesg −−level=err,warn
+
+O comando
+
+dmesg −−facility=daemo
+mostra apenas as mensagens relacionados aos servidores (daemons).
+Observações
+
+O tempo mostrado com as mensagens pode não ser preciso, pois o tempo dos logs não é atualizado após o sistema ser SUSPEND/RESUME.
+Para ver o arquivo /dev/kmsg, onde as mensagens são normalmente armazenadas, use o comando less.
+
+less -f /dev/kmsg
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

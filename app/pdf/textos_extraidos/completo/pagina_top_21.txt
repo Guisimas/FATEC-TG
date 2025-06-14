@@ -1,0 +1,151 @@
+
+
+
+
+
+
+
+
+
+
+killall | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+killall
+
+killall [opções] [nome]
+Descrição
+Este comando envia um determinado sinal a um conjunto de processos que usam o mesmo nome.
+Algumas opções do comando
+
+-e nome : procura pelo nome que seja igual (exato) ao especificado. Se o nome tiver mais de 15 caracteres, apenas os primeiros 15 caracteres são comparados.
+-i : pede confirmação antes de matar o processo.
+-l : lista os sinais que podem ser enviados a um processo junto com o comando killall.
+-s sinal ou -sinal : define outro sinal a ser enviado aos processos ao invés do sinal TERM.
+-u usuário : mata apenas os processos de determinado usuário.
+-v : informa se o sinal foi enviado com sucesso.
+
+Exemplos
+
+O comando
+
+killall -9 firefox
+mata todos os processos relacionados ao firefox. O uso do sinal 9 (SIGKILL) informa que o comando não pode ser ignorado pelo aplicativo.
+
+Para remover apenas o processo firefox, digite
+
+killall -e firefox
+Observações
+
+O comando kill envia um determinado sinal a um processo em execução.
+Os comandos ps, pstree e top exibem informações sobre os processos que estão executando na máquina.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

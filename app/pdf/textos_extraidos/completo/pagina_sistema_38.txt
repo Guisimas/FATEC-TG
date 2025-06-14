@@ -1,0 +1,141 @@
+
+
+
+
+
+
+
+
+
+
+chfn | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+chfn
+
+chfn [opções] [usuário]
+Descrição
+Este comando permite alterar as informações fornecidas pelo aplicativo finger.
+Algumas opções do comando
+
+-f nome : altera o nome do usuário.
+-h num : altera o número do telefone residencial (home).
+-r nome : altera o local de trabalho (room).
+-w num : altera o número do telefone do trabalho (work).
+
+Observações
+
+Ao digitar o comando chfn, sem opções, o sistema pergunta por modificação em cada um dos campos. Caso não queira alterar um determinado campo, basta digitar Enter.
+Apenas o root pode alterar informações de outros usuários. Portanto, não é necessário fornecer o nome do usuário se você deseja apenas alterar as informações da sua própria conta.
+Os dados informados com o comando chfn são armazenados no arquivo /etc/passwd na entrada correspondente ao usuário. Para ver as informações existentes, por exemplo, do usuário aluno, digite
+
+finger aluno
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

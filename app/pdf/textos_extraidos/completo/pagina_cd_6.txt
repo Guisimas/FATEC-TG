@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+hardware | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+hardware
+
+Descrição
+Existem vários comandos no Linux que nos permitem checar as informações sobre o hardware utilizado. Alguns comandos informam somente sobre algum componente específico, como CPU ou memória. Outros abrangem vários componentes. Veja abaixo algumas informações rápidas referentes aos comandos mais comumente usados para checagem de informações e configurações referentes ao hardware (para informações detalhadas clique no nome do comando).
+
+arch : informa a arquitetura da máquina.
+df : exibe informações sobre várias partições, onde foram criadas e o espaço disponível e já usado em cada uma delas.
+dmidecode : exibe informações de hardware que são extraídas através da leitura das tabelas DMI.
+du : exibe informações sobre o espaço usado pelos diretórios e arquivos.
+fdisk : exibe informações sobre as partições em um disco rígido, além de permitir que as mesmas sejam alteradas.
+free : exibe informações sobre a memória RAM.
+hdparm : exibe informações sobre dispositivos sata/IDE.
+hwinfo : parecido com o comando lshw, porém exibe mais informações.
+inxi : é um script bash que captura informações detalhadas de diferentes fontes e comandos do sistema, gerando automaticamente um relatório de fácil compreensão.
+lsblk : exibe as informações dos block devices, que são as partiçoes do HD e outros dispositivos de armazenamento como pen drives e CDs.
+lscpu : imprime informações sobre a CPU e as unidades de processamento.
+lshw : imprime informações breves porém detalhadas sobre diferentes unidades do hardware como CPU, memória, adaptadores de rede.
+lspci : exibe informações sobre os dispositivos PCI.
+lsscsi : lista os dispositivos scsi.
+lsusb : exibe informações sobre os controladores USB e os dispositivos conectados a ele.
+mount : comando usado para incluir o sistema de arquivos de um dispositivo qualquer no sistema de arquivos do Linux.
+slabtop : exibe informações em tempo real sobre a memória cache.
+smartctl : exibe relatório detalhado sobre os discos IDE/SCSI existentes no sistema.
+vmstat : exibe estatísticas sobre a memória virtual.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

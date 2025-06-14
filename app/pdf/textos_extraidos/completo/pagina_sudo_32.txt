@@ -1,0 +1,154 @@
+
+
+
+
+
+
+
+
+
+
+vigr | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+vigr
+
+vigr [opções]
+Descrição
+Este aplicativo edita os arquivos /etc/group e /etc/gshadow.
+
+Algumas opções do comando
+
+-h, −−help : exibe as opções do aplicativo.
+-s, −−shadow : edita o arquivo /etc/gshadow.
+
+Exemplos
+
+Para editar o arquivo /etc/group, basta digitar
+
+sudo vigr
+
+Para editar o arquivo /etc/gshadow, digite
+
+
+sudo vigr -s
+Observações
+
+O editor padrão de vigr é o vim. Para alterar o editor padrão deve-se alterar (ou definir, caso não exista) a variável de ambiente EDITOR. Por exemplo, o comando
+
+export EDITOR=pico
+configura o pico como editor padrão do vigr.
+
+É importante notar que o comando vigr apenas edita o arquivo /etc/group e permite que o root altere o seu conteúdo. Nenhuma verificação de consistência é feita pelo aplicativo. Portanto, é da responsabilidade do root garantir que a alteração feita corresponde a realidade.
+O comando vipw  edita os arquivos /etc/passwd e /etc/shadow.
+O comando  visudo  edita o arquivo /etc/sudoers.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

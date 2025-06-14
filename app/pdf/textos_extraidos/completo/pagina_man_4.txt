@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+xman | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+xman
+
+xman
+Descrição
+O aplicativo xman é um navegador (browser) para as páginas do manual on-line. A primeira página mostrada pelo aplicativo é a do próprio xman.
+Exemplo
+Na linha de comando, digite
+xman
+Vai aparecer uma pequena janela como mostrada na figura abaixo.
+
+Escolha a opção “Manual Page” para acessar as páginas do manual.
+
+Note que o aplicativo permite selecionar uma das seções do manual para navegar.
+
+A imagem abaixo mostra as páginas do manual para a primeira seção (comandos do usuário). Basta clicar em um dos comandos para acessar a página correspondente.
+
+Observações
+
+O comando apropos pesquisa por determina expressão nas páginas do manual do sistema.
+O comando info ler documentos no formato info.
+O comando man formata e apresenta páginas do manual on-line.
+O comando whatis mostra um resumo sobre um ou mais comandos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

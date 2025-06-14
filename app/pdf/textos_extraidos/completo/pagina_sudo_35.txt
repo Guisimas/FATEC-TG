@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+
+lastb | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+lastb
+
+lastb [opções]
+Descrição
+Este comando exibe informações sobre as tentativas mal sucedidas de se logar ao sistema.
+Algumas opções do comando
+
+-a : exibe o nome da máquina onde foi efetuada a tentativa de login.
+-d : exibe o número de IP da máquina remota onde foi efetuada a tentativa de login.
+-f arquivo : define o nome do arquivo de onde serão extraídas as informações sobre as tentativas de login. Por padrão, o arquivo lido é o /var/log/btmp.
+
+Observações
+
+O comando lastb exige permissão de administrador (sudo) para ser executado.
+Caso nenhum argumento seja passado, o comando lastb exibe todas as informações armazenadas no arquivo /var/log/btmp que possui todas as tentativas de login efetuadas no sistema.
+Se não existirem registros de tentativas mal sucedidas de acessar o sistema, o comando fornecerá apenas a data de criação do arquivo /var/log/btmp (provavelmente, esta data corresponderá à data de instalação do sistema).
+O comando last funciona da mesma forma do comando lastb. Entretanto, ele usa, por padrão, o arquivo /var/log/wtmp que possui informações referentes a entrada (login) e saída (logout) de usuários do sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

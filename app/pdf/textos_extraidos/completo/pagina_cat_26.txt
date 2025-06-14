@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+
+
+cotas de disco | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+cotas de disco
+
+Descrição
+O administrador do sistema pode definir a quantidade de espaço em disco que cada usuário e/ou grupo do sistema pode utilizar. Para isto, o Linux disponibiliza o sistema de cotas de disco. Este aplicativo permite definir uma cota padrão para todos os usuários/grupos do sistema e também cotas específicas para determinados usuários/grupos.
+Palavras-chave
+As seguintes palavras são usadas na definição do sistema de cotas:
+
+Limite soft – quantidade de espaço em disco que o usuário/grupo tem direito. Esta quantidade pode ser excedida por um determinado tempo (período extra), não podendo exceder a quantidade definida no limite hard.
+Limite hard – quantidade máxima de espaço em disco que o usuário/grupo pode usar. Este limite não pode ser excedido.
+Período extra – período de tempo no qual o usuário/grupo pode usar uma quantidade de espaço em disco superior ao limite soft, mas inferior ou igual ao limite hard. O padrão é sete dias.
+
+Observações
+
+O comando quota fornece informações sobre o sistema de cotas.
+O comando quotaon habilita o sistema de cotas.
+O comando quotaoff desabilita o sistema de cotas.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

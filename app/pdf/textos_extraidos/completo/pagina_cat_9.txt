@@ -1,0 +1,138 @@
+
+
+
+
+
+
+
+
+
+
+teclas especiais | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+teclas especiais
+
+Descrição
+No Linux, existem algumas combinações de teclas que podem ser usadas pelo usuário na execução de suas tarefas. Abaixo, são listados alguns exemplos.
+TAB
+A tecla TAB completa a digitação dos comandos e/ou aplicativos do sistema. Por exemplo, digite makew e tecle TAB. O Linux irá completar o comando para makewhatis(caso exista este comando no seu sistema). Se você digitar apenas make e pressionar duas vezes a tecla TAB, o Linux fornecerá a lista dos comandos e aplicativos que começam por make.
+CTRL+ALT+ ou CTRL+ALT-
+Se você configurou mais de uma resolução da tela dentro do X-Window, é possível alternar entre estas configurações usando as teclas CTRL+ALT+ ou as teclas CTRL+ALT-.
+Os sinais de “+” e de “-” são do teclado numérico.
+CTRL+ALT+DEL
+Ao pressionar as teclas CTRL+ALT+DEL, em conjunto, o sistema será reinicializado. Para evitar que qualquer usuário possar reinicializar o sistema, deve-se criar o arquivo /etc/shutdown.allow com o nome dos usuários que possuem autorização para rebootar a máquina.
+O script com a configuração destas teclas é o /etc/init/control-alt-delete.conf.
+ALT+Fn
+As teclas ALT+Fn permite a navegação no modo texto entre as consoles virtuais da máquina, onde Fn é uma tecla de função. Por exemplo, ALT+F1 mostra a console virtual 1 e ALT+F3 mostra a console virtual 3.
+CTRL+ALT+Fn
+O conjunto de teclas CTRL+ALT+Fn permite a navegação no modo gráfico entre as consoles virtuais da máquina, onde Fn é uma tecla de função. Por exemplo, CTRL+ALT+F1 mostra a console virtual 1 e CTRL+ALT+F3 mostra a console virtual 3.
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

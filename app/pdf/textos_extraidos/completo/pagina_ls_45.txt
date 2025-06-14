@@ -1,0 +1,215 @@
+
+
+
+
+
+
+
+
+
+
+bc | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+bc
+
+bc [opções] [expressão / arquivo]
+Descrição
+É uma linguagem de programação para operações aritméticas. O termo bc significa basic calculator.
+Algumas opções do comando
+
+-h ou −−help : exibe as opções da linguagem.
+-i : usa modo interativo.
+-l ou −−mathlib : usa a biblioteca padrão de funções matemáticas como, por exemplo, as mostradas abaixo.
+
+s (x) : o seno de x, onde x é em radianos.
+c (x) : o cosseno de x, onde x é em radianos.
+a (x) : o arcotangente de x, a resposta é dada em radianos.
+l (x) : o logaritmo natural de x.
+e (x) : a função exponencial de e elevado a x.
+j (n, x) : a função de Bessel da ordem de n de x.
+sqrt (x) : a raiz quadrada de x.
+
+
+-v ou −−version : exibe a versão atual da linguagem.
+
+Exemplos
+
+Para calcular a divisão de 5 por 3 com 2 casas decimais, digite
+
+
+bc <<< “scale=2;5/3”
+
+Outra forma de calcular a divisão de 5 por 3 com 2 casas decimais é
+
+echo “scale=2; 5/3” | bc
+
+Para calcular a potência de 6 elevado a 3, basta digitar
+
+
+bc <<< 6^3
+
+Para calcular a raiz quadrada de 4, digite
+
+
+bc -l <<< ‘sqrt(4)’
+
+Para imprimir o número pi com dez casas decimais, entre com
+
+
+echo pi=$(echo “scale=10; 4*a(1)” | bc -l)
+
+Para coverter o número hexadecimal 2D para decimal, digite
+
+bc <<< “ibase=16;obase=A;2D”
+
+Para coverter o número decimal 45 em hexadecimal, digite
+
+bc <<< “ibase=A;obase=16;45”
+
+Para coverter o número decimal 45 em octal, digite
+
+bc <<< “ibase=A;obase=8;45”
+
+Para coverter o número decimal 45 em binário, digite
+
+bc <<< “ibase=A;obase=2;45”
+
+Para verificar se o número 131 é par ou ímpar, basta digitar
+
+echo ‘if ((131%2) == 0) {print “numero par\n”} else {print “numero impar\n”}’ | bc
+
+Para entrar no modo interativo, digite
+
+bc -i
+Em seguida, forneça as operações a serem feitas e tecle Enter a cada interação. Abaixo, são feitas quatro interações: 1) soma de 3 e 2; 2) divisão de 8 por 7; 3) define 2 casas decimais para as próximas operações; 4) pede novamente a divisão de 8 por 7.
+3+2 
+5 
+8/7 
+1 
+scale=2 
+8/7 
+1.14
+Para sair do modo interativo basta digitar quit.
+Observações
+
+A linguagem bc é muito rica pois permite, por exemplo, o uso de
+
+comandos de decisão (if, else);
+laços (for, while);
+expresões aritméticas (+, -, *, /, %, ++, −−, =, +=, -=, >, >=, <, <=, !=, etc);
+variáveis, constantes e vetores .
+
+Para obter mais informações, consulte o manual on-line (digite “man bc”).
+Não existem no bc : tratamento de erros e manipulação de arquivos.
+Pode-se também usar os comandos dc e expr para fazer cálculos na linha de comandos.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

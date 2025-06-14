@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+
+setterm | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+setterm
+
+setterm [opções]
+Descrição
+O comando setterm envia para a saída padrão um string de caracteres para ativar uma habilidade específica do terminal. As opções não implementadas pelo terminal são ignoradas.
+Algumas opções do comando
+
+-background [cor|default] : altera a cor de fundo do terminal para a cor especificada.
+-blank [num] : configura a proteção de tela no shell onde num corresponde ao número de minutos de inatividade do computador para que a proteção de tela seja executada. O valor de num pode variar de zero a 60 sendo que o valor zero corresponde a desativação da tela de proteção.
+-foreground [cor|default] : altera a cor da letra do terminal para a cor especificada.
+-reset : coloca o terminal na condição de recém ligado.
+-store : passa a assumir as opções definidas no comando como padrão.
+-term terminal : altera o nome da variável de ambiente TERM.
+
+Exemplo
+Por exemplo, o comando
+setterm -store -background blue
+altera a cor do fundo da console virtual para azul (não funciona adequadamente na interface gráfica). Esta definição é agora padrão para os todos os terminais virtuais do sistema.
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

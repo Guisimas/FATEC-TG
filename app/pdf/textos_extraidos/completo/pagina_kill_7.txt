@@ -1,0 +1,235 @@
+
+
+
+
+
+
+
+
+
+
+Processo | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+Processo
+
+Descrição
+Abaixo é apresentada a definição de processo dada por Tanenbaum em “Sistemas Operacionais – Projeto e Implementação”.
+“A ideia-chave aqui é que um processo é um tipo de atividade. Ele tem um programa, entrada, saída e um estado. Um único processador pode ser compartilhado entre vários processos, com algum algoritmo de agendamento sendo utilizado para determinar quando parar de trabalhar em um processo e servir a um diferente.”
+Ainda segundo Tanenbaum, são estados de um processo:
+
+executando – o processo está utilizando a CPU;
+pronto – o processo está temporariamente parado para permitir que outro processo execute;
+bloqueado – o processo é incapaz de executar até que um evento aconteça.
+
+Um processo pode criar outros processos. Dizemos que um processo é pai do processo que ele criou. Além disso, um processo-filho pode também criar novos processos, formando assim uma árvore hierárquica de processos.
+Linux
+O init é o primeiro processo inicializado no Linux e é o pai de todos os outros processos. Se um processo termina e deixa processos-filho ainda executando, o processo init assume a paternidade destes processos.
+Quando um usuário trabalha no modo monousuário, um único processo shell é inicializado. Qualquer comando digitado pelo usuário neste terminal irá gerar um ou mais processos. A árvore hierárquica dos processos tendo o shell como raiz é chamada de sessão.
+Quando um usuário inicializa um gerenciador de janelas (X Windows), para cada terminal criado é alocado um processo shell responsável pelo terminal em questão. Cada terminal corresponde a uma sessão aberta pelo usuário sendo que as sessões são independentes entre si. Isto significa que uma alteração feita em um dos terminais não será reconhecida pelos outros terminais pois cada terminal possui o seu próprio conjunto de variáveis de ambiente. Por exemplo, ao entrar com o comando newgrp em um dos terminais para alterar o grupo do usuário, apenas a sessão em questão mudará de grupo.
+Background e Foreground
+No linux, um processo pode estar em foreground ou em background, ou seja, em primeiro plano ou em segundo plano. Por exemplo, ao digitar o comando
+ls -R / > teste
+o sistema criará o arquivo teste com o conteúdo de todos os diretórios e arquivos do sistema. Durante a execução do comando acima, nenhum outro comando poderá ser digitado pelo usuário no mesmo terminal. Isto significa que o comando está sendo executado em primeiro plano impedindo assim a execução de outras atividades no mesmo terminal.
+Para o exemplo acima, é possível liberar o shell para outras atividades enquanto o arquivo teste é criado. Basta que você digite
+ls -R / > teste &
+O símbolo & indica que o comando deve ser executado em background, ou seja, em segundo plano.
+Se um processo está executando em foreground e você deseja colocá-lo em background, você deve:
+
+interromper a execução do processo com as teclas CTRL-Z;
+digitar o comando bg.
+
+Para trazer um processo do modo background para o modo foreground, você deve usar o comando fg.
+Modelo Cliente-Servidor
+O Linux implementa muitas das suas funções usando o modelo cliente-servidor. Isto significa que existem processos que são criados especificamente para executar determinadas tarefas. Estas tarefas especiais são oferecidas aos outros processos do sistema na forma de serviços.
+O processo responsável pela execução de um determinado serviço no sistema é chamado de servidor, enquanto o processo que solicita o serviço ao sistema é chamado de cliente.
+Normalmente, as aplicações servidoras (daemons) são executadas em background, enquanto as aplicações clientes são executadas em foreground.
+A grande vantagem em implementar funções do sistema dessa forma é tornar o kernel do Linux menor, pois tudo que o kernel faz neste caso é gerenciar a comunicação entre clientes e servidores. Além disso, o administrador pode escolher os serviços que o sistema tornará disponíveis.
+São exemplos de daemons no Linux:
+
+at daemon – servidor que executa serviços agendados pelo comando at.
+cron daemon – servidor que executa serviços agendados pelo comando crontab.
+lpd (printer daemon) – servidor de impressão de arquivos.
+
+Por padrão, podemos usar os seguintes argumentos com os daemons:
+
+start : inicializa o daemon.
+stop : termina o daemon.
+status : verifica a situação do daemon.
+
+Portanto, o comando
+service atd status 
+fornece informação sobre o servidor at. Por exemplo, é possível ter a saída mostrada na imagem abaixo.
+
+
+Prioridade
+Existem dois tipos de processos no Linux :
+
+Normal – a prioridade de execução pode variar de 0 (maior prioridade) a 39 (menor prioridade). A prioridade de um processo normal é calculada como
+
+PR = 20 + NI
+onde NI é o valor nice usado para alterar as prioridades dos programas dos usuários. O NI pode variar de -20 a 19 e é, por padrão, zero. O usuário pode usar o comando nice para alterar as prioridades dos seus programas.
+Obs: quanto maior o valor para nice, mais “legal” (nice) você está sendo com os outros usuários.
+
+Tempo real – a prioridade de execução pode variar de  -100 (maior prioridade) a -1 (menor prioridade). A prioridade de um processo de tempo real é calculada como
+
+PR = -1 – rtprio
+onde rtprio é a maior prioridade que o processo pode usar no sistema. O valor de rtprio pode variar de 0 a 99. Assim o processo que terá maior prioridade sobre os outros processos será aquele que tiver rtprio igual a 99.
+Como o kernel trabalha com 140 prioridades, costuma-se mapear essas prioridades para os valores de 0 (maior prioridade) a 139 (menor prioridade) : processos executados em tempo real com prioridades de 0 a 99 e processos normais com prioridades de 100 a 139.
+Existem dois limites de prioridade:
+
+hard – são definidos pelo administrador (root) e implementados pelo kernel. O usuário comum não pode ultrapassar os limites definidos.
+soft – estes limites são interpretados como os valores padrões. O usuário comum pode definir valores acima ou abaixo dos limites especificados.
+
+É possível definir o valor nice para um usuário ou um grupo no arquivo /etc/security/limits.conf. Por exemplo, para definir o valor nice dos processos executados pelo usuário aluno como 10 e não permitir que este valor seja alterado, basta criar a linha abaixo no arquivo.
+aluno hard priority 10
+Para definir para todos os usuários a prioridade 4 como padrão, digite
+* soft priority 4
+A ferramenta top pode ser usada para verificar as prioridades dos processos em execução no sistema como mostra a figura a seguir.
+
+
+Memória
+
+O espaço de memória alocado para um processo é organizado nos seguintes segmentos:
+
+Texto ou código (text or code segment) – contém o código de máquina do programa compilado. É uma área que só permite leitura, evitando assim modificações no código.
+Dados inicializados (initialized data segments) – armazena todas as variáveis do programa (global, estáticas, constantes e externas) que recebem um valor antes do início da execução.
+Dados não inicializados (uninitialized data segments) – armazena todas as variáveis do programa (global, estáticas e externas) não inicializadas. Quando o arquivo é carregado na memória para ser executado, estas variáveis são inicializadas com zero. Esta área é também conhecida como segmento BSS (Block Storage Start).
+Pilha (stack segment) – armazena variáveis locais, parâmetros passados para alguma função e endereço de retorno após execução de alguma função. Dados são adicionados e removidos usando o método LIFO (Last In, First Out). Quando este segmento precisa ampliar sua área de memória, a pilha cresce para baixo (os novos endereços terão valores menores que os já alocados).
+Pilha inversa (heap segment) – armazena variáveis alocadas dinamicamente (por exemplo, com as funções malloc() e calloc() da linguagem C ou com as chamadas de sitema brk() e sbrk() do Linux). Quando este segmento precisa ampliar sua área de memória, a pilha cresce para cima (os novos endereços terão valores maiores que os já alocados).
+
+
+A distinção entre dados inicializados e dados não inicializados é feita por questão de eficiência: variáveis não inicializadas não ocupam espaço no código objeto (arquivo obtido após a compilação).
+A distinção entre stack e heap pode ser feita pelo local onde áreas de memória são adicinadas e removidas. Considerando as duas estruturas como uma fila, stackadiciona e remove áreas no início da fila, enquanto heap adiciona e remove áreas no fim da fila.
+O sistema disponibiliza três variáveis externas no ambiente do programa C que podem ser usadas para verificar o tamanho dos segmentos de memória:
+
+etext – primeiro endereço após o fim do segmento de texto.
+edata – primeiro endereço após o fim do segmento de dados inicializados.
+end – primeiro endereço após o fim do segmento de dados não inicializados.
+
+
+É preciso declarar explicitamente as variáveis externas etext, edata e end no programa C. Elas não estão definidas em nenhum cabeçalho.
+Só é possível verificar o espaço alocado pelos segmentos stack e heap durante a execução do programa.
+Pode-se também usar os comandos size e readelf para obter informações sobre o tamanho dos segmentos de memória.
+
+Abaixo é mostrado um desenho simplificado da alocação de memória por um processo. O segmento de memória mais alta corresponde aos argumentos passados na linha de comandos e à lista de variáveis de ambiente. Em programas C, eles correspondem aos parâmetros da função main().
+
+Observações
+
+O diretório /proc possui a lista dos processos que estão em execução no sistema. Cada processo é identificado neste diretório por um número. Por exemplo, o processo init é o processo 1.
+O comando fuser identifica os processos que estão usando um determinado arquivo.
+O comando kill envia um determinado sinal a um processo em execução.
+O comando killall envia um determinado sinal a um conjunto de processos que usam o mesmo nome.
+ comando nohup executa um comando (processo) imune a interrupções de conexão.
+O comando pidof fornece o PID de um programa em execução.
+Os comandos ps, pstree e top exibem informações sobre os processos que estão executando na máquina.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

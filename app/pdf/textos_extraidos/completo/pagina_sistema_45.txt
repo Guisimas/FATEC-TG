@@ -1,0 +1,175 @@
+
+
+
+
+
+
+
+
+
+
+ac | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+ac
+
+ ac [opções] 
+Descrição
+Este comando imprime estatísticas sobre o tempo de conexão dos usuários no sistema.
+Algumas opções do comando
+
+-d ou −−daily-totals : imprime o tempo de conexão de cada dia.
+-y ou −−print-year : imprime o total de conexão por ano.
+-p ou −−individual-totals : imprime o tempo total de conexão para cada usuário.
+-f ou −−file arquivo : lê as informações de login de arquivo ao invés de wtmp.
+-h ou −−help  : mostra opções do comando.
+-V  ou −−version : mostra informações sobre o programa.
+
+Exemplos
+
+Para imprimir o tempo total de conexão diária, digite
+
+ac -d
+Uma possível saída é mostrada abaixo.
+Feb 1 total 1.94
+Feb 2 total 4.69
+Feb 3 total 4.71
+Feb 4 total 0.23
+Feb 5 total 1.90
+Feb 6 total 1.10
+Feb 7 total 1.59
+Feb 8 total 2.00
+Feb 9 total 5.05
+Feb 10 total 2.91
+Today total 0.75
+
+Para imprimir o tempo de conexão de todos os usuários, basta digitar
+
+
+ac -p
+A saída poderá ser como mostrada abaixo.
+bob     8.06
+joao    0.60
+pedro 7.37
+maria  0.12
+total   16.15
+
+Para imprimir somente o tempo de conexão de joao e ana, digite
+
+ac -p joao ana
+Observações
+
+O arquivo /var/log/wtmp possui os registros de login do sistema.
+O comando ac não cria o arquivo /var/log/wtmp. Se ele não existe, nenhum controle é feito. Para começar esse controle, é necessária sua criação com tamanho zero.
+Para usar ac, é preciso instalar o pacote acct no Linux.
+
+sudo apt-get install acct
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

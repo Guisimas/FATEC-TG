@@ -1,0 +1,196 @@
+
+
+
+
+
+
+
+
+
+
+rpm | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+rpm
+
+rpm [opções]
+Descrição
+
+O rpm (recursivo acrônimo para RPM Package Manager) é um gerenciador de pacotes que pode ser usado para construir, instalar, consultar, verificar, atualizar e desinstalar pacotes de software. Um pacote consiste em um arquivo de arquivos e informações sobre o pacote, incluindo nome, versão e descrição.
+Os pacotes RPM possuem o seguinte formato:
+
+pacote-versão-release.plataforma.rpm
+Por exemplo, gtk+-3.6.0-2.ram1.x86_64.rpm, significa
+
+nome do arquivo = gtk+;
+versão = 3.6.0;
+release = 2;
+plataforma = x86_64.
+
+O termo “ram1” indica que o pacote foi desenvolvido para a distribuição Linux Ramone.
+Algumas opções do comando
+
+Modo de Consulta
+
+rpm -q [opções]
+Exemplos:
+
+-q aplicativo : exibe a versão do pacote que forneceu o aplicativo especificado.
+-qa : exibe a versão de todos os pacotes instalados.
+-qf arquivo : consulta o pacote que contém o arquivo especificado.
+-qi pacote : exibe as informações sobre o pacote, incluindo nome, versão e descrição.
+-ql pacote : exibe a lista dos arquivos do pacote.
+-qlc pacote : exibe a lista apenas dos arquivos de configuração do pacote.
+-qld pacote : exibe a lista apenas dos arquivos de documentação do pacote.
+-qR pacote : exibe a lista dos pacotes dos quais o pacote especificado depende.
+-qs pacote : exibe o estado de cada arquivo do pacote (normal, instalado ou substituído).
+
+
+Modo de Verificação
+
+rpm -V|–verify [opções]
+Exemplos:
+
+-V pacote : verifica pacote.
+-Va : verifica todos os pacote instalados.
+-Vf arquivo : verifica o pacote que possui o arquivo especificado.
+-Vp pacote : verifica o pacote instalado e o arquivo de pacote RPM.
+
+
+Outras opções
+
+-i pacote : instala pacote.
+-e pacote : desinstala pacote.
+-F pacote : atualiza pacote já instalado (compara as versões).
+–version : informa a versão do aplicativo.
+-v : exibe informações mais detalhadas das operações sendo realizadas.
+-vh : exibe o caractere # à medida em que o arquivo é desempacotado e verifica dependências.
+-U pacote : substituir pacote (desinstalar e instalar novamente).
+
+
+
+Exemplos
+
+Para instalar e verificar o pacote que contém o compilador gcc, digite
+
+rpm -ivh gcc-4.8.0-0.8.fc19.x86_64.rpm
+A instalação acima não será feita caso o pacote seja dependente de outro(s) pacote(s). Neste caso, o sistema especifica o nome do pacote que está faltando, e você deve instalar o pacote citado antes de tentar instalar o gcc novamente.
+
+Para desinstalar o compilador gcc, basta digitar
+
+rpm -e gcc-4.8.0-0.8.fc19.x86_64.rpm
+Observações
+
+A distribuição Ubuntu tem na sua interface gráfica a Central de Programas do Ubuntu que permite instalar e remover pacotes.
+Para instalar pacotes no Linux pode-se também usar apt-get,  aptitude, dpkg, yum ou snap.
+
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

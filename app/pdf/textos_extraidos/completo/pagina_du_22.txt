@@ -1,0 +1,152 @@
+
+
+
+
+
+
+
+
+
+
+compress | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+compress
+
+compress [opções] [arquivo]
+Descrição
+Este aplicativo compacta/descompacta arquivos.
+Algumas opções do comando
+
+-f : força a compactação, mesmo que não seja possível reduzir o tamanho do arquivo ou que já exista o arquivo com extensão .Z.
+-r : compacta todos os arquivos dos diretórios que estão no caminho especificado pelo comando.
+-v : escreve na saída padrão de erro o percentual de redução.
+
+Exemplos
+
+Para compactar o arquivo “teste”, digite
+
+compress teste
+O arquivo original é substituiído por um arquivo compactado com a extensão .Z.
+
+Para descompactar o arquivo, digite
+
+uncompress teste.Z
+Observações
+
+Normalmente o aplicativo compress não vem instalado com o Linux. Para instalá-lo digite
+
+sudo apt-get install ncompress
+
+São exemplos de comandos para agrupar e/ou compactar arquivos: ar, tar, zip, gzip e bzip2.
+O aplicativo zgrep procura padrões em um arquivo compactado com compress.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

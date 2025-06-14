@@ -1,0 +1,164 @@
+
+
+
+
+
+
+
+
+
+
+netstat | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+netstat
+
+netstat [opções]
+Descrição
+Esta ferramenta mostra informações sobre as conexões de rede, tabelas de roteamento e estatísticas da utilização da interface na rede.
+Algumas opções do comando
+
+−−tcp : mostra conexões TCP.
+−−numeric : exibe apenas o endereço IP.
+−−programs : indica qual processo está ouvindo a porta especificada.
+−−all : mostra portas com conexões e portas que estão sendo ouvidas.
+−−route : mostra a tabela de encaminhamento.
+−−statistics : mostra as estatísticas da rede.
+−−help : lista as opções do aplicativo.
+−−version : mostra informações sobre o aplicativo.
+
+Exemplos
+
+O comando
+
+netstat
+mostra todos os soquetes abertos.
+
+Para ver apenas as conexões TCP, digite
+
+netstat –tcp −−numeric
+
+Para ver quais portas TCP a sua máquina está ouvindo, basta digitar
+
+netstat −−tcp –listening −−programs
+
+Para mostrar a tabela de encaminhamento, basta digitar
+
+netstat −−route
+
+Para mostrar as estatísticas da rede, digite
+
+netstat −−statistics –raw
+Observações
+
+O comando ifconfig permite configurar interfaces de redes.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,152 @@
+
+
+
+
+
+
+
+
+
+
+inode | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+inode
+
+Descrição
+
+Cada diretório e arquivo é identificado no kernel como um número de nó i (inode).
+Um inode é, na realidade, uma estrutura de dados que possui informações sobre um determinado arquivo ou diretório como, por exemplo, dono, grupo, tipo e permissões de acesso. Além dessas informações, os inodes  apontam para os blocos de dados.
+
+Existe um número máximo de blocos que um inode pode apontar. Portanto, arquivos muito grandes podem necessitar que o seu inode aponte para blocos alocados de forma indireta como mostra a figura abaixo.
+
+Fonte: https://en.wikipedia.org/wiki/Inode_pointer_structure
+
+O inode é exclusivo somente para o dispositivo (partição) dentro do qual ele está contido. Portanto, para identificar um arquivo, o kernel deve ter o número de dispositivo e o inode do arquivo.
+Um arquivo possui um único inode, não importa por quantos nomes este arquivo é identificado no sistema. Logo, é o conjunto de inodes que indica o número de arquivos/diretórios que o sistema possui.
+O sistema Linux possui um conjunto de inodes disponíveis para o uso. Não há criação de inodes. Pode-se usar o comando df para verificar a quantidade de inodes do sistema.
+
+df -i  /
+
+Exemplo
+
+Para ver os inodes dos arquivos do diretório corrente, basta digitar
+
+ls -i 
+
+Para ver os inodes das partições do sistema, digite
+
+df –inodes 
+Observações
+
+Quando se usa o comando ln para criar uma ligação direta para um arquivo que já existe, os dois nomes do mesmo arquivo compartilham o mesmo inode.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

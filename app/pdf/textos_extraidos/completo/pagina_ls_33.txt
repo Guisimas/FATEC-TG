@@ -1,0 +1,137 @@
+
+
+
+
+
+
+
+
+
+
+arch | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+arch
+
+ arch [opções] 
+Descrição
+Este comando informa a arquitetura da máquina, ou seja, o tipo do hardware.
+Algumas opções do comando
+
+−−help : mostra as opções do aplicativo.
+−−version : informa a versão do aplicativo.
+
+Observações
+
+O comando lshw exibe informações sobre o hardware.
+O comando uname exibe informações sobre o sistema.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

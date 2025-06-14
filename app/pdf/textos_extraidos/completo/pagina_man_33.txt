@@ -1,0 +1,162 @@
+
+
+
+
+
+
+
+
+
+
+ifconfig | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+ifconfig
+
+ifconfig [opções]
+Descrição
+O comando é usado para configurar (e posteriormente manter) as interfaces de rede. É usado durante o boot para configurar a maioria das interfaces de rede para um estado utilizável. Depois disto, sua utilização é normalmente necessária somente durante depurações ou quando for necessário melhorar a configuração do sistema.
+Algumas opções do comando
+
+-a : exibe informações sobre todas as interfaces de rede (ativadas e desativadas).
+
+ifconfig -a
+
+interface : exibe informações sobre uma interface de rede. Exemplo:
+
+ifconfig eth0
+
+interface up : ativa uma interface. Exemplo:
+
+sudo ifconfig eth0 up
+
+interface down : desativa uma interface. Exemplo:
+
+sudo ifconfig eth0 down
+
+interface endereço : define um endereço de ip para uma interface. Exemplo:
+
+sudo ifconfig eth0 192.148.3.2
+
+interface netmask endereço : define a máscara de uma subrede. Exemplo:
+
+sudo ifconfig eth0 netmask 255.255.255.0
+
+interface broadcast endereço : define o endereço de broadcast de uma interface. Exemplo:
+
+sudo ifconfig eth0 broadcast 192.148.3.255
+Observações
+
+Se nenhum argumento for informado, ifconfig somente mostra o estado das interfaces atualmente em uso.
+Para obter mais informações sobre o comando ifconfig, digite
+
+info ifconfig
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,152 @@
+
+
+
+
+
+
+
+
+
+
+zgrep | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+zgrep
+
+zgrep [opções] padrão [arquivos]
+Descrição
+Este utilitário procura padrões em um arquivo compactado com compress.
+Algumas opções do comando
+
+−−help : exibe as opções do comando.
+-V ou −−version : informa a versão do comando.
+
+Exemplos
+
+Para exibir as linhas onde aparecem a palavra “DESCRIPTION” no arquivo teste.Z, digite
+
+
+zgrep DESCRIPTION teste.Z
+
+Para exibir as linhas do arquivo teste.Z que começam com a palavra “DESCRIPTION”, basta digitar
+
+
+zgrep ^DESCRIPTION teste.Z
+
+Para exibir as linhas do arquivo teste.Z que não começam com a palavra “DESCRIPTION”, use
+
+
+zgrep -v ^DESCRIPTION teste.Z
+Observações
+
+Na realidade, este aplicativo é um script de shell que serve de interface para o uso do aplicativo grep em arquivos compactados com compress. O aplicativo descompacta o arquivo e em seguida chama o grep passando todas as opções definidas com o comando pelo usuário.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

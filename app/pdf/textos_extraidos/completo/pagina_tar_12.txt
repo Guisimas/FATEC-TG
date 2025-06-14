@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+ssh | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+ssh
+
+ssh [opções] [usuário@]hostname [comando]
+Descrição
+
+SSH (SSH client) é um programa para acessar uma máquina remota e para executar comandos nela. O SSH é também um protocolo e possui as mesmas funcionalidades que o TELNET, mas com a vantagem de prover criptografia na conexão.
+O argumento hostname é o endereço IP da máquina remota, sendo opcional indicar o usuário que será logado nela. Após o login do usuário, ele poderá executar comandos na máquina remota usando o terminal.
+Se um comando for especificado após o hostname, esse comando é executado na máquina remota e em seguida o usuário não poderá executar outros comandos no terminal (a não ser que o usuário use o comando ssh novamente).
+
+Algumas opções do comando
+
+-4 : força o ssh a usar apenas endereços IPv4.
+-6 : força o ssh a usar apenas endereços IPv6.
+-p : indica a porta para conexão na máquina remota.
+-q : modo “quiet”. Suprime a maior parte das mensagens de aviso e diagnóstico.
+-V : apenas exibe o número da versão do ssh e sai do ssh.
+-v : Modo verboso. O ssh exibe na tela messagens de debbug sobre o seu progresso.
+
+Exemplo
+O comando
+ssh -p 22 root@10.1.2.3
+solicita uma conexão como o usuário root na porta 22 da máquina 10.1.2.3.
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

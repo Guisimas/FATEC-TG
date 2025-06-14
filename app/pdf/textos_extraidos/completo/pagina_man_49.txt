@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+gpasswd | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+gpasswd
+
+gpasswd [opções] [usuários] grupo
+Descrição
+Este comando é utilizado para administrar o arquivo /etc/group.
+Algumas opções do comando
+
+-a : Adiciona usuário.
+-d : Exclui usuário.
+-r : Remove a senha do grupo.
+
+Exemplos
+
+Para inserir o usuário joao no grupo linux:
+
+gpasswd -a joao linux
+
+Para excluir o usuário joao
+
+gpasswd -d joao linux
+Observações
+
+O arquivo /etc/group contém informações dos grupos.
+O arquivo /etc/gshadow contém informações sobre as senhas criptografadas dos grupos no sistema gshadow.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

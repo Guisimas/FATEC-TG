@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+cal | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+cal
+
+cal [opções]
+Descrição
+Este comando exibe um calendário simplificado.
+Algumas opções do comando
+
+-3 : exibe o mês anterior, o mês atual e o próximo mês.
+-A num : exibe o mês atual e os num meses após o mês atual.
+-B num : exibe os num meses antes do mês atual e o mês atual.
+-m mês : exibe o calendário do mês especificado. Se o ano não for informado, será usado o ano atual.
+-y ano : exibe o calendário do ano especificado.
+
+Exemplos
+Por exemplo,
+cal 7 2018
+exibe o calendário correspondente a julho de 2018. Se você digitar apenas
+cal 7
+são exibidos os meses de 1 a 12 do ano 7 da era cristã.
+É importante notar que, se nenhum parâmetro for especificado com o comando, o calendário do mês atual é exibido.
+Observações
+
+O parâmetro mês tem valor de 1 a 12.
+O parâmetro ano tem valor maior que ou igual a 1.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

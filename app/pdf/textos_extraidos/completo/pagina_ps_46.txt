@@ -1,0 +1,134 @@
+
+
+
+
+
+
+
+
+
+
+PID | Guia Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Pular para o conteúdo
+
+
+
+Guia Linux
+
+
+					Pesquisar				
+
+
+Menu principal
+Sumário
+Contato
+ 
+
+
+
+
+
+Pesquisar por:
+
+
+
+ 
+
+
+
+
+
+
+
+PID
+
+Descrição
+Cada processo sendo executado no Linux está associado a um número inteiro positivo que é conhecido como PID (Process IDentification).
+Observações
+
+Existem alguns PIDs que são especiais. Por exemplo, o PID de valor 1 sempre corresponde ao processo init que é o primeiro processo a ser inicializado pelo Linux.
+Os números de PID crescem até um valor alto e então reiniciam. Entretanto, dois processos nunca podem ter o mesmo número de ID. É responsabilidade do kernel do Linux garantir que um novo processo obtenha seu próprio número único de ID.
+O diretório /proc possui a lista dos processos que estão executando no sistema.
+O PPID é o número de identificação (ID) do processo-pai.
+Os comandos ps, pstree e top exibem informações sobre os processos que estão executando na máquina.
+
+ 
+Sumário
+     |     
+Topo
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+					Orgulhosamente mantido com WordPress				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
