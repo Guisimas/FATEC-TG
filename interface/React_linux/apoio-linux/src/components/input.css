@@ -1,0 +1,14 @@
+.question-input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #111;
+  color: white;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.question-input:focus {
+  border-color: #3b82f6;
+}

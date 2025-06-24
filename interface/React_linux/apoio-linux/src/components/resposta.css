@@ -1,0 +1,68 @@
+.resposta-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.resposta-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+}
+
+.resposta-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.resposta-pergunta {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Estilo do Markdown */
+.resposta-markdown {
+  line-height: 1.6;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.resposta-markdown pre {
+  background-color: #1e293b;
+  color: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.resposta-markdown code {
+  background-color: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.resposta-markdown ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.resposta-markdown h1,
+.resposta-markdown h2,
+.resposta-markdown h3 {
+  margin-top: 1rem;
+  font-weight: bold;
+}

@@ -1,0 +1,64 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* permite quebra de linha */
+  gap: 16px;       /* espaçamento entre os cards */
+  margin-bottom: 24px;
+}
+
+.card {
+  background-color: #111725;
+  border-radius: 12px;
+  width: 100%;
+  height: 300px;
+  max-width: 272px;
+  padding: 24px;
+  box-shadow: 0 0 10px rgba(17, 23, 37);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Alinha o conteúdo e o botão no final */
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.icon-svg {
+  width: 10%;
+  height: auto;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  background-color: #1e273d; /* Sutil mudança de fundo no hover */
+}
+
+.card-content {
+  flex-grow: 1; /* Ocupa o espaço disponível no card */
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.generate {
+  width: 137px;
+  height: 34px;
+  border: 1px solid #3D63DD;
+  background-color: #FDFDFF;
+  color: #3D63DD;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s;
+  align-self: flex-start; 
+}
+
+.generate:hover {
+  background-color: #3D63DD;
+  color: white;
+  transform: scale(1.05);
+}
