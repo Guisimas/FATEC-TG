@@ -59,7 +59,7 @@ export default function App() {
       <aside className="sidebar">
         <div>
           <div className="logo">
-            <img src="/Logo.svg" alt="Professor Virtual" className="logo-icon" />
+            <img src="/Logo.svg" alt="Sistema de apoio linux" className="logo-icon" />
           </div>
           <Button
             className="new-chat"
