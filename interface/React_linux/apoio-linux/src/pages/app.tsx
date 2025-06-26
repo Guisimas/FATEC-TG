@@ -4,12 +4,14 @@ import "@pages/app.css";
 import { Button } from "@components/button";
 import { Card } from "@components/card";
 import { Input } from "@components/input";
+import { useNavigate } from "react-router-dom";
 
 interface CardData {
   text: string;
 }
 
 export default function App() {
+  const navigate = useNavigate();
   const [question, setQuestion] = useState<string>("");
   const [answer, setAnswer] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -68,6 +70,12 @@ export default function App() {
             }}
           >
             + Novo chat
+          </Button>
+           <Button
+            className="prompt-design-button"
+            onClick={() => navigate("/prompt-design")}
+          >
+            Prompt Design
           </Button>
         </div>
       </aside>

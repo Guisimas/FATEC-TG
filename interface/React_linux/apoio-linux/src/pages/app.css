@@ -68,6 +68,15 @@ body::-webkit-scrollbar-thumb {
 .new-chat {
   position: fixed;
   bottom: 40px;
+  width: 140px; 
+
+}
+
+.prompt-design-button {
+  position: fixed;
+  bottom: 90px; 
+  width: 140px; 
+
 }
 
 .title {
