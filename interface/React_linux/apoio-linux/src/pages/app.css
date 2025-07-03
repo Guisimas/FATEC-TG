@@ -106,7 +106,7 @@ body::-webkit-scrollbar-thumb {
 
 .send-button {
   position: absolute;
-  right: 10px;
+  right: -5%;
   top: 50%;
   transform: translateY(-50%);
   background-color: #3f76f6;
